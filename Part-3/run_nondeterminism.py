@@ -23,11 +23,15 @@ import time
 from collections import Counter
 from pathlib import Path
 
-from agents_demo import run_pipeline, DEFAULT_MODEL
-
 HERE = Path(__file__).parent
-CASES_DIR = HERE / "reports" / "hw01" / "cases"
-RAW_DIR = HERE / "reports" / "hw01" / "raw"
+REPO_ROOT = HERE.parent
+
+# agents_demo.py lives in the sibling Part-2/ folder.
+sys.path.insert(0, str(REPO_ROOT / "Part-2"))
+from agents_demo import run_pipeline, DEFAULT_MODEL  # noqa: E402
+
+CASES_DIR = REPO_ROOT / "reports" / "hw01" / "cases"
+RAW_DIR = REPO_ROOT / "reports" / "hw01" / "raw"
 INPUT_FILE = CASES_DIR / "nondeterminism_input.json"
 
 N_RUNS = 20

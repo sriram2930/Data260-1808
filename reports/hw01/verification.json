@@ -1,56 +1,56 @@
 {
-  "timestamp": "2026-08-31T04:48:51.598802+00:00",
+  "timestamp": "2026-08-31T04:58:01.374413+00:00",
   "total_checks": 35,
   "passed": 35,
   "failed": 0,
   "checks": [
     {
-      "name": "file exists: index.html",
+      "name": "file exists: Part-1/index.html",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: app.js",
+      "name": "file exists: Part-1/app.js",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: Dockerfile",
+      "name": "file exists: Part-1/Dockerfile",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: nginx.conf",
+      "name": "file exists: Part-1/nginx.conf",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: DOMAIN_SCHEMA.md",
+      "name": "file exists: Part-1/DOMAIN_SCHEMA.md",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: agents_demo.py",
+      "name": "file exists: Part-2/agents_demo.py",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: run_nondeterminism.py",
+      "name": "file exists: Part-3/run_nondeterminism.py",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: src/model_client.py",
+      "name": "file exists: Part-4/src/model_client.py",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: hw1_client.py",
+      "name": "file exists: Part-4/hw1_client.py",
       "passed": true,
       "detail": ""
     },
     {
-      "name": "file exists: AGENT.md",
+      "name": "file exists: Part-4/AGENT.md",
       "passed": true,
       "detail": ""
     },

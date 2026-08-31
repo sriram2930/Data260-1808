@@ -36,9 +36,11 @@ def file_exists(rel_path: str) -> bool:
 
 # --- Required files present -------------------------------------------------
 for rel in [
-    "index.html", "app.js", "Dockerfile", "nginx.conf", "DOMAIN_SCHEMA.md",
-    "agents_demo.py", "run_nondeterminism.py", "src/model_client.py",
-    "hw1_client.py", "AGENT.md", "requirements.txt",
+    "Part-1/index.html", "Part-1/app.js", "Part-1/Dockerfile",
+    "Part-1/nginx.conf", "Part-1/DOMAIN_SCHEMA.md",
+    "Part-2/agents_demo.py", "Part-3/run_nondeterminism.py",
+    "Part-4/src/model_client.py", "Part-4/hw1_client.py", "Part-4/AGENT.md",
+    "requirements.txt",
     "reports/hw01/METRICS.md", "reports/hw01/AI_USE.md",
     "reports/hw01/PART2_AGENTIC_AI.md", "reports/hw01/RUN_LOG.txt",
     "reports/hw01/cases/nondeterminism_input.json",
@@ -54,7 +56,7 @@ check("python version in [3.11, 3.12]", py_ok, f"running {sys.version.split()[0]
 
 # --- index.html has the required form elements --------------------------------
 try:
-    html = (HERE / "index.html").read_text(encoding="utf-8")
+    html = (HERE / "Part-1" / "index.html").read_text(encoding="utf-8")
     check("index.html has <title>HW1-", "HW1-" in html)
     check("index.html has autofocus input", "autofocus" in html)
     check("index.html has email input", 'type="email"' in html)
@@ -67,7 +69,7 @@ except FileNotFoundError:
 
 # --- app.js has the required JS patterns --------------------------------------
 try:
-    js = (HERE / "app.js").read_text(encoding="utf-8")
+    js = (HERE / "Part-1" / "app.js").read_text(encoding="utf-8")
     check("app.js uses arrow function validation", "=>" in js and "validateForm" in js)
     check("app.js uses JSON.stringify", "JSON.stringify" in js)
     check("app.js uses destructuring", "const {" in js)

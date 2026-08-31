@@ -1,6 +1,13 @@
 # data260-1808 — DATA-260 Homework Repository
 
-This repository is extended for every DATA-260 homework this semester.
+This repository is extended for every DATA-260 homework this semester. Each
+homework's code is split into one folder per part (`Part-1` ... `Part-4`);
+`reports/hw01/` holds the graded deliverables per the assignment spec.
+
+All commands below assume your current directory is the **repo root**
+(`data260-1808/`) — scripts are invoked by their path (e.g. `Part-2\agents_demo.py`)
+rather than by `cd`-ing into each folder, so relative paths inside the scripts
+resolve correctly regardless of where you run them from.
 
 ## Section 0 — Personal Configuration
 
@@ -26,16 +33,19 @@ completing the full Part 3 batch in ~13-15 minutes.
 
 ## Part 1 — HTML/JS App (Course Catalogue Submission Form)
 
-Files: [index.html](index.html), [app.js](app.js), [DOMAIN_SCHEMA.md](DOMAIN_SCHEMA.md)
+Files: [Part-1/index.html](Part-1/index.html), [Part-1/app.js](Part-1/app.js),
+[Part-1/DOMAIN_SCHEMA.md](Part-1/DOMAIN_SCHEMA.md)
 
 ### Run without Docker (quick check)
 ```
+cd Part-1
 python -m http.server 8008
 ```
 then visit `http://localhost:8008`.
 
 ### Run with Docker (local)
 ```
+cd Part-1
 docker build -t data260-1808-hw1 .
 docker run -d -p 8008:8008 --name data260-1808-hw1-container data260-1808-hw1
 ```
@@ -70,9 +80,9 @@ all using **PORT_BASE = 8008**.
    attempt failed with "Unable to assume the service linked role" — a
    known first-time-account race condition; creating the
    `AWSServiceRoleForECS` role and retrying succeeded.)
-4. **Task Definition** — see [`ecs-task-def.json`](ecs-task-def.json): family
-   `s1808-hw1-task`, Fargate, Linux/X86_64, 0.25 vCPU / 0.5 GB, execution role
-   `ecsTaskExecutionRole` (created manually — didn't exist on this fresh
+4. **Task Definition** — see [`Part-1/ecs-task-def.json`](Part-1/ecs-task-def.json):
+   family `s1808-hw1-task`, Fargate, Linux/X86_64, 0.25 vCPU / 0.5 GB, execution
+   role `ecsTaskExecutionRole` (created manually — didn't exist on this fresh
    account), container `hw1-container`, port 8008, `awslogs` → `/ecs/s1808-hw1`
    (also created manually — the standard `AmazonECSTaskExecutionRolePolicy`
    grants `logs:CreateLogStream`/`PutLogEvents` but not `CreateLogGroup`).
@@ -90,10 +100,11 @@ all using **PORT_BASE = 8008**.
 
 ## Part 2 — Agentic AI (Planner → Reviewer → Finalizer)
 
-Files: [agents_demo.py](agents_demo.py), [sample_input.json](sample_input.json)
+Files: [Part-2/agents_demo.py](Part-2/agents_demo.py), [Part-2/sample_input.json](Part-2/sample_input.json)
 
 ### Setup
-Requires Python 3.11/3.12 (not 3.13+) and Ollama running locally with a model pulled.
+Requires Python 3.11/3.12 (not 3.13+) and Ollama running locally with a model
+pulled. One shared venv at the repo root covers Parts 2-4:
 ```
 py -3.12 -m venv .venv
 .venv\Scripts\pip install -r requirements.txt
@@ -102,11 +113,11 @@ ollama pull qwen2.5:1.5b-instruct
 
 ### Run
 ```
-.venv\Scripts\python agents_demo.py --input-file sample_input.json --temperature 0.7
+.venv\Scripts\python Part-2\agents_demo.py --input-file Part-2\sample_input.json --temperature 0.7
 ```
 or with inline text:
 ```
-.venv\Scripts\python agents_demo.py --title "..." --content "..." --temperature 0.7
+.venv\Scripts\python Part-2\agents_demo.py --title "..." --content "..." --temperature 0.7
 ```
 Prints, in order: the input, the Planner's draft JSON, the Reviewer's JSON
 (approved/corrected), and the Finalized/Publish JSON — plus pipeline latency.
@@ -128,14 +139,17 @@ Full write-up (Q1-Q3, step explanation): [`reports/hw01/PART2_AGENTIC_AI.md`](re
 
 ## Part 3 — Measuring Non-Determinism
 
-Files: [run_nondeterminism.py](run_nondeterminism.py), [reports/hw01/cases/nondeterminism_input.json](reports/hw01/cases/nondeterminism_input.json)
+Files: [Part-3/run_nondeterminism.py](Part-3/run_nondeterminism.py),
+[reports/hw01/cases/nondeterminism_input.json](reports/hw01/cases/nondeterminism_input.json)
 
 ```
-.venv\Scripts\python.exe run_nondeterminism.py | Tee-Object -FilePath reports\hw01\RUN_LOG_part3.txt
+.venv\Scripts\python.exe Part-3\run_nondeterminism.py | Tee-Object -FilePath reports\hw01\RUN_LOG_part3.txt
 ```
-Runs the pipeline 20× at temperature 0.7 and 20× at temperature 0.0 on the
-fixed input, writing raw rows + summary metrics to `reports/hw01/raw/`. Full
-results tables and write-up: [`reports/hw01/METRICS.md`](reports/hw01/METRICS.md).
+`run_nondeterminism.py` imports `run_pipeline` directly from `Part-2\agents_demo.py`
+(no duplicated agent logic — it adds `Part-2/` to `sys.path` at import time) and
+runs the pipeline 20× at temperature 0.7 and 20× at temperature 0.0 on the fixed
+input, writing raw rows + summary metrics to `reports/hw01/raw/`. Full results
+tables and write-up: [`reports/hw01/METRICS.md`](reports/hw01/METRICS.md).
 
 > Note: Windows PowerShell 5.1's `Tee-Object`/`Out-File` default to UTF-16.
 > Re-save any regenerated log as UTF-8 with:
@@ -145,22 +159,24 @@ results tables and write-up: [`reports/hw01/METRICS.md`](reports/hw01/METRICS.md
 
 ## Part 4 — Model Client and Token Accounting
 
-Files: [src/model_client.py](src/model_client.py), [hw1_client.py](hw1_client.py), [AGENT.md](AGENT.md)
+Files: [Part-4/src/model_client.py](Part-4/src/model_client.py),
+[Part-4/hw1_client.py](Part-4/hw1_client.py), [Part-4/AGENT.md](Part-4/AGENT.md)
 
 ```
-.venv\Scripts\python.exe hw1_client.py
+.venv\Scripts\python.exe Part-4\hw1_client.py
 ```
 A small interactive CLI chat built on `src/model_client.py`'s
 `ModelClient.complete(messages, tools=None)` adapter — the one interface all
 model calls in this file go through. Loads `AGENT.md` (a strict bullet-only
-code-review contract) as the system prompt. After every model response it
-prints that turn's input/output/total tokens; `/stats` shows cumulative turn
-count, cumulative token counts, and serialized conversation-history length
-without altering the history; on exit it prints cumulative totals.
+code-review contract, sitting alongside it in `Part-4/`) as the system prompt.
+After every model response it prints that turn's input/output/total tokens;
+`/stats` shows cumulative turn count, cumulative token counts, and serialized
+conversation-history length without altering the history; on exit it prints
+cumulative totals.
 
 To reproduce the exact 5-turn conversation used for the report:
 ```
-Get-Content smoke_test_conversation.txt | .venv\Scripts\python.exe hw1_client.py | Tee-Object -FilePath reports\hw01\RUN_LOG_part4.txt
+Get-Content Part-4\smoke_test_conversation.txt | .venv\Scripts\python.exe Part-4\hw1_client.py | Tee-Object -FilePath reports\hw01\RUN_LOG_part4.txt
 ```
 Full results (per-turn token table, `/stats` snapshots, AGENT.md compliance
 finding, and the four conceptual answers) are in
@@ -191,20 +207,17 @@ something gives: truncation, summarization, or the call failing outright.
 ```
 python verify_hw01.py
 ```
-Runs a self-check (required files present, Python version, `index.html`/`app.js`
-contain the required elements/patterns, Ollama reachable with the target model
-pulled, non-determinism raw data well-formed) and writes
-[`reports/hw01/verification.json`](reports/hw01/verification.json).
+Runs a self-check (required files present in each `Part-N/` folder, Python
+version, `index.html`/`app.js` contain the required elements/patterns, Ollama
+reachable with the target model pulled, non-determinism raw data well-formed)
+and writes [`reports/hw01/verification.json`](reports/hw01/verification.json).
 
 ## Repository layout
 ```
-index.html, app.js, Dockerfile, nginx.conf   — Part 1 app
-DOMAIN_SCHEMA.md                             — Part 1, written before coding
-agents_demo.py, sample_input.json            — Part 2
-run_nondeterminism.py                        — Part 3 driver (reuses agents_demo.run_pipeline)
-src/model_client.py                          — Part 4 model adapter
-hw1_client.py, AGENT.md                      — Part 4 CLI demo
-smoke_test_conversation.txt                  — reproducible 5-turn script for Part 4
-ecs-task-def.json                            — ECS task definition used for AWS deployment
-reports/hw01/                                — all HW1 deliverables (see assignment spec)
+Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json
+Part-2/   agents_demo.py, sample_input.json
+Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)
+Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py
+requirements.txt, verify_hw01.py   — shared, repo root
+reports/hw01/                      — all HW1 deliverables (see assignment spec)
 ```
