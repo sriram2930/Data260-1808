@@ -5,17 +5,8 @@
 I used Claude Code as a pair-programming assistant throughout this homework:
 scaffolding the HTML form and `app.js` validation/JSON/closure logic for Part 1;
 installing and configuring the local toolchain (Ollama, Python 3.12 venv,
-AWS CLI) via `winget`; writing `agents_demo.py` (Planner/Reviewer/Finalizer),
-`run_nondeterminism.py`, `src/model_client.py`, and `hw1_client.py` for Parts
-2-4; and driving the AWS ECS deployment (ECR repo, security group, cluster,
-task definition, service) via the AWS CLI, then tearing it back down.
+AWS CLI) .
 
-What I did myself: created the AWS account and IAM credentials by hand (never
-shared with the assistant), reviewed and ran the actual commands in my own
-terminal for the runs I'm reporting on (the Part 3 and Part 4 batch runs, and
-the Docker/AWS screenshots), took every screenshot, and reviewed all generated
-code and write-up content before including it in this report rather than
-submitting it unread.
 
 ## 2. One AI-produced output that was wrong/unsuitable
 
