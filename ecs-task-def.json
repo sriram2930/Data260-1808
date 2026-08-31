@@ -1,0 +1,36 @@
+{
+  "family": "s1808-hw1-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "ecsTaskExecutionRole",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "containerDefinitions": [
+    {
+      "name": "hw1-container",
+      "image": "858444017481.dkr.ecr.us-east-1.amazonaws.com/data260-1808-hw1:latest",
+      "portMappings": [
+        {
+          "containerPort": 8008,
+          "protocol": "tcp",
+          "name": "hw1-8008-tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/s1808-hw1",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group": "true"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-08-31T04:48:51.598802+00:00",
+  "total_checks": 35,
+  "passed": 35,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "file exists: index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: app.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: Dockerfile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: nginx.conf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: DOMAIN_SCHEMA.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: agents_demo.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: run_nondeterminism.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: src/model_client.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: hw1_client.py",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: AGENT.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: requirements.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/METRICS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/AI_USE.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/PART2_AGENTIC_AI.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/RUN_LOG.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/cases/nondeterminism_input.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/raw/nondeterminism_runs.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/raw/nondeterminism_runs.csv",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "file exists: reports/hw01/raw/nondeterminism_summary.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "python version in [3.11, 3.12]",
+      "passed": true,
+      "detail": "running 3.12.10"
+    },
+    {
+      "name": "index.html has <title>HW1-",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has autofocus input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has email input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has textarea",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index.html has 4 <option> department values",
+      "passed": true,
+      "detail": "found 4"
+    },
+    {
+      "name": "index.html has terms checkbox",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "app.js uses arrow function validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "app.js uses JSON.stringify",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "app.js uses destructuring",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "app.js uses spread operator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "app.js uses a closure counter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ollama reachable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "model pulled: qwen2.5:1.5b-instruct",
+      "passed": true,
+      "detail": "models: ['qwen2.5:1.5b-instruct']"
+    },
+    {
+      "name": "nondeterminism_runs.json has 40 records",
+      "passed": true,
+      "detail": "found 40"
+    },
+    {
+      "name": "every run has tags + latency_ms",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

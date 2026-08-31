@@ -1,0 +1,27 @@
+{
+  "0.7": {
+    "distinct_tag_sets": 10,
+    "tags_in_all_runs": [],
+    "tags_in_exactly_one_run": [
+      "data management",
+      "ingestion",
+      "machine learning pipelines",
+      "pipelining"
+    ],
+    "latency_p50_ms": 8076.6,
+    "latency_p95_ms": 12253.8,
+    "latency_p99_ms": 16409.7
+  },
+  "0.0": {
+    "distinct_tag_sets": 1,
+    "tags_in_all_runs": [
+      "data pipelines",
+      "data systems",
+      "machine learning"
+    ],
+    "tags_in_exactly_one_run": [],
+    "latency_p50_ms": 7116.5,
+    "latency_p95_ms": 7511.0,
+    "latency_p99_ms": 7671.5
+  }
+}

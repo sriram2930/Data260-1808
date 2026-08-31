@@ -1,0 +1,584 @@
+[
+  {
+    "run_index": 1,
+    "temperature": 0.7,
+    "tags": [
+      "data pipelines",
+      "machine learning",
+      "pipeline design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring, and builds a",
+    "latency_ms": 16409.7,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 30 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:10:18"
+  },
+  {
+    "run_index": 2,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data systems",
+      "pipeline design"
+    ],
+    "summary": "This course focuses on the design and operation of data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7539.6,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:10:35"
+  },
+  {
+    "run_index": 3,
+    "temperature": 0.7,
+    "tags": [
+      "Machine Learning",
+      "Data Systems",
+      "Pipeline Design"
+    ],
+    "summary": "This course focuses on designing and implementing data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7532.1,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:10:43"
+  },
+  {
+    "run_index": 4,
+    "temperature": 0.7,
+    "tags": [
+      "Machine Learning",
+      "Data Pipelines",
+      "Data Systems"
+    ],
+    "summary": "This course focuses on the design and operation of data pipelines for machine learning systems, including schema design, batch and streaming ingestion, feature stores, data",
+    "latency_ms": 7945.1,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 28 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:10:51"
+  },
+  {
+    "run_index": 5,
+    "temperature": 0.7,
+    "tags": [
+      "data systems",
+      "machine learning pipelines",
+      "data ingestion"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning, covering schema design, batch and streaming ingestion, feature stores, and monitoring data drift.",
+    "latency_ms": 7887.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:10:59"
+  },
+  {
+    "run_index": 6,
+    "temperature": 0.7,
+    "tags": [
+      "data pipelines",
+      "machine learning",
+      "schema design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning, including schema design, batch and streaming ingestion, and monitoring for data drift.",
+    "latency_ms": 7325.2,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:11:08"
+  },
+  {
+    "run_index": 7,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data systems",
+      "pipeline design"
+    ],
+    "summary": "This course focuses on the design and operation of data pipelines for machine learning systems, including schema design, batch and streaming ingestion, feature stores, versioning,",
+    "latency_ms": 8102.3,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 27 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:11:16"
+  },
+  {
+    "run_index": 8,
+    "temperature": 0.7,
+    "tags": [
+      "data pipelines",
+      "machine learning",
+      "data ingestion"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, batch and streaming ingestion, feature stores, data versioning, and",
+    "latency_ms": 8076.6,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 29 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:11:24"
+  },
+  {
+    "run_index": 9,
+    "temperature": 0.7,
+    "tags": [
+      "data pipelines",
+      "machine learning",
+      "data management"
+    ],
+    "summary": "This course covers the design and operation of data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7478.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:11:33"
+  },
+  {
+    "run_index": 10,
+    "temperature": 0.7,
+    "tags": [
+      "Data Systems",
+      "Machine Learning",
+      "Pipeline Design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, including schema design, ingestion, feature stores, data versioning, and monitoring for data",
+    "latency_ms": 10555.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 48 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:11:41"
+  },
+  {
+    "run_index": 11,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "schema design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines that support machine learning systems, covering batch and streaming ingestion, feature stores, and monitoring for drift.",
+    "latency_ms": 7639.2,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:11:52"
+  },
+  {
+    "run_index": 12,
+    "temperature": 0.7,
+    "tags": [
+      "Data Pipelines",
+      "Machine Learning",
+      "Ingestion"
+    ],
+    "summary": "This course covers the design and operation of data pipelines for machine learning systems, focusing on schema design, ingestion, feature stores, and monitoring for data",
+    "latency_ms": 10491.4,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 52 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:12:00"
+  },
+  {
+    "run_index": 13,
+    "temperature": 0.7,
+    "tags": [
+      "data systems",
+      "machine learning",
+      "pipeline design"
+    ],
+    "summary": "This course covers the design and operation of data pipelines that feed machine-learning systems.",
+    "latency_ms": 6354.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:12:11"
+  },
+  {
+    "run_index": 14,
+    "temperature": 0.7,
+    "tags": [
+      "data systems",
+      "machine learning",
+      "pipeline design"
+    ],
+    "summary": "This course covers the design and operation of data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7534.3,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:12:18"
+  },
+  {
+    "run_index": 15,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "pipeline design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines that feed machine-learning systems, including schema design, batch and streaming ingestion, feature stores, data versioning, and",
+    "latency_ms": 8246.1,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 29 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:12:26"
+  },
+  {
+    "run_index": 16,
+    "temperature": 0.7,
+    "tags": [
+      "data systems",
+      "machine learning",
+      "pipelines"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, including schema design, batch and streaming ingestion, feature stores, versioning, and monitoring",
+    "latency_ms": 12253.8,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 65 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:12:34"
+  },
+  {
+    "run_index": 17,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "pipeline design"
+    ],
+    "summary": "This course covers the design and operation of data pipelines that feed machine-learning systems: schema design, batch and streaming ingestion, feature stores, data versioning, and",
+    "latency_ms": 9650.4,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 66 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:12:47"
+  },
+  {
+    "run_index": 18,
+    "temperature": 0.7,
+    "tags": [
+      "machine learning",
+      "data systems",
+      "pipelines"
+    ],
+    "summary": "This course focuses on the design and operation of data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring for",
+    "latency_ms": 10878.7,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 55 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:12:57"
+  },
+  {
+    "run_index": 19,
+    "temperature": 0.7,
+    "tags": [
+      "data pipelines",
+      "machine learning",
+      "pipelining"
+    ],
+    "summary": "This course focuses on creating and operating data pipelines for machine learning systems, including schema design, ingestion, feature stores, versioning, and monitoring for drift. Students",
+    "latency_ms": 11106.2,
+    "reviewer_approved": true,
+    "finalizer_notes": [
+      "truncated summary from 49 to 25 words"
+    ],
+    "started_at": "2026-08-30T17:13:09"
+  },
+  {
+    "run_index": 20,
+    "temperature": 0.7,
+    "tags": [
+      "data systems",
+      "machine learning",
+      "pipeline design"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning, covering topics like schema design, ingestion, feature stores, and monitoring.",
+    "latency_ms": 7563.4,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:20"
+  },
+  {
+    "run_index": 1,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7671.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:28"
+  },
+  {
+    "run_index": 2,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 6975.1,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:36"
+  },
+  {
+    "run_index": 3,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 6917.9,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:44"
+  },
+  {
+    "run_index": 4,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7106.2,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:51"
+  },
+  {
+    "run_index": 5,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 6960.1,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:13:59"
+  },
+  {
+    "run_index": 6,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7250.6,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:06"
+  },
+  {
+    "run_index": 7,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7511.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:14"
+  },
+  {
+    "run_index": 8,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7089.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:22"
+  },
+  {
+    "run_index": 9,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7180.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:30"
+  },
+  {
+    "run_index": 10,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7073.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:37"
+  },
+  {
+    "run_index": 11,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7043.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:45"
+  },
+  {
+    "run_index": 12,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7116.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:14:52"
+  },
+  {
+    "run_index": 13,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7140.4,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:00"
+  },
+  {
+    "run_index": 14,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7138.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:08"
+  },
+  {
+    "run_index": 15,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7403.0,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:15"
+  },
+  {
+    "run_index": 16,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7224.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:23"
+  },
+  {
+    "run_index": 17,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7381.6,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:31"
+  },
+  {
+    "run_index": 18,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7103.4,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:39"
+  },
+  {
+    "run_index": 19,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7021.3,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:47"
+  },
+  {
+    "run_index": 20,
+    "temperature": 0.0,
+    "tags": [
+      "machine learning",
+      "data pipelines",
+      "data systems"
+    ],
+    "summary": "This course focuses on designing and operating data pipelines for machine learning systems, covering schema design, ingestion, feature stores, versioning, and monitoring.",
+    "latency_ms": 7047.5,
+    "reviewer_approved": true,
+    "finalizer_notes": [],
+    "started_at": "2026-08-30T17:15:55"
+  }
+]

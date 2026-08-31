@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW1-Sreeram Achutuni</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --border: #d7dce1;
+      --text: #1c2530;
+      --muted: #5b6b7a;
+      --accent: #2f5fa8;
+      --accent-dark: #234a86;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2.5rem 1rem;
+      font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 0.25rem;
+    }
+    p.subtitle {
+      color: var(--muted);
+      margin: 0 0 1.75rem;
+    }
+    form {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    label {
+      font-weight: 600;
+      font-size: 0.92rem;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox-row label {
+      margin: 0;
+      font-weight: 400;
+    }
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: var(--accent-dark);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Campus Course Catalogue &amp; Enrolment</h1>
+    <p class="subtitle">Submit a new course listing for the catalogue.</p>
+
+    <form id="courseForm" novalidate>
+      <div>
+        <label for="courseCode">Course Code</label>
+        <input
+          type="text"
+          id="courseCode"
+          name="courseCode"
+          placeholder="Course code, e.g. DATA-260"
+          required
+          autofocus
+        >
+      </div>
+
+      <div>
+        <label for="courseTitle">Course Title</label>
+        <input
+          type="text"
+          id="courseTitle"
+          name="courseTitle"
+          placeholder="Course title, e.g. Big Data Technologies and Systems"
+          required
+        >
+      </div>
+
+      <div>
+        <label for="submitterEmail">Your Email</label>
+        <input
+          type="email"
+          id="submitterEmail"
+          name="submitterEmail"
+          placeholder="e.g. jane.doe@sjsu.edu"
+          required
+        >
+      </div>
+
+      <div>
+        <label for="description">Course Description</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Describe the course content, topics covered, and learning outcomes..."
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Data Science & AI">Data Science &amp; AI</option>
+          <option value="Business Analytics">Business Analytics</option>
+          <option value="Engineering">Engineering</option>
+        </select>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms">
+        <label for="agreeTerms">I agree to the terms and conditions.</label>
+      </div>
+
+      <button type="submit">Submit Course Listing</button>
+    </form>
+
+    <footer>DATA-260 &middot; HW1 &middot; Domain 0 &middot; PREFIX s1808</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

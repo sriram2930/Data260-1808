@@ -1,0 +1,8 @@
+Please review this code: def divide(a, b): return a / b
+Please review this code: def get_first(lst): return lst[0]
+What are three good tags for a course about relational databases?
+/stats
+Please review this code: def add(a, b): return a + b
+Thanks, that covers everything I needed.
+/stats
+/exit

@@ -1,0 +1,4 @@
+{
+  "title": "DATA-260: Data Systems for Machine Learning",
+  "content": "This course covers the design and operation of data pipelines that feed machine-learning systems: schema design, batch and streaming ingestion, feature stores, data versioning, and monitoring for data drift. Students build a small pipeline that ingests raw records, validates and transforms them, and serves features to a downstream model, while comparing batch and streaming trade-offs and discussing failure modes such as schema evolution and late-arriving data."
+}

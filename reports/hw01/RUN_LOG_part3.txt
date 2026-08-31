@@ -1,0 +1,85 @@
+=== DATA-260 HW1 Part 3 ù non-determinism run started 2026-08-30 17:10:18 ===
+Fixed input: C:\Users\User\Desktop\Data_260_HW-1\Part-2\reports\hw01\cases\nondeterminism_input.json
+Model: qwen2.5:1.5b-instruct | Runs per temperature: 20 | Temperatures: [0.7, 0.0]
+
+
+=== Running 20 runs at temperature=0.7 ===
+[2026-08-30T17:10:18] [temp=0.7] run 1/20 -> tags=['data pipelines', 'machine learning', 'pipeline design'] latency=16409.7ms
+[2026-08-30T17:10:35] [temp=0.7] run 2/20 -> tags=['machine learning', 'data systems', 'pipeline design'] latency=7539.6ms
+[2026-08-30T17:10:43] [temp=0.7] run 3/20 -> tags=['Machine Learning', 'Data Systems', 'Pipeline Design'] latency=7532.1ms
+[2026-08-30T17:10:51] [temp=0.7] run 4/20 -> tags=['Machine Learning', 'Data Pipelines', 'Data Systems'] latency=7945.1ms
+[2026-08-30T17:10:59] [temp=0.7] run 5/20 -> tags=['data systems', 'machine learning pipelines', 'data ingestion'] latency=7887.0ms
+[2026-08-30T17:11:08] [temp=0.7] run 6/20 -> tags=['data pipelines', 'machine learning', 'schema design'] latency=7325.2ms
+[2026-08-30T17:11:16] [temp=0.7] run 7/20 -> tags=['machine learning', 'data systems', 'pipeline design'] latency=8102.3ms
+[2026-08-30T17:11:24] [temp=0.7] run 8/20 -> tags=['data pipelines', 'machine learning', 'data ingestion'] latency=8076.6ms
+[2026-08-30T17:11:33] [temp=0.7] run 9/20 -> tags=['data pipelines', 'machine learning', 'data management'] latency=7478.0ms
+[2026-08-30T17:11:41] [temp=0.7] run 10/20 -> tags=['Data Systems', 'Machine Learning', 'Pipeline Design'] latency=10555.5ms
+[2026-08-30T17:11:52] [temp=0.7] run 11/20 -> tags=['machine learning', 'data pipelines', 'schema design'] latency=7639.2ms
+[2026-08-30T17:12:00] [temp=0.7] run 12/20 -> tags=['Data Pipelines', 'Machine Learning', 'Ingestion'] latency=10491.4ms
+[2026-08-30T17:12:11] [temp=0.7] run 13/20 -> tags=['data systems', 'machine learning', 'pipeline design'] latency=6354.5ms
+[2026-08-30T17:12:18] [temp=0.7] run 14/20 -> tags=['data systems', 'machine learning', 'pipeline design'] latency=7534.3ms
+[2026-08-30T17:12:26] [temp=0.7] run 15/20 -> tags=['machine learning', 'data pipelines', 'pipeline design'] latency=8246.1ms
+[2026-08-30T17:12:34] [temp=0.7] run 16/20 -> tags=['data systems', 'machine learning', 'pipelines'] latency=12253.8ms
+[2026-08-30T17:12:47] [temp=0.7] run 17/20 -> tags=['machine learning', 'data pipelines', 'pipeline design'] latency=9650.4ms
+[2026-08-30T17:12:57] [temp=0.7] run 18/20 -> tags=['machine learning', 'data systems', 'pipelines'] latency=10878.7ms
+[2026-08-30T17:13:09] [temp=0.7] run 19/20 -> tags=['data pipelines', 'machine learning', 'pipelining'] latency=11106.2ms
+[2026-08-30T17:13:20] [temp=0.7] run 20/20 -> tags=['data systems', 'machine learning', 'pipeline design'] latency=7563.4ms
+
+=== Running 20 runs at temperature=0.0 ===
+[2026-08-30T17:13:28] [temp=0.0] run 1/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7671.5ms
+[2026-08-30T17:13:36] [temp=0.0] run 2/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=6975.1ms
+[2026-08-30T17:13:44] [temp=0.0] run 3/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=6917.9ms
+[2026-08-30T17:13:51] [temp=0.0] run 4/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7106.2ms
+[2026-08-30T17:13:59] [temp=0.0] run 5/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=6960.1ms
+[2026-08-30T17:14:06] [temp=0.0] run 6/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7250.6ms
+[2026-08-30T17:14:14] [temp=0.0] run 7/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7511.0ms
+[2026-08-30T17:14:22] [temp=0.0] run 8/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7089.5ms
+[2026-08-30T17:14:30] [temp=0.0] run 9/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7180.0ms
+[2026-08-30T17:14:37] [temp=0.0] run 10/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7073.0ms
+[2026-08-30T17:14:45] [temp=0.0] run 11/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7043.0ms
+[2026-08-30T17:14:52] [temp=0.0] run 12/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7116.5ms
+[2026-08-30T17:15:00] [temp=0.0] run 13/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7140.4ms
+[2026-08-30T17:15:08] [temp=0.0] run 14/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7138.5ms
+[2026-08-30T17:15:15] [temp=0.0] run 15/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7403.0ms
+[2026-08-30T17:15:23] [temp=0.0] run 16/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7224.5ms
+[2026-08-30T17:15:31] [temp=0.0] run 17/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7381.6ms
+[2026-08-30T17:15:39] [temp=0.0] run 18/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7103.4ms
+[2026-08-30T17:15:47] [temp=0.0] run 19/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7021.3ms
+[2026-08-30T17:15:55] [temp=0.0] run 20/20 -> tags=['machine learning', 'data pipelines', 'data systems'] latency=7047.5ms
+
+=== SUMMARY ===
+
+--- temperature=0.7 ---
+{
+  "distinct_tag_sets": 10,
+  "tags_in_all_runs": [],
+  "tags_in_exactly_one_run": [
+    "data management",
+    "ingestion",
+    "machine learning pipelines",
+    "pipelining"
+  ],
+  "latency_p50_ms": 8076.6,
+  "latency_p95_ms": 12253.8,
+  "latency_p99_ms": 16409.7
+}
+
+--- temperature=0.0 ---
+{
+  "distinct_tag_sets": 1,
+  "tags_in_all_runs": [
+    "data pipelines",
+    "data systems",
+    "machine learning"
+  ],
+  "tags_in_exactly_one_run": [],
+  "latency_p50_ms": 7116.5,
+  "latency_p95_ms": 7511.0,
+  "latency_p99_ms": 7671.5
+}
+
+Raw rows (CSV): C:\Users\User\Desktop\Data_260_HW-1\Part-2\reports\hw01\raw\nondeterminism_runs.csv
+Raw rows (JSON): C:\Users\User\Desktop\Data_260_HW-1\Part-2\reports\hw01\raw\nondeterminism_runs.json
+Summary: C:\Users\User\Desktop\Data_260_HW-1\Part-2\reports\hw01\raw\nondeterminism_summary.json
+
+=== finished 2026-08-30 17:16:02 ===
