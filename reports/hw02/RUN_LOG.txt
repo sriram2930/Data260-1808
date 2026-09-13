@@ -1,0 +1,1158 @@
+=== DATA-260 HW2 Part 4 experiments started 2026-09-13 14:58:18 ===
+
+=== Experiment 1: 30-run classification (schema_input.json, ceiling=10) ===
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['ML Data Pipelines', 'Data Schema Design', 'Streaming Ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is too long and does not capture the essence of the course well.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data-pipelines', 'machine-learning', 'schema-design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T14:58:18] [classification] run 1/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=9428.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['tags need to be specific and relevant to the content', "summary is too long and doesn't capture the essence of the course"]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipeline design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T14:58:27] [classification] run 2/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=9105.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Systems', 'Machine Learning', 'Data Pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["The planner's tags are vague and not relevant to the course's content.", "The summary is too long and does not accurately capture the course's focus."]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 6 [type=value_error, input_value=['data pipelines', 'machi...nitoring', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data monitoring']
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+[2026-09-13T14:58:37] [classification] run 3/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=3 latency=13799.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:58:52] [classification] run 4/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4909.6ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:58:57] [classification] run 5/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4523.3ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Data Systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:59:03] [classification] run 6/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4698.0ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 6 [type=value_error, input_value=['data pipelines', 'machi...ta drift', 'monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data drift monitoring']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T14:59:08] [classification] run 7/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8413.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:59:17] [classification] run 8/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4747.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data science', 'machine learning', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["rephrase 'ML' to 'machine learning' for consistency", "expand 'data drift' into 'data drift detection']"]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['ML pipelines', 'data engineering', 'data quality']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["The planner's tags are vague and not directly relevant to the title and content."]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['ML', 'Data Systems', 'Pipelines'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['ML', 'Data Pipelines', 'Machine Learning'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['Data Pipelines', 'ML', 'Streaming Ingestion'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> valid proposal: ['data systems', 'machine learning pipelines', 'streaming ingestion']
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+[2026-09-13T14:59:23] [classification] run 9/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=6 latency=23730.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:59:47] [classification] run 10/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5020.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Pipelines', 'Machine Learning', 'Schema Design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T14:59:53] [classification] run 11/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5174.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['data pipelines', 'ML', ...'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['data pipelines', 'ML', 'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> valid proposal: ['ML pipelines', 'data ingestion', 'monitoring']
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+[2026-09-13T14:59:59] [classification] run 12/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=3 latency=11168.9ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Streaming Ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is too long and does not capture the essence of the course content.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['ML', 'Data Pipelines', 'Data Systems'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['ML', 'Data Pipelines', 'Data Systems'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> valid proposal: ['Data Pipelines', 'Data Systems', 'Machine Learning']
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+[2026-09-13T15:00:11] [classification] run 13/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=4 latency=15538.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary should be more specific and relevant to the content.', 'The summary should be a single sentence.', 'The summary should be at most 25 words.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['data pipelines', 'ML', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> valid proposal: ['ML pipelines', 'data systems', 'machine learning']
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+[2026-09-13T15:00:27] [classification] run 14/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=3 latency=13794.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['ML Pipelines', 'Data Systems', 'Drift Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:00:42] [classification] run 15/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5410.3ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Systems', 'Machine Learning', 'Pipeline Design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:00:48] [classification] run 16/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5030.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data management', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["Planner's tags are vague", 'Summary is too long']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['data pipelines', 'ML', ...'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['data pipelines', 'ML', 'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> valid proposal: ['data pipelines', 'streaming ingestion', 'data drift monitoring']
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+[2026-09-13T15:00:54] [classification] run 17/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=4 latency=15682.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Data Systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:10] [classification] run 18/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4982.9ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning pipelines', 'data systems', 'data quality monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:16] [classification] run 19/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4965.9ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:22] [classification] run 20/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5208.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Pipelines', 'ML Data Systems', 'Data Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:28] [classification] run 21/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4690.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'ML pipelines', 'data monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:34] [classification] run 22/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4931.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Pipelines', 'Machine Learning', 'Data Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary should be a single, faithful sentence of at most 25 words.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:01:39] [classification] run 23/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8831.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:49] [classification] run 24/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4943.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning pipelines', 'data systems', 'streaming ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:01:55] [classification] run 25/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4982.0ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:02:00] [classification] run 26/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4740.3ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 4 [type=value_error, input_value=['data pipelines', 'machi...ngestion', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['machine learning pipelines', 'data schema design', 'streaming ingestion']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:02:06] [classification] run 27/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8311.0ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data-pipelines', 'machine-learning', 'data-systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 4 [type=value_error, input_value=['data pipelines', 'machi...ngestion', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'streaming ingestion']
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+[2026-09-13T15:02:15] [classification] run 28/30 ceiling=10 -> outcome=valid_after_2plus_retries turns=3 latency=11586.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:02:27] [classification] run 29/30 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4732.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data systems', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['Planner summary is too long', 'Planner tags are vague and not relevant to the title']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:02:32] [classification] run 30/30 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8828.2ms
+
+=== Experiment 2: turn-ceiling comparison ([2, 10], 20 runs each) ===
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data', 'pipeline', 'machine-learning']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:02:42] [ceiling_2] run 1/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4290.0ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine learning pipelines', 'data engineering', 'data monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:02:47] [ceiling_2] run 2/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=5156.4ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine-learning', 'data-pipelines', 'data-drift']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:02:53] [ceiling_2] run 3/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4631.9ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:02:58] [ceiling_2] run 4/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4868.2ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:03] [ceiling_2] run 5/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4829.3ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['Machine Learning Pipelines', 'Data Ingestion', 'Drift Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:09] [ceiling_2] run 6/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4920.6ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:15] [ceiling_2] run 7/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4780.0ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine-learning', 'data-pipelines', 'schema-design']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:20] [ceiling_2] run 8/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=5246.2ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine-learning', 'data-systems', 'pipeline-design']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:26] [ceiling_2] run 9/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4878.1ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:32] [ceiling_2] run 10/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4785.5ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['data systems', 'machine...'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Planner (attempt 2/2)---
+  -> valid proposal: ['machine learning', 'data systems', 'data monitoring']
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+[2026-09-13T15:03:37] [ceiling_2] run 11/20 ceiling=2 -> outcome=valid_after_1_retry turns=2 latency=7422.6ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=False issues=["Relevant tag 'machine learning' is redundant", "Relevant tag 'data systems' is vague", "Tag 'data pipelines' is relevant but not specific enough"]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Planner (attempt 2/2)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data systems']
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is longer than 25 words.']
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+[2026-09-13T15:03:45] [ceiling_2] run 12/20 ceiling=2 -> outcome=hit_turn_ceiling turns=2 latency=9869.5ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:03:55] [ceiling_2] run 13/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4808.2ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'streaming ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:04:00] [ceiling_2] run 14/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4855.6ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data systems', 'machine learning', 'data pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:04:05] [ceiling_2] run 15/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4675.1ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['data pipelines', 'machi...ngestion', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Planner (attempt 2/2)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data monitoring']
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+[2026-09-13T15:04:10] [ceiling_2] run 16/20 ceiling=2 -> outcome=valid_after_1_retry turns=2 latency=8197.0ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['ML pipelines', 'Data Drift', 'Data Ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:04:19] [ceiling_2] run 17/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=5521.1ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['ML pipelines', 'data systems', 'data management']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:04:24] [ceiling_2] run 18/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=5839.3ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['Data Pipelines', 'ML', ...'Data Drift Monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Planner (attempt 2/2)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'ML' must be 3-30 characters, got 2 [type=value_error, input_value=['Data Pipelines', 'ML', 'Data Drift Monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=2)---
+[2026-09-13T15:04:31] [ceiling_2] run 19/20 ceiling=2 -> outcome=hit_turn_ceiling turns=2 latency=7701.6ms
+---NODE: Supervisor (turn_count=0, ceiling=2)---
+---NODE: Planner (attempt 1/2)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=2)---
+[2026-09-13T15:04:39] [ceiling_2] run 20/20 ceiling=2 -> outcome=valid_first_attempt turns=1 latency=4895.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data-systems', 'ml-pipelines', 'data-ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:04:44] [ceiling_10] run 1/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5099.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data systems', 'data pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:04:49] [ceiling_10] run 2/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4932.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['ML Pipelines', 'Data Systems', 'Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['Rephrase summary to be more specific and concise', "The planner's tags are vague and do not directly address the course's focus", "The course's content spans multiple tags, which is not optimal"]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['machine-learning', 'data-pipelines', 'ml-data-systems']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:04:55] [ceiling_10] run 3/20 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=10291.2ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning pipelines', 'data management', 'data quality']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:05] [ceiling_10] run 4/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5102.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Systems', 'Machine Learning', 'Ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:10] [ceiling_10] run 5/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5148.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:16] [ceiling_10] run 6/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4964.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['data pipelines', 'machi...ngestion', 'data drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data monitoring']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:05:21] [ceiling_10] run 7/20 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8544.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Data Drift Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:30] [ceiling_10] run 8/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5291.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipelines']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:36] [ceiling_10] run 9/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5260.3ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:41] [ceiling_10] run 10/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=5357.9ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'streaming ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:47] [ceiling_10] run 11/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4773.0ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:52] [ceiling_10] run 12/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4833.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine-learning', 'data-pipelines', 'data-systems']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:05:57] [ceiling_10] run 13/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4954.4ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 5 [type=value_error, input_value=['machine learning', 'dat...'data drift monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'data drift monitoring']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is too long (28 words)']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+[2026-09-13T15:06:02] [ceiling_10] run 14/20 ceiling=10 -> outcome=valid_after_2plus_retries turns=3 latency=11377.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Data Pipelines', 'Machine Learning', 'Data Drift Monitoring']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["The planner tag 'Machine Learning' is vague as it does not specify whether the course is focused on supervised, unsupervised, or reinforcement learning."]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 4 [type=value_error, input_value=['Data Pipelines', 'Machi...on', 'Drift Monitoring'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+tags
+  Value error, tag 'Data Systems for Machine Learning' must be 3-30 characters, got 33 [type=value_error, input_value=['Data Pipelines', 'Data ...ng', 'Monitoring Drift'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> valid proposal: ['Data Pipelines', 'Streaming Ingestion', 'Monitoring Drift']
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+[2026-09-13T15:06:14] [ceiling_10] run 15/20 ceiling=10 -> outcome=valid_after_2plus_retries turns=4 latency=17084.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['Machine Learning', 'Data Pipelines', 'Data Drift']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:06:31] [ceiling_10] run 16/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4887.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'streaming ingestion']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+[2026-09-13T15:06:36] [ceiling_10] run 17/20 ceiling=10 -> outcome=valid_first_attempt turns=1 latency=4924.7ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is too long and exceeds 25 words.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['machine learning', 'data systems', 'pipeline design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:06:42] [ceiling_10] run 18/20 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8568.9ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data systems', 'machine learning', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary should be a single, faithful sentence of at most 25 words.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:06:50] [ceiling_10] run 19/20 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8769.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['data pipelines', 'machine learning', 'schema design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is too long and does not fit the 25-word limit.']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'data systems']
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=True issues=[]
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+[2026-09-13T15:06:59] [ceiling_10] run 20/20 ceiling=10 -> outcome=valid_after_1_retry turns=2 latency=8547.5ms
+
+=== Experiment 3: adversarial input (5 runs, ceiling=10) ===
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 66 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 68 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 28 [type=value_error, input_value='This course focuses on d...d monitoring for drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 66 [type=value_error, input_value='This course explores the...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 54 [type=value_error, input_value='This course focuses on t... to a downstream model.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 27 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Planner (attempt 7/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 29 [type=value_error, input_value='This course focuses on d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Planner (attempt 8/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 29 [type=value_error, input_value='This course focuses on d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Planner (attempt 9/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 67 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Planner (attempt 10/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 61 [type=value_error, input_value='This course focuses on d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=10, ceiling=10)---
+[2026-09-13T15:07:08] [adversarial] run 1/5 ceiling=10 -> outcome=hit_turn_ceiling turns=10 latency=44302.5ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 50 [type=value_error, input_value='This course focuses on d...scussing failure modes.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 64 [type=value_error, input_value='This course focuses on d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 65 [type=value_error, input_value='This course focuses on d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 68 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 66 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 47 [type=value_error, input_value='This course focuses on d...s to downstream models.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Planner (attempt 7/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 32 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Planner (attempt 8/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 65 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Planner (attempt 9/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 48 [type=value_error, input_value='This course teaches the ... to a downstream model.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Planner (attempt 10/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 27 [type=value_error, input_value='This course teaches the ...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=10, ceiling=10)---
+[2026-09-13T15:07:53] [adversarial] run 2/5 ceiling=10 -> outcome=hit_turn_ceiling turns=10 latency=47809.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> valid proposal: ['machine learning', 'data systems', 'pipeline design']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['the summary should be a single sentence', 'the summary is longer than 25 words', 'the tags are not specific enough']
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 28 [type=value_error, input_value='This course focuses on d...ioning, and monitoring.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 29 [type=value_error, input_value='This course covers the d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 2 validation errors for PlannerTags
+tags
+  Value error, must have exactly 3 tags, got 7 [type=value_error, input_value=['data pipelines', 'machi...oning', 'failure modes'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+summary
+  Value error, summary must be at most 25 words, got 31 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 68 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 48 [type=value_error, input_value='This course focuses on d... to a downstream model.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Planner (attempt 7/10)---
+  -> valid proposal: ['Data Systems', 'Machine Learning', 'Pipeline Design']
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['']
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Planner (attempt 8/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 67 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Planner (attempt 9/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 62 [type=value_error, input_value='This course focuses on d... as late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Planner (attempt 10/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 31 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=10, ceiling=10)---
+[2026-09-13T15:08:41] [adversarial] run 3/5 ceiling=10 -> outcome=hit_turn_ceiling turns=10 latency=51216.8ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 53 [type=value_error, input_value='This course explores the...volution and late data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 67 [type=value_error, input_value='This course examines the...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 29 [type=value_error, input_value='This course explores dat...offs and failure modes.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 59 [type=value_error, input_value='This course explores dat... and late data arrival.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 30 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 49 [type=value_error, input_value='This course examines the... to a downstream model.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Planner (attempt 7/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 67 [type=value_error, input_value='This course explores the...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Planner (attempt 8/10)---
+  -> valid proposal: ['data-systems', 'machine-learning', 'pipeline-design']
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=["The planner's tags are too vague, as 'data-systems' and 'machine-learning' are not specific enough."]
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Planner (attempt 9/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 67 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Planner (attempt 10/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 69 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=10, ceiling=10)---
+[2026-09-13T15:09:32] [adversarial] run 4/5 ceiling=10 -> outcome=hit_turn_ceiling turns=10 latency=50898.1ms
+---NODE: Supervisor (turn_count=0, ceiling=10)---
+---NODE: Planner (attempt 1/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 27 [type=value_error, input_value='This course covers the d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=1, ceiling=10)---
+---NODE: Planner (attempt 2/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 31 [type=value_error, input_value='This course explores the...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=2, ceiling=10)---
+---NODE: Planner (attempt 3/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 68 [type=value_error, input_value='This course covers the d...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=3, ceiling=10)---
+---NODE: Planner (attempt 4/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 30 [type=value_error, input_value='This course covers the d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=4, ceiling=10)---
+---NODE: Planner (attempt 5/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 30 [type=value_error, input_value='This course focuses on d...itoring for data drift.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=5, ceiling=10)---
+---NODE: Planner (attempt 6/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 62 [type=value_error, input_value='This course explores the...offs and failure modes.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=6, ceiling=10)---
+---NODE: Planner (attempt 7/10)---
+  -> valid proposal: ['data-systems', 'machine-learning', 'pipeline-design']
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['The summary is not a single, faithful sentence of at most 25 words.']
+---NODE: Supervisor (turn_count=7, ceiling=10)---
+---NODE: Planner (attempt 8/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 62 [type=value_error, input_value='This course focuses on t...and late-arriving data.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=8, ceiling=10)---
+---NODE: Planner (attempt 9/10)---
+  -> valid proposal: ['machine learning', 'data pipelines', 'pipeline design']
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Reviewer---
+  -> approved=False issues=['']
+---NODE: Supervisor (turn_count=9, ceiling=10)---
+---NODE: Planner (attempt 10/10)---
+  -> INVALID: 1 validation error for PlannerTags
+summary
+  Value error, summary must be at most 25 words, got 63 [type=value_error, input_value='This course explores the...scussing failure modes.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/value_error
+---NODE: Supervisor (turn_count=10, ceiling=10)---
+[2026-09-13T15:10:24] [adversarial] run 5/5 ceiling=10 -> outcome=hit_turn_ceiling turns=10 latency=44741.9ms
+
+=== SUMMARY ===
+{
+  "classification_30_runs": {
+    "valid_first_attempt": {
+      "count": 17,
+      "mean_latency_ms": 4923.0
+    },
+    "valid_after_1_retry": {
+      "count": 6,
+      "mean_latency_ms": 8819.8
+    },
+    "valid_after_2plus_retries": {
+      "count": 7,
+      "mean_latency_ms": 15042.9
+    },
+    "hit_turn_ceiling": {
+      "count": 0,
+      "mean_latency_ms": null
+    }
+  },
+  "ceiling_comparison": {
+    "2": {
+      "n": 20,
+      "completion_rate": 0.9,
+      "mean_latency_ms": 5608.6
+    },
+    "10": {
+      "n": 20,
+      "completion_rate": 1.0,
+      "mean_latency_ms": 6935.7
+    }
+  },
+  "adversarial": {
+    "n": 5,
+    "hit_ceiling_rate": 1.0
+  }
+}
+
+Raw rows (CSV): C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw02\raw\schema_experiment_runs.csv
+Raw rows (JSON): C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw02\raw\schema_experiment_runs.json
+Summary: C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw02\raw\schema_experiment_summary.json
+
+=== finished 2026-09-13 15:11:09 ===

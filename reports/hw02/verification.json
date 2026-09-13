@@ -1,0 +1,50 @@
+{
+  "homework": "hw02",
+  "sid4": 1808,
+  "commit_hash": "c34c86a102df8c80c223218b252f19590201d35f",
+  "model": "qwen2.5:1.5b-instruct",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "fastapi_responds_on_port_base",
+      "pass": true
+    },
+    {
+      "check": "home_page_200",
+      "pass": true
+    },
+    {
+      "check": "add_record_succeeds",
+      "pass": true
+    },
+    {
+      "check": "update_record_id1_succeeds",
+      "pass": true
+    },
+    {
+      "check": "delete_highest_id_succeeds",
+      "pass": true
+    },
+    {
+      "check": "search_filters_by_primary_or_secondary_field",
+      "pass": true
+    },
+    {
+      "check": "langgraph_finishes_without_hanging",
+      "pass": true,
+      "detail": "finished in 5.9s"
+    },
+    {
+      "check": "approved_run_returns_exactly_3_tags",
+      "pass": true
+    },
+    {
+      "check": "correction_loop_routes_back_to_planner",
+      "pass": true,
+      "detail": "turn_count=2, outcome=hit_turn_ceiling"
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-09-13T15:12:13"
+}

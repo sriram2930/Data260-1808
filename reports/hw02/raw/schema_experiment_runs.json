@@ -1,0 +1,677 @@
+[
+  {
+    "label": "classification",
+    "run_index": 1,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 9428.4,
+    "started_at": "2026-09-13T14:58:18"
+  },
+  {
+    "label": "classification",
+    "run_index": 2,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 9105.7,
+    "started_at": "2026-09-13T14:58:27"
+  },
+  {
+    "label": "classification",
+    "run_index": 3,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 3,
+    "latency_ms": 13799.7,
+    "started_at": "2026-09-13T14:58:37"
+  },
+  {
+    "label": "classification",
+    "run_index": 4,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4909.6,
+    "started_at": "2026-09-13T14:58:52"
+  },
+  {
+    "label": "classification",
+    "run_index": 5,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4523.3,
+    "started_at": "2026-09-13T14:58:57"
+  },
+  {
+    "label": "classification",
+    "run_index": 6,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4698.0,
+    "started_at": "2026-09-13T14:59:03"
+  },
+  {
+    "label": "classification",
+    "run_index": 7,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8413.5,
+    "started_at": "2026-09-13T14:59:08"
+  },
+  {
+    "label": "classification",
+    "run_index": 8,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4747.2,
+    "started_at": "2026-09-13T14:59:17"
+  },
+  {
+    "label": "classification",
+    "run_index": 9,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 6,
+    "latency_ms": 23730.4,
+    "started_at": "2026-09-13T14:59:23"
+  },
+  {
+    "label": "classification",
+    "run_index": 10,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5020.8,
+    "started_at": "2026-09-13T14:59:47"
+  },
+  {
+    "label": "classification",
+    "run_index": 11,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5174.1,
+    "started_at": "2026-09-13T14:59:53"
+  },
+  {
+    "label": "classification",
+    "run_index": 12,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 3,
+    "latency_ms": 11168.9,
+    "started_at": "2026-09-13T14:59:59"
+  },
+  {
+    "label": "classification",
+    "run_index": 13,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 4,
+    "latency_ms": 15538.7,
+    "started_at": "2026-09-13T15:00:11"
+  },
+  {
+    "label": "classification",
+    "run_index": 14,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 3,
+    "latency_ms": 13794.2,
+    "started_at": "2026-09-13T15:00:27"
+  },
+  {
+    "label": "classification",
+    "run_index": 15,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5410.3,
+    "started_at": "2026-09-13T15:00:42"
+  },
+  {
+    "label": "classification",
+    "run_index": 16,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5030.4,
+    "started_at": "2026-09-13T15:00:48"
+  },
+  {
+    "label": "classification",
+    "run_index": 17,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 4,
+    "latency_ms": 15682.2,
+    "started_at": "2026-09-13T15:00:54"
+  },
+  {
+    "label": "classification",
+    "run_index": 18,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4982.9,
+    "started_at": "2026-09-13T15:01:10"
+  },
+  {
+    "label": "classification",
+    "run_index": 19,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4965.9,
+    "started_at": "2026-09-13T15:01:16"
+  },
+  {
+    "label": "classification",
+    "run_index": 20,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5208.4,
+    "started_at": "2026-09-13T15:01:22"
+  },
+  {
+    "label": "classification",
+    "run_index": 21,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4690.5,
+    "started_at": "2026-09-13T15:01:28"
+  },
+  {
+    "label": "classification",
+    "run_index": 22,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4931.4,
+    "started_at": "2026-09-13T15:01:34"
+  },
+  {
+    "label": "classification",
+    "run_index": 23,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8831.7,
+    "started_at": "2026-09-13T15:01:39"
+  },
+  {
+    "label": "classification",
+    "run_index": 24,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4943.2,
+    "started_at": "2026-09-13T15:01:49"
+  },
+  {
+    "label": "classification",
+    "run_index": 25,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4982.0,
+    "started_at": "2026-09-13T15:01:55"
+  },
+  {
+    "label": "classification",
+    "run_index": 26,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4740.3,
+    "started_at": "2026-09-13T15:02:00"
+  },
+  {
+    "label": "classification",
+    "run_index": 27,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8311.0,
+    "started_at": "2026-09-13T15:02:06"
+  },
+  {
+    "label": "classification",
+    "run_index": 28,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 3,
+    "latency_ms": 11586.4,
+    "started_at": "2026-09-13T15:02:15"
+  },
+  {
+    "label": "classification",
+    "run_index": 29,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4732.1,
+    "started_at": "2026-09-13T15:02:27"
+  },
+  {
+    "label": "classification",
+    "run_index": 30,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8828.2,
+    "started_at": "2026-09-13T15:02:32"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 1,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4290.0,
+    "started_at": "2026-09-13T15:02:42"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 2,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5156.4,
+    "started_at": "2026-09-13T15:02:47"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 3,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4631.9,
+    "started_at": "2026-09-13T15:02:53"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 4,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4868.2,
+    "started_at": "2026-09-13T15:02:58"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 5,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4829.3,
+    "started_at": "2026-09-13T15:03:03"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 6,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4920.6,
+    "started_at": "2026-09-13T15:03:09"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 7,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4780.0,
+    "started_at": "2026-09-13T15:03:15"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 8,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5246.2,
+    "started_at": "2026-09-13T15:03:20"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 9,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4878.1,
+    "started_at": "2026-09-13T15:03:26"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 10,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4785.5,
+    "started_at": "2026-09-13T15:03:32"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 11,
+    "turn_ceiling": 2,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 7422.6,
+    "started_at": "2026-09-13T15:03:37"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 12,
+    "turn_ceiling": 2,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 2,
+    "latency_ms": 9869.5,
+    "started_at": "2026-09-13T15:03:45"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 13,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4808.2,
+    "started_at": "2026-09-13T15:03:55"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 14,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4855.6,
+    "started_at": "2026-09-13T15:04:00"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 15,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4675.1,
+    "started_at": "2026-09-13T15:04:05"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 16,
+    "turn_ceiling": 2,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8197.0,
+    "started_at": "2026-09-13T15:04:10"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 17,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5521.1,
+    "started_at": "2026-09-13T15:04:19"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 18,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5839.3,
+    "started_at": "2026-09-13T15:04:24"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 19,
+    "turn_ceiling": 2,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 2,
+    "latency_ms": 7701.6,
+    "started_at": "2026-09-13T15:04:31"
+  },
+  {
+    "label": "ceiling_2",
+    "run_index": 20,
+    "turn_ceiling": 2,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4895.2,
+    "started_at": "2026-09-13T15:04:39"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 1,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5099.8,
+    "started_at": "2026-09-13T15:04:44"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 2,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4932.8,
+    "started_at": "2026-09-13T15:04:49"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 3,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 10291.2,
+    "started_at": "2026-09-13T15:04:55"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 4,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5102.8,
+    "started_at": "2026-09-13T15:05:05"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 5,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5148.7,
+    "started_at": "2026-09-13T15:05:10"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 6,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4964.5,
+    "started_at": "2026-09-13T15:05:16"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 7,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8544.7,
+    "started_at": "2026-09-13T15:05:21"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 8,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5291.1,
+    "started_at": "2026-09-13T15:05:30"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 9,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5260.3,
+    "started_at": "2026-09-13T15:05:36"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 10,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 5357.9,
+    "started_at": "2026-09-13T15:05:41"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 11,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4773.0,
+    "started_at": "2026-09-13T15:05:47"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 12,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4833.1,
+    "started_at": "2026-09-13T15:05:52"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 13,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4954.4,
+    "started_at": "2026-09-13T15:05:57"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 14,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 3,
+    "latency_ms": 11377.5,
+    "started_at": "2026-09-13T15:06:02"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 15,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_2plus_retries",
+    "turn_count": 4,
+    "latency_ms": 17084.7,
+    "started_at": "2026-09-13T15:06:14"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 16,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4887.5,
+    "started_at": "2026-09-13T15:06:31"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 17,
+    "turn_ceiling": 10,
+    "outcome": "valid_first_attempt",
+    "turn_count": 1,
+    "latency_ms": 4924.7,
+    "started_at": "2026-09-13T15:06:36"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 18,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8568.9,
+    "started_at": "2026-09-13T15:06:42"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 19,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8769.1,
+    "started_at": "2026-09-13T15:06:50"
+  },
+  {
+    "label": "ceiling_10",
+    "run_index": 20,
+    "turn_ceiling": 10,
+    "outcome": "valid_after_1_retry",
+    "turn_count": 2,
+    "latency_ms": 8547.5,
+    "started_at": "2026-09-13T15:06:59"
+  },
+  {
+    "label": "adversarial",
+    "run_index": 1,
+    "turn_ceiling": 10,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 10,
+    "latency_ms": 44302.5,
+    "started_at": "2026-09-13T15:07:08"
+  },
+  {
+    "label": "adversarial",
+    "run_index": 2,
+    "turn_ceiling": 10,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 10,
+    "latency_ms": 47809.8,
+    "started_at": "2026-09-13T15:07:53"
+  },
+  {
+    "label": "adversarial",
+    "run_index": 3,
+    "turn_ceiling": 10,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 10,
+    "latency_ms": 51216.8,
+    "started_at": "2026-09-13T15:08:41"
+  },
+  {
+    "label": "adversarial",
+    "run_index": 4,
+    "turn_ceiling": 10,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 10,
+    "latency_ms": 50898.1,
+    "started_at": "2026-09-13T15:09:32"
+  },
+  {
+    "label": "adversarial",
+    "run_index": 5,
+    "turn_ceiling": 10,
+    "outcome": "hit_turn_ceiling",
+    "turn_count": 10,
+    "latency_ms": 44741.9,
+    "started_at": "2026-09-13T15:10:24"
+  }
+]
