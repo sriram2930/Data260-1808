@@ -25,18 +25,41 @@ DEFAULT_HOST = "http://localhost:11434"
 class ModelClient:
     """Thin, stable adapter around a local Ollama model."""
 
-    def __init__(self, model: str = DEFAULT_MODEL, host: str = DEFAULT_HOST):
+    def __init__(
+        self,
+        model: str = DEFAULT_MODEL,
+        host: str = DEFAULT_HOST,
+        temperature: Optional[float] = None,
+    ):
         self.model = model
+        self.temperature = temperature
         self._client = ollama.Client(host=host)
 
-    def complete(self, messages: list[dict], tools: Optional[list] = None) -> dict:
+    def complete(
+        self,
+        messages: list[dict],
+        tools: Optional[list] = None,
+        format: Optional[str] = None,
+    ) -> dict:
         """Send `messages` (OpenAI-style role/content dicts) to the model and
         return a normalized dict: content, role, tool_calls, usage (input/
         output/total token counts for this turn only), and the raw provider
-        response for anything caller-specific that isn't normalized here."""
+        response for anything caller-specific that isn't normalized here.
+
+        `format="json"` requests Ollama's native JSON mode, which only
+        guarantees syntactically valid JSON -- it does not enforce any
+        particular shape, so schema-level validation (e.g. "exactly 3 tags")
+        is still the caller's job. This keeps the adapter provider-agnostic
+        (langchain's stricter schema-constrained `with_structured_output` is
+        not used here, since HW2 explicitly requires calling this adapter
+        directly from graph nodes rather than langchain)."""
         kwargs: dict[str, Any] = {"model": self.model, "messages": messages, "stream": False}
         if tools:
             kwargs["tools"] = tools
+        if format:
+            kwargs["format"] = format
+        if self.temperature is not None:
+            kwargs["options"] = {"temperature": self.temperature}
 
         response = self._client.chat(**kwargs)
         message = response["message"]

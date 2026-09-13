@@ -1,0 +1,4 @@
+{
+  "title": "DATA-260: Data Systems for ML",
+  "content": "This course covers data pipelines for machine learning: schema design, streaming ingestion, and monitoring for data drift."
+}
