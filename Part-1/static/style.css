@@ -1,0 +1,279 @@
+/* DATA-260 HW2 Part 1 -- responsive (mobile-first, usable at 375px) + loading/
+   empty/error state styling for the Campus Course Catalogue app. */
+
+:root {
+  color-scheme: light;
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --border: #d7dce1;
+  --text: #1c2530;
+  --muted: #5b6b7a;
+  --accent: #2f5fa8;
+  --accent-dark: #234a86;
+  --error-bg: #fdecea;
+  --error-border: #f2b8b5;
+  --error-text: #9b2c26;
+  --success-bg: #eaf6ec;
+  --success-border: #b7ddbe;
+  --success-text: #1e6b30;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 1.5rem 1rem 3rem;
+  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.25;
+}
+
+p.subtitle {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+section {
+  margin-bottom: 1.75rem;
+}
+
+h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+}
+
+/* Banners: error / success ------------------------------------------------ */
+
+.banner {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+}
+.banner.error {
+  background: var(--error-bg);
+  border-color: var(--error-border);
+  color: var(--error-text);
+}
+.banner.success {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+  color: var(--success-text);
+}
+
+/* Search ------------------------------------------------------------------ */
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search-row input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+.search-row button {
+  flex-shrink: 0;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* List / cards -------------------------------------------------------------
+   Rendered as stacked cards rather than a wide table, so it holds up at
+   375px without horizontal scrolling. */
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+}
+
+.course-card .row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.course-card .code {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.course-card .dept {
+  font-size: 0.78rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  white-space: nowrap;
+}
+
+.course-card .title {
+  margin: 0.15rem 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.course-card .desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+
+.course-card .actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.course-card .actions a,
+.course-card .actions button {
+  font-size: 0.82rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Loading / empty / error placeholder states ------------------------------ */
+
+.state-placeholder {
+  text-align: center;
+  padding: 1.75rem 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  background: var(--card);
+}
+.state-placeholder.is-error {
+  border-color: var(--error-border);
+  background: var(--error-bg);
+  color: var(--error-text);
+}
+
+.spinner {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: -2px;
+  margin-right: 0.4rem;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Form ---------------------------------------------------------------------*/
+
+form.entity-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.checkbox-row label {
+  margin: 0;
+  font-weight: 400;
+}
+
+button[type="submit"] {
+  padding: 0.7rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: var(--accent-dark); }
+button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 1.5rem;
+}
+
+/* At 375px there is nothing left to shrink -- the layout is already single
+   column and fluid -- but keep an explicit breakpoint so intent is documented
+   and to tighten padding slightly on very narrow phones. */
+@media (max-width: 400px) {
+  body { padding: 1rem 0.65rem 2.5rem; }
+  h1 { font-size: 1.4rem; }
+  .course-card .actions a,
+  .course-card .actions button { flex: 1 1 auto; text-align: center; }
+}

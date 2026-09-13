@@ -1,2 +1,8 @@
 langchain-ollama
 pydantic
+ollama
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+langgraph

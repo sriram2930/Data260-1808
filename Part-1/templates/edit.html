@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW2-Sreeram Achutuni</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Edit Course #{{ course.id }}</h1>
+    <p class="subtitle">Update the primary and secondary fields (and anything else) for this listing.</p>
+
+    <form class="entity-form" method="post" action="/courses/{{ course.id }}/update">
+      <div>
+        <label for="courseCode">Course Code</label>
+        <input type="text" id="courseCode" name="courseCode" value="{{ course.courseCode }}" required autofocus>
+      </div>
+      <div>
+        <label for="courseTitle">Course Title</label>
+        <input type="text" id="courseTitle" name="courseTitle" value="{{ course.courseTitle }}" required>
+      </div>
+      <div>
+        <label for="submitterEmail">Your Email</label>
+        <input type="email" id="submitterEmail" name="submitterEmail" value="{{ course.submitterEmail }}">
+      </div>
+      <div>
+        <label for="description">Course Description</label>
+        <textarea id="description" name="description">{{ course.description }}</textarea>
+      </div>
+      <div>
+        <label for="department">Department</label>
+        <select id="department" name="department">
+          {% for d in departments %}
+          <option value="{{ d }}" {% if d == course.department %}selected{% endif %}>{{ d }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="agreeTerms" name="agreeTerms" {% if course.agreeTerms %}checked{% endif %}>
+        <label for="agreeTerms">I agree to the terms and conditions.</label>
+      </div>
+      <button type="submit">Save Changes</button>
+    </form>
+
+    <p style="margin-top:1rem"><a href="/">&larr; Back to list</a></p>
+    <footer>DATA-260 &middot; HW2 &middot; Domain 0 &middot; PREFIX s1808</footer>
+  </main>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", (e) => {
+      const btn = e.target.querySelector("button[type='submit']");
+      btn.textContent = "Loading...";
+      btn.disabled = true;
+    });
+  </script>
+</body>
+</html>

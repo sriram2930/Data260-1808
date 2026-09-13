@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW2-Sreeram Achutuni</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Campus Course Catalogue &amp; Enrolment</h1>
+    <p class="subtitle">Add, edit, remove, and search course listings.</p>
+
+    {% if error %}
+    <div class="banner error">{{ error }}</div>
+    {% endif %}
+    {% if success %}
+    <div class="banner success">{{ success }}</div>
+    {% endif %}
+
+    <section>
+      <h2>Search</h2>
+      <div class="search-row">
+        <input type="search" id="searchBox" placeholder="Search by course code or title..."
+               value="{{ q }}" aria-label="Search courses">
+        <button type="button" id="searchBtn">Search</button>
+      </div>
+
+      <div id="courseListWrap">
+        {% include "_course_list.html" %}
+      </div>
+    </section>
+
+    <section>
+      <h2>Add a Course</h2>
+      <form class="entity-form" method="post" action="/courses" id="addForm">
+        <div>
+          <label for="courseCode">Course Code</label>
+          <input type="text" id="courseCode" name="courseCode"
+                 placeholder="Course code, e.g. DATA-260" required autofocus>
+        </div>
+        <div>
+          <label for="courseTitle">Course Title</label>
+          <input type="text" id="courseTitle" name="courseTitle"
+                 placeholder="Course title, e.g. Big Data Technologies and Systems" required>
+        </div>
+        <div>
+          <label for="submitterEmail">Your Email</label>
+          <input type="email" id="submitterEmail" name="submitterEmail"
+                 placeholder="e.g. jane.doe@sjsu.edu">
+        </div>
+        <div>
+          <label for="description">Course Description</label>
+          <textarea id="description" name="description"
+                    placeholder="Describe the course content, topics covered, and learning outcomes..."></textarea>
+        </div>
+        <div>
+          <label for="department">Department</label>
+          <select id="department" name="department">
+            {% for d in departments %}
+            <option value="{{ d }}">{{ d }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="agreeTerms" name="agreeTerms">
+          <label for="agreeTerms">I agree to the terms and conditions.</label>
+        </div>
+        <button type="submit">Submit Course Listing</button>
+      </form>
+    </section>
+
+    <footer>DATA-260 &middot; HW2 &middot; Domain 0 &middot; PREFIX s1808</footer>
+  </main>
+
+  <script>
+    // Visible loading state on every mutating form (add / update / delete):
+    // disable the submit button and swap its label while the real network
+    // round-trip to the server is in flight.
+    document.querySelectorAll("form").forEach((form) => {
+      form.addEventListener("submit", () => {
+        const btn = form.querySelector("button[type='submit'], button:not([type])");
+        if (btn) {
+          btn.dataset.originalText = btn.textContent;
+          btn.textContent = "Loading...";
+          btn.disabled = true;
+        }
+      });
+    });
+
+    // Live search: fetch the JSON API and re-render the list client-side,
+    // showing a real loading state while the request is in flight and an
+    // error state if the request fails.
+    const searchBox = document.getElementById("searchBox");
+    const searchBtn = document.getElementById("searchBtn");
+    const listWrap = document.getElementById("courseListWrap");
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+      }[c]));
+    }
+
+    function renderCourses(courses) {
+      if (!courses.length) {
+        listWrap.innerHTML = '<div class="state-placeholder">No courses match your search.</div>';
+        return;
+      }
+      const cards = courses.map((c) => `
+        <div class="course-card">
+          <div class="row1">
+            <span class="code">${escapeHtml(c.courseCode)}</span>
+            <span class="dept">${escapeHtml(c.department)}</span>
+          </div>
+          <p class="title">${escapeHtml(c.courseTitle)}</p>
+          ${c.description ? `<p class="desc">${escapeHtml(c.description)}</p>` : ""}
+          <div class="actions">
+            <a href="/courses/${c.id}/edit">Edit</a>
+            ${c.id === Math.max(...courses.map((x) => x.id))
+              ? '<form method="post" action="/courses/delete-highest" style="display:inline">'
+                + '<button type="submit">Delete (highest id)</button></form>'
+              : ""}
+          </div>
+        </div>`).join("");
+      listWrap.innerHTML = `<div class="course-list">${cards}</div>`;
+      // re-arm loading state on any newly-rendered delete form
+      listWrap.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", () => {
+          const btn = form.querySelector("button");
+          if (btn) { btn.textContent = "Loading..."; btn.disabled = true; }
+        });
+      });
+    }
+
+    async function runSearch() {
+      const q = searchBox.value;
+      listWrap.innerHTML = '<div class="state-placeholder"><span class="spinner"></span>Loading courses...</div>';
+      try {
+        const res = await fetch(`/api/courses?q=${encodeURIComponent(q)}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const courses = await res.json();
+        renderCourses(courses);
+      } catch (err) {
+        listWrap.innerHTML = `<div class="state-placeholder is-error">Could not load courses (${escapeHtml(err.message)}). Please try again.</div>`;
+      }
+    }
+
+    let debounceTimer;
+    searchBox.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(runSearch, 300);
+    });
+    searchBtn.addEventListener("click", runSearch);
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{# Server-rendered initial list (no-JS baseline). Mirrors renderCourses() in
+   home.html's <script>, which takes over for live search once JS loads. #}
+{% if not courses %}
+  {% if q %}
+  <div class="state-placeholder">No courses match your search.</div>
+  {% else %}
+  <div class="state-placeholder">No courses yet. Add one below.</div>
+  {% endif %}
+{% else %}
+<div class="course-list">
+  {% set highest_id = courses | map(attribute='id') | max %}
+  {% for c in courses %}
+  <div class="course-card">
+    <div class="row1">
+      <span class="code">{{ c.courseCode }}</span>
+      <span class="dept">{{ c.department }}</span>
+    </div>
+    <p class="title">{{ c.courseTitle }}</p>
+    {% if c.description %}<p class="desc">{{ c.description }}</p>{% endif %}
+    <div class="actions">
+      <a href="/courses/{{ c.id }}/edit">Edit</a>
+      {% if c.id == highest_id %}
+      <form method="post" action="/courses/delete-highest" style="display:inline">
+        <button type="submit">Delete (highest id)</button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

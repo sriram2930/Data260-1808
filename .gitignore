@@ -7,6 +7,9 @@ venv/
 # Node (if any tooling gets added later)
 node_modules/
 
+# Logs from local test runs (not the official RUN_LOG.txt deliverables)
+*.log
+
 # OS
 .DS_Store
 Thumbs.db
