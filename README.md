@@ -202,7 +202,7 @@ something gives: truncation, summarization, or the call failing outright.
 
 ---
 
-## Verification
+## HW1 Verification
 
 ```
 python verify_hw01.py
@@ -212,12 +212,107 @@ version, `index.html`/`app.js` contain the required elements/patterns, Ollama
 reachable with the target model pulled, non-determinism raw data well-formed)
 and writes [`reports/hw01/verification.json`](reports/hw01/verification.json).
 
+---
+
+# HW2
+
+HW2 extends the same folders rather than adding new ones: **Part-1/** gains a
+FastAPI backend on top of the HW1 static page, and **Part-2/** gains a
+LangGraph refactor of the HW1 Planner/Reviewer agents. Same shared root-level
+`.venv` (now also includes `fastapi`, `uvicorn`, `jinja2`, `python-multipart`,
+`langgraph` — see `requirements.txt`).
+
+## Part 1-2 — Responsive/Stateful UI + FastAPI CRUD Backend
+
+Files: [Part-1/main.py](Part-1/main.py), [Part-1/templates/](Part-1/templates/),
+[Part-1/static/style.css](Part-1/static/style.css)
+
+```
+.venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8008
+```
+(run from inside `Part-1/`, or point uvicorn at `Part-1.main:app` from the repo
+root). Then visit `http://localhost:8008`.
+
+- **Add** a course via the form at the bottom of the page (redirects home,
+  303, on success).
+- **Update** any record via its **Edit** link (`/courses/{id}/edit`); the
+  assignment's specific example is updating id=1.
+- **Delete** the highest-id record via the button on that card
+  (`POST /courses/delete-highest`).
+- **Search** by course code or title updates the list live via
+  `fetch('/api/courses?q=...')`, showing a real loading spinner while the
+  request is in flight, an empty-state message when nothing matches, and an
+  error-state message if the request fails. Mutating forms (add/update/delete)
+  show their own "Loading..." button state during the real network
+  round-trip.
+- Layout is mobile-first (single-column cards, fluid widths, no fixed widths
+  wider than a phone screen) so it holds up at 375px without a separate
+  "mobile" stylesheet.
+- Storage is a simple in-memory list seeded with 3 sample records on startup
+  (not a database — the assignment only requires the CRUD/redirect behavior).
+
+## Part 3-4 — Stateful Agent Graph + Output Schema and Loop Safety
+
+Files: [Part-2/agent_graph.py](Part-2/agent_graph.py),
+[Part-2/run_schema_experiments.py](Part-2/run_schema_experiments.py),
+[reports/hw02/cases/](reports/hw02/cases/)
+
+```
+.venv\Scripts\python.exe Part-2\agent_graph.py --input-file reports\hw02\cases\schema_input.json --turn-ceiling 10
+```
+
+Refactors HW1's Planner→Reviewer waterfall into a LangGraph graph implementing
+the supervisor pattern (`AgentState` TypedDict, `planner_node`/`reviewer_node`/
+`supervisor_node`, conditional edges via `router_logic`). All LLM calls go
+through `Part-4/src/model_client.py`'s `ModelClient` adapter (extended with
+optional `format=`/`temperature=` passthrough), not langchain or raw `ollama`
+directly, per the assignment.
+
+- **Schema validation** (`PlannerTags` Pydantic model): exactly 3 tags, each
+  3-30 characters, summary ≤25 words. On failure, the validation error is fed
+  back into the Planner's next prompt and it retries, up to `--turn-ceiling`
+  Planner attempts.
+- **Correction loop test**: `--force-reviewer-issues` makes the Reviewer
+  always reject (no LLM call needed for it), to demonstrate/confirm the graph
+  routes back to the Planner instead of ending —
+  ```
+  .venv\Scripts\python.exe Part-2\agent_graph.py --input-file reports\hw02\cases\schema_input.json --turn-ceiling 3 --force-reviewer-issues
+  ```
+- **Outcome classification**: each run ends in one of `valid_first_attempt`,
+  `valid_after_1_retry`, `valid_after_2plus_retries`, or `hit_turn_ceiling`
+  (`turn_count` is incremented once per Planner attempt specifically, so it
+  maps directly onto these buckets).
+
+### Running the Part 4 experiments
+```
+.venv\Scripts\python.exe Part-2\run_schema_experiments.py | Tee-Object -FilePath reports\hw02\RUN_LOG.txt
+```
+Runs, against `reports/hw02/cases/schema_input.json` and
+`.../adversarial_input.json`: 30 runs classified into the four buckets, a
+turn-ceiling comparison (2 vs. 10, 20 runs each), and 5 adversarial-input runs.
+Writes raw rows to `reports/hw02/raw/` and a summary to
+`reports/hw02/raw/schema_experiment_summary.json`. Full write-up and filled-in
+tables: [`reports/hw02/METRICS.md`](reports/hw02/METRICS.md).
+
+## HW2 Verification
+
+```
+python verify_hw02.py
+```
+Starts the FastAPI backend and exercises add/update(id=1)/delete-highest/search
+behaviorally over HTTP, runs the LangGraph agent once to confirm it terminates
+instead of hanging (and returns exactly 3 tags on an approved run), and confirms
+the forced-rejection correction loop actually routes back to the Planner. Writes
+[`reports/hw02/verification.json`](reports/hw02/verification.json).
+
 ## Repository layout
 ```
-Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json
-Part-2/   agents_demo.py, sample_input.json
-Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)
-Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py
-requirements.txt, verify_hw01.py   — shared, repo root
-reports/hw01/                      — all HW1 deliverables (see assignment spec)
+Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
+          main.py, templates/, static/style.css                                            (HW2)
+Part-2/   agents_demo.py, sample_input.json                                                 (HW1)
+          agent_graph.py, run_schema_experiments.py                                         (HW2)
+Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)        (HW1)
+Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py          (HW1)
+requirements.txt, verify_hw01.py, verify_hw02.py   — shared, repo root
+reports/hw01/, reports/hw02/                       — deliverables per assignment spec
 ```
