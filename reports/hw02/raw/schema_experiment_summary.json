@@ -1,36 +1,36 @@
 {
   "classification_30_runs": {
     "valid_first_attempt": {
-      "count": 17,
-      "mean_latency_ms": 4923.0
+      "count": 14,
+      "mean_latency_ms": 4682.4
     },
     "valid_after_1_retry": {
-      "count": 6,
-      "mean_latency_ms": 8819.8
+      "count": 8,
+      "mean_latency_ms": 8366.1
     },
     "valid_after_2plus_retries": {
       "count": 7,
-      "mean_latency_ms": 15042.9
+      "mean_latency_ms": 14656.6
     },
     "hit_turn_ceiling": {
-      "count": 0,
-      "mean_latency_ms": null
+      "count": 1,
+      "mean_latency_ms": 28392.1
     }
   },
   "ceiling_comparison": {
     "2": {
       "n": 20,
-      "completion_rate": 0.9,
-      "mean_latency_ms": 5608.6
+      "completion_rate": 0.7,
+      "mean_latency_ms": 6109.4
     },
     "10": {
       "n": 20,
       "completion_rate": 1.0,
-      "mean_latency_ms": 6935.7
+      "mean_latency_ms": 9714.8
     }
   },
   "adversarial": {
     "n": 5,
-    "hit_ceiling_rate": 1.0
+    "hit_ceiling_rate": 0.8
   }
 }
