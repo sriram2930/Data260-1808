@@ -1,0 +1,52 @@
+{
+  "homework": "hw03",
+  "sid4": 1808,
+  "commit_hash": "44d558790df5ecbc71ace73540bff1f39faf42a8",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "fastapi_responds_on_port_base",
+      "pass": true
+    },
+    {
+      "check": "dashboard_blocks_unauthenticated",
+      "pass": true
+    },
+    {
+      "check": "login_sets_cookie_with_httponly_secure_samesite",
+      "pass": true,
+      "detail": "s1808_session=eyJ1c2VyIjogIkNvdXJzZSBBZHZpc29yIiwgImxhc3Rfc2VlbiI6IDE3ODk5MjY5NTIuMDEyNjMxMn0=.arAeKA.CZikOow1n9ZBG0SaUP"
+    },
+    {
+      "check": "dashboard_reachable_with_valid_session",
+      "pass": true
+    },
+    {
+      "check": "dashboard_unreachable_after_logout",
+      "pass": true,
+      "detail": "post-logout cookie: s1808_session=null"
+    },
+    {
+      "check": "corpus_loads_and_meets_200kb_minimum",
+      "pass": true,
+      "detail": "208885 chars across 32 files"
+    },
+    {
+      "check": "rag_pipeline_finishes_without_hanging",
+      "pass": true,
+      "detail": "finished in 22.2s"
+    },
+    {
+      "check": "retrieval_returns_exactly_k_results",
+      "pass": true
+    },
+    {
+      "check": "query_embedding_dimension_is_384",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-09-20T10:56:29"
+}
