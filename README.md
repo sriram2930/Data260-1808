@@ -305,14 +305,110 @@ instead of hanging (and returns exactly 3 tags on an approved run), and confirms
 the forced-rejection correction loop actually routes back to the Planner. Writes
 [`reports/hw02/verification.json`](reports/hw02/verification.json).
 
+---
+
+# HW3
+
+HW3 again extends existing folders: **Part-1/** gains a login/session/logout
+system on top of the HW2 CRUD app, and a new **Part-5/** folder holds the
+LlamaIndex chunking/retrieval comparison (a genuinely new capability, not an
+extension of any earlier part). Same shared root-level `.venv` (now also
+includes `itsdangerous`, `beautifulsoup4`, `lxml`, `llama-index`,
+`llama-index-embeddings-huggingface`, `sentence-transformers`, `faiss-cpu`,
+`numpy`, `pandas`, `pyyaml` — see `requirements.txt`).
+
+## Part 1 — FastAPI Authentication
+
+Files: [Part-1/auth.py](Part-1/auth.py), [Part-1/templates/login.html](Part-1/templates/login.html),
+[Part-1/templates/dashboard.html](Part-1/templates/dashboard.html)
+
+```
+.venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8008
+```
+(same server as HW2 — `auth.py`'s router is mounted into `Part-1/main.py`.)
+Demo credentials: `advisor` / `course123`.
+
+- `/` — home page, now session-aware (shows a login link or a
+  dashboard+logout link in the navbar depending on session state).
+- `/login` — Bootstrap card + form; invalid credentials show a Bootstrap
+  alert.
+- `/dashboard` — protected; redirects to `/login` if not logged in or if the
+  session has idle-timed-out.
+- `/logout` — clears the session, redirects home.
+- Session cookie: Starlette `SessionMiddleware`, `HttpOnly` + `Secure` +
+  `SameSite=lax` all set (verified via the raw `Set-Cookie` header, not just
+  assumed).
+- **Idle timeout**: 30 seconds (short on purpose, so it's actually
+  demoable — see `IDLE_TIMEOUT_SECONDS` in `auth.py`), enforced manually
+  (`get_current_user()` checks elapsed time since `last_seen` on every
+  request), since the cookie's own `max_age` is a fixed expiry from login
+  time, not a sliding idle timeout.
+- Note on logout: this is a stateless, signed-cookie session (no
+  server-side session store), so `/logout` works by sending the browser a
+  new, cleared cookie that overwrites the old one — a real browser
+  correctly picks that up and the old session is gone. If someone captured
+  a copy of the *raw* pre-logout cookie value and replayed it directly
+  (bypassing normal browser cookie-jar behavior), that specific bypass is
+  not something a purely stateless session can prevent without a
+  server-side revocation list; `verify_hw03.py` tests the former (normal
+  logout-then-reuse-of-the-real-cookie-the-server-sent), which is the
+  standard interpretation of "log out and confirm the session doesn't
+  work anymore."
+
+## Part 2 — Compare Three LlamaIndex Chunking Techniques
+
+Files: [Part-5/fetch_corpus.py](Part-5/fetch_corpus.py),
+[Part-5/rag_compare.py](Part-5/rag_compare.py),
+[Part-5/run_retrieval_comparison.py](Part-5/run_retrieval_comparison.py),
+[Part-5/compute_metrics.py](Part-5/compute_metrics.py)
+
+```
+.venv\Scripts\python.exe Part-5\fetch_corpus.py            # one-time corpus build (already done, real snapshots committed)
+.venv\Scripts\python.exe Part-5\run_retrieval_comparison.py  # 5 questions x 3 techniques, writes raw/
+.venv\Scripts\python.exe Part-5\compute_metrics.py            # recomputes the summary table from raw/ only
+```
+
+- **Corpus**: 32 real SJSU pages (registrar/admissions/department FAQ pages),
+  fetched and cleaned to plain text, 208.4KB total. Documented with SHA-256
+  hashes in [`reports/hw03/CORPUS_MANIFEST.json`](reports/hw03/CORPUS_MANIFEST.json)
+  / [`SOURCES.md`](reports/hw03/SOURCES.md).
+- **Questions**: [`reports/hw03/questions.yaml`](reports/hw03/questions.yaml)
+  (5 domain questions with expected answer + expected source file, committed
+  before any retrieval was run).
+- **Techniques**: `TokenTextSplitter` (256/40 chunk size/overlap),
+  `SemanticSplitterNodeParser` (buffer_size=1), `SentenceWindowNodeParser`
+  (window_size=3) — each builds its own in-memory `VectorStoreIndex` over
+  `sentence-transformers/all-MiniLM-L6-v2` embeddings (384-dim).
+- `rag_compare.retrieve()` is the shared retrieval-only helper: prints the
+  query embedding (dim + first 8 values), top-k with store score AND an
+  explicitly recomputed cosine similarity (these don't always match exactly —
+  see `METRICS.md`), chunk length, preview, and the query/doc vector shapes.
+- Full write-up (results table, a confidently-scored miss with an
+  explanation, observations, conclusion):
+  [`reports/hw03/METRICS.md`](reports/hw03/METRICS.md).
+
+## HW3 Verification
+
+```
+python verify_hw03.py
+```
+Starts the FastAPI app and checks login sets the 3-attribute cookie,
+dashboard is reachable with a valid session and unreachable after logout;
+builds the token-chunking pipeline over the real corpus and checks it
+terminates, returns exactly k=5 results, and produces 384-dim embeddings.
+Writes [`reports/hw03/verification.json`](reports/hw03/verification.json).
+
 ## Repository layout
 ```
 Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
           main.py, templates/, static/style.css                                            (HW2)
+          auth.py, templates/login.html, templates/dashboard.html, templates/_navbar.html  (HW3)
 Part-2/   agents_demo.py, sample_input.json                                                 (HW1)
           agent_graph.py, run_schema_experiments.py                                         (HW2)
 Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)        (HW1)
 Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py          (HW1)
-requirements.txt, verify_hw01.py, verify_hw02.py   — shared, repo root
-reports/hw01/, reports/hw02/                       — deliverables per assignment spec
+Part-5/   fetch_corpus.py, corpus/, rag_compare.py, run_retrieval_comparison.py,
+          compute_metrics.py                                                                (HW3)
+requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py   — shared, repo root
+reports/hw01/, reports/hw02/, reports/hw03/                        — deliverables per assignment spec
 ```
