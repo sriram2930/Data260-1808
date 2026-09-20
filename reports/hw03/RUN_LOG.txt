@@ -1,0 +1,165 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+=== DATA-260 HW3 Part 2 retrieval comparison started 2026-09-20 10:46:23 ===
+Loaded 5 questions from C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw03\questions.yaml
+
+Building pipelines (token / semantic / sentence_window)...
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1340.34it/s]
+  token: 235 chunks, avg chunk length 1045.7 chars
+  semantic: 150 chunks, avg chunk length 1392.6 chars
+  sentence_window: 2114 chunks, avg chunk length 98.8 chars
+
+=== technique=token | query='If a CS major has no prior computing experience, what does the department suggest instead of jumping straight into CS 46A?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0299, 0.0407, 0.0069, 0.0328, -0.0286, -0.0121, -0.0782, -0.0269]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6424       0.6369      1043       third possibility is to simply take CS 46A at SJSU.  Your 46A will almost certainly count as equivalent to CS 49C if it used C or C++, and will likely count as 
+2    0.6095       0.5893      1097       you can count it toward graduation (if you have not already taken another Area E course). See the Science 2 web site for more information. There is a similar co
+3    0.5934       0.5890      1218       certificate program may count toward the B.S. in Computer Science.  There are several lower-division prerequisites for the courses in the program, so it will be
+4    0.5757       0.5942      1127       brief discussion of the differences between the computer science field and the software engineering field is given in the MSCS FAQ . According to the catalog de
+5    0.5739       0.6059      908        Master of Science in Computer Science | Department of Computer Science Skip to main content Master of Science in Computer Science The Master of Science program 
+
+=== technique=semantic | query='If a CS major has no prior computing experience, what does the department suggest instead of jumping straight into CS 46A?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0299, 0.0407, 0.0069, 0.0328, -0.0286, -0.0121, -0.0782, -0.0269]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.5704       0.5712      9538       Determine, preferably in consultation with an advisor, whether you are ready to start upper-division coursework in Computer Science. If you have successfully co
+2    0.5281       0.5459      1331       slightly modified, August 2016 What is Science 2? What is Science 90T? Science 2 (Sci 002) is a course designed to improve retention rates in science and engine
+3    0.5224       0.5210      939        Who should I see for other types of assistance? For assistance with Computer Science issues For most CS issues, you should start with the appropriate advisor, a
+4    0.5199       0.5005      3646       Yes. The calculus courses in the major cover Area B4.  Areas Z and V of SJSU Studies are also covered with the required courses CS 100W  (Technical Writing Work
+5    0.5190       0.4926      993        Be aware that this program is only a sample, and will not be appropriate for every student.  The department web site contains a prerequisite chart . Also see th
+
+=== technique=sentence_window | query='If a CS major has no prior computing experience, what does the department suggest instead of jumping straight into CS 46A?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0299, 0.0407, 0.0069, 0.0328, -0.0286, -0.0121, -0.0782, -0.0269]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6063       0.6656      209        Your 46A will almost certainly count as equivalent to CS 49C if it used C or C++, and will likely count as an elective for the CS major -- consult the Computer 
+2    0.5249       0.6995      94         If you have not successfully completed a CS 46A equivalent, then you should enroll in CS 46A. 
+3    0.5235       0.5534      238        If you are reasonably sure that you want to be a CS major, you are a community college student, and you think you will be attending SJSU or another California S
+4    0.5203       0.5585      256        By department policy, instructors of computer science classes must give priority for adds to students who are not repeating the course, except that graduating s
+5    0.5122       0.5198      93         slightly modified, April 2025 Does the department offer courses on current computing topics? 
+
+=== technique=token | query='What course must an MSCS student pass before they can enroll in CS 297, and in which semester do most students take CS 297?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0034, -0.0505, -0.0422, 0.0037, -0.0357, 0.0158, 0.0102, -0.0693]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6816       0.6722      1050       numbers during Summer and Winter Sessions. When should I take CS 297 and CS 298? Most students take CS 297 in their third semester. However, please note you wil
+2    0.6454       0.7168      1171       MSCS FAQ | Department of Computer Science How do we fulfill the Foundations/Architecture/Systems Software and Specialty Courses requirement? Please refer to our
+3    0.6393       0.6297      1043       third possibility is to simply take CS 46A at SJSU.  Your 46A will almost certainly count as equivalent to CS 49C if it used C or C++, and will likely count as 
+4    0.6390       0.6473      1166       requirements? Admission to the MSCS program is a competitive process. We continually monitor the number of applicants and the number of spaces in the program. W
+5    0.6384       0.6167      1097       you can count it toward graduation (if you have not already taken another Area E course). See the Science 2 web site for more information. There is a similar co
+
+=== technique=semantic | query='What course must an MSCS student pass before they can enroll in CS 297, and in which semester do most students take CS 297?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0034, -0.0505, -0.0422, 0.0037, -0.0357, 0.0158, 0.0102, -0.0693]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7279       0.7045      597        Please bring along your prerequisite documents. The CS Office is no longer providing permission numbers during Summer and Winter Sessions. When should I take CS
+2    0.6306       0.6172      3658       Did you recently change the admission requirements? Admission to the MSCS program is a competitive process. We continually monitor the number of applicants and 
+3    0.6134       0.5922      9538       Determine, preferably in consultation with an advisor, whether you are ready to start upper-division coursework in Computer Science. If you have successfully co
+4    0.6023       0.5758      993        Be aware that this program is only a sample, and will not be appropriate for every student.  The department web site contains a prerequisite chart . Also see th
+5    0.5953       0.6775      337        MSCS Requirements for Graduation | Department of Computer Science Skip to main content MSCS Requirements for Graduation Students must complete all residency, cu
+
+=== technique=sentence_window | query='What course must an MSCS student pass before they can enroll in CS 297, and in which semester do most students take CS 297?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0034, -0.0505, -0.0422, 0.0037, -0.0357, 0.0158, 0.0102, -0.0693]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7514       0.8059      51         Most students take CS 297 in their third semester. 
+2    0.6763       0.7420      138        However, please note you will need to select an instructor to serve as your advisor and have their approval before enrolling into CS 297. 
+3    0.6478       0.5929      89         What is a typical set of computer science courses that you might expect of an applicant? 
+4    0.6278       0.6733      102        A typical BSCS program will expect students to complete about 12 junior/senior level CS courses (i.e. 
+5    0.6158       0.5841      117        Degree programs in computer science offer one or more software engineering courses as elements of the CS curriculum. 
+
+=== technique=token | query='At what cumulative GPA is an undergraduate student placed on academic notice at SJSU?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0376, 0.0292, -0.0069, -0.0594, 0.0236, -0.0037, -0.0732, 0.0237]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7481       0.7498      1025       Academic Notice | College of Social Sciences Student Success Center Skip to main content Academic Notice Undergraduate students are placed on academic notice if
+2    0.6925       0.6931      494        = Unauthorized Withdrawal      IC = Incomplete - Charged The following grades are not calculated into your GPA. No Credit. Equivalent to D+ and below* . See the
+3    0.6813       0.6778      1097       requirements. General Education is fulfilled upon completion of a degree ( Exceptions for University Graduation Requirements ). DocuSign template forms require 
+4    0.6600       0.5947      938        "stopped-out" or being disqualified, students must: have an all college GPA that is 2.0 or better; and have earned 60 or more semester units (90 quarter units);
+5    0.6558       0.6338      1093       business major . A change of concentration is also considered a change of major. How do I establish graduating senior status? When should I apply for graduation
+
+=== technique=semantic | query='At what cumulative GPA is an undergraduate student placed on academic notice at SJSU?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0376, 0.0292, -0.0069, -0.0594, 0.0236, -0.0037, -0.0732, 0.0237]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7822       0.7701      817        Academic Notice | College of Social Sciences Student Success Center Skip to main content Academic Notice Undergraduate students are placed on academic notice if
+2    0.6769       0.6264      1374       When should I apply for graduation? Graduating senior standing is granted for students who apply for graduation by the priority deadline. Visit our Graduation w
+3    0.6483       0.7053      371        Equivalent to D+ and below* . See the current SJSU Catalog for details regarding the grading symbols and policies for Undergraduate and Graduate studies. Retroa
+4    0.6246       0.5880      2706       ). Temporary suspension of sections of Executive Order 1037 due to COVID-19 (effective Fall 2020-Spring 2021). Fewer than 6-semester units of upper-division cou
+5    0.6155       0.5995      239        These exceptions do not apply outside of those terms. How many upper-division units do I need for a minor at SJSU? You must complete at least 6 upper-division u
+
+=== technique=sentence_window | query='At what cumulative GPA is an undergraduate student placed on academic notice at SJSU?' | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0376, 0.0292, -0.0069, -0.0594, 0.0236, -0.0037, -0.0732, 0.0237]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.8006       0.7981      218        Academic Notice | College of Social Sciences Student Success Center Skip to main content Academic Notice Undergraduate students are placed on academic notice if
+2    0.7758       0.7539      153        SJSU cumulative GPA (SJSU CUM GPA) determines Academic Standing (e.g., Good Standing, Academic Notice (formerly Probation), or Disqualification status). 
+3    0.7524       0.7673      137        Good Academic Standing The student has earned at least a 2.0 semester GPA, which is high enough to bring the SJSU cumulative GPA to 2.0. 
+4    0.7422       0.7523      138        Academic Notice (formerly Academic Probation) refers to the academic standing category for students with a SJSU cumulative GPA below 2.0. 
+5    0.7358       0.7999      145        Continued Academic Notice The student has earned at least a 2.0 semester GPA, but it is not high enough to bring the SJSU cumulative GPA to 2.0. 
+
+=== technique=token | query='How many years does an MSCS student have to complete the degree?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0255, 0.0286, 0.0009, 0.0097, -0.0134, 0.0023, -0.0768, -0.0451]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6302       0.6815      337        MSCS Requirements for Graduation | Department of Computer Science Skip to main content MSCS Requirements for Graduation Students must complete all residency, cu
+2    0.6164       0.5851      908        Master of Science in Computer Science | Department of Computer Science Skip to main content Master of Science in Computer Science The Master of Science program 
+3    0.5655       0.5183      1050       numbers during Summer and Winter Sessions. When should I take CS 297 and CS 298? Most students take CS 297 in their third semester. However, please note you wil
+4    0.5458       0.5628      1113       the first day of classes in the graduate program. I do not have a 4-year Bachelor degree. Can I be admitted to the MSCS program? No, a 4-year Bachelor degree is
+5    0.5271       0.5234      1139       How To Apply | Department of Computer Science Skip to main content How to Apply We encourage applicants holding a bachelor's degree in Computer Science or a rel
+
+=== technique=semantic | query='How many years does an MSCS student have to complete the degree?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0255, 0.0286, 0.0009, 0.0097, -0.0134, 0.0023, -0.0768, -0.0451]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6325       0.4945      604        Master of Science in Computer Science | Department of Computer Science Skip to main content Master of Science in Computer Science The Master of Science program 
+2    0.6302       0.6815      337        MSCS Requirements for Graduation | Department of Computer Science Skip to main content MSCS Requirements for Graduation Students must complete all residency, cu
+3    0.6228       0.5300      482        Completed 3 years of full-time coursework in a regionally accredited institution within the U.S. Completed a Bachelor's or Master's degree from one of the count
+4    0.6059       0.5695      1160       Is that ok? Be sure to clearly indicate that you expect to earn your BS in the current semester. Completing the degree will be a condition for admission. Note t
+5    0.5872       0.5512      1153       I work during the day. Can I obtain the MSCS degree while working? We try to offer graduate courses in the late afternoons and evenings or early in the morning.
+
+=== technique=sentence_window | query='How many years does an MSCS student have to complete the degree?' | k=5 ===
+query embedding dim: 384, first 8 values: [0.0255, 0.0286, 0.0009, 0.0097, -0.0134, 0.0023, -0.0768, -0.0451]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7357       0.5433      92         No, a 4-year Bachelor degree is a minimum requirement for admission to the graduate school. 
+2    0.7357       0.5433      92         No, a 4-year Bachelor degree is a minimum requirement for admission to the graduate school. 
+3    0.7211       0.6263      133        However, some students with a 3-year degree have gone on to do one or two more years of post baccalaureate work in computer science. 
+4    0.6680       0.5739      88         A 4-year Bachelor degree is a minimum requirement for admission to the graduate school. 
+5    0.6409       0.6754      44         Can I obtain the MSCS degree while working? 
+
+=== technique=token | query="Roughly how far before a semester starts does a student's enrollment appointment get posted on MySJSU?" | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0224, -0.0194, -0.0283, -0.0386, -0.0347, -0.0488, -0.1219, -0.0233]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7661       0.7553      1174       Registration Basics | Office of the Registrar Skip to main content Registration Basics What Are Enrollment Appointments? How Are Enrollment Appointments Set, an
+2    0.6768       0.6789      902        Fall 2026 Dates and Deadlines | Office of the Registrar Skip to main content Fall 2026 Payment due date is based on when you register, see Bursar's payment sche
+3    0.6664       0.6385      877        Spring 2027 | Office of the Registrar Skip to main content Spring 2027 Payment due date is based on when you register, see Bursar's payment schedule . after 9:0
+4    0.6258       0.6355      1069       Spring 2026 Registration Bulletin | Office of the Registrar registration deadlines, permission numbers, automated waitlists, time conflicts, audit options, and 
+5    0.6226       0.5959      950        processing Repeat Exception Petitions Tue, Aug. 18 Last Day to Drop for 100% Refund Wed, Aug. 19 First Day of Instruction The automated waitlist remains active 
+
+=== technique=semantic | query="Roughly how far before a semester starts does a student's enrollment appointment get posted on MySJSU?" | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0224, -0.0194, -0.0283, -0.0386, -0.0347, -0.0488, -0.1219, -0.0233]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.7604       0.7395      3653       Registration Basics | Office of the Registrar Skip to main content Registration Basics What Are Enrollment Appointments? How Are Enrollment Appointments Set, an
+2    0.6750       0.6816      1730       Fall 2026 Dates and Deadlines | Office of the Registrar Skip to main content Fall 2026 Payment due date is based on when you register, see Bursar's payment sche
+3    0.6734       0.6482      764        Spring 2027 | Office of the Registrar Skip to main content Spring 2027 Payment due date is based on when you register, see Bursar's payment schedule . after 9:0
+4    0.6335       0.6286      1801       Spring 2026 Registration Bulletin | Office of the Registrar registration deadlines, permission numbers, automated waitlists, time conflicts, audit options, and 
+5    0.5783       0.6010      886        Department policies take precedence over university limits and will be enforced. Waitlist How does waitlist work? for: Waitlist start and end dates Automated Re
+
+=== technique=sentence_window | query="Roughly how far before a semester starts does a student's enrollment appointment get posted on MySJSU?" | k=5 ===
+query embedding dim: 384, first 8 values: [-0.0224, -0.0194, -0.0283, -0.0386, -0.0347, -0.0488, -0.1219, -0.0233]
+query vector shape: (384,), stacked doc vectors shape: (5, 384)
+rank store_score  cosine_sim  chunk_len  preview
+1    0.6951       0.8065      83         Your enrollment appointment date and time is listed in your MySJSU student center. 
+2    0.6872       0.7958      130        It will be posted on MySJSU about three months before the semester starts and will end the day before the Enrollment Census Date. 
+3    0.6810       0.7127      71         You be able to view your Fall 2026 enrollment appointments on MySJSU.  
+4    0.6613       0.7246      649        Class schedule available on MySJSU or SJSU Class Schedule Page Tue, April 21 - Tue, Sep 15 Registration Period for Continuing Students Waitlist Starts Enrollmen
+5    0.6451       0.7150      215        Common Registration Issues 1290R Enrollment for Graduate Students Enrollment Appointments Your enrollment appointment is when you can start registering for clas
+
+Wrote 75 rows to C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw03\raw\retrieval_results.jsonl
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw03\raw\retrieval_results.csv
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw03\raw\chunk_stats.json
+
+=== finished 2026-09-20 10:48:51 ===

@@ -6,3 +6,13 @@ uvicorn[standard]
 jinja2
 python-multipart
 langgraph
+itsdangerous
+beautifulsoup4
+lxml
+llama-index
+llama-index-embeddings-huggingface
+sentence-transformers
+faiss-cpu
+numpy
+pandas
+pyyaml

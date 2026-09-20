@@ -1,0 +1,78 @@
+{
+  "summary": {
+    "semantic": {
+      "chunks": 150,
+      "avg_chunk_length": 1392.6,
+      "top1_cosine": 0.656,
+      "mean_at_k_cosine": 0.6085,
+      "recall_at_k": 1.0,
+      "mean_retrieval_latency_ms": 52.07
+    },
+    "sentence_window": {
+      "chunks": 2114,
+      "avg_chunk_length": 98.8,
+      "top1_cosine": 0.7239,
+      "mean_at_k_cosine": 0.6793,
+      "recall_at_k": 1.0,
+      "mean_retrieval_latency_ms": 149.87
+    },
+    "token": {
+      "chunks": 235,
+      "avg_chunk_length": 1045.7,
+      "top1_cosine": 0.6991,
+      "mean_at_k_cosine": 0.6329,
+      "recall_at_k": 1.0,
+      "mean_retrieval_latency_ms": 77.77
+    }
+  },
+  "confident_misses": {
+    "semantic": {
+      "question_id": "q3",
+      "question": "At what cumulative GPA is an undergraduate student placed on academic notice at SJSU?",
+      "expected_source_file": "sjsu_socsci_academic_notice.txt",
+      "single_source": false,
+      "technique": "semantic",
+      "k": 5,
+      "retrieval_latency_ms": 62.57059995550662,
+      "query_embedding_dim": 384,
+      "rank": 3,
+      "store_score": 0.6482816868595506,
+      "cosine_sim": 0.7053287001025427,
+      "chunk_len": 371,
+      "preview": "Equivalent to D+ and below* . See the current SJSU Catalog for details regarding the grading symbols and policies for Undergraduate and Graduate studies. Retroa",
+      "source_file": "sjsu_grade_changes.txt"
+    },
+    "sentence_window": {
+      "question_id": "q5",
+      "question": "Roughly how far before a semester starts does a student's enrollment appointment get posted on MySJSU?",
+      "expected_source_file": "sjsu_registration_basics.txt",
+      "single_source": false,
+      "technique": "sentence_window",
+      "k": 5,
+      "retrieval_latency_ms": 129.15090005844831,
+      "query_embedding_dim": 384,
+      "rank": 1,
+      "store_score": 0.6951447522905854,
+      "cosine_sim": 0.8065218809109498,
+      "chunk_len": 83,
+      "preview": "Your enrollment appointment date and time is listed in your MySJSU student center. ",
+      "source_file": "sjsu_chhs_faqs.txt"
+    },
+    "token": {
+      "question_id": "q3",
+      "question": "At what cumulative GPA is an undergraduate student placed on academic notice at SJSU?",
+      "expected_source_file": "sjsu_socsci_academic_notice.txt",
+      "single_source": false,
+      "technique": "token",
+      "k": 5,
+      "retrieval_latency_ms": 53.708799998275936,
+      "query_embedding_dim": 384,
+      "rank": 2,
+      "store_score": 0.6924924494658644,
+      "cosine_sim": 0.6931275855793422,
+      "chunk_len": 494,
+      "preview": "= Unauthorized Withdrawal\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0IC = Incomplete - Charged The following grades are not calculated into your GPA. No Credit. Equivalent to D+ and below* . See the",
+      "source_file": "sjsu_grade_changes.txt"
+    }
+  }
+}

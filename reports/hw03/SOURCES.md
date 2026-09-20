@@ -1,6 +1,6 @@
 # SOURCES.md - HW3 domain corpus
 
-Domain: DOMAIN_ID 0, Campus course catalogue and enrolment. All 30 documents
+Domain: DOMAIN_ID 0, Campus course catalogue and enrolment. All 32 documents
 are real, public SJSU pages (registrar, admissions, and department/college
 student success center pages covering registration, add/drop, grading,
 transfer credit, advising, and program FAQs), fetched and cleaned to plain
