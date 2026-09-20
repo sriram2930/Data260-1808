@@ -1,0 +1,142 @@
+Transfer Credit FAQ | Engineering Student Success Center
+Skip to main content
+Transfer Credit FAQ
+Generally, meet with an Engineering Student Success advisor to have your GE courses
+and
+transfer credit summary
+audited. They can clear any errors (credits that did not transfer when they should
+have, for example) that the automated system in the Evaluation's office didn't catch.
+Please read our list of frequently asked questions below.
+FAQs
+How do I transfer my course credits from another college?
+Order transcripts from the institution from which you took courses. For most institutions,
+you will need to login to your student portal and request your transcript there.
+Have them electronically sent to SJSU (recommended) or mailed to you, so you can hand
+deliver them to the Registrar's office, which is located under the North Garage. (Use
+the Dropbox by the Student Services Center entrance.)
+You will be emailed confirmation that they have
+received
+your transcripts and will need time to process and post your grades.
+Check the status of your transcripts in your
+Transfer Credit summary
+in MySJSU.
+Email
+eval@sjsu.edu
+if your transcripts have been received but not yet posted.
+How do I make sure the courses I plan on taking will transfer (articulate) with SJSU?
+Generally, all information can be found in
+Assist.org
+.
+Additionally, SJSU has its own
+articulation
+page which includes options to view only
+GE courses
+or major courses (
+course-to-course list
+).
+When should I transfer my credits?
+As soon as possible.
+If the transfer course is a prerequisite, you will need it posted in your records
+before you can register for the proceeding course during Advanced Enrollment. Otherwise,
+you will need to bring unofficial transcripts to the department or instructor in record to
+get an add code.
+Failing to show proof or prerequisites may result in being dropped from the course.
+My credits didn't transfer. What should I do?
+These are your options:
+Talk to your major advisor for a substitution or a waiver.
+Depending on the course, you might need to submit a
+petition.
+If you're unsure,
+make an appointment
+with an ESSC advisor for their recommendations.
+I took an AP exam. For which courses or GE areas will I receive SJSU course credit?
+Go to the
+SJSU catalog
+and enter "Advanced Placement (AP) Exams" in the search field to view an equivalency
+chart.
+You will need to send your
+official scores from College Board
+to SJSU to apply these credits to your account.
+What is the "temporary Area C waiver," and how does it relate to Area F?
+The temporary Area C waiver for 2021-2022 has been approved for our college.
+If you are a new transfer student starting Fall 2021, you will not be required to
+complete Area F if you've had continuous enrollment at the community college
+. During the process of transfer credit being posted and evaluated and continuous
+enrollment verified, Evaluations will change your GE catalog year (different from
+the major catalog year) to Fall 2020, which would keep you on the old GE pattern and
+not require you to take Area F.
+Transfer credit will continue to be evaluated and posted throughout the summer, so
+once credit has been evaluated, please refer to eval@sjsu.edu if you have the continuous
+enrollment but are being held to Area F.
+Read the
+CSU policy on GE requirements
+.
+What is the difference between a TEP and a substitution?
+A
+TEP
+(transfer equivalency petition) is strictly for an external course with no articulation
+agreement already. It is submitted by the student through a TEP process. Each college
+manages a TEP for their courses.
+Substitution
+is when an advisor approves the use of one course (external credit or another SJSU
+course) for another SJSU course. There could be an articulation agreement, or it could
+be another SJSU course. Only the
+department chair or faculty advisor
+can make a substitution. This is the more flexible option.
+Here are some examples of substitutions:
+The student took an external course with no articulation agreement, but the course
+is very close to an SJSU required course (e.g. CIS 22A from De Anza for CS 46A).
+The student took an SJSU course from a different major, and it is close enough to
+the current major requirement (e.g. AE 30 for ME 30).
+The student submitted a TEP (transfer equivalency petition) which was rejected for
+some reason or another, and the major advisor determines that the course satisfies
+the major requirement (e.g. a physics course from an international university for
+PHYS 50).
+When in doubt,
+meet with your major advisor
+first.
+Should I sign up for a course before I know whether transfer credit could be used
+to meet a requirement through equivalency?
+In general we advise checking in with your major advisor to determine whether a TEP
+is best or necessary. We also advise not signing up for courses you think you have
+a good chance of receiving credit for using transfer credit (especially as a new transfer
+student).
+When in doubt,
+meet with your major advisor
+first.
+CMPE/SE: Can I use a lower-division course as a substitute for a required upper-division
+course?
+The CMPE/SE department will no longer consider petitions from students trying to substitute
+a lower-division course for an upper-division SJSU course. Please
+contact the CMPE/SE department
+if you have questions.
+For which course(s) do I use the College of Engineering (CoE) TEP?
+CoE Transfer Equivalency Petition (TEP)
+may be used only for:
+).
+The SJSU course needs to have a letter prefix listed
+in bold
+above.
+Here are examples of CoE major courses
+: ENGR 10, EE 98, CE 99, MATE 25, TECH 60, ME 101, AE 20, BME 25, AVIA 1, ISE 130,
+CMPE 30, ME 20, CE 95
+I need a TEP for math and other courses NOT in the College of Engineering. What should
+I do?
+The
+College of Science
+consists of the following departments: Biology, Chemistry, Computer Science, Geology,
+Mathematics, Meteorology, and Physics.
+Common examples of CoS courses for Engineering or Aviation majors
+are MATH (all), PHYS (all), CHEM (all), CS (all), BIOL (all), GEOL 2.
+To request equivalency for a
+College of Science
+course use the equivalency petition on their TEP
+CoS-SSC webpage.
+I already had transfer credit approved (equivalency or substitution), but it no longer
+shows up in MyProgress. How can I get it added back?
+Anything that causes your major prep and major requirements to change in MyProgress
+will wipe out any previous updates that were manually made. This includes a change
+of major or being DQ'ed (i.e. enrolled in Open University/Continuing Education instead
+of SJSU). TEPs are not processed by ESSC. Students must work directly with the department
+offering the course for updates on petition submission and credit postings.
+Last Updated Jun 22, 2026

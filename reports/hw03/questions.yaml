@@ -1,0 +1,57 @@
+# DATA-260 HW3, Part 2 -- five domain questions for the chunking/retrieval
+# comparison. Written and committed BEFORE running the graded retrieval
+# comparison, so these expected answers were not adjusted after seeing any
+# retrieval output. Each expected_answer/expected_source_file was verified by
+# hand against the actual corpus file content before committing this file.
+
+questions:
+  - id: q1
+    question: >
+      If a CS major has no prior computing experience, what does the
+      department suggest instead of jumping straight into CS 46A?
+    expected_answer: >
+      CS 46A officially assumes no background, but students with no computer
+      experience are advised to first take CS 22A (which does not count
+      toward the BSCS degree) or an equivalent introductory programming
+      course at a community college.
+    expected_source_file: sjsu_cs_undergrad_faq.txt
+    single_source: true
+
+  - id: q2
+    question: >
+      What course must an MSCS student pass before they can enroll in CS 297,
+      and in which semester do most students take CS 297?
+    expected_answer: >
+      Students must have taken and passed CS 200W before enrolling in CS 297.
+      Most students take CS 297 in their third semester.
+    expected_source_file: sjsu_mscs_faq.txt
+    single_source: true
+
+  - id: q3
+    question: >
+      At what cumulative GPA is an undergraduate student placed on academic
+      notice at SJSU?
+    expected_answer: >
+      An undergraduate student is placed on academic notice if their SJSU
+      cumulative GPA falls below 2.0 at any time.
+    expected_source_file: sjsu_socsci_academic_notice.txt
+    single_source: false
+
+  - id: q4
+    question: >
+      How many years does an MSCS student have to complete the degree?
+    expected_answer: >
+      Up to 7 years, although the department does not recommend actually
+      taking that long.
+    expected_source_file: sjsu_mscs_faq.txt
+    single_source: true
+
+  - id: q5
+    question: >
+      Roughly how far before a semester starts does a student's enrollment
+      appointment get posted on MySJSU?
+    expected_answer: >
+      About three months before the semester starts (ending the day before
+      the Enrollment Census Date).
+    expected_source_file: sjsu_registration_basics.txt
+    single_source: false

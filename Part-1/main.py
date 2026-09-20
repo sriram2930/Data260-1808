@@ -24,6 +24,7 @@ behavior and redirect flow, not persistence across restarts.
 
 from __future__ import annotations
 
+import secrets
 from pathlib import Path
 from typing import Optional
 
@@ -31,11 +32,30 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.middleware.sessions import SessionMiddleware
+
+import auth
 
 HERE = Path(__file__).parent
 PORT_BASE = 8008
 
 app = FastAPI(title="Campus Course Catalogue & Enrolment")
+
+# Session cookie: signed (SessionMiddleware always sends HttpOnly), Secure so
+# it's only sent back over HTTPS (Chrome/Edge treat localhost as a secure
+# context so this still works for local testing), SameSite=lax. secret_key is
+# regenerated on every process start -- fine for a homework demo, since it
+# just means old sessions don't survive a restart, but not something to reuse
+# for anything real.
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=secrets.token_hex(32),
+    session_cookie="s1808_session",
+    same_site="lax",
+    https_only=True,
+)
+
+app.include_router(auth.router)
 app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 templates = Jinja2Templates(directory=str(HERE / "templates"))
 
@@ -114,6 +134,7 @@ def home(request: Request, q: str = "", error: str = "", success: str = ""):
             "error": error,
             "success": success,
             "departments": DEPARTMENTS,
+            "user": auth.get_current_user(request),
         },
     )
 

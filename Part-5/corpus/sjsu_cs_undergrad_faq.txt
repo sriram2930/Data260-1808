@@ -1,0 +1,788 @@
+I'm entering as a freshman. What do I do?
+Make sure to attend
+frosh orientation
+, as described in the material sent to you by the university upon your acceptance.
+Strongly consider enrolling for Science 2 (Sci 002) in your first semester.
+At the beginning of the semester, meet with the College of Science Student Success
+Center (CoS-SSC) advisor, as described on the
+CS department advising web site
+.
+.  Be aware that this program is only a sample, and will not be appropriate for every
+student.  The department web site contains a
+prerequisite chart
+.
+Also see the answer to the question about the computing devices you will need as an
+SJSU CS major.
+modified, April 2020
+Does the department participate in the Four-Year Graduation Pledge Program?
+Yes, although the conditions for BSCS students are very strict due to the large number
+of required courses in the program. In addition to all university requirements, you
+must get grades of C- or better in all courses, not repeat any courses, be ready to
+start calculus in your first semester, and stick with the
+sample program publicized by the department
+unless your advisor has approved a deviation.  You may need to avoid probation, since
+students on probation may be allowed to register for only a limited number of units,
+and may be best advised to take optional workshop courses.
+For more details, contact the
+CS undergraduate coordinator
+.
+slightly modified, August 2016
+What is Science 2? What is Science 90T?
+Science 2 (Sci 002) is a course designed to improve retention rates in science and
+engineering and poor student preparation in general. Effective Fall 2007, it is a
+permitted General Education course under Area E. It is an appropriate course for a
+substantial proportion of frosh CS majors. Since the course is a General Education
+course, you can count it toward graduation (if you have not already taken another
+Area E course).
+See the
+Science 2 web site
+for more information.
+There is a similar course for transfer students, Science 90. This course is not approved
+for GE. Note that different sections of this course may have different subtitles.
+slightly modified, April 20
+Does the first computer science course (CS 46A) assume any background in computing?
+Officially, no. However, a number of students in the past have attempted to take the
+course with little experience with computing. Many of these students have not succeeded.
+If you don't have any computer experience, you might consider first taking CS 22A.
+Note that CS 22A will not count toward the BSCS degree.  Another possibility is to
+take an introductory programming course at a community college.  At many schools,
+an appropriate course is the prerequisite course to the
+CS 46A equivalent
+.  Such a course, however will not count toward the BSCS degree.
+modified, April 2020
+Questions relevant to transfer students and potential transfer students
+What is the STAR Act?  What is SB 1440?  What is C-ID?  What is an AS-T degree?
+SB 1440, the STAR act, is a California law designed to improve the interface between
+community college programs and CSU degree programs. C-ID is a course numbering system
+used in the implementation of this act. Students with an appropriate AS degree (an
+"AS degree for transfer", or "AS-T degree", in computer science) are automatically
+exempt from certain BSCS requirements.
+You do not need to have an AS-T degree in order to transfer from a community college
+to the BSCS program at SJSU.
+One provision of the STAR act effectively requires that students with an appropriate
+AS-T degree need at most 60 units beyond the AS to complete the 120-unit BSCS program
+at SJSU.  Sample programs for the various BSCS requirements showing how the BSCS can
+be attained in 4 semesters of 60 total units are available on the
+CS department web site
+.  Such a sample program will not be appropriate for every student.
+Students with an AS-T degree in CS will be given BSCS credit for Math 30 and 31 and
+42, Physics 50 and 51, CS 46A and 46B, and 47, and all but 12 units of General Education.
+AS-T students are
+exempt from the Physical Education
+requirement at SJSU.
+The sample program assumes that students will be able to pass the
+Writing Skills Test (WST)
+without any additional coursework, and have completed the American Institutions requirement
+as part of their AS degree. Students for whom these assumptions are not true should
+see the
+undergraduate coordinator
+to see how they can complete the BSCS in only 60 additional units.
+slightly modified, December 2015
+I'm considering entering as a transfer student.  What do I do?
+For general information about transferring to SJSU, see the university web pages on
+Transfer Admission Requirements
+and
+SJSU Undergraduate Degrees and Impaction
+.  Pay special attention to the section on transferring as a lower-division student
+if this is relevant to you, since this kind of transfers may not be possible in a
+given semester.  Impaction is important since it is likely to result in a minimum
+GPA requirement for transfer, which you can check by clicking on the impaction link.
+If you are reasonably sure that you want to be a CS major, you are a community college
+student, and you think you will be attending SJSU or another California State University,
+you should seriously consider getting an AS-T degree in CS.  Also check the section
+on transfer associate degrees on the web page mentioned above.
+If you are not able to complete all of the coursework that is part of an AS-T degree
+in CS by the time you are ready to transfer, you should at least try to complete the
+Computer Science portion of the program. The other courses can be made up easily when
+you arrive at SJSU.
+Since SJSU uses Java for its introductory courses, if the institution you are attending
+gives you a choice between a Java-based introduction to computing and an introduction
+that uses another language, it will probably be better for you to take the Java-based
+introduction.
+There is a 70-unit limit on units transferred from a two-year college, but this limit
+is irrelevant for determining which requirements in the major you have satisfied.
+Ideally you will be prepared to take the
+Writing Skills Test (WST)
+when you arrive at SJSU.
+Also see the answer to the next question.
+somewhat modified, August 2015
+I'm entering as a transfer student.  What do I do?
+Attend a transfer orientation session
+Make sure to attend one of the campus Transfer Orientation sessions, as described
+in the material sent to you by the university upon your acceptance.
+Are you ready to start upper-division coursework in Computer Science?
+Determine, preferably in consultation with an advisor, whether you are ready to start
+upper-division coursework in Computer Science.
+If you have successfully completed equivalents of CS 46A and CS 46B that use the Java
+language, then you have the computing background needed for CS 146 (Data Structures
+and Algorithms) and CS 151 (Object-Oriented Design).  You should consider taking these
+courses in your first semester at SJSU if you have met their mathematics prerequisites.
+If you have successfully completed equivalents of CS 46A and CS 46B that use a language
+other than Java, then you should enroll in CS 49J (Programming in Java) as soon as
+possible.   After completing CS 49J successfully, you should take CS 146 and CS 151
+as soon as you can.
+If you have successfully completed a CS 46A equivalent but not a CS 46B equivalent,
+then if the CS 46A equivalent used Java you may enroll in CS 46B.  Otherwise you should
+consider enrolling in CS 49J and then CS 46B, and then following the instructions
+above for students who took equivalents of CS 46A and 46B in Java.  CS 49J may be
+counted as an elective for the CS major. If you have not successfully completed a
+CS 46A equivalent, then you should enroll in CS 46A.
+If you want, you may instead take a
+46B equivalent
+at the same institution where you took your 46A equivalent, and then follow the instructions
+above for students whose 46A and 46B equivalencies didn't use Java.
+A third possibility is to simply take CS 46A at SJSU.  Your 46A will almost certainly
+count as equivalent to CS 49C if it used C or C++, and will likely count as an elective
+for the CS major -- consult the Computer Science Department's
+undergraduate coordinator
+.
+Take the Writing Skills Test (WST)
+Take the
+Writing Skills Test (WST)
+as early as you can -- unless you have been exempted from the CS 100W and General
+Education Area Z requirements. This test is a prerequisite for CS 100W, and all other
+SJSU studies courses.  Many students transferring into the CS major have satisfied
+all graduation requirements except for SJSU Studies and coursework in the Math and
+CS departments. If you are one of these students and you haven't taken the Writing
+Skills Test, then in your first semester you will either have to take all your classes
+in Math or CS, or take classes that won't help you graduate.  And you may not be able
+to take very many classes in Math or CS, depending on which prerequisite courses you
+have taken, and on your knowledge of Java.
+Take CS 100W
+It is a good idea to take CS 100W as early as possible, since it helps you in all
+of your other courses.  In particular, CS 100W is a prerequisite for the required
+software engineering course CS 160.  It's not uncommon for students to have to delay
+their graduation because they did not take CS 100W early enough.
+, and the web pages containing the
+BSCS requirements and the associated sample programs
+). In particular, check the prerequisites for the courses you plan to take.  The department
+web site contains a
+prerequisite chart
+that shows the mathematics and CS prerequisites for all CS courses that count toward
+the BS in CS.
+modified, April 2020
+Can I get credit toward the BSCS degree based on Advanced Placement (AP) exams?
+Current CS Department policy is to give 3 units of credit and a CS 46A waiver to any
+student scoring 3 or better on the Computer Science A exam. The department currently
+grants a Math 30 waiver to any student scoring 3 or better on the Calculus AB exam.
+We give waivers for both Math 30 and Math 31 to any student scoring 3 or better on
+the Calculus BC exam.
+The department grants a Physics 50 waiver to any student scoring 3 or better on Part
+1 of the Physics C exam. We grant a Physics 51 waiver to any student scoring 3 or
+better on Part 2 of this exam.
+Since they are accepted as equivalents to GE courses, credit toward the 14-unit science
+requirement will be given for the Physics B exam or the Chemistry AP exam, to students
+who are not also counting a substantially similar course toward the BSCS science requirement.
+Neither of these exams may be used to satisfy the 5-unit science requirement, or the
+additional science course BSCS requirement in effect before Fall 2014.
+modified, April 2020
+Can lower-division courses I have taken at other institutions count toward the BSCS
+degree? If so, will they be recorded on MySJSU?
+The university maintains a list of articulation agreements for SJSU courses. If an
+SJSU course is articulated with a course at another institution, then this latter
+course is automatically accepted in place of the SJSU course with which it is articulated.
+You may view the university's list of articulated courses either
+sorted by college
+or
+sorted by subject
+.
+Statewide information regarding transfers and transfer credit is available at
+http://www.assist.org/
+.
+In addition to articulated courses, lower-division courses that are substantially
+similar to CS courses at SJSU may be used to satisfy major requirements.
+However to make sure that university officials know which BSCS requirements you have
+satisfied, and to make sure that your course instructors know that you have met course
+prerequisites, you need to meet with an advisor to make sure that your prior coursework
+gets recorded properly.  The best time to do this is at your Transfer Orientation
+session.
+Make sure you bring:
+1 - transcripts showing all work you are attempting to transfer toward the BSCS (unofficial
+transcripts are fine, but make sure that each one includes your name or other information
+that identifies the transcript as yours), and
+2 - catalog information (in the English language if at all possible) from the schools
+and years when and where you took the courses you are trying to transfer. Your advisor
+MIGHT be satisfied with looking at the school's web site, or at course green sheets,
+outlines, or syllabi.
+If you have transfer courses that count toward the BSCS, you and your advisor will
+fill out a
+Course Equivalency Form [pdf]
+. It's this form that you can use to demonstrate to instructors of your first semester's
+classes that you have the appropriate prerequisites.
+The course equivalency form is not appropriate for General Education courses. GE courses
+taken elsewhere are approved by
+a separate process [pdf]
+.
+Courses that are articulated with SJSU courses will appear on MySJSU with an indication
+of the articulated SJSU course once the transcript is posted on MySJSU. This may take
+as long as a semester. The articulation will then be considered  in the computation
+of how many of your graduation requirements you have met.
+modified, April 2020
+Can I use courses taken elsewhere to satisfy upper-division BSCS requirements at SJSU?
+In general
+Upper-division courses that were taken at a UC or CSU before entering the CS major,
+and that closely match SJSU courses allowable for that major, may be used to waive
+the corresponding SJSU BSCS requirements.
+A lower division linear algebra course is likely to be accepted for waiver of the
+Math 129A requirement. A combined course in linear algebra and differential equations
+of at least 5 semester units is likely to be accepted for waiver of the Math 129A
+requirement.
+For current CS majors, waiver of upper-division courses by coursework taken elsewhere
+while a student is a CS major at SJSU must be approved IN ADVANCE by the department.
+This includes courses taken at SJSU outside the CS department.
+In rare cases, a lower-division course taken at a topnotch institution before a student
+enters the CS major at SJSU may be used to waive an upper-division BSCS requirement
+at SJSU.
+Otherwise, waivers or substitutions for upper-division BSCS requirements are very
+unlikely to be approved.
+Notes
+Note that waiving a requirement is not the same thing as substituting one course for
+another. Using a lower-division course to waive an upper-division course means you
+have satisfied the upper division requirement with a lower division course. It does
+not mean that you get credit for the upper division units. In particular, the courses
+that you use for "Support for the Major" and "Requirements in the Major" must still
+include
+the proper number of units
+of upper division mathematics and computer science coursework, excluding CS 100W
+and CS 110L.
+To make sure that equivalent courses are credited toward your BSCS, you should follow
+the procedure described in the previous question.
+Upper-division GE courses (SJSU studies courses) generally need to be taken at SJSU.
+The one exception to this policy is detailed in the discussion of CS 100W in the answer
+to the question on SJSU studies.
+modified, April 2020
+Questions about entering the CS major or minor
+How can I change my major to computer science?
+Entry into the CS major at SJSU is now competitive. The rules for applying to
+change your major to computer science
+are given on the CS department's web site. They apply to students seeking a double
+major and students returning who were not in good standing in the major or the university
+when they left, as well as to students seeking to change their only major.
+Note that if you take CS courses in the hopes of being admitted to the major, and
+are not admitted, you will have a very good start toward the CS minor.
+modified, January 2018
+How do I go about getting a minor in computer science?
+You must meet the following requirements before you can declare a CS minor:
+SJSU Cumulative GPA of 2.7 or better.
+Complete the following courses with a B- or better average and with a grade of C or
+better in each:
+1. Math 42.
+2. CS 46A (or equivalent course in Java).
+More Information
+If you are interested in declaring a CS minor, it's wise to see the
+Computer Science Minor advisor
+.
+The
+requirements for the computer science minor
+are listed on the Computer Science department web site.
+If you cannot preregister for a class, there is space available in the class, and
+you have the prerequisites for the class, most CS instructors will be happy to add
+you to their class. However during some semesters many or most classes are full by
+the first day of instruction, and you may not be able to add the courses you need.
+So there's a significant chance that even students who complete the first few classes
+for their minor will not be able to get the remaining classes.  This means that your
+progress toward the minor may be halted at any point, and you should be aware of this
+possibility before beginning the coursework toward the CS minor.
+If you cannot complete your CS minor, submit
+this form [pdf]
+to drop the minor.
+modified, October, 2024
+What is disqualification from the university?  How does it differ from disqualification
+from the major?  Can I get back into the major after I have been disqualified?  What
+is academic probation?
+An undergraduate student whose SJSU GPA falls too far below 2.0 is subject to disqualification
+from the university. The university's policy on
+disqualification
+is given in the university catalog.  If you are disqualified from SJSU, then you
+are no longer enrolled at SJSU, although you may petition for reinstatement.  Disqualified
+students are eligible to take courses through
+Open University
+.
+For information about petitioning for reinstatement, check the
+Office of the Registrar
+. The university's policy on
+reinstatement
+is given in the university catalog.
+Reinstatement is not automatic.  Petitioners generally need to demonstrate that they
+are capable of succeeding in university level work.  Except for the occasional hardship
+case, this is done simply by raising one's SJSU GPA back to 2.0.
+Note that if you are disqualified from the university, then you are no longer enrolled
+in any major. If you become eligible for reinstatement, you must reapply to the university.
+You may reapply in a different major than your original major. Reinstatement into
+the computer science major for disqualified students is subject to the same
+requirements
+as for ordinary changes of major, and is very unlikely to be possible.
+Academic probation
+is a first step toward disqualification from the university. The relevant SJSU policy
+is given in the university catalog.  Every semester, a registration hold is placed
+on all students on academic probation.  For information about removing this hold,
+and for general advising information related to probation, see the question on removing
+advising and probation holds.
+Effective Fall 2014, Computer Science majors are now subject to disqualification from
+the major and probation in the major.  The
+policy
+in both cases is that of the College of Science.  The university policy on
+disqualification
+from the major is given in the university catalog.  Again, reinstatement into the
+computer science major for disqualified students is subject to the same
+requirements
+as for ordinary changes of major, and is very unlikely to be possible.
+somewhat modified, June 2022
+Questions about particular courses or groups of courses
+Are there any General Education requirements that are satisfied automatically by the
+major?
+Yes. The calculus courses in the major cover Area B4.  Areas Z and V of
+SJSU Studies
+are also covered with the required courses CS 100W  (Technical Writing Workshop)
+and Phil 134 (Computers, Ethics, and Society).
+For more information about Core GE, SJSU studies, and the General Education requirements,
+check the
+Schedule of Classes
+(in the online version, select the appropriate semester's Policies, and Procedures,
+and then follow the General Education (GE) link).  Or see a
+CoS-SSC advisor
+.
+somewhat modified, April 2025
+What is Phil 134?
+Phil 134 (Computers, Ethics, and Society) is a General Education course that satisfies
+the Area V  requirement.  It was designed specifically for Computer Science majors,
+and focuses on the ethics and social impact of computing.
+See the following question for information about substitutions for Phil 134.
+somewhat modified, August 2015
+What is SJSU Studies?
+SJSU Studies is the advanced portion of General Education.  It consists of four requirements
+-- one course each from Areas R, S, V, and Z. Two requirements are met by BSCS Support
+Courses -- the Area Z requirement is met by CS 100W  (Technical Writing Workshop)
+and the Area V requirement is met by Phil 134 (Computers, Ethics, and Society).
+Students using requirements in effect before Fall 2014 may use certain courses to
+satisfy both the "additional science requirement" and the Area R requirement -- many
+students have taken advantage of this double counting.
+Note that Phil 134 is specifically a course in the ethics and social impact of computing.
+No substitute course is available at SJSU. If you are a second baccalaureate student,
+you will still need to satisfy this requirement, even though you are exempt from all
+GE requirements. On the other hand, if your degree is from another institution and
+you've already taken a course or courses with significant coverage of the ethics and
+social impact of computing, you may be able to waive the Phil 134 requirement. However
+in this case, you will still need to satisfy the Area V requirement (unless you are
+a second baccalaureate student).
+All SJSU studies courses officially require completion of
+Core GE
+and successful completion of the
+Writing Skills Test (WST)
+(or an exemption from 100W).  Many SJSU Studies courses have 100W as at least a corequisite.
+The university expects you to take the WST in the semester in which you achieve 75
+earned units (counting no more than 70 community college units). The
+SJSU Advising Hub
+gives suggestions on what you can do if you cannot pass the WST.
+For the BSCS, a sufficiently high score on the WST will exempt you from the 100W requirement.
+The only other exemption that is routinely granted by the CS department is for students
+who passed an appropriate 100W course while enrolled as a math or science or engineering
+major. However note that for BSCS students, Engr 100W may count only toward Area Z,
+and not toward Area R.
+Sometimes the department will waive the CS 100W requirement for second baccalaureate
+or other transfer students based on upper-division writing courses taken at other
+institutions. Almost always in these cases the Area Z requirement is also waived by
+the university, although there is no guarantee that this will happen. Occasionally,
+if the other institution's course is not a technical writing course, the Area Z requirement
+is waived for a student but the CS 100W requirement is not.
+For more information about General Education requirements, or the related but distinct
+American Institutions requirements, check the
+Schedule of Classes
+. Select the Policies and Procedures, and the General Education (GE) links. Or see
+.
+somewhat modified, August 2015
+What is the difference between the calculus courses Math 30 and Math 30P?  What are
+Math 19, Math 19W, Math 30W, Math 31W, and Math 32W?
+Math 30P is an alternate entry point into the traditional calculus sequence of Math
+30, 31, and 32. In other words, either version of Calculus I, Math 30 or Math 30P,
+may be used as a prerequisite for Math 31, provided that you get a C- or better in
+the course that you take. Math 30P is 5 units and Math 30 is 3 units. This difference
+stems from the fact that Math 30P contains some precalculus material.
+Math 19 is a traditional precalculus course.  Math 19W, 30W, 31W, and 32W are workshop
+courses that have been developed to help increase student success in precalculus and
+calculus..
+modified, April 2020
+How do I know whether I have satisfied the language prerequisite for CS 46B (or 49J
+or 146 or 151)?
+If you took CS 46A at SJSU, you have satisfied the language prerequisite for CS 46B.
+If you took CS 46B at SJSU, you have satisfied the language prerequisite for both
+CS 146 and 151.  If you took CS 49J at SJSU, you have satisfied the language prerequisite
+for both CS 146 and CS 151.  If you took CS 46A at SJSU, you should not take CS 49J.
+If you haven't satisfied one of these language prerequisites by taking an SJSU course,
+you should have learned at your initial CS advising session whether you have satisfied
+these prerequisites.
+For more information, please check out the
+Java Language Requirement flowcharts [pdf]
+.
+slightly modified, April 2025
+Does the department offer courses on current computing topics?
+Yes, the department offers CS 85C and CS 185C.
+Most CS 85C and CS 185C courses will count as CS electives.  Normally only one BSCS
+elective may be satisfied in this way.
+If you take CS 85C, you are still responsible for taking the right number of upper-division
+units in math and CS courses.
+modified, April 2020
+Questions about courses in general
+Can I make substitutions for courses in the BSCS program?
+In some cases, yes, with approval from an advisor (subject to approval by the department's
+undergraduate coordinator
+).
+For lower-division courses, many substitutions are accepted automatically based on
+articulation with SJSU courses, many have been approved in advance by the CS department,
+and many are approved after consultation with an advisor.
+See the question on
+SJSU Studies
+for information about substitutions for CS 100W and Phil 134.  See the question on
+Engineering courses
+regarding courses taken from the SJSU College of Engineering.  See the question on
+transferring upper-division courses
+for information on other upper-division courses.  See the question on
+credit by examination
+for the current policy on this issue.
+Graduate courses are never approved automatically for BSCS requirements, but they
+are allowed under certain circumstances.
+Substitutions based on extension courses or work experience are rarely approved.
+somewhat modified, June 2016
+Can I take a course without having taken the prerequisite courses?
+This is really two questions:  (a) Can I take a course ..., and (b) Should I take
+a course ...
+In the vast majority of cases, the answer to (b) is "no". The department recognizes
+that there are rare cases in which a student is prepared for a course without having
+taken the official prerequisite courses. Thus the department allows instructors to
+admit such students at their discretion. These courses can be recognized in the catalog
+by a phrase like "or instructor consent" in the list of prerequisites. So the answer
+to (a) is technically "yes, if you get the consent of the instructor".
+modified, October 1995
+When and how can I drop classes?  When and how can I add classes?
+University policy S09-7 [pdf]
+states that for a student to drop after the first two weeks, there must be serious
+and compelling reasons.  In the last 20% of the semester, exceptions are granted only
+if these serious and compelling reasons are beyond your control.
+The policy also establishes a limit on the number of course units that can be dropped
+between the drop deadline and the last 20% of the semester.  This limit is 18 units
+for undergraduate students, 12 units for postbaccalaureate students, and 9 units for
+graduate students. Units dropped based on the granting of an exception do not count
+toward these limits.
+More specific information about registration issues, including course adds and drops,
+is available through the
+Schedule of Classes
+(start by following the Policies and Procedures and Registration links).
+modified, June 2012
+Is there a way of retaking a course to improve my grade?  If so, how does it work?
+SJSU has a provision for "grade forgiveness", allowing undergraduate students to retake
+an undergraduate course to improve their grade in the course. Constraints on the use
+of
+grade forgiveness
+can be found in the university catalog.
+A course may be repeated with grade forgiveness only once. As for any other repeated
+course (that is not designated as "repeatable for credit"), the original grade must
+have been less than a C. You need not petition for grade forgiveness -- it is automatic
+for students and courses that meet the conditions above.  You will need to
+petition not to use grade forgiveness
+for a given course if you are eligible to use it for the course, but don't want grade
+forgiveness. In particular, if you got a C- in a course but choose to re-enroll in
+it to improve your understanding, the university will assume that you are seeking
+grade forgiveness unless you petition otherwise.
+You cannot use grade forgiveness for a class and also preregister for the class, since
+you cannot preregister for a course that you have already taken.  By department policy,
+instructors of computer science classes must give priority for adds to students who
+are not repeating the course, except that graduating seniors have highest priority
+for adds regardless of whether they have taken the course before.  Among students
+wanting to repeat the course, CS instructors must not have a policy of giving lower
+priority to students using grade forgiveness.
+If you repeat a course and do not use grade forgiveness, both grades will be counted
+in your GPA (assuming that the earlier grade was C- or below).
+You may use grade forgiveness even if you have been disqualified from the university
+(and are therefore not a registered SJSU student). In this case you will need to take
+the course through
+Open University
+.
+Repeating a course more than once requires
+special approval from the registrar's office
+, as well as the signature of the course instructor and of the department chair (or
+associate dean).
+There is also an "academic renewal" policy for disregarding work of previous semesters.
+Petitions for academic renewal are available from the
+Undergraduate Studies Office
+.
+modified,  April 2020
+Can I use a graduate course to satisfy a BSCS requirement?
+Current departmental policy is to allow this only if the student has at least a 3.0
+GPA in upper division CS courses, and receives written approval of the instructor
+and from the
+undergraduate coordinator
+prior to taking the course.
+modified, September 2024
+I think I already know the material in a particular course.  Can I get credit by examination?
+The department currently allows credit by examination only for CS 46A, and only by
+taking the Computer Science AP Exam, as required by the
+new university policy for credit by examination [pdf]
+.
+modified, June 2016
+Can I use courses taken in the College of Engineering to satisfy BSCS requirements?
+In many cases, yes, but only if you took the course while you were an engineering
+major.  For example, Engr 100W may be used to replace CS 100W if you took the former
+course while an engineering major. However note that when it comes to SJSU Studies,
+BSCS students may count Engr 100W toward Area Z only, and not toward Area R.
+A number of other courses, from several different Engineering departments, may be
+counted as equivalent to BSCS requirements or electives, by students who took these
+courses while Computer Engineering majors. A list of
+equivalent courses
+is available online. Note that this list is subject to change from semester to semester.
+If you took any of these courses while enrolled in another engineering major, they
+are likely to be approved, but you will need to consult the
+undergraduate coordinator
+to be sure.
+somewhat modified, June 2016
+Does the department offer credit for extension courses taken elsewhere?  For work
+experience?
+Since extension courses vary so widely and offerings change so frequently, it is not
+possible for us to evaluate the vast number of extension and online courses being
+offered. Therefore, it is our policy not to accept extension courses as equivalent
+to SJSU courses, unless the course is accepted in a university's CS degree program.
+Similarly, we are not equipped to give academic credit for work experience, with the
+exception of CS 190I (Internship Project).
+modified, June 2014
+Questions about certificates, programs, and resources
+Does the department offer any certificate programs?
+The department now offers a
+Basic Certificate in Cyber Security Fundamentals
+.  All of the courses in the certificate program may count toward the B.S. in Computer
+Science.  There are several lower-division prerequisites for the courses in the program,
+so it will be difficult to complete except for majors in Computer Science or a related
+area.
+An
+Advanced Certificate in Cyber Security
+is also available. This is a three-course program, two of which are graduate courses.
+The certificate in Unix System Administration is no longer being offered.
+modified, October 2015
+What CS offerings are available in software engineering?
+The Computer Science department now offers an undergraduate software project course
+(CS 161) along with the longstanding undergraduate course in software engineering
+(CS 160) and the graduate software project course (CS 240).
+Several years ago, the CS department joined with the department of Computer Engineering
+to create a
+B.S. degree in Software Engineering
+. The program is described in the university catalog. Other current information on
+the program is available at
+http://bsse.sjsu.edu/
+.
+A brief discussion of the differences between the computer science field and the software
+engineering field is given in the
+MSCS FAQ
+.
+According to the catalog descriptions of the CS and SE programs, the SE program has
+17 more units beyond the level of support courses.  Most of this 17-unit difference
+consists of hybrid GE/SE courses and 3 units are in math courses.  The rest is explained
+by GE and physical education waivers granted to the SE program.  The CS program allows
+considerably more electives than the SE program.
+modified, April 2020
+Are there internship or co-op programs for BSCS students?
+Yes. The CS department has an
+internship program
+, and BSCS students are eligible for the math department's
+Center for Applied Mathematics and Computer Science (CAMCOS)
+. The
+SJSU Career Center
+also provides support for seeking and profiting from internship opportunities.
+The department's program offers students the opportunity to earn academic credit (in
+CS 190I -- Internship Project) for work done at corporate partners of the department.
+Students must interview with and be chosen by the corporate partner.  For more information,
+consult the CS 190I course instructor.
+In a CAMCOS project, sponsors from industry and elsewhere present problems to a team
+consisting of 4 to 8 students working under a faculty supervisor. Students receive
+3 units of credit through enrollment in Math 203. Math 203 can in many cases be counted
+toward the BSCS degree; check with the
+undergraduate coordinator
+for information about particular projects.  Information about the CAMCOS projects
+available in particular semesters is publicized on the
+CAMCOS web site
+.
+Many students in the department have obtained jobs in industry on their own, and attend
+class part-time or at night. A check of this semester's schedule of classes (follow
+the direct link from the CS department web site) will show that the department makes
+an effort to schedule many courses, especially graduate and advanced undergraduate
+courses, in the evening or early in the morning.
+modified, April 2020
+What computing devices will I need as a Computer Science major?
+You will need a device with internet connectivity so that you can access the university's
+wireless network.  The network is available in every classroom.  For account or password
+information about the network, check the
+SJSUOne web site
+.
+The department does have some equipment available for loan for emergencies (e.g.,
+if your device breaks down).  The
+library
+also has some equipment available for loan.
+Some software is available through the CS club, and
+through the university
+.
+somewhat modified, June 2016
+Are there jobs available through the CS department?
+A very few jobs are available. Check with the department office or see the question
+on financial assistance in the
+FAQ for the MS program
+. Keep in mind that this discussion refers to aid available through the department,
+rather than through the university.  Also, teaching associate positions are unlikely
+to be offered to undergraduates.
+somewhat modified, August 2015
+Is there any software that is available at special rates to CS students?
+The
+CS Club web site
+often has links to such software, and to other resources as well.
+slightly modified, April 2020
+Questions about rules and requirements
+What is an advising hold? What is a probation hold?  Why do I have one? How can I
+get it removed?
+An advising hold is a mechanism by which students are prevented from registering for
+classes until they have seen an advisor.  For every semester's registration, advising
+holds are now placed on all Computer Science majors, graduate and undergraduate students
+alike.  Probation holds are registration holds for students on academic probation.
+To remove either kind of hold, see the
+advisor
+given by the instructions at the CS department web site. It is important to remove
+advising holds before the end of each semester, since you cannot count on your advisor
+being on campus between semesters.
+To the meeting with your advisor to remove an advising hold, you should bring a signed
+course equivalency form if you have one, and a filled-out advising release form. Advising
+release forms may be obtained through the CS department office in MH 208, or from
+the department's web site.
+slightly modified, April 2015
+Haven't the BSCS requirements changed recently? Which requirements should I use? How
+can I find the most up-to-date statement of the requirements?
+Deciding which requirements to use
+Within limits, you can determine which requirements to use.  You have "catalog rights"
+in your choice, meaning that you may continue to use a set of requirements even if
+the requirements change, again within limits.  The limits are that
+1. you can always use the newest requirements, and
+2. you can use any set of older requirements (from the last 10 years) as long as you
+have maintained continuous attendance between a time when they were in effect and
+the time when you graduate, and
+3. you cannot mix old and new requirements.
+The university is now maintaining the choice of
+catalog rights
+of each student, in part to make the Degree Audits on MySJSU more accurate.
+The official definition of
+continuous attendance
+(sometimes called "continuous enrollment") is given in the university catalog. For
+most students, maintaining continuous attendance means being enrolled for one semester
+(or two quarters) in each CALENDAR year.
+The conditions determining whether students need to reapply for admission after an
+absence from SJSU are not the same as for continuous attendance. You may need to reapply
+even though you have maintained continuous attendance.
+Statements of the requirements
+Since changes to degree requirements (as opposed to changes in course offerings and
+prerequisites) may change only for fall semesters, the university catalog will contain
+the most recent set of major requirements.  Some information on other changes may
+be available from MySJSU and from the department's website (including these FAQs).
+Announcements regarding experimental courses or "topics courses" (e.g., CS 85C or
+CS 185C) cannot be made in the catalog. Check the department's bulletin boards and
+web site for information on these courses.
+Relying on friends for information on official department policies has gotten students
+into trouble in the past.  The safest thing to do is to check with your
+advisor
+.
+somewhat modified, April 2025
+May I count a newly created elective? Must I follow a newly imposed prerequisite?
+The answer to the first question is yes, subject to any explicit restrictions placed
+on doing so.
+In every case, the use of electives is subject to the distributional constraint on
+electives, and the constraint on upper-division units in Math and CS courses.
+New prerequisites, on the other hand, need to go into effect uniformly for all students,
+no matter when they entered the major.
+modified, September 2024
+Who should I see if I am having trouble with department or university rules and regulations?
+Who should I see for other types of assistance?
+For assistance with Computer Science issues
+For most CS issues, you should start with the appropriate advisor, as given on the
+CS
+advising page
+.
+For more complicated CS issues, or if you have problems with your graduation, you
+may consult the
+undergraduate coordinator
+. The undergraduate coordinator has the authority to approve modifications to the
+major requirements in special cases, and to make rulings on curriculum-related matters
+in cases where the rules are unclear. If you have problems with your graduation, you
+should see the undergraduate coordinator.  On rare occasions you may need to consult
+the department chair or the graduate coordinator
+. Appointments may be made with the department chair through the CS department office
+in MH 208.
+For other assistance
+In some cases, it is possible to petition the university for waiver of university
+rules. In some cases it is not.  The web sites of the the
+office of the registrar
+and the
+Undergraduate Education Office
+provide petition forms for many of the most common cases.
+Many university facilities also stand ready to assist you, including the following:
+the College of Science Student Success Center
+,
+Peer Connections (for tutoring)
+,
+the SJSU Writing Center (for assistance with writing)
+SJSU Counseling and Psychological Services (for counseling from professionals)
+How do I apply for graduation?
+To apply for graduation, you must follow the steps outlined on
+the Office of the Registrar website.
+modified, October 2024
+When do I apply for graduation?
+This question is answered in the registrar's graduation
+Application Central
+page. The importance of priority registration and graduating senior status is discussed
+below, in the answer to What is a graduating senior?
+The
+registrar's graduation page
+is a good reference for other questions about graduation.
+modified, January 2018
+What is a graduating senior?
+By
+university policy [pdf]
+, graduating seniors are to be given priority in registration for courses that they
+need to take in order to graduate on time. In particular, they are to be given priority
+over other students for adding courses. In recent semesters, the registrar's office
+has been providing special cards to graduating seniors that they may use to identify
+themselves to instructors.
+Graduating senior status is available to students in the semester before their final
+semester, if they turn in their graduation application early enough. So you should
+apply for graduation early to ensure that you can qualify for two semesters of priority
+registration as a graduating senior.
+If you miss a university deadline for filing for priority registration and getting
+a graduating senior card, you should still file as early as you can. You may be able
+to get the card as early as you had hoped, even though there's no guarantee.
+modified, April 2020
+What are the requirements for graduation with honors?
+The requirements for graduation with honors are described in the
+CS department's section of the university catalog
+. These are departmental honors, as distinct from university honors at graduation.
+The
+Humanities Honors Program in General Education
+is not related to graduation with honors.
+slightly modified, June 2012
+Is it difficult for CS majors to get a minor in another field?
+With one exception, minors for CS majors require considerable extra coursework, since
+the BS program in CS has little or no room for free electives. This exception is the
+mathematics minor
+. The math minor requires 18 units, including Calculus 1, Calculus 2, and 9 upper-division
+units in mathematics courses.
+CS majors automatically satisfy the Calculus 1 and Calculus 2 requirement, and have
+9 qualifying lower-division units (from calculus and discrete math). Qualifying upper-division
+courses are Math 129A, Math 161A, and any of several math courses listed as BSCS electives
+in the
+BSCS requirements
+(including the crosslisted courses 143C and 143M in numerical analysis and scientific
+computing). Any of these may count toward the BSCS.
+The university regulation that minors require 12 units distinct from the major is
+also satisfied, if you take Math 129A (as opposed to a lower-division linear algebra
+course).  This is because courses in support of the major (like Math 30, 31, 42, and
+129A) do not count as major requirements for the purpose of determining 12 distinct
+units).
+So it's possible to get a math minor without taking any extra courses at all, if you
+choose your major courses carefully. In any case, the cost of a math minor is a small
+number of additional courses.
+Do be aware, when deciding which electives to take, that there is a constraint on
+electives used for the BSCS. None of the math courses that count as BSCS electives
+appear in this list.
+Also be aware that adding and changing minors are no longer automatically allowed.
+modified, April 2020
+Last Updated Sep 3, 2026

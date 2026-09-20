@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-09-20T10:32:19",
+  "files": [
+    {
+      "filename": "sjsu_fall_2026_dates_deadlines.txt",
+      "title": "Fall 2026 Dates and Deadlines (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/calendar/fall-2026.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2009,
+      "sha256": "70a0dc4cd114c88f955e4e73b8707301d71fb6b105fe9531f387d3b3d9692762"
+    },
+    {
+      "filename": "sjsu_spring_2027_dates_deadlines.txt",
+      "title": "Spring 2027 Dates and Deadlines (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/calendar/spring-2027.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2139,
+      "sha256": "08607e738f88e38629b2f43732c42945d624bf7e95d5298925f23b23ab02f73d"
+    },
+    {
+      "filename": "sjsu_bs_data_science_program.txt",
+      "title": "Bachelor of Science in Data Science (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/programs/bsds/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 1064,
+      "sha256": "3007b4f0afe5a95af2d8a8533ed1f0d6bb40419d18d4999fedaf1c85ee568c05"
+    },
+    {
+      "filename": "sjsu_late_drop_withdrawal_petitions.txt",
+      "title": "Undergraduate Late Drop and Semester Withdrawal (SJSU)",
+      "source_url": "https://www.sjsu.edu/ue/student-petitions/drops/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 1506,
+      "sha256": "5d55d31b3c1ec4360f4a224749e64b608e314b69df98e0a59f330629258edfd3"
+    },
+    {
+      "filename": "sjsu_spring_2026_registration_bulletin.txt",
+      "title": "Spring 2026 Registration Bulletin (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/faculty-staff/important-bulletins/spring-2026-registration-bulletin.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2333,
+      "sha256": "0e67553e114276cb7ce3939aa1c4f605d8893d19848e2c7dab94edefe680d752"
+    },
+    {
+      "filename": "sjsu_repeat_grade_forgiveness.txt",
+      "title": "Repeats and Grade Forgiveness (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/registration/repeat-grade-forgiveness.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2784,
+      "sha256": "a3d3470fdd161b22a6be2b72a82177d1f874f1621353613b4499c4a7b1f23635"
+    },
+    {
+      "filename": "sjsu_grade_changes.txt",
+      "title": "Grades / Grade Changes (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/academic-records/grade-changes.php",
+      "access_date": "2026-09-20",
+      "byte_size": 3411,
+      "sha256": "37d299f95bbe23514cc44131df81949db8b5b359b93922bac6578efe0e129f22"
+    },
+    {
+      "filename": "sjsu_inadmissible_repeat_faq.txt",
+      "title": "Repeats: Unauthorized/Inadmissible FAQs (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/academic-records/inadmissible-repeat.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2338,
+      "sha256": "bb9ff1df293fa6c0791ae47ec94d0c07d186ddd04724b42b3d76f1461bed96ea"
+    },
+    {
+      "filename": "sjsu_student_petitions.txt",
+      "title": "Student Petitions (SJSU Undergraduate Education)",
+      "source_url": "https://www.sjsu.edu/ue/student-petitions/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 26826,
+      "sha256": "303e28aef7ccda0e61108a4341b2e5ecaa11a48f8e0174dc92f1bbfe1e261a6b"
+    },
+    {
+      "filename": "sjsu_registration_basics.txt",
+      "title": "Registration Basics (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/registration/registration-basics/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 5032,
+      "sha256": "beaec9d1b864f2c4c9cf2de0cd0fd5213f84276b1101c8e767b41465c6ba5ffc"
+    },
+    {
+      "filename": "sjsu_enrollment_limit_waitlist.txt",
+      "title": "Enrollment Limits and Waitlist (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/registration/enrollment-limit-waitlist.php",
+      "access_date": "2026-09-20",
+      "byte_size": 4020,
+      "sha256": "c2139b441d6dea810379ae6e21daa58cb08be42cba0feaeab67ffaa813920b13"
+    },
+    {
+      "filename": "sjsu_mscs_requirements_for_graduation.txt",
+      "title": "MSCS Requirements for Graduation (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/programs/mscs/requirements-for-graduation.php",
+      "access_date": "2026-09-20",
+      "byte_size": 344,
+      "sha256": "cfdf0050fe26d5efb40438cf4dbc88f824f5edb90089649b077da3c33612d821"
+    },
+    {
+      "filename": "sjsu_mscs_program_overview.txt",
+      "title": "Master of Science in Computer Science (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/programs/mscs/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 922,
+      "sha256": "bc994a1513532b241306ce3e76a1be54d00a7722ed5757ea9097820c1ca67c61"
+    },
+    {
+      "filename": "sjsu_mscs_how_to_apply.txt",
+      "title": "MSCS How To Apply (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/programs/mscs/how-to-apply.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2113,
+      "sha256": "08d5d5a7c7b1049cc7fe1b2db1a5fdd7b0148112accb5c1707c36ab31d980fca"
+    },
+    {
+      "filename": "sjsu_mscs_faq.txt",
+      "title": "MSCS FAQ (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/programs/mscs/mscs-faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 29968,
+      "sha256": "035c3c41453fa3c531fe91e55f68617803d446d2256e0a636197f47e96d01f00"
+    },
+    {
+      "filename": "sjsu_graduate_admission_requirements.txt",
+      "title": "Graduate Admission Requirements (SJSU Admissions)",
+      "source_url": "https://www.sjsu.edu/admissions/graduate/admission-requirements/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 925,
+      "sha256": "4550243ec61a6b85e72137b6cae82ea470b145dccd5a437e99c875d109d842e6"
+    },
+    {
+      "filename": "sjsu_international_steps_to_admission.txt",
+      "title": "International Steps to Admission (SJSU Admissions)",
+      "source_url": "https://www.sjsu.edu/admissions/graduate/want-to-apply/international-steps-to-admission/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 15400,
+      "sha256": "0132e41e43f69993a1a2d85917d1de5472d071b7a183040da19aee46e9912264"
+    },
+    {
+      "filename": "sjsu_transfer_credit_faq_essc.txt",
+      "title": "Transfer Credit FAQ (SJSU Engineering Student Success Center)",
+      "source_url": "https://www.sjsu.edu/essc/undergraduate/tep/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 6860,
+      "sha256": "75bb6f6d366eb55864ae7f1f615c0668403d643c0d2f31e9f3f44b8b48c9e177"
+    },
+    {
+      "filename": "sjsu_transferring_credits.txt",
+      "title": "Transferring Credits from Other Institutions to SJSU (SJSU Office of the Registrar)",
+      "source_url": "https://www.sjsu.edu/registrar/academic-records/transfer-credit.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2636,
+      "sha256": "49dddd605564e3b09828a17671a3728a0f7c105c61492181bdbbeeaaaab498d5"
+    },
+    {
+      "filename": "sjsu_major_ge_advising.txt",
+      "title": "Major & General Education Advising (SJSU College of Science)",
+      "source_url": "https://www.sjsu.edu/science-ssc/advising/major/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 2627,
+      "sha256": "3e2cb2e13537369db5dd41dbec454c08c9881a771fd8e371de00e0902abec633"
+    },
+    {
+      "filename": "sjsu_socsci_academic_advising.txt",
+      "title": "Academic Advising (SJSU College of Social Sciences Student Success Center)",
+      "source_url": "https://www.sjsu.edu/socsci-ssc/academic-advising/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 4431,
+      "sha256": "8ff402d7485c650fc1fb097749b9e49bea47951ac2975f58decbcc6273e8fb41"
+    },
+    {
+      "filename": "sjsu_socsci_academic_notice.txt",
+      "title": "Academic Notice (SJSU College of Social Sciences Student Success Center)",
+      "source_url": "https://www.sjsu.edu/socsci-ssc/student-resources/probation-advising/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 1798,
+      "sha256": "2e0b5d295674c6cba696c1e8f2311fea7f6a76d33c078581dda98416c03fb607"
+    },
+    {
+      "filename": "sjsu_chhs_faqs.txt",
+      "title": "Frequently Asked Questions (SJSU CHHS Student Success Center)",
+      "source_url": "https://www.sjsu.edu/chhs-ssc/student-resources/faqs.php",
+      "access_date": "2026-09-20",
+      "byte_size": 8936,
+      "sha256": "376b046bbb928866c18b55d273846aac9c925a83a85e3709da343db01e3efa6e"
+    },
+    {
+      "filename": "sjsu_socsci_continued_probation.txt",
+      "title": "Continued Academic Notice (SJSU College of Social Sciences Student Success Center)",
+      "source_url": "https://www.sjsu.edu/socsci-ssc/student-resources/probation-advising/continued-probation.php",
+      "access_date": "2026-09-20",
+      "byte_size": 588,
+      "sha256": "94dee9bfb6279f573707667c348964f565f7a00daaa9990f879def6d0ecbe840"
+    },
+    {
+      "filename": "sjsu_cs_undergrad_faq.txt",
+      "title": "Undergraduate FAQ (SJSU Dept. of Computer Science)",
+      "source_url": "https://www.sjsu.edu/cs/students/undergrad-students/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 46309,
+      "sha256": "6f78c108dccd68ba0d415733cb88c9f03be27dff696ab0948f2c3338e6c90489"
+    },
+    {
+      "filename": "sjsu_comm_undergrad_faq.txt",
+      "title": "FAQ (SJSU Dept. of Communication Studies)",
+      "source_url": "https://www.sjsu.edu/comm/undergraduate/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 333,
+      "sha256": "aea9c73363f84a8cc3a874b0e85c225a800d05f32f6e26dfbb0cf2c2d6d15820"
+    },
+    {
+      "filename": "sjsu_student_petitions_faq.txt",
+      "title": "Student Petitions FAQ (SJSU Undergraduate Education)",
+      "source_url": "https://www.sjsu.edu/ue/student-petitions/faq/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 14624,
+      "sha256": "ab9eb89dd0b363513f2803dd6f9e76d1c09ee62d990eb304c18e891c4303fa4e"
+    },
+    {
+      "filename": "sjsu_ge_requirements.txt",
+      "title": "General Education Requirements (SJSU)",
+      "source_url": "https://www.sjsu.edu/general-education/ge-requirements/index.php",
+      "access_date": "2026-09-20",
+      "byte_size": 1417,
+      "sha256": "87b9d15ead7c37d6a1b1fa1a1fd5cb159aad6339ab3056d29a0bb1b7e47ebcd3"
+    },
+    {
+      "filename": "sjsu_ise_programs_faq.txt",
+      "title": "Programs FAQ (SJSU Dept. of Industrial and Systems Engineering)",
+      "source_url": "https://www.sjsu.edu/ise/programs/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 4114,
+      "sha256": "4de2191045c7b88404c8381250a43d869a683f1b7b19a2d270c68be539b65426"
+    },
+    {
+      "filename": "sjsu_lcob_advising_faq.txt",
+      "title": "Advising FAQ (SJSU Jack Holland Student Success Center, Lucas College of Business)",
+      "source_url": "https://www.sjsu.edu/lcobssc/advising/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 4479,
+      "sha256": "d9ff125cf59e81b182a466cb79690fafc73fd453234b7391c19987a56f1cb451"
+    },
+    {
+      "filename": "sjsu_lurie_ssc_faq.txt",
+      "title": "Frequently Asked Questions (SJSU Lurie College of Education Student Success Center)",
+      "source_url": "https://www2.sjsu.edu/luriessc/student-resources/frequently-asked-questions.php",
+      "access_date": "2026-09-20",
+      "byte_size": 163,
+      "sha256": "ad80273edfdae1b74e08fbc0c62a228d74a5b160b0050ff815689bdc2f095392"
+    },
+    {
+      "filename": "sjsu_new_student_faq.txt",
+      "title": "FAQ (SJSU New Student and Family Programs)",
+      "source_url": "https://www.sjsu.edu/newspartans/faq.php",
+      "access_date": "2026-09-20",
+      "byte_size": 10953,
+      "sha256": "9e3430514a137d61954dfb4b6b93d3e0bcec281b13460daee0373eec624d1735"
+    }
+  ]
+}
