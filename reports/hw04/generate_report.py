@@ -31,7 +31,7 @@ config_rows = [
                      "qwen2.5:1.5b-instruct via Ollama for generation (Part 4 answers), both "
                      "running CPU-only on the machine above, no dedicated GPU"),
     ("Repo", "https://github.com/sriram2930/Data260-1808"),
-    ("Commit tagged as hw4", "PLACEHOLDER_COMMIT_HASH"),
+    ("Commit tagged as hw4", "63d2bd2a13e423ed71d7a8414704d84da008cec5"),
 ]
 t = doc.add_table(rows=0, cols=2)
 t.style = "Table Grid"
