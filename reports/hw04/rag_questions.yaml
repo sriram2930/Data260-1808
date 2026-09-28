@@ -1,0 +1,53 @@
+# DATA-260 HW4, Part 4 -- six test questions for the grounded RAG QA system.
+# Reuses the same 32-document SJSU corpus from HW3 (Part-5/corpus/). Expected
+# facts here were already verified by hand against the corpus in HW3's
+# questions.yaml, reused here rather than re-deriving them.
+
+questions:
+  - id: q1
+    category: single_chunk
+    question: >
+      What course should a CS major with no prior computing experience take
+      instead of jumping straight into CS 46A?
+    expected_source_files: [sjsu_cs_undergrad_faq.txt]
+    expected_keywords: ["22A", "CS 22A"]
+    must_refuse: false
+
+  - id: q2
+    category: two_chunks
+    question: >
+      What cumulative GPA keeps an undergraduate off academic notice, and how
+      many years does an MSCS student have to complete their degree?
+    expected_source_files: [sjsu_socsci_academic_notice.txt, sjsu_mscs_faq.txt]
+    expected_keywords: ["2.0", "7 years", "seven years"]
+    must_refuse: false
+
+  - id: q3
+    category: similar_across_docs
+    question: >
+      Roughly how far before a semester starts does a student's enrollment
+      appointment get posted on MySJSU?
+    expected_source_files: [sjsu_registration_basics.txt, sjsu_chhs_faqs.txt]
+    expected_keywords: ["three months", "3 months"]
+    must_refuse: false
+
+  - id: q4
+    category: ambiguous
+    question: "What are the requirements?"
+    expected_source_files: []
+    expected_keywords: []
+    must_refuse: false
+
+  - id: q5
+    category: not_in_documents
+    question: "What is the price of a parking permit at SJSU?"
+    expected_source_files: []
+    expected_keywords: []
+    must_refuse: true
+
+  - id: q6
+    category: unrelated
+    question: "What is a good recipe for chocolate chip cookies?"
+    expected_source_files: []
+    expected_keywords: []
+    must_refuse: true

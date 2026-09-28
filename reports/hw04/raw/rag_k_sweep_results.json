@@ -1,0 +1,29 @@
+[
+  {
+    "k": 1,
+    "answer": "An undergraduate is placed on academic notice if their cumulative GPA falls below 2.0. An MSCS student generally has five years to complete their degree.",
+    "chunks_retrieved": 1,
+    "chunks_used_after_curation": 1,
+    "irrelevant_chunks_in_top_k": 0,
+    "correct_answer": true,
+    "latency_ms": 8985.8
+  },
+  {
+    "k": 3,
+    "answer": "An undergraduate student is placed on academic notice if their cumulative GPA falls below 2.0. An MSCS student must complete their degree within 4 years.",
+    "chunks_retrieved": 3,
+    "chunks_used_after_curation": 3,
+    "irrelevant_chunks_in_top_k": 0,
+    "correct_answer": true,
+    "latency_ms": 14200.3
+  },
+  {
+    "k": 5,
+    "answer": "An undergraduate student is placed on academic notice if their SJSU cumulative GPA falls below 2.0. MSCS students must complete a minimum of four years of undergraduate education to graduate.",
+    "chunks_retrieved": 5,
+    "chunks_used_after_curation": 5,
+    "irrelevant_chunks_in_top_k": 0,
+    "correct_answer": true,
+    "latency_ms": 22162.3
+  }
+]

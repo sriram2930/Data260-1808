@@ -1,0 +1,5 @@
+{
+  "accuracy": 0.778,
+  "faithfulness_grounded_rate": 0.0,
+  "refusal_correctness_rate": 0.778
+}
