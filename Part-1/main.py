@@ -29,17 +29,31 @@ from pathlib import Path
 from typing import Optional
 
 from fastapi import FastAPI, Form, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
+import api_auth
+import api_courses
 import auth
 
 HERE = Path(__file__).parent
 PORT_BASE = 8008
 
 app = FastAPI(title="Campus Course Catalogue & Enrolment")
+
+# The React dev server (Vite, HW4 Part-6) runs on a different origin, and it
+# needs to send/receive the session cookie, hence allow_credentials=True with
+# an explicit origin list rather than "*" (which allow_credentials forbids).
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Session cookie: signed (SessionMiddleware always sends HttpOnly), Secure so
 # it's only sent back over HTTPS (Chrome/Edge treat localhost as a secure
@@ -56,6 +70,8 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(api_auth.router)
+app.include_router(api_courses.router)
 app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 templates = Jinja2Templates(directory=str(HERE / "templates"))
 
