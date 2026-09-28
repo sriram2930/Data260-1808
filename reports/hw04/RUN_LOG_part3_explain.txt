@@ -1,0 +1,42 @@
+Query: SELECT * FROM courses WHERE department = 'Data Science & AI'
+(1257 matching rows out of 5000 total courses)
+
+=== EXPLAIN before index ===
+  id: 1
+  select_type: SIMPLE
+  table: courses
+  partitions: None
+  type: ALL
+  possible_keys: None
+  key: None
+  key_len: None
+  ref: None
+  rows: 5070
+  filtered: 10.0
+  Extra: Using where
+
+Creating index ix_courses_department on courses(department)...
+=== EXPLAIN after index ===
+  id: 1
+  select_type: SIMPLE
+  table: courses
+  partitions: None
+  type: ref
+  possible_keys: ix_courses_department
+  key: ix_courses_department
+  key_len: 259
+  ref: const
+  rows: 1257
+  filtered: 100.0
+  Extra: None
+
+=== What changed ===
+type: ALL -> ref
+key: None -> ix_courses_department
+rows (estimated scanned): 5070 -> 1257
+
+Before: no usable index on department, so MySQL does a full table
+scan (type=ALL) across all 5000 rows and filters each one in memory.
+After: the new index lets it jump straight to matching rows (type=ref),
+scanning roughly just the 1257 rows that actually match instead of
+all 5000.

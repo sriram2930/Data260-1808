@@ -1,0 +1,50 @@
+[
+  {
+    "page_size": 10,
+    "version": "naive",
+    "sql_stmts_per_req": 11,
+    "p50_ms": 2072.75,
+    "p95_ms": 2105.45,
+    "p99_ms": 2119.57
+  },
+  {
+    "page_size": 10,
+    "version": "fixed",
+    "sql_stmts_per_req": 1,
+    "p50_ms": 2043.77,
+    "p95_ms": 2058.61,
+    "p99_ms": 2066.52
+  },
+  {
+    "page_size": 50,
+    "version": "naive",
+    "sql_stmts_per_req": 51,
+    "p50_ms": 2173.87,
+    "p95_ms": 2197.92,
+    "p99_ms": 2213.18
+  },
+  {
+    "page_size": 50,
+    "version": "fixed",
+    "sql_stmts_per_req": 1,
+    "p50_ms": 2050.82,
+    "p95_ms": 2064.7,
+    "p99_ms": 2065.87
+  },
+  {
+    "page_size": 200,
+    "version": "naive",
+    "sql_stmts_per_req": 201,
+    "p50_ms": 2552.57,
+    "p95_ms": 2636.69,
+    "p99_ms": 2644.59
+  },
+  {
+    "page_size": 200,
+    "version": "fixed",
+    "sql_stmts_per_req": 1,
+    "p50_ms": 2059.02,
+    "p95_ms": 2079.75,
+    "p99_ms": 2097.28
+  }
+]

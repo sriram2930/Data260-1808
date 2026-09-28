@@ -13,9 +13,10 @@ the box for local dev without needing a .env file.
 
 from __future__ import annotations
 
+import contextvars
 import os
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, event
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 MYSQL_HOST = os.environ.get("MYSQL_HOST", "127.0.0.1")
@@ -44,3 +45,25 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+# --- Per-request SQL query counter (HW4, Part 3: N+1 measurement) ---------
+# A ContextVar rather than a plain global so concurrent requests (FastAPI
+# runs sync route functions in a threadpool, and Starlette copies the
+# context into each thread) don't stomp on each other's counts.
+_query_count_var: contextvars.ContextVar[int] = contextvars.ContextVar(
+    "query_count", default=0
+)
+
+
+@event.listens_for(engine, "before_cursor_execute")
+def _count_query(conn, cursor, statement, parameters, context, executemany):
+    _query_count_var.set(_query_count_var.get() + 1)
+
+
+def reset_query_count() -> None:
+    _query_count_var.set(0)
+
+
+def get_query_count() -> int:
+    return _query_count_var.get()

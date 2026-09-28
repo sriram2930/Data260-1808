@@ -1,0 +1,204 @@
+=== DATA-260 HW4 Part 3 N+1 experiment started 2026-09-28 10:12:12 ===
+3 page sizes x 2 versions x 30 requests = 180 total requests
+
+--- page_size=10 version=naive ---
+  run 1/30: sql_query_count=11 latency=2081.618ms
+  run 2/30: sql_query_count=11 latency=2094.668ms
+  run 3/30: sql_query_count=11 latency=2071.22ms
+  run 4/30: sql_query_count=11 latency=2079.813ms
+  run 5/30: sql_query_count=11 latency=2067.357ms
+  run 6/30: sql_query_count=11 latency=2077.154ms
+  run 7/30: sql_query_count=11 latency=2073.369ms
+  run 8/30: sql_query_count=11 latency=2064.74ms
+  run 9/30: sql_query_count=11 latency=2086.501ms
+  run 10/30: sql_query_count=11 latency=2080.711ms
+  run 11/30: sql_query_count=11 latency=2056.513ms
+  run 12/30: sql_query_count=11 latency=2080.979ms
+  run 13/30: sql_query_count=11 latency=2105.455ms
+  run 14/30: sql_query_count=11 latency=2119.575ms
+  run 15/30: sql_query_count=11 latency=2063.759ms
+  run 16/30: sql_query_count=11 latency=2074.472ms
+  run 17/30: sql_query_count=11 latency=2087.607ms
+  run 18/30: sql_query_count=11 latency=2088.973ms
+  run 19/30: sql_query_count=11 latency=2069.557ms
+  run 20/30: sql_query_count=11 latency=2079.809ms
+  run 21/30: sql_query_count=11 latency=2060.302ms
+  run 22/30: sql_query_count=11 latency=2068.868ms
+  run 23/30: sql_query_count=11 latency=2062.083ms
+  run 24/30: sql_query_count=11 latency=2072.96ms
+  run 25/30: sql_query_count=11 latency=2069.839ms
+  run 26/30: sql_query_count=11 latency=2067.676ms
+  run 27/30: sql_query_count=11 latency=2050.897ms
+  run 28/30: sql_query_count=11 latency=2072.748ms
+  run 29/30: sql_query_count=11 latency=2072.227ms
+  run 30/30: sql_query_count=11 latency=2069.655ms
+--- page_size=10 version=fixed ---
+  run 1/30: sql_query_count=1 latency=2041.461ms
+  run 2/30: sql_query_count=1 latency=2049.827ms
+  run 3/30: sql_query_count=1 latency=2040.809ms
+  run 4/30: sql_query_count=1 latency=2043.767ms
+  run 5/30: sql_query_count=1 latency=2047.052ms
+  run 6/30: sql_query_count=1 latency=2045.594ms
+  run 7/30: sql_query_count=1 latency=2049.379ms
+  run 8/30: sql_query_count=1 latency=2026.607ms
+  run 9/30: sql_query_count=1 latency=2033.733ms
+  run 10/30: sql_query_count=1 latency=2043.681ms
+  run 11/30: sql_query_count=1 latency=2053.343ms
+  run 12/30: sql_query_count=1 latency=2045.241ms
+  run 13/30: sql_query_count=1 latency=2034.593ms
+  run 14/30: sql_query_count=1 latency=2041.289ms
+  run 15/30: sql_query_count=1 latency=2035.331ms
+  run 16/30: sql_query_count=1 latency=2041.263ms
+  run 17/30: sql_query_count=1 latency=2045.253ms
+  run 18/30: sql_query_count=1 latency=2053.921ms
+  run 19/30: sql_query_count=1 latency=2053.044ms
+  run 20/30: sql_query_count=1 latency=2037.458ms
+  run 21/30: sql_query_count=1 latency=2029.503ms
+  run 22/30: sql_query_count=1 latency=2054.742ms
+  run 23/30: sql_query_count=1 latency=2034.665ms
+  run 24/30: sql_query_count=1 latency=2050.372ms
+  run 25/30: sql_query_count=1 latency=2042.286ms
+  run 26/30: sql_query_count=1 latency=2037.869ms
+  run 27/30: sql_query_count=1 latency=2056.864ms
+  run 28/30: sql_query_count=1 latency=2058.615ms
+  run 29/30: sql_query_count=1 latency=2066.519ms
+  run 30/30: sql_query_count=1 latency=2050.767ms
+--- page_size=50 version=naive ---
+  run 1/30: sql_query_count=51 latency=2181.786ms
+  run 2/30: sql_query_count=51 latency=2147.684ms
+  run 3/30: sql_query_count=51 latency=2159.591ms
+  run 4/30: sql_query_count=51 latency=2213.184ms
+  run 5/30: sql_query_count=51 latency=2193.16ms
+  run 6/30: sql_query_count=51 latency=2192.344ms
+  run 7/30: sql_query_count=51 latency=2162.964ms
+  run 8/30: sql_query_count=51 latency=2156.553ms
+  run 9/30: sql_query_count=51 latency=2147.406ms
+  run 10/30: sql_query_count=51 latency=2179.976ms
+  run 11/30: sql_query_count=51 latency=2168.952ms
+  run 12/30: sql_query_count=51 latency=2142.937ms
+  run 13/30: sql_query_count=51 latency=2147.254ms
+  run 14/30: sql_query_count=51 latency=2162.543ms
+  run 15/30: sql_query_count=51 latency=2177.175ms
+  run 16/30: sql_query_count=51 latency=2139.976ms
+  run 17/30: sql_query_count=51 latency=2197.922ms
+  run 18/30: sql_query_count=51 latency=2173.867ms
+  run 19/30: sql_query_count=51 latency=2193.4ms
+  run 20/30: sql_query_count=51 latency=2154.285ms
+  run 21/30: sql_query_count=51 latency=2197.056ms
+  run 22/30: sql_query_count=51 latency=2136.06ms
+  run 23/30: sql_query_count=51 latency=2157.216ms
+  run 24/30: sql_query_count=51 latency=2154.5ms
+  run 25/30: sql_query_count=51 latency=2185.171ms
+  run 26/30: sql_query_count=51 latency=2179.848ms
+  run 27/30: sql_query_count=51 latency=2174.701ms
+  run 28/30: sql_query_count=51 latency=2174.716ms
+  run 29/30: sql_query_count=51 latency=2190.977ms
+  run 30/30: sql_query_count=51 latency=2187.245ms
+--- page_size=50 version=fixed ---
+  run 1/30: sql_query_count=1 latency=2064.696ms
+  run 2/30: sql_query_count=1 latency=2046.402ms
+  run 3/30: sql_query_count=1 latency=2059.425ms
+  run 4/30: sql_query_count=1 latency=2048.023ms
+  run 5/30: sql_query_count=1 latency=2039.038ms
+  run 6/30: sql_query_count=1 latency=2048.84ms
+  run 7/30: sql_query_count=1 latency=2056.567ms
+  run 8/30: sql_query_count=1 latency=2046.367ms
+  run 9/30: sql_query_count=1 latency=2051.327ms
+  run 10/30: sql_query_count=1 latency=2060.762ms
+  run 11/30: sql_query_count=1 latency=2063.833ms
+  run 12/30: sql_query_count=1 latency=2052.724ms
+  run 13/30: sql_query_count=1 latency=2051.677ms
+  run 14/30: sql_query_count=1 latency=2042.988ms
+  run 15/30: sql_query_count=1 latency=2051.547ms
+  run 16/30: sql_query_count=1 latency=2033.298ms
+  run 17/30: sql_query_count=1 latency=2045.355ms
+  run 18/30: sql_query_count=1 latency=2065.871ms
+  run 19/30: sql_query_count=1 latency=2062.686ms
+  run 20/30: sql_query_count=1 latency=2063.773ms
+  run 21/30: sql_query_count=1 latency=2053.956ms
+  run 22/30: sql_query_count=1 latency=2044.476ms
+  run 23/30: sql_query_count=1 latency=2032.51ms
+  run 24/30: sql_query_count=1 latency=2050.818ms
+  run 25/30: sql_query_count=1 latency=2057.662ms
+  run 26/30: sql_query_count=1 latency=2046.562ms
+  run 27/30: sql_query_count=1 latency=2034.278ms
+  run 28/30: sql_query_count=1 latency=2063.344ms
+  run 29/30: sql_query_count=1 latency=2042.884ms
+  run 30/30: sql_query_count=1 latency=2044.054ms
+--- page_size=200 version=naive ---
+  run 1/30: sql_query_count=201 latency=2644.585ms
+  run 2/30: sql_query_count=201 latency=2614.442ms
+  run 3/30: sql_query_count=201 latency=2552.575ms
+  run 4/30: sql_query_count=201 latency=2518.256ms
+  run 5/30: sql_query_count=201 latency=2636.687ms
+  run 6/30: sql_query_count=201 latency=2518.436ms
+  run 7/30: sql_query_count=201 latency=2511.503ms
+  run 8/30: sql_query_count=201 latency=2566.977ms
+  run 9/30: sql_query_count=201 latency=2632.309ms
+  run 10/30: sql_query_count=201 latency=2464.881ms
+  run 11/30: sql_query_count=201 latency=2562.273ms
+  run 12/30: sql_query_count=201 latency=2547.095ms
+  run 13/30: sql_query_count=201 latency=2504.035ms
+  run 14/30: sql_query_count=201 latency=2614.014ms
+  run 15/30: sql_query_count=201 latency=2599.929ms
+  run 16/30: sql_query_count=201 latency=2512.86ms
+  run 17/30: sql_query_count=201 latency=2554.375ms
+  run 18/30: sql_query_count=201 latency=2490.065ms
+  run 19/30: sql_query_count=201 latency=2531.362ms
+  run 20/30: sql_query_count=201 latency=2587.384ms
+  run 21/30: sql_query_count=201 latency=2548.912ms
+  run 22/30: sql_query_count=201 latency=2625.05ms
+  run 23/30: sql_query_count=201 latency=2559.762ms
+  run 24/30: sql_query_count=201 latency=2569.969ms
+  run 25/30: sql_query_count=201 latency=2595.453ms
+  run 26/30: sql_query_count=201 latency=2549.527ms
+  run 27/30: sql_query_count=201 latency=2564.458ms
+  run 28/30: sql_query_count=201 latency=2522.036ms
+  run 29/30: sql_query_count=201 latency=2512.072ms
+  run 30/30: sql_query_count=201 latency=2540.587ms
+--- page_size=200 version=fixed ---
+  run 1/30: sql_query_count=1 latency=2056.775ms
+  run 2/30: sql_query_count=1 latency=2073.093ms
+  run 3/30: sql_query_count=1 latency=2068.239ms
+  run 4/30: sql_query_count=1 latency=2097.277ms
+  run 5/30: sql_query_count=1 latency=2041.059ms
+  run 6/30: sql_query_count=1 latency=2057.183ms
+  run 7/30: sql_query_count=1 latency=2062.5ms
+  run 8/30: sql_query_count=1 latency=2065.878ms
+  run 9/30: sql_query_count=1 latency=2074.062ms
+  run 10/30: sql_query_count=1 latency=2051.55ms
+  run 11/30: sql_query_count=1 latency=2054.191ms
+  run 12/30: sql_query_count=1 latency=2072.075ms
+  run 13/30: sql_query_count=1 latency=2057.99ms
+  run 14/30: sql_query_count=1 latency=2058.09ms
+  run 15/30: sql_query_count=1 latency=2047.122ms
+  run 16/30: sql_query_count=1 latency=2079.754ms
+  run 17/30: sql_query_count=1 latency=2051.746ms
+  run 18/30: sql_query_count=1 latency=2056.067ms
+  run 19/30: sql_query_count=1 latency=2059.022ms
+  run 20/30: sql_query_count=1 latency=2068.835ms
+  run 21/30: sql_query_count=1 latency=2073.988ms
+  run 22/30: sql_query_count=1 latency=2062.272ms
+  run 23/30: sql_query_count=1 latency=2051.739ms
+  run 24/30: sql_query_count=1 latency=2063.745ms
+  run 25/30: sql_query_count=1 latency=2063.943ms
+  run 26/30: sql_query_count=1 latency=2071.782ms
+  run 27/30: sql_query_count=1 latency=2057.436ms
+  run 28/30: sql_query_count=1 latency=2054.598ms
+  run 29/30: sql_query_count=1 latency=2061.813ms
+  run 30/30: sql_query_count=1 latency=2051.144ms
+
+=== SUMMARY ===
+Page size  Version  SQL/req  p50 (ms)  p95 (ms)  p99 (ms)  
+10         naive    11       2072.75   2105.45   2119.57   
+10         fixed    1        2043.77   2058.61   2066.52   
+50         naive    51       2173.87   2197.92   2213.18   
+50         fixed    1        2050.82   2064.7    2065.87   
+200        naive    201      2552.57   2636.69   2644.59   
+200        fixed    1        2059.02   2079.75   2097.28   
+
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw04\raw\n1_experiment_runs.csv
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw04\raw\n1_experiment_runs.json
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw04\raw\n1_experiment_summary.json
+
+=== finished 2026-09-28 10:18:41 ===

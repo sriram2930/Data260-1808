@@ -1,0 +1,1442 @@
+[
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 1,
+    "sql_query_count": 11,
+    "latency_ms": 2081.618,
+    "started_at": "2026-09-28T10:12:14"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 2,
+    "sql_query_count": 11,
+    "latency_ms": 2094.668,
+    "started_at": "2026-09-28T10:12:16"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 3,
+    "sql_query_count": 11,
+    "latency_ms": 2071.22,
+    "started_at": "2026-09-28T10:12:18"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 4,
+    "sql_query_count": 11,
+    "latency_ms": 2079.813,
+    "started_at": "2026-09-28T10:12:20"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 5,
+    "sql_query_count": 11,
+    "latency_ms": 2067.357,
+    "started_at": "2026-09-28T10:12:23"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 6,
+    "sql_query_count": 11,
+    "latency_ms": 2077.154,
+    "started_at": "2026-09-28T10:12:25"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 7,
+    "sql_query_count": 11,
+    "latency_ms": 2073.369,
+    "started_at": "2026-09-28T10:12:27"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 8,
+    "sql_query_count": 11,
+    "latency_ms": 2064.74,
+    "started_at": "2026-09-28T10:12:29"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 9,
+    "sql_query_count": 11,
+    "latency_ms": 2086.501,
+    "started_at": "2026-09-28T10:12:31"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 10,
+    "sql_query_count": 11,
+    "latency_ms": 2080.711,
+    "started_at": "2026-09-28T10:12:33"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 11,
+    "sql_query_count": 11,
+    "latency_ms": 2056.513,
+    "started_at": "2026-09-28T10:12:35"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 12,
+    "sql_query_count": 11,
+    "latency_ms": 2080.979,
+    "started_at": "2026-09-28T10:12:37"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 13,
+    "sql_query_count": 11,
+    "latency_ms": 2105.455,
+    "started_at": "2026-09-28T10:12:39"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 14,
+    "sql_query_count": 11,
+    "latency_ms": 2119.575,
+    "started_at": "2026-09-28T10:12:41"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 15,
+    "sql_query_count": 11,
+    "latency_ms": 2063.759,
+    "started_at": "2026-09-28T10:12:43"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 16,
+    "sql_query_count": 11,
+    "latency_ms": 2074.472,
+    "started_at": "2026-09-28T10:12:45"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 17,
+    "sql_query_count": 11,
+    "latency_ms": 2087.607,
+    "started_at": "2026-09-28T10:12:48"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 18,
+    "sql_query_count": 11,
+    "latency_ms": 2088.973,
+    "started_at": "2026-09-28T10:12:50"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 19,
+    "sql_query_count": 11,
+    "latency_ms": 2069.557,
+    "started_at": "2026-09-28T10:12:52"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 20,
+    "sql_query_count": 11,
+    "latency_ms": 2079.809,
+    "started_at": "2026-09-28T10:12:54"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 21,
+    "sql_query_count": 11,
+    "latency_ms": 2060.302,
+    "started_at": "2026-09-28T10:12:56"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 22,
+    "sql_query_count": 11,
+    "latency_ms": 2068.868,
+    "started_at": "2026-09-28T10:12:58"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 23,
+    "sql_query_count": 11,
+    "latency_ms": 2062.083,
+    "started_at": "2026-09-28T10:13:00"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 24,
+    "sql_query_count": 11,
+    "latency_ms": 2072.96,
+    "started_at": "2026-09-28T10:13:02"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 25,
+    "sql_query_count": 11,
+    "latency_ms": 2069.839,
+    "started_at": "2026-09-28T10:13:04"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 26,
+    "sql_query_count": 11,
+    "latency_ms": 2067.676,
+    "started_at": "2026-09-28T10:13:06"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 27,
+    "sql_query_count": 11,
+    "latency_ms": 2050.897,
+    "started_at": "2026-09-28T10:13:08"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 28,
+    "sql_query_count": 11,
+    "latency_ms": 2072.748,
+    "started_at": "2026-09-28T10:13:10"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 29,
+    "sql_query_count": 11,
+    "latency_ms": 2072.227,
+    "started_at": "2026-09-28T10:13:12"
+  },
+  {
+    "version": "naive",
+    "page_size": 10,
+    "run_index": 30,
+    "sql_query_count": 11,
+    "latency_ms": 2069.655,
+    "started_at": "2026-09-28T10:13:14"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 1,
+    "sql_query_count": 1,
+    "latency_ms": 2041.461,
+    "started_at": "2026-09-28T10:13:16"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 2,
+    "sql_query_count": 1,
+    "latency_ms": 2049.827,
+    "started_at": "2026-09-28T10:13:19"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 3,
+    "sql_query_count": 1,
+    "latency_ms": 2040.809,
+    "started_at": "2026-09-28T10:13:21"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 4,
+    "sql_query_count": 1,
+    "latency_ms": 2043.767,
+    "started_at": "2026-09-28T10:13:23"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 5,
+    "sql_query_count": 1,
+    "latency_ms": 2047.052,
+    "started_at": "2026-09-28T10:13:25"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 6,
+    "sql_query_count": 1,
+    "latency_ms": 2045.594,
+    "started_at": "2026-09-28T10:13:27"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 7,
+    "sql_query_count": 1,
+    "latency_ms": 2049.379,
+    "started_at": "2026-09-28T10:13:29"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 8,
+    "sql_query_count": 1,
+    "latency_ms": 2026.607,
+    "started_at": "2026-09-28T10:13:31"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 9,
+    "sql_query_count": 1,
+    "latency_ms": 2033.733,
+    "started_at": "2026-09-28T10:13:33"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 10,
+    "sql_query_count": 1,
+    "latency_ms": 2043.681,
+    "started_at": "2026-09-28T10:13:35"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 11,
+    "sql_query_count": 1,
+    "latency_ms": 2053.343,
+    "started_at": "2026-09-28T10:13:37"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 12,
+    "sql_query_count": 1,
+    "latency_ms": 2045.241,
+    "started_at": "2026-09-28T10:13:39"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 13,
+    "sql_query_count": 1,
+    "latency_ms": 2034.593,
+    "started_at": "2026-09-28T10:13:41"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 14,
+    "sql_query_count": 1,
+    "latency_ms": 2041.289,
+    "started_at": "2026-09-28T10:13:43"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 15,
+    "sql_query_count": 1,
+    "latency_ms": 2035.331,
+    "started_at": "2026-09-28T10:13:45"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 16,
+    "sql_query_count": 1,
+    "latency_ms": 2041.263,
+    "started_at": "2026-09-28T10:13:47"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 17,
+    "sql_query_count": 1,
+    "latency_ms": 2045.253,
+    "started_at": "2026-09-28T10:13:49"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 18,
+    "sql_query_count": 1,
+    "latency_ms": 2053.921,
+    "started_at": "2026-09-28T10:13:51"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 19,
+    "sql_query_count": 1,
+    "latency_ms": 2053.044,
+    "started_at": "2026-09-28T10:13:53"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 20,
+    "sql_query_count": 1,
+    "latency_ms": 2037.458,
+    "started_at": "2026-09-28T10:13:55"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 21,
+    "sql_query_count": 1,
+    "latency_ms": 2029.503,
+    "started_at": "2026-09-28T10:13:57"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 22,
+    "sql_query_count": 1,
+    "latency_ms": 2054.742,
+    "started_at": "2026-09-28T10:13:59"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 23,
+    "sql_query_count": 1,
+    "latency_ms": 2034.665,
+    "started_at": "2026-09-28T10:14:01"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 24,
+    "sql_query_count": 1,
+    "latency_ms": 2050.372,
+    "started_at": "2026-09-28T10:14:03"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 25,
+    "sql_query_count": 1,
+    "latency_ms": 2042.286,
+    "started_at": "2026-09-28T10:14:06"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 26,
+    "sql_query_count": 1,
+    "latency_ms": 2037.869,
+    "started_at": "2026-09-28T10:14:08"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 27,
+    "sql_query_count": 1,
+    "latency_ms": 2056.864,
+    "started_at": "2026-09-28T10:14:10"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 28,
+    "sql_query_count": 1,
+    "latency_ms": 2058.615,
+    "started_at": "2026-09-28T10:14:12"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 29,
+    "sql_query_count": 1,
+    "latency_ms": 2066.519,
+    "started_at": "2026-09-28T10:14:14"
+  },
+  {
+    "version": "fixed",
+    "page_size": 10,
+    "run_index": 30,
+    "sql_query_count": 1,
+    "latency_ms": 2050.767,
+    "started_at": "2026-09-28T10:14:16"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 1,
+    "sql_query_count": 51,
+    "latency_ms": 2181.786,
+    "started_at": "2026-09-28T10:14:18"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 2,
+    "sql_query_count": 51,
+    "latency_ms": 2147.684,
+    "started_at": "2026-09-28T10:14:20"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 3,
+    "sql_query_count": 51,
+    "latency_ms": 2159.591,
+    "started_at": "2026-09-28T10:14:22"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 4,
+    "sql_query_count": 51,
+    "latency_ms": 2213.184,
+    "started_at": "2026-09-28T10:14:24"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 5,
+    "sql_query_count": 51,
+    "latency_ms": 2193.16,
+    "started_at": "2026-09-28T10:14:27"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 6,
+    "sql_query_count": 51,
+    "latency_ms": 2192.344,
+    "started_at": "2026-09-28T10:14:29"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 7,
+    "sql_query_count": 51,
+    "latency_ms": 2162.964,
+    "started_at": "2026-09-28T10:14:31"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 8,
+    "sql_query_count": 51,
+    "latency_ms": 2156.553,
+    "started_at": "2026-09-28T10:14:33"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 9,
+    "sql_query_count": 51,
+    "latency_ms": 2147.406,
+    "started_at": "2026-09-28T10:14:35"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 10,
+    "sql_query_count": 51,
+    "latency_ms": 2179.976,
+    "started_at": "2026-09-28T10:14:38"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 11,
+    "sql_query_count": 51,
+    "latency_ms": 2168.952,
+    "started_at": "2026-09-28T10:14:40"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 12,
+    "sql_query_count": 51,
+    "latency_ms": 2142.937,
+    "started_at": "2026-09-28T10:14:42"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 13,
+    "sql_query_count": 51,
+    "latency_ms": 2147.254,
+    "started_at": "2026-09-28T10:14:44"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 14,
+    "sql_query_count": 51,
+    "latency_ms": 2162.543,
+    "started_at": "2026-09-28T10:14:46"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 15,
+    "sql_query_count": 51,
+    "latency_ms": 2177.175,
+    "started_at": "2026-09-28T10:14:48"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 16,
+    "sql_query_count": 51,
+    "latency_ms": 2139.976,
+    "started_at": "2026-09-28T10:14:50"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 17,
+    "sql_query_count": 51,
+    "latency_ms": 2197.922,
+    "started_at": "2026-09-28T10:14:53"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 18,
+    "sql_query_count": 51,
+    "latency_ms": 2173.867,
+    "started_at": "2026-09-28T10:14:55"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 19,
+    "sql_query_count": 51,
+    "latency_ms": 2193.4,
+    "started_at": "2026-09-28T10:14:57"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 20,
+    "sql_query_count": 51,
+    "latency_ms": 2154.285,
+    "started_at": "2026-09-28T10:14:59"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 21,
+    "sql_query_count": 51,
+    "latency_ms": 2197.056,
+    "started_at": "2026-09-28T10:15:01"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 22,
+    "sql_query_count": 51,
+    "latency_ms": 2136.06,
+    "started_at": "2026-09-28T10:15:04"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 23,
+    "sql_query_count": 51,
+    "latency_ms": 2157.216,
+    "started_at": "2026-09-28T10:15:06"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 24,
+    "sql_query_count": 51,
+    "latency_ms": 2154.5,
+    "started_at": "2026-09-28T10:15:08"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 25,
+    "sql_query_count": 51,
+    "latency_ms": 2185.171,
+    "started_at": "2026-09-28T10:15:10"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 26,
+    "sql_query_count": 51,
+    "latency_ms": 2179.848,
+    "started_at": "2026-09-28T10:15:12"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 27,
+    "sql_query_count": 51,
+    "latency_ms": 2174.701,
+    "started_at": "2026-09-28T10:15:14"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 28,
+    "sql_query_count": 51,
+    "latency_ms": 2174.716,
+    "started_at": "2026-09-28T10:15:17"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 29,
+    "sql_query_count": 51,
+    "latency_ms": 2190.977,
+    "started_at": "2026-09-28T10:15:19"
+  },
+  {
+    "version": "naive",
+    "page_size": 50,
+    "run_index": 30,
+    "sql_query_count": 51,
+    "latency_ms": 2187.245,
+    "started_at": "2026-09-28T10:15:21"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 1,
+    "sql_query_count": 1,
+    "latency_ms": 2064.696,
+    "started_at": "2026-09-28T10:15:23"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 2,
+    "sql_query_count": 1,
+    "latency_ms": 2046.402,
+    "started_at": "2026-09-28T10:15:25"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 3,
+    "sql_query_count": 1,
+    "latency_ms": 2059.425,
+    "started_at": "2026-09-28T10:15:27"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 4,
+    "sql_query_count": 1,
+    "latency_ms": 2048.023,
+    "started_at": "2026-09-28T10:15:29"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 5,
+    "sql_query_count": 1,
+    "latency_ms": 2039.038,
+    "started_at": "2026-09-28T10:15:31"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 6,
+    "sql_query_count": 1,
+    "latency_ms": 2048.84,
+    "started_at": "2026-09-28T10:15:33"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 7,
+    "sql_query_count": 1,
+    "latency_ms": 2056.567,
+    "started_at": "2026-09-28T10:15:35"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 8,
+    "sql_query_count": 1,
+    "latency_ms": 2046.367,
+    "started_at": "2026-09-28T10:15:37"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 9,
+    "sql_query_count": 1,
+    "latency_ms": 2051.327,
+    "started_at": "2026-09-28T10:15:39"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 10,
+    "sql_query_count": 1,
+    "latency_ms": 2060.762,
+    "started_at": "2026-09-28T10:15:41"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 11,
+    "sql_query_count": 1,
+    "latency_ms": 2063.833,
+    "started_at": "2026-09-28T10:15:44"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 12,
+    "sql_query_count": 1,
+    "latency_ms": 2052.724,
+    "started_at": "2026-09-28T10:15:46"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 13,
+    "sql_query_count": 1,
+    "latency_ms": 2051.677,
+    "started_at": "2026-09-28T10:15:48"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 14,
+    "sql_query_count": 1,
+    "latency_ms": 2042.988,
+    "started_at": "2026-09-28T10:15:50"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 15,
+    "sql_query_count": 1,
+    "latency_ms": 2051.547,
+    "started_at": "2026-09-28T10:15:52"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 16,
+    "sql_query_count": 1,
+    "latency_ms": 2033.298,
+    "started_at": "2026-09-28T10:15:54"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 17,
+    "sql_query_count": 1,
+    "latency_ms": 2045.355,
+    "started_at": "2026-09-28T10:15:56"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 18,
+    "sql_query_count": 1,
+    "latency_ms": 2065.871,
+    "started_at": "2026-09-28T10:15:58"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 19,
+    "sql_query_count": 1,
+    "latency_ms": 2062.686,
+    "started_at": "2026-09-28T10:16:00"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 20,
+    "sql_query_count": 1,
+    "latency_ms": 2063.773,
+    "started_at": "2026-09-28T10:16:02"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 21,
+    "sql_query_count": 1,
+    "latency_ms": 2053.956,
+    "started_at": "2026-09-28T10:16:04"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 22,
+    "sql_query_count": 1,
+    "latency_ms": 2044.476,
+    "started_at": "2026-09-28T10:16:06"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 23,
+    "sql_query_count": 1,
+    "latency_ms": 2032.51,
+    "started_at": "2026-09-28T10:16:08"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 24,
+    "sql_query_count": 1,
+    "latency_ms": 2050.818,
+    "started_at": "2026-09-28T10:16:10"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 25,
+    "sql_query_count": 1,
+    "latency_ms": 2057.662,
+    "started_at": "2026-09-28T10:16:12"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 26,
+    "sql_query_count": 1,
+    "latency_ms": 2046.562,
+    "started_at": "2026-09-28T10:16:14"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 27,
+    "sql_query_count": 1,
+    "latency_ms": 2034.278,
+    "started_at": "2026-09-28T10:16:16"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 28,
+    "sql_query_count": 1,
+    "latency_ms": 2063.344,
+    "started_at": "2026-09-28T10:16:18"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 29,
+    "sql_query_count": 1,
+    "latency_ms": 2042.884,
+    "started_at": "2026-09-28T10:16:20"
+  },
+  {
+    "version": "fixed",
+    "page_size": 50,
+    "run_index": 30,
+    "sql_query_count": 1,
+    "latency_ms": 2044.054,
+    "started_at": "2026-09-28T10:16:22"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 1,
+    "sql_query_count": 201,
+    "latency_ms": 2644.585,
+    "started_at": "2026-09-28T10:16:25"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 2,
+    "sql_query_count": 201,
+    "latency_ms": 2614.442,
+    "started_at": "2026-09-28T10:16:28"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 3,
+    "sql_query_count": 201,
+    "latency_ms": 2552.575,
+    "started_at": "2026-09-28T10:16:30"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 4,
+    "sql_query_count": 201,
+    "latency_ms": 2518.256,
+    "started_at": "2026-09-28T10:16:33"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 5,
+    "sql_query_count": 201,
+    "latency_ms": 2636.687,
+    "started_at": "2026-09-28T10:16:35"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 6,
+    "sql_query_count": 201,
+    "latency_ms": 2518.436,
+    "started_at": "2026-09-28T10:16:38"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 7,
+    "sql_query_count": 201,
+    "latency_ms": 2511.503,
+    "started_at": "2026-09-28T10:16:40"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 8,
+    "sql_query_count": 201,
+    "latency_ms": 2566.977,
+    "started_at": "2026-09-28T10:16:43"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 9,
+    "sql_query_count": 201,
+    "latency_ms": 2632.309,
+    "started_at": "2026-09-28T10:16:46"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 10,
+    "sql_query_count": 201,
+    "latency_ms": 2464.881,
+    "started_at": "2026-09-28T10:16:48"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 11,
+    "sql_query_count": 201,
+    "latency_ms": 2562.273,
+    "started_at": "2026-09-28T10:16:51"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 12,
+    "sql_query_count": 201,
+    "latency_ms": 2547.095,
+    "started_at": "2026-09-28T10:16:53"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 13,
+    "sql_query_count": 201,
+    "latency_ms": 2504.035,
+    "started_at": "2026-09-28T10:16:56"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 14,
+    "sql_query_count": 201,
+    "latency_ms": 2614.014,
+    "started_at": "2026-09-28T10:16:58"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 15,
+    "sql_query_count": 201,
+    "latency_ms": 2599.929,
+    "started_at": "2026-09-28T10:17:01"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 16,
+    "sql_query_count": 201,
+    "latency_ms": 2512.86,
+    "started_at": "2026-09-28T10:17:03"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 17,
+    "sql_query_count": 201,
+    "latency_ms": 2554.375,
+    "started_at": "2026-09-28T10:17:06"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 18,
+    "sql_query_count": 201,
+    "latency_ms": 2490.065,
+    "started_at": "2026-09-28T10:17:09"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 19,
+    "sql_query_count": 201,
+    "latency_ms": 2531.362,
+    "started_at": "2026-09-28T10:17:11"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 20,
+    "sql_query_count": 201,
+    "latency_ms": 2587.384,
+    "started_at": "2026-09-28T10:17:14"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 21,
+    "sql_query_count": 201,
+    "latency_ms": 2548.912,
+    "started_at": "2026-09-28T10:17:16"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 22,
+    "sql_query_count": 201,
+    "latency_ms": 2625.05,
+    "started_at": "2026-09-28T10:17:19"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 23,
+    "sql_query_count": 201,
+    "latency_ms": 2559.762,
+    "started_at": "2026-09-28T10:17:21"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 24,
+    "sql_query_count": 201,
+    "latency_ms": 2569.969,
+    "started_at": "2026-09-28T10:17:24"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 25,
+    "sql_query_count": 201,
+    "latency_ms": 2595.453,
+    "started_at": "2026-09-28T10:17:27"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 26,
+    "sql_query_count": 201,
+    "latency_ms": 2549.527,
+    "started_at": "2026-09-28T10:17:29"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 27,
+    "sql_query_count": 201,
+    "latency_ms": 2564.458,
+    "started_at": "2026-09-28T10:17:32"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 28,
+    "sql_query_count": 201,
+    "latency_ms": 2522.036,
+    "started_at": "2026-09-28T10:17:34"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 29,
+    "sql_query_count": 201,
+    "latency_ms": 2512.072,
+    "started_at": "2026-09-28T10:17:37"
+  },
+  {
+    "version": "naive",
+    "page_size": 200,
+    "run_index": 30,
+    "sql_query_count": 201,
+    "latency_ms": 2540.587,
+    "started_at": "2026-09-28T10:17:39"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 1,
+    "sql_query_count": 1,
+    "latency_ms": 2056.775,
+    "started_at": "2026-09-28T10:17:41"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 2,
+    "sql_query_count": 1,
+    "latency_ms": 2073.093,
+    "started_at": "2026-09-28T10:17:43"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 3,
+    "sql_query_count": 1,
+    "latency_ms": 2068.239,
+    "started_at": "2026-09-28T10:17:45"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 4,
+    "sql_query_count": 1,
+    "latency_ms": 2097.277,
+    "started_at": "2026-09-28T10:17:48"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 5,
+    "sql_query_count": 1,
+    "latency_ms": 2041.059,
+    "started_at": "2026-09-28T10:17:50"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 6,
+    "sql_query_count": 1,
+    "latency_ms": 2057.183,
+    "started_at": "2026-09-28T10:17:52"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 7,
+    "sql_query_count": 1,
+    "latency_ms": 2062.5,
+    "started_at": "2026-09-28T10:17:54"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 8,
+    "sql_query_count": 1,
+    "latency_ms": 2065.878,
+    "started_at": "2026-09-28T10:17:56"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 9,
+    "sql_query_count": 1,
+    "latency_ms": 2074.062,
+    "started_at": "2026-09-28T10:17:58"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 10,
+    "sql_query_count": 1,
+    "latency_ms": 2051.55,
+    "started_at": "2026-09-28T10:18:00"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 11,
+    "sql_query_count": 1,
+    "latency_ms": 2054.191,
+    "started_at": "2026-09-28T10:18:02"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 12,
+    "sql_query_count": 1,
+    "latency_ms": 2072.075,
+    "started_at": "2026-09-28T10:18:04"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 13,
+    "sql_query_count": 1,
+    "latency_ms": 2057.99,
+    "started_at": "2026-09-28T10:18:06"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 14,
+    "sql_query_count": 1,
+    "latency_ms": 2058.09,
+    "started_at": "2026-09-28T10:18:08"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 15,
+    "sql_query_count": 1,
+    "latency_ms": 2047.122,
+    "started_at": "2026-09-28T10:18:10"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 16,
+    "sql_query_count": 1,
+    "latency_ms": 2079.754,
+    "started_at": "2026-09-28T10:18:12"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 17,
+    "sql_query_count": 1,
+    "latency_ms": 2051.746,
+    "started_at": "2026-09-28T10:18:14"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 18,
+    "sql_query_count": 1,
+    "latency_ms": 2056.067,
+    "started_at": "2026-09-28T10:18:16"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 19,
+    "sql_query_count": 1,
+    "latency_ms": 2059.022,
+    "started_at": "2026-09-28T10:18:18"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 20,
+    "sql_query_count": 1,
+    "latency_ms": 2068.835,
+    "started_at": "2026-09-28T10:18:21"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 21,
+    "sql_query_count": 1,
+    "latency_ms": 2073.988,
+    "started_at": "2026-09-28T10:18:23"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 22,
+    "sql_query_count": 1,
+    "latency_ms": 2062.272,
+    "started_at": "2026-09-28T10:18:25"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 23,
+    "sql_query_count": 1,
+    "latency_ms": 2051.739,
+    "started_at": "2026-09-28T10:18:27"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 24,
+    "sql_query_count": 1,
+    "latency_ms": 2063.745,
+    "started_at": "2026-09-28T10:18:29"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 25,
+    "sql_query_count": 1,
+    "latency_ms": 2063.943,
+    "started_at": "2026-09-28T10:18:31"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 26,
+    "sql_query_count": 1,
+    "latency_ms": 2071.782,
+    "started_at": "2026-09-28T10:18:33"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 27,
+    "sql_query_count": 1,
+    "latency_ms": 2057.436,
+    "started_at": "2026-09-28T10:18:35"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 28,
+    "sql_query_count": 1,
+    "latency_ms": 2054.598,
+    "started_at": "2026-09-28T10:18:37"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 29,
+    "sql_query_count": 1,
+    "latency_ms": 2061.813,
+    "started_at": "2026-09-28T10:18:39"
+  },
+  {
+    "version": "fixed",
+    "page_size": 200,
+    "run_index": 30,
+    "sql_query_count": 1,
+    "latency_ms": 2051.144,
+    "started_at": "2026-09-28T10:18:41"
+  }
+]
