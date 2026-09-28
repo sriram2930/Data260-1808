@@ -398,17 +398,123 @@ builds the token-chunking pipeline over the real corpus and checks it
 terminates, returns exactly k=5 results, and produces 384-dim embeddings.
 Writes [`reports/hw03/verification.json`](reports/hw03/verification.json).
 
+---
+
+# HW4
+
+HW4 is the biggest jump yet: the domain data moves from the in-memory list
+to **MySQL**, a **React** frontend replaces (well, sits alongside) the
+server-rendered UI, and Part-5 gains an actual **generation** step on top of
+HW3's retrieval-only pipeline. Mapping: **Part-1/** gets the MySQL/session
+layer plus the N+1 endpoints (still the same FastAPI service from HW2/HW3,
+per the assignment's "keep extending, don't start a new one"); a new
+**Part-6/** holds the React client (a genuinely new stack: Node/Vite, not an
+extension of anything existing); **Part-5/** gains `rag_qa.py` alongside
+HW3's retrieval-only `rag_compare.py`.
+
+## Prerequisite: MySQL (Docker)
+
+No native MySQL is required — a container is enough:
+```
+docker run -d --name s1808-mysql -e MYSQL_ROOT_PASSWORD=s1808_root_pw -e MYSQL_DATABASE=s1808_rel -p 3307:3306 mysql:8
+```
+(Port 3307 on the host, not 3306 — this machine already had a native MySQL
+service bound to 3306.) Then, once, create the tables and seed a demo user:
+```
+.venv\Scripts\python.exe Part-1\init_db.py
+```
+
+## Part 1 — React Client
+
+Files: [Part-6/src/](Part-6/src/)
+```
+cd Part-6
+npm install
+npm run dev
+```
+Visit `http://localhost:5173`. Talks to the FastAPI backend (below) via
+`fetch(..., { credentials: "include" })`; `Login.jsx` / `Home.jsx` /
+`CreateRecord.jsx` / `UpdateRecord.jsx` / `DeleteRecord.jsx` map to
+`/login`, `/`, `/create`, `/update`, `/delete`. `App.jsx` owns the shared
+course list and passes create/update/delete handlers down as props, per the
+assignment. Verified end to end with a Playwright-driven headless browser
+session (login gating, full CRUD, no console errors) before considering it
+done.
+
+## Part 2 — MySQL Persistence and Server-Side Sessions
+
+Files: [Part-1/db.py](Part-1/db.py), [Part-1/models.py](Part-1/models.py),
+[Part-1/api_auth.py](Part-1/api_auth.py), [Part-1/api_courses.py](Part-1/api_courses.py)
+```
+.venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8008
+```
+(run from `Part-1/`). Demo login: `advisor@sjsu.edu` / `course123` (POST
+`/api/login`). Sessions are real server-side rows in MySQL's `sessions`
+table (`db.py`'s session factory is literally named `db_session_basede26`,
+per the assignment's exact naming requirement); the browser only ever holds
+an opaque token in an `HttpOnly`+`Secure`+`SameSite=lax` cookie, never user
+data. `GET/POST/GET-by-id/PUT/DELETE /api/courses` are the CRUD endpoints,
+all auth-protected. Schema dump: [`Part-1/migrations/001_create_tables.sql`](Part-1/migrations/001_create_tables.sql).
+
+## Part 3 — N+1 Measurement and Query Tuning
+
+Files: [Part-1/seed_n1.py](Part-1/seed_n1.py), [Part-1/api_n1.py](Part-1/api_n1.py),
+[Part-1/run_n1_experiment.py](Part-1/run_n1_experiment.py), [Part-1/explain_index_demo.py](Part-1/explain_index_demo.py)
+```
+.venv\Scripts\python.exe Part-1\seed_n1.py            # once: 5,000 courses + 200 sections, SEED=1808
+.venv\Scripts\python.exe Part-1\run_n1_experiment.py   # 180 requests (3 page sizes x 2 versions x 30)
+.venv\Scripts\python.exe Part-1\explain_index_demo.py  # EXPLAIN before/after adding an index
+```
+`GET /api/n1/naive?page_size=N` issues one query per course (the N+1);
+`GET /api/n1/fixed?page_size=N` uses `joinedload` for one query flat,
+confirmed empirically (11/51/201 vs. a constant 1). Full results, including
+an honest note about a ~2050ms per-request floor on this machine (Docker
+Desktop/WSL2 overhead, present in both versions equally) that had to be
+netted out to see the real ~2.5ms-per-extra-query N+1 cost:
+[`reports/hw04/METRICS.md`](reports/hw04/METRICS.md).
+
+## Part 4 — Grounded RAG Question-Answering
+
+Files: [Part-5/rag_qa.py](Part-5/rag_qa.py), [Part-5/run_rag_qa.py](Part-5/run_rag_qa.py)
+```
+.venv\Scripts\python.exe Part-5\run_rag_qa.py
+```
+Reuses HW3's 32-document SJSU corpus (already well over the 5-document
+minimum), re-chunked with `TokenTextSplitter(chunk_size=500, chunk_overlap=50)`.
+Runs [`reports/hw04/rag_questions.yaml`](reports/hw04/rag_questions.yaml)'s
+six questions through three configurations (No-RAG / Basic-RAG /
+Context-RAG with relevance filtering, deduplication, source labeling, and
+grounding+refusal rules), sweeps `k` in {1, 3, 5} on the two-chunk question,
+and scores everything with objective checks. Full results, raw answers, and
+the required written analysis: [`reports/hw04/METRICS.md`](reports/hw04/METRICS.md).
+
+## HW4 Verification
+
+```
+python verify_hw04.py
+```
+Checks the backend responds on PORT_BASE, login sets the session cookie, a
+MySQL CRUD create/list round-trip works, both `/api/n1` endpoints return
+data with naive's query count strictly greater than fixed's, and the RAG
+pipeline finishes without hanging and returns a non-empty answer. Writes
+[`reports/hw04/verification.json`](reports/hw04/verification.json).
+
 ## Repository layout
 ```
 Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
           main.py, templates/, static/style.css                                            (HW2)
           auth.py, templates/login.html, templates/dashboard.html, templates/_navbar.html  (HW3)
+          db.py, models.py, init_db.py, api_auth.py, api_courses.py, api_n1.py,
+          seed_n1.py, run_n1_experiment.py, explain_index_demo.py, migrations/              (HW4)
 Part-2/   agents_demo.py, sample_input.json                                                 (HW1)
           agent_graph.py, run_schema_experiments.py                                         (HW2)
 Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)        (HW1)
 Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py          (HW1)
 Part-5/   fetch_corpus.py, corpus/, rag_compare.py, run_retrieval_comparison.py,
           compute_metrics.py                                                                (HW3)
-requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py   — shared, repo root
-reports/hw01/, reports/hw02/, reports/hw03/                        — deliverables per assignment spec
+          rag_qa.py, run_rag_qa.py                                                          (HW4)
+Part-6/   src/App.jsx, src/Home.jsx, src/Login.jsx, src/CreateRecord.jsx,
+          src/UpdateRecord.jsx, src/DeleteRecord.jsx, src/AuthContext.jsx, src/api.js        (HW4)
+requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py   — shared, repo root
+reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/                        — deliverables per assignment spec
 ```

@@ -1,0 +1,42 @@
+{
+  "homework": "hw04",
+  "sid4": 1808,
+  "commit_hash": "ca5198c517201856d46f371311c01b619d6d1248",
+  "model": "qwen2.5:1.5b-instruct",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "fastapi_responds_on_port_base",
+      "pass": true
+    },
+    {
+      "check": "login_sets_session_cookie",
+      "pass": true
+    },
+    {
+      "check": "mysql_crud_create_and_list_roundtrip",
+      "pass": true
+    },
+    {
+      "check": "n1_naive_and_fixed_both_return_data",
+      "pass": true
+    },
+    {
+      "check": "n1_naive_query_count_greater_than_fixed",
+      "pass": true,
+      "detail": "naive=11, fixed=1"
+    },
+    {
+      "check": "rag_pipeline_finishes_without_hanging",
+      "pass": true,
+      "detail": "finished in 39.5s"
+    },
+    {
+      "check": "rag_pipeline_returns_nonempty_answer",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-09-28T11:51:57"
+}
