@@ -499,6 +499,95 @@ data with naive's query count strictly greater than fixed's, and the RAG
 pipeline finishes without hanging and returns a non-empty answer. Writes
 [`reports/hw04/verification.json`](reports/hw04/verification.json).
 
+# HW5
+
+Builds on HW4's FastAPI + MySQL backend and React client rather than
+starting fresh. Mapping: **Part-1/** gains a second entity (Department) and
+tighter validation on Course; **Part-6/** moves its course data layer from
+component state to Redux Toolkit; a new **Part-7/** holds everything that's
+genuinely new in HW5 -- the two MCP servers, the retry/fault-injection
+harness, and `execute_tool` (the Part 5 agent loop lands here too).
+
+## Part 1 — Department Entity, Extended Course API, Redux Client
+
+Files: [Part-1/models.py](Part-1/models.py), [Part-1/api_departments.py](Part-1/api_departments.py),
+[Part-1/migrate_hw05.py](Part-1/migrate_hw05.py), [Part-6/src/store.js](Part-6/src/store.js),
+[Part-6/src/coursesSlice.js](Part-6/src/coursesSlice.js)
+```
+.venv\Scripts\python.exe Part-1\migrate_hw05.py   # once: adds departments + Course columns in place
+cd Part-6 && npm install && npm run dev
+```
+Department is the required related entity (name, building, `dept_code`
+unique, timestamps); Course gains `department_id` (FK, RESTRICT by
+default), `seats_available` (numeric, default 30), timestamps, and a unique
+`course_code`. `/api/departments` has full CRUD, pagination, and a
+relationship endpoint (`/api/departments/{id}/courses`). The React client's
+course state moved from `App.jsx`'s `useState` to Redux Toolkit
+(`store.js`/`coursesSlice.js`, axios-based thunks); Update/Delete now take
+the record id from the URL (`/update/:id`, `/delete/:id`) instead of an
+App-level "selected" prop. Verified with a scripted Playwright run through
+the real dev server (login, create, update, delete all round-tripped, no
+console errors; the test script and Playwright were removed afterward).
+
+## Part 2 — MCP Tool Servers
+
+Files: [Part-7/meals_server.py](Part-7/meals_server.py), [Part-7/domain_server.py](Part-7/domain_server.py),
+[Part-7/envelope.py](Part-7/envelope.py)
+```
+mcp dev Part-7/meals_server.py     # TheMealDB tutorial server, 4 tools
+mcp dev Part-7/domain_server.py    # required domain server, 3 tools
+```
+The domain server reuses Part-1's SQLAlchemy models directly (no separate
+copy of the schema) and returns the shared `{ok, data, error}` envelope
+from all three tools (`search_courses`, `course_detail`,
+`department_stats` -- search / detail lookup / aggregate). Both servers are
+verified two ways: direct Python calls against live data (meals_server
+against the real TheMealDB API, domain_server against the real MySQL
+database), and `Part-7/inspect_tools.py`, which drives both over the actual
+MCP STDIO protocol via the MCP SDK's own client -- the same protocol the
+Inspector UI uses -- and saves the raw request/response records to
+[`reports/hw05/raw/mcp_inspector_outputs.json`](reports/hw05/raw/mcp_inspector_outputs.json).
+
+## Part 3 — Tool Contracts Under Stress
+
+Files: [Part-7/retry_policy.py](Part-7/retry_policy.py), [Part-7/run_fault_injection.py](Part-7/run_fault_injection.py)
+```
+.venv\Scripts\python.exe Part-7\run_fault_injection.py
+```
+`call_with_retry` wraps any callable with a per-attempt timeout (enforced
+via a worker thread) and bounded exponential backoff. Demonstrates all
+three required scenarios (first-try success, fail-then-retry success,
+exhausted retries raising a clean `RetryExhausted` instead of crashing),
+then runs the required 150-call fault-injection experiment (3 rates x 50
+calls, seeded from `VERIFY_SEED` for reproducibility). Full results and the
+interactive-vs-batch retry policy analysis:
+[`reports/hw05/METRICS.md`](reports/hw05/METRICS.md).
+
+## Part 4 — One Safe Tool Entry Point and Offline Tests
+
+Files: [Part-7/execute_tool.py](Part-7/execute_tool.py), [Part-7/test_tools.py](Part-7/test_tools.py)
+```
+.venv\Scripts\python.exe Part-7\test_tools.py
+```
+`execute_tool(name, inputs)` is the single function Part 5's agent calls;
+it reuses the `{ok, data, error}` envelope and a JSON string, and never
+raises. The offline test runner builds a temporary in-memory SQLite
+database from the same models the real MySQL database uses (dependency
+injection via `execute_tool`'s `session=` parameter) so all 8 tests
+(6 required + 2 covering `execute_tool`'s own dispatch logic) run without
+touching the network, the real database, or an LLM.
+
+## HW5 Verification
+
+```
+python verify_hw05.py
+```
+Covers Parts 1-4 (Part 5 checks will be added once that part is built):
+backend + session + Department CRUD + course validation, both MCP servers
+responding over real STDIO, all three retry-policy scenarios, and the
+Part 4 offline suite. Writes
+[`reports/hw05/verification.json`](reports/hw05/verification.json).
+
 ## Repository layout
 ```
 Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
@@ -506,6 +595,7 @@ Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task
           auth.py, templates/login.html, templates/dashboard.html, templates/_navbar.html  (HW3)
           db.py, models.py, init_db.py, api_auth.py, api_courses.py, api_n1.py,
           seed_n1.py, run_n1_experiment.py, explain_index_demo.py, migrations/              (HW4)
+          api_departments.py, migrate_hw05.py                                               (HW5)
 Part-2/   agents_demo.py, sample_input.json                                                 (HW1)
           agent_graph.py, run_schema_experiments.py                                         (HW2)
 Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)        (HW1)
@@ -515,6 +605,10 @@ Part-5/   fetch_corpus.py, corpus/, rag_compare.py, run_retrieval_comparison.py,
           rag_qa.py, run_rag_qa.py                                                          (HW4)
 Part-6/   src/App.jsx, src/Home.jsx, src/Login.jsx, src/CreateRecord.jsx,
           src/UpdateRecord.jsx, src/DeleteRecord.jsx, src/AuthContext.jsx, src/api.js        (HW4)
-requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py   — shared, repo root
-reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/                        — deliverables per assignment spec
+          src/store.js, src/coursesSlice.js, src/axiosClient.js                             (HW5)
+Part-7/   meals_server.py, domain_server.py, envelope.py, retry_policy.py,
+          run_fault_injection.py, execute_tool.py, test_tools.py, inspect_tools.py           (HW5)
+requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py,
+verify_hw05.py                                                                    — shared, repo root
+reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/         — deliverables per assignment spec
 ```

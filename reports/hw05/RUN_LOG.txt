@@ -1,0 +1,193 @@
+=== run_fault_injection.py started 2026-10-05T01:04:42 ===
+VERIFY_SEED=261808, max_retries=2, base_delay_s=0.02, timeout_s=1.0
+
+=== Part 3.19: retry policy demonstration ===
+--- Scenario A: success on the first attempt ---
+result='ok' attempts_used=1
+  attempt 0: success=True elapsed_ms=54.5 error=None
+
+--- Scenario B: failure on attempt 1, success on retry (attempt 2) ---
+result='ok' attempts_used=2
+  attempt 0: success=False elapsed_ms=41.2 error=simulated failure (attempt 1)
+  attempt 1: success=True elapsed_ms=41.3 error=None
+
+--- Scenario C: failure on every attempt (max_retries=2, so 3 attempts) ---
+RetryExhausted raised cleanly (no crash): all 3 attempts failed: simulated failure (attempt 3)
+  attempt 0: success=False elapsed_ms=42.6 error=simulated failure (attempt 1)
+  attempt 1: success=False elapsed_ms=41.6 error=simulated failure (attempt 2)
+  attempt 2: success=False elapsed_ms=46.3 error=simulated failure (attempt 3)
+
+=== Part 3.20: 150-call fault-injection experiment ===
+
+Total calls: 150 (expected 150)
+
+Summary:
+Rate    Success rate   Mean latency (ms)   p99 latency (ms)    
+0%      1.0            42.03               71.81               
+20%     0.98           54.11               185.06              
+50%     0.82           99.9                188.59              
+
+Raw data: C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\fault_injection_calls.csv, C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\fault_injection_calls.json
+=== finished 2026-10-05T01:04:52 ===
+
+=== test_tools.py started 2026-10-05T01:07:02 ===
+[PASS] search_courses: valid query finds both seeded courses
+[PASS] search_courses: empty query is rejected cleanly
+[PASS] course_detail: valid id returns the right course + department
+[PASS] course_detail: nonexistent id is rejected cleanly (not a crash)
+[PASS] department_stats: valid id aggregates correctly (2 courses, 40 total seats, 20.0 avg)
+[PASS] department_stats: nonexistent id is rejected cleanly (not a crash)
+[PASS] execute_tool: unknown tool name is rejected cleanly (not a crash)
+[PASS] execute_tool: malformed inputs (wrong arg name) are rejected cleanly (not a crash)
+
+8/8 tests passed
+=== finished 2026-10-05T01:07:06 ===
+
+=== inspect_tools.py (scripted MCP Inspector equivalent, real STDIO protocol) started 2026-10-05T01:08:10 ===
+Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\mcp_inspector_outputs.json
+{
+  "server": "meals_server.py",
+  "tools": [
+    "search_meals_by_name",
+    "meals_by_ingredient",
+    "random_meal",
+    "meal_details"
+  ]
+}
+{
+  "tool": "search_meals_by_name",
+  "args": {
+    "query": "Arrabiata",
+    "limit": 3
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"count\": 1,\n  \"message\": null,\n  \"meals\": [\n    {\n      \"id\": \"52771\",\n      \"name\": \"Spicy Arrabiata Penne\",\n      \"area\": \"Italian\",\n      \"category\": \"Vegetarian\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\"\n    }\n  ]\n}",
+      "annotations": n
+{
+  "tool": "meals_by_ingredient",
+  "args": {
+    "ingredient": "chicken",
+    "limit": 3
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"count\": 3,\n  \"message\": null,\n  \"meals\": [\n    {\n      \"id\": \"52940\",\n      \"name\": \"Brown Stew Chicken\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg\"\n    },\n    {\n      \"id\": \"53161\",\n      \"name\": \"Chicken & chorizo rice pot\",\n      \"thumb\":
+{
+  "tool": "random_meal",
+  "args": {},
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"message\": null,\n  \"meal\": {\n    \"id\": \"53223\",\n    \"name\": \"Mutabbaq\",\n    \"category\": \"Miscellaneous\",\n    \"area\": \"Saudi Arabian\",\n    \"instructions\": \"1\\r\\nHeat the frying pan and add in some oil. Fry the mashed garlic and ginger first and then add in the minced meat and all seasoning. When the meat is cooked, set aside to cool down.\\r\\n
+{
+  "tool": "meal_details",
+  "args": {
+    "id": "52772"
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"message\": null,\n  \"meal\": {\n    \"id\": \"52772\",\n    \"name\": \"Teriyaki Chicken Casserole\",\n    \"category\": \"Chicken\",\n    \"area\": \"Japanese\",\n    \"instructions\": \"Preheat oven to 350\u00b0 F. Spray a 9x13-inch baking pan with non-stick spray.\\r\\nCombine soy sauce, \u00bd cup water, brown sugar, ginger and garlic in a small
+{
+  "server": "domain_server.py",
+  "tools": [
+    "search_courses",
+    "course_detail",
+    "department_stats"
+  ]
+}
+{
+  "tool": "search_courses",
+  "args": {
+    "query": "Cloud Computing",
+    "limit": 3
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"data\": [\n    {\n      \"id\": 8,\n      \"course_code\": \"DATA-00006\",\n      \"course_title\": \"Topics in Cloud Computing\",\n      \"department_id\": 2,\n      \"seats_available\": 30\n    },\n    {\n      \"id\": 20,\n      \"course_code\": \"CS-00018\",\n      \"course_title\": \"Introduction t
+{
+  "tool": "search_courses",
+  "args": {
+    "query": "",
+    "limit": 3
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"query must be a non-empty string\"\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "server": "domain_server.py"
+}
+{
+  "tool": "course_detail",
+  "args": {
+    "course_id": 7
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"data\": {\n    \"id\": 7,\n    \"course_code\": \"CS-00005\",\n    \"course_title\": \"Statistical Operating Systems\",\n    \"description\": \"Auto-generated seed course #5 for N+1 load testing.\",\n    \"seats_available\": 30,\n    \"department\": {\n      \"id\": 1,\n      \"name\": \"Computer Science\",\n      \"dept_code\": \"
+{
+  "tool": "course_detail",
+  "args": {
+    "course_id": 999999
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"course_id 999999 not found\"\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "server": "domain_server.py"
+}
+{
+  "tool": "department_stats",
+  "args": {
+    "department_id": 1
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"data\": {\n    \"department_id\": 1,\n    \"department_name\": \"Computer Science\",\n    \"course_count\": 1244,\n    \"total_seats_available\": 37320,\n    \"avg_seats_available\": 30.0\n  },\n  \"error\": null\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "server": "domain_server.py"
+}
+{
+  "tool": "department_stats",
+  "args": {
+    "department_id": 999999
+  },
+  "isError": false,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"department_id 999999 not found\"\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "server": "domain_server.py"
+}
+=== finished 2026-10-05T01:08:22 ===
+

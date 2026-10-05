@@ -1,0 +1,184 @@
+{
+  "generated_at": "2026-10-05T01:08:22",
+  "records": [
+    {
+      "server": "meals_server.py",
+      "tools": [
+        "search_meals_by_name",
+        "meals_by_ingredient",
+        "random_meal",
+        "meal_details"
+      ]
+    },
+    {
+      "tool": "search_meals_by_name",
+      "args": {
+        "query": "Arrabiata",
+        "limit": 3
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"count\": 1,\n  \"message\": null,\n  \"meals\": [\n    {\n      \"id\": \"52771\",\n      \"name\": \"Spicy Arrabiata Penne\",\n      \"area\": \"Italian\",\n      \"category\": \"Vegetarian\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\"\n    }\n  ]\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "meals_server.py"
+    },
+    {
+      "tool": "meals_by_ingredient",
+      "args": {
+        "ingredient": "chicken",
+        "limit": 3
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"count\": 3,\n  \"message\": null,\n  \"meals\": [\n    {\n      \"id\": \"52940\",\n      \"name\": \"Brown Stew Chicken\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg\"\n    },\n    {\n      \"id\": \"53161\",\n      \"name\": \"Chicken & chorizo rice pot\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/fk80jp1763280767.jpg\"\n    },\n    {\n      \"id\": \"52846\",\n      \"name\": \"Chicken & mushroom Hotpot\",\n      \"thumb\": \"https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg\"\n    }\n  ]\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "meals_server.py"
+    },
+    {
+      "tool": "random_meal",
+      "args": {},
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"message\": null,\n  \"meal\": {\n    \"id\": \"53223\",\n    \"name\": \"Mutabbaq\",\n    \"category\": \"Miscellaneous\",\n    \"area\": \"Saudi Arabian\",\n    \"instructions\": \"1\\r\\nHeat the frying pan and add in some oil. Fry the mashed garlic and ginger first and then add in the minced meat and all seasoning. When the meat is cooked, set aside to cool down.\\r\\n2\\r\\nGet another big bowl. Add in egg, chopped tomato, chopped spring onion and minced meat.\\r\\n3\\r\\nGet one 2 sheets of filo pastry or 1 sheet spring roll wrap. Brush it with some butter and then put some filling in the middle. Fold the pastry and brush more butter on the seal part.\\r\\n4\\r\\nHeat a frying pan and add in some oil to cook the parcel until its both sides and 4 edges all turn into golden brown. (Or brush melted butter all over the parcel and bake it in 180\u00b0C oven for 10-15 minutes)\\r\\n5\\r\\nEnjoy \\r\\n\\r\\n\",\n    \"image\": \"https://www.themealdb.com/images/media/meals/i5o2b61763739053.jpg\",\n    \"source\": \"https://cookpad.com/eng/recipes/14701273?ref=search&search_term=saudi+arabia\",\n    \"youtube\": \"https://www.youtube.com/watch?v=xzu8XswXqcs\",\n    \"ingredients\": [\n      {\n        \"name\": \"Mincemeat\",\n        \"measure\": \"500g\"\n      },\n      {\n        \"name\": \"Garlic\",\n        \"measure\": \"1.5 tbs minced\"\n      },\n      {\n        \"name\": \"Ginger\",\n        \"measure\": \"1.5 tbs minced\"\n      },\n      {\n        \"name\": \"Egg\",\n        \"measure\": \"1\"\n      },\n      {\n        \"name\": \"Tomato\",\n        \"measure\": \"1 large\"\n      },\n      {\n        \"name\": \"Spring Onions\",\n        \"measure\": \"4\"\n      },\n      {\n        \"name\": \"Filo Pastry\",\n        \"measure\": \"12\"\n      },\n      {\n        \"name\": \"Melted Butter\",\n        \"measure\": \"1 1/2 cups\"\n      },\n      {\n        \"name\": \"Salt\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Paprika\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Cumin\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Allspice\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Turmeric\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Black Pepper\",\n        \"measure\": \"1 tsp\"\n      },\n      {\n        \"name\": \"Sugar\",\n        \"measure\": \"1 tsp\"\n      }\n    ]\n  }\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "meals_server.py"
+    },
+    {
+      "tool": "meal_details",
+      "args": {
+        "id": "52772"
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"message\": null,\n  \"meal\": {\n    \"id\": \"52772\",\n    \"name\": \"Teriyaki Chicken Casserole\",\n    \"category\": \"Chicken\",\n    \"area\": \"Japanese\",\n    \"instructions\": \"Preheat oven to 350\u00b0 F. Spray a 9x13-inch baking pan with non-stick spray.\\r\\nCombine soy sauce, \u00bd cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Remove lid and cook for one minute once boiling.\\r\\nMeanwhile, stir together the corn starch and 2 tablespoons of water in a separate dish until smooth. Once sauce is boiling, add mixture to the saucepan and stir to combine. Cook until the sauce starts to thicken then remove from heat.\\r\\nPlace the chicken breasts in the prepared pan. Pour one cup of the sauce over top of chicken. Place chicken in oven and bake 35 minutes or until cooked through. Remove from oven and shred chicken in the dish using two forks.\\r\\n*Meanwhile, steam or cook the vegetables according to package directions.\\r\\nAdd the cooked vegetables and rice to the casserole dish with the chicken. Add most of the remaining sauce, reserving a bit to drizzle over the top when serving. Gently toss everything together in the casserole dish until combined. Return to oven and cook 15 minutes. Remove from oven and let stand 5 minutes before serving. Drizzle each serving with remaining sauce. Enjoy!\",\n    \"image\": \"https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg\",\n    \"source\": null,\n    \"youtube\": \"https://www.youtube.com/watch?v=4aZr5hZXP_s\",\n    \"ingredients\": [\n      {\n        \"name\": \"soy sauce\",\n        \"measure\": \"3/4 cup\"\n      },\n      {\n        \"name\": \"water\",\n        \"measure\": \"1/2 cup\"\n      },\n      {\n        \"name\": \"brown sugar\",\n        \"measure\": \"1/4 cup\"\n      },\n      {\n        \"name\": \"ground ginger\",\n        \"measure\": \"1/2 teaspoon\"\n      },\n      {\n        \"name\": \"minced garlic\",\n        \"measure\": \"1/2 teaspoon\"\n      },\n      {\n        \"name\": \"cornstarch\",\n        \"measure\": \"4 Tablespoons\"\n      },\n      {\n        \"name\": \"chicken breasts\",\n        \"measure\": \"2\"\n      },\n      {\n        \"name\": \"stir-fry vegetables\",\n        \"measure\": \"1 (12 oz.)\"\n      },\n      {\n        \"name\": \"brown rice\",\n        \"measure\": \"3 cups\"\n      }\n    ]\n  }\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "meals_server.py"
+    },
+    {
+      "server": "domain_server.py",
+      "tools": [
+        "search_courses",
+        "course_detail",
+        "department_stats"
+      ]
+    },
+    {
+      "tool": "search_courses",
+      "args": {
+        "query": "Cloud Computing",
+        "limit": 3
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": true,\n  \"data\": [\n    {\n      \"id\": 8,\n      \"course_code\": \"DATA-00006\",\n      \"course_title\": \"Topics in Cloud Computing\",\n      \"department_id\": 2,\n      \"seats_available\": 30\n    },\n    {\n      \"id\": 20,\n      \"course_code\": \"CS-00018\",\n      \"course_title\": \"Introduction to Cloud Computing\",\n      \"department_id\": 1,\n      \"seats_available\": 30\n    },\n    {\n      \"id\": 25,\n      \"course_code\": \"DATA-00023\",\n      \"course_title\": \"Principles of Cloud Computing\",\n      \"department_id\": 2,\n      \"seats_available\": 30\n    }\n  ],\n  \"error\": null\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    },
+    {
+      "tool": "search_courses",
+      "args": {
+        "query": "",
+        "limit": 3
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"query must be a non-empty string\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    },
+    {
+      "tool": "course_detail",
+      "args": {
+        "course_id": 7
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": true,\n  \"data\": {\n    \"id\": 7,\n    \"course_code\": \"CS-00005\",\n    \"course_title\": \"Statistical Operating Systems\",\n    \"description\": \"Auto-generated seed course #5 for N+1 load testing.\",\n    \"seats_available\": 30,\n    \"department\": {\n      \"id\": 1,\n      \"name\": \"Computer Science\",\n      \"dept_code\": \"CS\"\n    }\n  },\n  \"error\": null\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    },
+    {
+      "tool": "course_detail",
+      "args": {
+        "course_id": 999999
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"course_id 999999 not found\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    },
+    {
+      "tool": "department_stats",
+      "args": {
+        "department_id": 1
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": true,\n  \"data\": {\n    \"department_id\": 1,\n    \"department_name\": \"Computer Science\",\n    \"course_count\": 1244,\n    \"total_seats_available\": 37320,\n    \"avg_seats_available\": 30.0\n  },\n  \"error\": null\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    },
+    {
+      "tool": "department_stats",
+      "args": {
+        "department_id": 999999
+      },
+      "isError": false,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"ok\": false,\n  \"data\": null,\n  \"error\": \"department_id 999999 not found\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "server": "domain_server.py"
+    }
+  ]
+}
