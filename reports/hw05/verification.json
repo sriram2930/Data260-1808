@@ -1,8 +1,8 @@
 {
   "homework": "hw05",
   "sid4": 1808,
-  "commit_hash": "1bdf8e5c63e49491861651a4b46896580f418738",
-  "model": "qwen2.5:1.5b-instruct (Ollama) -- not yet exercised by this check; Part 5 (agent loop) is still in progress",
+  "commit_hash": "7434ef53f4caa544002eb30aa828a7f818b74260",
+  "model": "qwen2.5:1.5b-instruct (Ollama), via Part-4's ModelClient (Part 5 agent loop)",
   "seed": 1808,
   "verify_seed": 261808,
   "checks": [
@@ -35,11 +35,19 @@
       "pass": true
     },
     {
+      "check": "part5_safety_rule_blocks_oversized_search",
+      "pass": true
+    },
+    {
+      "check": "part5_mock_agent_stops_at_max_steps",
+      "pass": true
+    },
+    {
       "check": "part4_offline_test_suite_passes",
       "pass": true,
-      "detail": "8/8 passed"
+      "detail": "10/10 passed"
     }
   ],
   "all_passed": true,
-  "generated_at": "2026-10-05T01:09:49"
+  "generated_at": "2026-10-05T13:20:44"
 }

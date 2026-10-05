@@ -577,15 +577,36 @@ injection via `execute_tool`'s `session=` parameter) so all 8 tests
 (6 required + 2 covering `execute_tool`'s own dispatch logic) run without
 touching the network, the real database, or an LLM.
 
+## Part 5 — Agent Loop, Safety Rule, and Reflection
+
+Files: [Part-7/execute_tool.py](Part-7/execute_tool.py), [Part-7/agent.py](Part-7/agent.py),
+[Part-7/run_agent_scenarios.py](Part-7/run_agent_scenarios.py)
+```
+.venv\Scripts\python.exe Part-7\run_agent_scenarios.py
+```
+One safety rule lives inside `execute_tool`: agent calls to `search_courses`
+are capped at `limit<=20` (stricter than the 100 a trusted direct caller
+gets), so the loop can't pull a huge chunk of the catalogue into its own
+context in one call. `run_agent(user_input)` drives a JSON-protocol tool-use
+loop against the real local Ollama model (`qwen2.5:1.5b-instruct`, via
+Part-4's `ModelClient`) and the three domain tools, with a turn counter and
+`max_steps` ceiling, logging every step to
+[`reports/hw05/raw/agent_runs.jsonl`](reports/hw05/raw/agent_runs.jsonl).
+Four scenarios run against the real model (3 finished normally, 1 hit
+`max_steps` after repeatedly tripping the safety rule); full results,
+`MockModel`-based offline tests for the safety rule and the `max_steps`
+stop, and the required reflection: [`reports/hw05/METRICS.md`](reports/hw05/METRICS.md),
+[`reports/hw05/REFLECTION.md`](reports/hw05/REFLECTION.md).
+
 ## HW5 Verification
 
 ```
 python verify_hw05.py
 ```
-Covers Parts 1-4 (Part 5 checks will be added once that part is built):
-backend + session + Department CRUD + course validation, both MCP servers
-responding over real STDIO, all three retry-policy scenarios, and the
-Part 4 offline suite. Writes
+Covers all five parts: backend + session + Department CRUD + course
+validation, both MCP servers responding over real STDIO, all three
+retry-policy scenarios, the Part 5 safety rule + MockModel max_steps stop,
+and the full Part 4 offline suite (10/10). Writes
 [`reports/hw05/verification.json`](reports/hw05/verification.json).
 
 ## Repository layout
@@ -607,7 +628,8 @@ Part-6/   src/App.jsx, src/Home.jsx, src/Login.jsx, src/CreateRecord.jsx,
           src/UpdateRecord.jsx, src/DeleteRecord.jsx, src/AuthContext.jsx, src/api.js        (HW4)
           src/store.js, src/coursesSlice.js, src/axiosClient.js                             (HW5)
 Part-7/   meals_server.py, domain_server.py, envelope.py, retry_policy.py,
-          run_fault_injection.py, execute_tool.py, test_tools.py, inspect_tools.py           (HW5)
+          run_fault_injection.py, execute_tool.py, test_tools.py, inspect_tools.py,
+          agent.py, run_agent_scenarios.py                                                   (HW5)
 requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py,
 verify_hw05.py                                                                    — shared, repo root
 reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/         — deliverables per assignment spec

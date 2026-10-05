@@ -184,6 +184,27 @@ def check_retry_policy(checks: list[dict]) -> None:
         checks.append({"check": "retry_policy_demonstrates_all_three_scenarios", "pass": False, "detail": str(e)})
 
 
+def check_agent(checks: list[dict]) -> None:
+    try:
+        from agent import MockModel, run_agent
+        from execute_tool import execute_tool
+
+        out = json.loads(execute_tool("search_courses", {"query": "a", "limit": 50}))
+        checks.append({
+            "check": "part5_safety_rule_blocks_oversized_search",
+            "pass": out["ok"] is False and "safety rule" in (out["error"] or ""),
+        })
+
+        mock = MockModel(['{"tool": "department_stats", "inputs": {"department_id": 1}}'])
+        result = run_agent("verify max_steps", model=mock, max_steps=2)
+        checks.append({
+            "check": "part5_mock_agent_stops_at_max_steps",
+            "pass": result["stop_reason"] == "max_steps" and result["step_count"] == 2,
+        })
+    except Exception as e:
+        checks.append({"check": "part5_agent_checks", "pass": False, "detail": str(e)})
+
+
 def check_offline_tests(checks: list[dict]) -> None:
     try:
         from test_tools import run_tests
@@ -204,13 +225,14 @@ def main() -> None:
     check_backend_and_department(checks)
     check_mcp_servers(checks)
     check_retry_policy(checks)
+    check_agent(checks)
     check_offline_tests(checks)
 
     result = {
         "homework": "hw05",
         "sid4": SID4,
         "commit_hash": _get_commit_hash(),
-        "model": "qwen2.5:1.5b-instruct (Ollama) -- not yet exercised by this check; Part 5 (agent loop) is still in progress",
+        "model": "qwen2.5:1.5b-instruct (Ollama), via Part-4's ModelClient (Part 5 agent loop)",
         "seed": SEED,
         "verify_seed": VERIFY_SEED,
         "checks": checks,

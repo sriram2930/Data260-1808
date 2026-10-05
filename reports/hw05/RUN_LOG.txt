@@ -191,3 +191,44 @@ Wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\mcp_insp
 }
 === finished 2026-10-05T01:08:22 ===
 
+=== run_agent_scenarios.py started 2026-10-05T13:18:52 ===
+=== run_agent_scenarios.py started 2026-10-05T13:18:54 ===
+
+--- Scenario 1: 'What are the details for course id 7?' ---
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-7\run_agent_scenarios.py", line 51, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-7\run_agent_scenarios.py", line 32, in main
+    result = run_agent(scenario, max_steps=4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-7\agent.py", line 98, in run_agent
+    response = model.complete(messages, format="json")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-4\src\model_client.py", line 64, in complete
+    response = self._client.chat(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 387, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 143, in _request_raw
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: prediction aborted, token repeat limit reached (status code: 500)
+=== finished 2026-10-05T13:19:10 ===
+
+=== test_tools.py (full suite incl. Part 5 tests) started 2026-10-05T13:19:10 ===
+[PASS] search_courses: valid query finds both seeded courses
+[PASS] search_courses: empty query is rejected cleanly
+[PASS] course_detail: valid id returns the right course + department
+[PASS] course_detail: nonexistent id is rejected cleanly (not a crash)
+[PASS] department_stats: valid id aggregates correctly (2 courses, 40 total seats, 20.0 avg)
+[PASS] department_stats: nonexistent id is rejected cleanly (not a crash)
+[PASS] execute_tool: unknown tool name is rejected cleanly (not a crash)
+[PASS] execute_tool: malformed inputs (wrong arg name) are rejected cleanly (not a crash)
+[PASS] execute_tool: safety rule blocks search_courses with limit>20
+[PASS] run_agent: MockModel that never finishes stops at max_steps
+
+10/10 tests passed
+=== finished 2026-10-05T13:19:14 ===

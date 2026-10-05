@@ -32,6 +32,24 @@ _TOOLS = {
 }
 
 
+MAX_AGENT_SEARCH_LIMIT = 20
+
+
+def _check_safety_rule(name: str, inputs: dict) -> Optional[str]:
+    """One domain-specific, business-logic safety rule (Part 5.I): the agent
+    is capped at a stricter result-size limit than a trusted direct caller
+    (Postman/Inspector) gets. domain_server.py's own search_courses already
+    permits up to 100 per the API contract; this rule exists specifically to
+    stop an autonomous agent loop from pulling a huge chunk of the catalogue
+    into its own context in one call. Returns an error string if the rule is
+    violated, None if the call is allowed."""
+    if name == "search_courses":
+        limit = inputs.get("limit", 10)
+        if isinstance(limit, int) and limit > MAX_AGENT_SEARCH_LIMIT:
+            return f"safety rule: agent calls to search_courses are capped at limit<={MAX_AGENT_SEARCH_LIMIT} (got {limit})"
+    return None
+
+
 def execute_tool(name: str, inputs: dict, *, session: Optional[Any] = None) -> str:
     """Runs one of the three domain tools by name. Always returns a JSON
     string of {ok, data, error} -- never raises."""
@@ -41,6 +59,10 @@ def execute_tool(name: str, inputs: dict, *, session: Optional[Any] = None) -> s
 
     if not isinstance(inputs, dict):
         return json.dumps(fail("inputs must be a dict"))
+
+    safety_error = _check_safety_rule(name, inputs)
+    if safety_error is not None:
+        return json.dumps(fail(safety_error))
 
     try:
         result = impl(**inputs, session=session)

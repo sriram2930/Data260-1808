@@ -144,6 +144,24 @@ def run_tests() -> list[tuple[str, bool, str]]:
         f"got {out}",
     )
 
+    # --- Part 5.III: safety rule + agent max_steps (added after Part 5) -----
+    out = json.loads(execute_tool("search_courses", {"query": "a", "limit": 50}, session=session))
+    check(
+        "execute_tool: safety rule blocks search_courses with limit>20",
+        out["ok"] is False and "safety rule" in (out["error"] or ""),
+        f"got {out}",
+    )
+
+    from agent import MockModel, run_agent
+
+    mock = MockModel(['{"tool": "department_stats", "inputs": {"department_id": 1}}'])
+    agent_result = run_agent("loop forever", model=mock, max_steps=3)
+    check(
+        "run_agent: MockModel that never finishes stops at max_steps",
+        agent_result["stop_reason"] == "max_steps" and agent_result["step_count"] == 3,
+        f"got stop_reason={agent_result['stop_reason']}, step_count={agent_result['step_count']}",
+    )
+
     session.close()
     return results
 

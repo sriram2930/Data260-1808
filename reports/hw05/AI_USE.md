@@ -1,9 +1,6 @@
 # AI_USE.md - HW5
 
-(Covers Parts 1-4 so far; Part 5 -- the agent loop, safety rule, and
-reflection -- is still in progress and this file will be extended once
-that's done, same as the rest of HW5's incremental build-and-commit
-pattern.)
+(Covers all five parts.)
 
 ## 1. What I used an AI assistant for, and what I did myself
 
