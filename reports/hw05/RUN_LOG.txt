@@ -232,3 +232,35 @@ ollama._types.ResponseError: prediction aborted, token repeat limit reached (sta
 
 10/10 tests passed
 === finished 2026-10-05T13:19:14 ===
+=== run_fault_injection.py started 2026-10-05T13:24:09 ===
+VERIFY_SEED=261808, max_retries=2, base_delay_s=0.02, timeout_s=1.0
+
+=== Part 3.19: retry policy demonstration ===
+--- Scenario A: success on the first attempt ---
+result='ok' attempts_used=1
+  attempt 0: success=True elapsed_ms=45.8 error=None
+
+--- Scenario B: failure on attempt 1, success on retry (attempt 2) ---
+result='ok' attempts_used=2
+  attempt 0: success=False elapsed_ms=41.0 error=simulated failure (attempt 1)
+  attempt 1: success=True elapsed_ms=41.1 error=None
+
+--- Scenario C: failure on every attempt (max_retries=2, so 3 attempts) ---
+RetryExhausted raised cleanly (no crash): all 3 attempts failed: simulated failure (attempt 3)
+  attempt 0: success=False elapsed_ms=42.3 error=simulated failure (attempt 1)
+  attempt 1: success=False elapsed_ms=41.0 error=simulated failure (attempt 2)
+  attempt 2: success=False elapsed_ms=59.1 error=simulated failure (attempt 3)
+
+=== Part 3.20: 150-call fault-injection experiment ===
+
+Total calls: 150 (expected 150)
+
+Summary:
+Rate    Success rate   Mean latency (ms)   p99 latency (ms)    
+0%      1.0            41.34               54.55               
+20%     0.98           53.43               183.93              
+50%     0.82           99.34               186.0               
+
+Raw data: C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\fault_injection_calls.csv, C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw05\raw\fault_injection_calls.json
+=== finished 2026-10-05T13:24:20 ===
+

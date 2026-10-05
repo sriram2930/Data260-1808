@@ -77,9 +77,9 @@ Raw per-call records (all 150): [`raw/fault_injection_calls.csv`](raw/fault_inje
 
 | Injected failure rate | Success rate | Mean latency (ms) | p99 latency (ms) |
 |---|---|---|---|
-| 0%  | 1.00 | 42.03 | 71.81  |
-| 20% | 0.98 | 54.11 | 185.06 |
-| 50% | 0.82 | 99.90 | 188.59 |
+| 0%  | 1.00 | 41.34 | 54.55  |
+| 20% | 0.98 | 53.43 | 183.93 |
+| 50% | 0.82 | 99.34 | 186.00 |
 
 Reproducibility check: re-running `FlakyOperation(seed=261808, failure_rate=0.5)`
 through `call_with_retry` from a fresh process twice in a row produced the

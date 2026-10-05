@@ -4,7 +4,7 @@
     "call_index": 0,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 71.81,
+    "total_latency_ms": 41.254,
     "error": null
   },
   {
@@ -12,7 +12,7 @@
     "call_index": 1,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.958,
+    "total_latency_ms": 41.21,
     "error": null
   },
   {
@@ -20,7 +20,7 @@
     "call_index": 2,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 42.36,
+    "total_latency_ms": 40.979,
     "error": null
   },
   {
@@ -28,7 +28,7 @@
     "call_index": 3,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.499,
+    "total_latency_ms": 40.549,
     "error": null
   },
   {
@@ -36,7 +36,7 @@
     "call_index": 4,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.202,
+    "total_latency_ms": 40.722,
     "error": null
   },
   {
@@ -44,7 +44,7 @@
     "call_index": 5,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.361,
+    "total_latency_ms": 41.524,
     "error": null
   },
   {
@@ -52,7 +52,7 @@
     "call_index": 6,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.164,
+    "total_latency_ms": 40.961,
     "error": null
   },
   {
@@ -60,7 +60,7 @@
     "call_index": 7,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.087,
+    "total_latency_ms": 40.762,
     "error": null
   },
   {
@@ -68,7 +68,7 @@
     "call_index": 8,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.988,
+    "total_latency_ms": 40.749,
     "error": null
   },
   {
@@ -76,7 +76,7 @@
     "call_index": 9,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.49,
+    "total_latency_ms": 41.447,
     "error": null
   },
   {
@@ -84,7 +84,7 @@
     "call_index": 10,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.251,
+    "total_latency_ms": 41.172,
     "error": null
   },
   {
@@ -92,7 +92,7 @@
     "call_index": 11,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.565,
+    "total_latency_ms": 40.757,
     "error": null
   },
   {
@@ -100,7 +100,7 @@
     "call_index": 12,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.852,
+    "total_latency_ms": 41.169,
     "error": null
   },
   {
@@ -108,7 +108,7 @@
     "call_index": 13,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.034,
+    "total_latency_ms": 40.505,
     "error": null
   },
   {
@@ -116,7 +116,7 @@
     "call_index": 14,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.174,
+    "total_latency_ms": 54.555,
     "error": null
   },
   {
@@ -124,7 +124,7 @@
     "call_index": 15,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.046,
+    "total_latency_ms": 49.307,
     "error": null
   },
   {
@@ -132,7 +132,7 @@
     "call_index": 16,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.315,
+    "total_latency_ms": 40.788,
     "error": null
   },
   {
@@ -140,7 +140,7 @@
     "call_index": 17,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.54,
+    "total_latency_ms": 40.866,
     "error": null
   },
   {
@@ -148,7 +148,7 @@
     "call_index": 18,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.138,
+    "total_latency_ms": 40.624,
     "error": null
   },
   {
@@ -156,7 +156,7 @@
     "call_index": 19,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.236,
+    "total_latency_ms": 40.764,
     "error": null
   },
   {
@@ -164,7 +164,7 @@
     "call_index": 20,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.851,
+    "total_latency_ms": 40.948,
     "error": null
   },
   {
@@ -172,7 +172,7 @@
     "call_index": 21,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.307,
+    "total_latency_ms": 40.486,
     "error": null
   },
   {
@@ -180,7 +180,7 @@
     "call_index": 22,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.377,
+    "total_latency_ms": 40.655,
     "error": null
   },
   {
@@ -188,7 +188,7 @@
     "call_index": 23,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.203,
+    "total_latency_ms": 40.574,
     "error": null
   },
   {
@@ -196,7 +196,7 @@
     "call_index": 24,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.55,
+    "total_latency_ms": 40.856,
     "error": null
   },
   {
@@ -204,7 +204,7 @@
     "call_index": 25,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.717,
+    "total_latency_ms": 41.124,
     "error": null
   },
   {
@@ -212,7 +212,7 @@
     "call_index": 26,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.792,
+    "total_latency_ms": 40.88,
     "error": null
   },
   {
@@ -220,7 +220,7 @@
     "call_index": 27,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.158,
+    "total_latency_ms": 40.587,
     "error": null
   },
   {
@@ -228,7 +228,7 @@
     "call_index": 28,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.581,
+    "total_latency_ms": 41.093,
     "error": null
   },
   {
@@ -236,7 +236,7 @@
     "call_index": 29,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 43.69,
+    "total_latency_ms": 41.491,
     "error": null
   },
   {
@@ -244,7 +244,7 @@
     "call_index": 30,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.715,
+    "total_latency_ms": 41.368,
     "error": null
   },
   {
@@ -252,7 +252,7 @@
     "call_index": 31,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.948,
+    "total_latency_ms": 41.334,
     "error": null
   },
   {
@@ -260,7 +260,7 @@
     "call_index": 32,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.347,
+    "total_latency_ms": 40.906,
     "error": null
   },
   {
@@ -268,7 +268,7 @@
     "call_index": 33,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.74,
+    "total_latency_ms": 41.137,
     "error": null
   },
   {
@@ -276,7 +276,7 @@
     "call_index": 34,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 42.954,
+    "total_latency_ms": 40.961,
     "error": null
   },
   {
@@ -284,7 +284,7 @@
     "call_index": 35,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.096,
+    "total_latency_ms": 41.105,
     "error": null
   },
   {
@@ -292,7 +292,7 @@
     "call_index": 36,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.434,
+    "total_latency_ms": 40.875,
     "error": null
   },
   {
@@ -300,7 +300,7 @@
     "call_index": 37,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.001,
+    "total_latency_ms": 40.9,
     "error": null
   },
   {
@@ -308,7 +308,7 @@
     "call_index": 38,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 42.587,
+    "total_latency_ms": 40.68,
     "error": null
   },
   {
@@ -316,7 +316,7 @@
     "call_index": 39,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.914,
+    "total_latency_ms": 40.788,
     "error": null
   },
   {
@@ -324,7 +324,7 @@
     "call_index": 40,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.167,
+    "total_latency_ms": 40.504,
     "error": null
   },
   {
@@ -332,7 +332,7 @@
     "call_index": 41,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.02,
+    "total_latency_ms": 40.839,
     "error": null
   },
   {
@@ -340,7 +340,7 @@
     "call_index": 42,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.262,
+    "total_latency_ms": 40.475,
     "error": null
   },
   {
@@ -348,7 +348,7 @@
     "call_index": 43,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.34,
+    "total_latency_ms": 40.751,
     "error": null
   },
   {
@@ -356,7 +356,7 @@
     "call_index": 44,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.785,
+    "total_latency_ms": 40.796,
     "error": null
   },
   {
@@ -364,7 +364,7 @@
     "call_index": 45,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.183,
+    "total_latency_ms": 40.945,
     "error": null
   },
   {
@@ -372,7 +372,7 @@
     "call_index": 46,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 42.236,
+    "total_latency_ms": 40.883,
     "error": null
   },
   {
@@ -380,7 +380,7 @@
     "call_index": 47,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.886,
+    "total_latency_ms": 40.869,
     "error": null
   },
   {
@@ -388,7 +388,7 @@
     "call_index": 48,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.246,
+    "total_latency_ms": 40.742,
     "error": null
   },
   {
@@ -396,7 +396,7 @@
     "call_index": 49,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.256,
+    "total_latency_ms": 40.662,
     "error": null
   },
   {
@@ -404,7 +404,7 @@
     "call_index": 0,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 44.341,
+    "total_latency_ms": 40.667,
     "error": null
   },
   {
@@ -412,7 +412,7 @@
     "call_index": 1,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.051,
+    "total_latency_ms": 40.74,
     "error": null
   },
   {
@@ -420,7 +420,7 @@
     "call_index": 2,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.128,
+    "total_latency_ms": 40.667,
     "error": null
   },
   {
@@ -428,7 +428,7 @@
     "call_index": 3,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.058,
+    "total_latency_ms": 101.653,
     "error": null
   },
   {
@@ -436,7 +436,7 @@
     "call_index": 4,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.959,
+    "total_latency_ms": 102.15,
     "error": null
   },
   {
@@ -444,7 +444,7 @@
     "call_index": 5,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.975,
+    "total_latency_ms": 101.755,
     "error": null
   },
   {
@@ -452,7 +452,7 @@
     "call_index": 6,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.983,
+    "total_latency_ms": 40.91,
     "error": null
   },
   {
@@ -460,7 +460,7 @@
     "call_index": 7,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.826,
+    "total_latency_ms": 40.545,
     "error": null
   },
   {
@@ -468,7 +468,7 @@
     "call_index": 8,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 185.061,
+    "total_latency_ms": 183.932,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -476,7 +476,7 @@
     "call_index": 9,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.174,
+    "total_latency_ms": 40.811,
     "error": null
   },
   {
@@ -484,7 +484,7 @@
     "call_index": 10,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.193,
+    "total_latency_ms": 40.627,
     "error": null
   },
   {
@@ -492,7 +492,7 @@
     "call_index": 11,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.92,
+    "total_latency_ms": 40.564,
     "error": null
   },
   {
@@ -500,7 +500,7 @@
     "call_index": 12,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.297,
+    "total_latency_ms": 40.608,
     "error": null
   },
   {
@@ -508,7 +508,7 @@
     "call_index": 13,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.43,
+    "total_latency_ms": 40.962,
     "error": null
   },
   {
@@ -516,7 +516,7 @@
     "call_index": 14,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.968,
+    "total_latency_ms": 40.777,
     "error": null
   },
   {
@@ -524,12 +524,84 @@
     "call_index": 15,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.109,
+    "total_latency_ms": 40.546,
     "error": null
   },
   {
     "failure_rate": 0.2,
     "call_index": 16,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.698,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 17,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.678,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 18,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.738,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 19,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.862,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 20,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.707,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 21,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.558,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 22,
+    "success": true,
+    "attempts_used": 2,
+    "total_latency_ms": 101.828,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 23,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.976,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 24,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.803,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 25,
     "success": true,
     "attempts_used": 1,
     "total_latency_ms": 40.956,
@@ -537,82 +609,10 @@
   },
   {
     "failure_rate": 0.2,
-    "call_index": 17,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.059,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 18,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 40.751,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 19,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 43.132,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 20,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.176,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 21,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.516,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 22,
-    "success": true,
-    "attempts_used": 2,
-    "total_latency_ms": 102.79,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 23,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.569,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 24,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.146,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 25,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 42.049,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
     "call_index": 26,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.828,
+    "total_latency_ms": 40.518,
     "error": null
   },
   {
@@ -620,7 +620,7 @@
     "call_index": 27,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.309,
+    "total_latency_ms": 40.724,
     "error": null
   },
   {
@@ -628,7 +628,7 @@
     "call_index": 28,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.192,
+    "total_latency_ms": 102.231,
     "error": null
   },
   {
@@ -636,7 +636,7 @@
     "call_index": 29,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.819,
+    "total_latency_ms": 40.799,
     "error": null
   },
   {
@@ -644,7 +644,7 @@
     "call_index": 30,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.907,
+    "total_latency_ms": 40.656,
     "error": null
   },
   {
@@ -652,7 +652,7 @@
     "call_index": 31,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.189,
+    "total_latency_ms": 40.676,
     "error": null
   },
   {
@@ -660,7 +660,7 @@
     "call_index": 32,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.166,
+    "total_latency_ms": 40.574,
     "error": null
   },
   {
@@ -668,7 +668,7 @@
     "call_index": 33,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.991,
+    "total_latency_ms": 40.612,
     "error": null
   },
   {
@@ -676,7 +676,7 @@
     "call_index": 34,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.588,
+    "total_latency_ms": 40.673,
     "error": null
   },
   {
@@ -684,7 +684,7 @@
     "call_index": 35,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.337,
+    "total_latency_ms": 102.158,
     "error": null
   },
   {
@@ -692,7 +692,7 @@
     "call_index": 36,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.252,
+    "total_latency_ms": 40.521,
     "error": null
   },
   {
@@ -700,7 +700,7 @@
     "call_index": 37,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.525,
+    "total_latency_ms": 102.007,
     "error": null
   },
   {
@@ -708,12 +708,60 @@
     "call_index": 38,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.697,
+    "total_latency_ms": 40.897,
     "error": null
   },
   {
     "failure_rate": 0.2,
     "call_index": 39,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 41.104,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 40,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 41.31,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 41,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 41.01,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 42,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 41.04,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 43,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 40.657,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 44,
+    "success": true,
+    "attempts_used": 1,
+    "total_latency_ms": 41.206,
+    "error": null
+  },
+  {
+    "failure_rate": 0.2,
+    "call_index": 45,
     "success": true,
     "attempts_used": 1,
     "total_latency_ms": 40.967,
@@ -721,58 +769,10 @@
   },
   {
     "failure_rate": 0.2,
-    "call_index": 40,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.093,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 41,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 40.759,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 42,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.093,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 43,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 42.206,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 44,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 41.483,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
-    "call_index": 45,
-    "success": true,
-    "attempts_used": 1,
-    "total_latency_ms": 42.675,
-    "error": null
-  },
-  {
-    "failure_rate": 0.2,
     "call_index": 46,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.963,
+    "total_latency_ms": 101.971,
     "error": null
   },
   {
@@ -780,7 +780,7 @@
     "call_index": 47,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.06,
+    "total_latency_ms": 41.114,
     "error": null
   },
   {
@@ -788,7 +788,7 @@
     "call_index": 48,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.011,
+    "total_latency_ms": 40.726,
     "error": null
   },
   {
@@ -796,7 +796,7 @@
     "call_index": 49,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 43.021,
+    "total_latency_ms": 40.592,
     "error": null
   },
   {
@@ -804,7 +804,7 @@
     "call_index": 0,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.953,
+    "total_latency_ms": 40.812,
     "error": null
   },
   {
@@ -812,7 +812,7 @@
     "call_index": 1,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.008,
+    "total_latency_ms": 103.158,
     "error": null
   },
   {
@@ -820,7 +820,7 @@
     "call_index": 2,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 104.439,
+    "total_latency_ms": 101.77,
     "error": null
   },
   {
@@ -828,7 +828,7 @@
     "call_index": 3,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.861,
+    "total_latency_ms": 102.646,
     "error": null
   },
   {
@@ -836,7 +836,7 @@
     "call_index": 4,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.97,
+    "total_latency_ms": 101.856,
     "error": null
   },
   {
@@ -844,7 +844,7 @@
     "call_index": 5,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 184.456,
+    "total_latency_ms": 183.75,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -852,7 +852,7 @@
     "call_index": 6,
     "success": true,
     "attempts_used": 3,
-    "total_latency_ms": 183.863,
+    "total_latency_ms": 184.249,
     "error": null
   },
   {
@@ -860,7 +860,7 @@
     "call_index": 7,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.358,
+    "total_latency_ms": 41.74,
     "error": null
   },
   {
@@ -868,7 +868,7 @@
     "call_index": 8,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 184.045,
+    "total_latency_ms": 185.998,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -876,7 +876,7 @@
     "call_index": 9,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.319,
+    "total_latency_ms": 42.011,
     "error": null
   },
   {
@@ -884,7 +884,7 @@
     "call_index": 10,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.997,
+    "total_latency_ms": 41.08,
     "error": null
   },
   {
@@ -892,7 +892,7 @@
     "call_index": 11,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.438,
+    "total_latency_ms": 41.062,
     "error": null
   },
   {
@@ -900,7 +900,7 @@
     "call_index": 12,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.302,
+    "total_latency_ms": 40.655,
     "error": null
   },
   {
@@ -908,7 +908,7 @@
     "call_index": 13,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.824,
+    "total_latency_ms": 40.794,
     "error": null
   },
   {
@@ -916,7 +916,7 @@
     "call_index": 14,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 183.95,
+    "total_latency_ms": 184.524,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -924,7 +924,7 @@
     "call_index": 15,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 185.408,
+    "total_latency_ms": 183.914,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -932,7 +932,7 @@
     "call_index": 16,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 188.585,
+    "total_latency_ms": 185.257,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -940,7 +940,7 @@
     "call_index": 17,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 42.128,
+    "total_latency_ms": 41.483,
     "error": null
   },
   {
@@ -948,7 +948,7 @@
     "call_index": 18,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 104.254,
+    "total_latency_ms": 103.455,
     "error": null
   },
   {
@@ -956,7 +956,7 @@
     "call_index": 19,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 104.031,
+    "total_latency_ms": 103.318,
     "error": null
   },
   {
@@ -964,7 +964,7 @@
     "call_index": 20,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.652,
+    "total_latency_ms": 41.811,
     "error": null
   },
   {
@@ -972,7 +972,7 @@
     "call_index": 21,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.728,
+    "total_latency_ms": 41.404,
     "error": null
   },
   {
@@ -980,7 +980,7 @@
     "call_index": 22,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.382,
+    "total_latency_ms": 102.016,
     "error": null
   },
   {
@@ -988,7 +988,7 @@
     "call_index": 23,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 104.799,
+    "total_latency_ms": 102.318,
     "error": null
   },
   {
@@ -996,7 +996,7 @@
     "call_index": 24,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.438,
+    "total_latency_ms": 41.183,
     "error": null
   },
   {
@@ -1004,7 +1004,7 @@
     "call_index": 25,
     "success": true,
     "attempts_used": 3,
-    "total_latency_ms": 184.112,
+    "total_latency_ms": 183.522,
     "error": null
   },
   {
@@ -1012,7 +1012,7 @@
     "call_index": 26,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.601,
+    "total_latency_ms": 41.01,
     "error": null
   },
   {
@@ -1020,7 +1020,7 @@
     "call_index": 27,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.543,
+    "total_latency_ms": 102.188,
     "error": null
   },
   {
@@ -1028,7 +1028,7 @@
     "call_index": 28,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.127,
+    "total_latency_ms": 101.943,
     "error": null
   },
   {
@@ -1036,7 +1036,7 @@
     "call_index": 29,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.507,
+    "total_latency_ms": 101.695,
     "error": null
   },
   {
@@ -1044,7 +1044,7 @@
     "call_index": 30,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.043,
+    "total_latency_ms": 103.129,
     "error": null
   },
   {
@@ -1052,7 +1052,7 @@
     "call_index": 31,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.009,
+    "total_latency_ms": 41.293,
     "error": null
   },
   {
@@ -1060,7 +1060,7 @@
     "call_index": 32,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 184.004,
+    "total_latency_ms": 185.081,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -1068,7 +1068,7 @@
     "call_index": 33,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 40.96,
+    "total_latency_ms": 40.55,
     "error": null
   },
   {
@@ -1076,7 +1076,7 @@
     "call_index": 34,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 187.508,
+    "total_latency_ms": 183.14,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -1084,7 +1084,7 @@
     "call_index": 35,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.303,
+    "total_latency_ms": 102.842,
     "error": null
   },
   {
@@ -1092,7 +1092,7 @@
     "call_index": 36,
     "success": true,
     "attempts_used": 3,
-    "total_latency_ms": 184.626,
+    "total_latency_ms": 185.478,
     "error": null
   },
   {
@@ -1100,7 +1100,7 @@
     "call_index": 37,
     "success": true,
     "attempts_used": 3,
-    "total_latency_ms": 184.61,
+    "total_latency_ms": 183.733,
     "error": null
   },
   {
@@ -1108,7 +1108,7 @@
     "call_index": 38,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 104.212,
+    "total_latency_ms": 103.379,
     "error": null
   },
   {
@@ -1116,7 +1116,7 @@
     "call_index": 39,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.22,
+    "total_latency_ms": 41.525,
     "error": null
   },
   {
@@ -1124,7 +1124,7 @@
     "call_index": 40,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.348,
+    "total_latency_ms": 41.589,
     "error": null
   },
   {
@@ -1132,7 +1132,7 @@
     "call_index": 41,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 103.363,
+    "total_latency_ms": 103.504,
     "error": null
   },
   {
@@ -1140,7 +1140,7 @@
     "call_index": 42,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.039,
+    "total_latency_ms": 41.396,
     "error": null
   },
   {
@@ -1148,7 +1148,7 @@
     "call_index": 43,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 102.876,
+    "total_latency_ms": 101.803,
     "error": null
   },
   {
@@ -1156,7 +1156,7 @@
     "call_index": 44,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.181,
+    "total_latency_ms": 40.99,
     "error": null
   },
   {
@@ -1164,7 +1164,7 @@
     "call_index": 45,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 184.687,
+    "total_latency_ms": 184.538,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -1172,7 +1172,7 @@
     "call_index": 46,
     "success": true,
     "attempts_used": 2,
-    "total_latency_ms": 105.875,
+    "total_latency_ms": 102.979,
     "error": null
   },
   {
@@ -1180,7 +1180,7 @@
     "call_index": 47,
     "success": false,
     "attempts_used": 3,
-    "total_latency_ms": 186.537,
+    "total_latency_ms": 184.972,
     "error": "all 3 attempts failed: simulated failure"
   },
   {
@@ -1188,7 +1188,7 @@
     "call_index": 48,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.65,
+    "total_latency_ms": 41.583,
     "error": null
   },
   {
@@ -1196,7 +1196,7 @@
     "call_index": 49,
     "success": true,
     "attempts_used": 1,
-    "total_latency_ms": 41.98,
+    "total_latency_ms": 40.932,
     "error": null
   }
 ]
