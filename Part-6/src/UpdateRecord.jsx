@@ -1,16 +1,24 @@
-// Part-6/src/UpdateRecord.jsx -- DATA-260 HW4, Part 1.III
+// Part-6/src/UpdateRecord.jsx -- DATA-260 HW5, Part 1.III.4
 //
-// Rendered at "/update". Receives the record to edit and the update handler
-// as props from App.jsx (not fetched independently -- see App.jsx's
-// handleUpdate, which is what actually calls the backend and persists the
-// change in MySQL). Falls back to redirecting home if no record was passed
-// in (e.g. someone navigates to /update directly without picking a row).
+// Rendered at "/update/:id". HW4 received the record and an onUpdate
+// callback as props from App.jsx; HW5 takes the id from the URL and looks
+// the record up in Redux state with useSelector, then dispatches the
+// updateCourse thunk directly on submit (see coursesSlice.js). Falls back to
+// redirecting home if that id isn't in the store (e.g. a stale link, or a
+// direct visit before the list has loaded).
 
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCourse } from "./coursesSlice";
 
-export default function UpdateRecord({ record, onUpdate }) {
+export default function UpdateRecord() {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const record = useSelector((state) =>
+    state.courses.items.find((c) => String(c.id) === id)
+  );
   const [courseCode, setCourseCode] = useState(record?.course_code || "");
   const [courseTitle, setCourseTitle] = useState(record?.course_title || "");
   const [error, setError] = useState("");
@@ -20,11 +28,13 @@ export default function UpdateRecord({ record, onUpdate }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    try {
-      await onUpdate(record.id, { course_code: courseCode, course_title: courseTitle });
+    const result = await dispatch(
+      updateCourse({ id: record.id, data: { course_code: courseCode, course_title: courseTitle } })
+    );
+    if (updateCourse.fulfilled.match(result)) {
       navigate("/");
-    } catch (err) {
-      setError(err.message || "Could not update course");
+    } else {
+      setError(result.payload || "Could not update course");
     }
   };
 

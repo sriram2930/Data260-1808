@@ -1,15 +1,15 @@
-// Part-6/src/App.jsx -- DATA-260 HW4, Part 1.V
+// Part-6/src/App.jsx -- DATA-260 HW5, Part 1.III.1
 //
-// Top-level component. Owns the shared `courses` list and `selectedCourse`
-// state (useState), fetches the list on mount and whenever the logged-in
-// user changes (useEffect), and passes callback props down to
-// Create/Update/DeleteRecord rather than having each of them talk to the
-// API independently -- per the assignment's "pass props for the Create,
-// Update, and Delete components." Routing is react-router-dom.
+// Top-level component. HW4 had App.jsx own the course list in useState and
+// pass callback props down to Create/Update/DeleteRecord. HW5 moves that
+// data layer to Redux (see store.js / coursesSlice.js): the list now lives
+// in the Redux store, each screen reads it with useSelector and dispatches
+// thunks directly instead of going through App-owned callbacks. App.jsx is
+// left owning only routing and the navbar. Update/Delete now take the record
+// id from the URL (/update/:id, /delete/:id) instead of an App-level
+// "selected" prop, since the record can be looked up from the store by id.
 
-import { useEffect, useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-import { api } from "./api";
 import { useAuth } from "./AuthContext";
 import Home from "./Home";
 import Login from "./Login";
@@ -20,38 +20,7 @@ import "./App.css";
 
 export default function App() {
   const { user, logout } = useAuth();
-  const [courses, setCourses] = useState([]);
-  const [error, setError] = useState("");
-  const [selected, setSelected] = useState(null);
   const navigate = useNavigate();
-
-  const refreshCourses = () => {
-    if (!user) {
-      setCourses([]);
-      return;
-    }
-    api
-      .listCourses()
-      .then(setCourses)
-      .catch((err) => setError(err.message));
-  };
-
-  useEffect(refreshCourses, [user]);
-
-  const handleCreate = async (data) => {
-    await api.createCourse(data);
-    refreshCourses();
-  };
-
-  const handleUpdate = async (id, data) => {
-    await api.updateCourse(id, data);
-    refreshCourses();
-  };
-
-  const handleDelete = async (id) => {
-    await api.deleteCourse(id);
-    refreshCourses();
-  };
 
   const handleLogout = async () => {
     await logout();
@@ -77,20 +46,11 @@ export default function App() {
       </nav>
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={<Home courses={courses} error={error} onSelect={setSelected} />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/create" element={<CreateRecord onCreate={handleCreate} />} />
-          <Route
-            path="/update"
-            element={<UpdateRecord record={selected} onUpdate={handleUpdate} />}
-          />
-          <Route
-            path="/delete"
-            element={<DeleteRecord record={selected} onDelete={handleDelete} />}
-          />
+          <Route path="/create" element={<CreateRecord />} />
+          <Route path="/update/:id" element={<UpdateRecord />} />
+          <Route path="/delete/:id" element={<DeleteRecord />} />
         </Routes>
       </main>
     </div>

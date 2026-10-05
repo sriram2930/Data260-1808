@@ -1,25 +1,34 @@
-// Part-6/src/DeleteRecord.jsx -- DATA-260 HW4, Part 1.IV
+// Part-6/src/DeleteRecord.jsx -- DATA-260 HW5, Part 1.III.5
 //
-// Rendered at "/delete". Receives the record to delete and the delete
-// handler as props from App.jsx. A single confirm button; on click it calls
-// the backend (removing the row from MySQL) and redirects home.
+// Rendered at "/delete/:id". HW4 received the record and an onDelete
+// callback as props from App.jsx; HW5 takes the id from the URL, looks the
+// record up in Redux state, and dispatches the deleteCourse thunk directly
+// on confirm -- Home.jsx's list updates automatically since both read the
+// same Redux slice (see coursesSlice.js).
 
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCourse } from "./coursesSlice";
 
-export default function DeleteRecord({ record, onDelete }) {
+export default function DeleteRecord() {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const record = useSelector((state) =>
+    state.courses.items.find((c) => String(c.id) === id)
+  );
   const [error, setError] = useState("");
 
   if (!record) return <Navigate to="/" replace />;
 
   const handleDelete = async () => {
     setError("");
-    try {
-      await onDelete(record.id);
+    const result = await dispatch(deleteCourse(record.id));
+    if (deleteCourse.fulfilled.match(result)) {
       navigate("/");
-    } catch (err) {
-      setError(err.message || "Could not delete course");
+    } else {
+      setError(result.payload || "Could not delete course");
     }
   };
 

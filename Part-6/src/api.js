@@ -1,11 +1,13 @@
-// Part-6/src/api.js -- DATA-260 HW4, Part 1
+// Part-6/src/api.js -- DATA-260 HW4/HW5, Part 1
 //
 // Thin fetch wrapper for the FastAPI backend (Part-1/, running on PORT_BASE
 // 8008). credentials: "include" on every call is what makes the browser
 // actually send the HttpOnly session cookie back on cross-origin requests
 // (the Vite dev server runs on :5173, the API on :8008), which is also why
 // the backend's CORS config needs allow_credentials=True with an explicit
-// origin instead of "*".
+// origin instead of "*". HW5 moved the course CRUD calls to Redux thunks
+// (coursesSlice.js, over axios) -- this file now only covers auth, which
+// AuthContext.jsx still uses directly.
 
 const API_BASE = "http://localhost:8008/api";
 
@@ -36,11 +38,4 @@ export const api = {
     request("/login", { method: "POST", body: JSON.stringify({ email, password }) }),
   me: () => request("/me"),
   logout: () => request("/logout", { method: "POST" }),
-
-  listCourses: () => request("/courses"),
-  getCourse: (id) => request(`/courses/${id}`),
-  createCourse: (data) => request("/courses", { method: "POST", body: JSON.stringify(data) }),
-  updateCourse: (id, data) =>
-    request(`/courses/${id}`, { method: "PUT", body: JSON.stringify(data) }),
-  deleteCourse: (id) => request(`/courses/${id}`, { method: "DELETE" }),
 };

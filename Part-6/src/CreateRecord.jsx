@@ -1,29 +1,32 @@
-// Part-6/src/CreateRecord.jsx -- DATA-260 HW4, Part 1.II
+// Part-6/src/CreateRecord.jsx -- DATA-260 HW5, Part 1.III.4
 //
-// Rendered at "/create". Primary field (course code) + secondary field
-// (course title) inputs, plus a domain-appropriate submit button. Receives
-// the create handler as a prop from App.jsx -- on submit it calls that prop,
-// which POSTs to the backend (MySQL assigns the auto-incremented id, not
-// generated client-side), then this redirects home so the updated list is
-// visible.
+// Rendered at "/create". HW4 received an onCreate callback prop from
+// App.jsx; HW5 dispatches the createCourse thunk directly (see
+// coursesSlice.js), which POSTs to the backend and appends the new row to
+// Redux state -- Home.jsx picks that up automatically, no manual refetch.
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createCourse } from "./coursesSlice";
 
-export default function CreateRecord({ onCreate }) {
+export default function CreateRecord() {
   const [courseCode, setCourseCode] = useState("");
   const [courseTitle, setCourseTitle] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    try {
-      await onCreate({ course_code: courseCode, course_title: courseTitle });
+    const result = await dispatch(
+      createCourse({ course_code: courseCode, course_title: courseTitle })
+    );
+    if (createCourse.fulfilled.match(result)) {
       navigate("/");
-    } catch (err) {
-      setError(err.message || "Could not add course");
+    } else {
+      setError(result.payload || "Could not add course");
     }
   };
 
@@ -37,7 +40,7 @@ export default function CreateRecord({ onCreate }) {
           <input
             value={courseCode}
             onChange={(e) => setCourseCode(e.target.value)}
-            placeholder="e.g. DATA-260"
+            placeholder="e.g. DATA-00260"
             required
             autoFocus
           />

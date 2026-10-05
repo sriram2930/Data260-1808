@@ -1,17 +1,30 @@
-// Part-6/src/Home.jsx -- DATA-260 HW4, Part 1.I
+// Part-6/src/Home.jsx -- DATA-260 HW5, Part 1.III.3
 //
-// Rendered at the root route "/". Receives the course list and a "select
-// this record" callback as props from App.jsx (App owns the useEffect that
-// actually fetches the list). Only logged-in users see the list or the Add
-// Record button -- logged-out users see a "Login required" message instead,
-// per the assignment.
+// Rendered at "/". HW4 received the course list as a prop from App.jsx; HW5
+// reads it straight from Redux state with useSelector and dispatches
+// fetchCourses itself whenever the logged-in user changes -- the list
+// updates automatically when records are created, updated, or deleted
+// because those thunks update the same Redux slice (see coursesSlice.js).
 
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { useAuth } from "./AuthContext";
+import { fetchCourses, clearCourses } from "./coursesSlice";
 
-export default function Home({ courses, error, onSelect }) {
+export default function Home() {
   const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { items: courses, status, error } = useSelector((state) => state.courses);
+
+  useEffect(() => {
+    if (user) {
+      dispatch(fetchCourses());
+    } else {
+      dispatch(clearCourses());
+    }
+  }, [user, dispatch]);
 
   if (authLoading) return <p className="muted">Loading...</p>;
 
@@ -27,11 +40,6 @@ export default function Home({ courses, error, onSelect }) {
     );
   }
 
-  const goTo = (path, course) => {
-    onSelect(course);
-    navigate(path);
-  };
-
   return (
     <div>
       <div className="row-between">
@@ -41,7 +49,8 @@ export default function Home({ courses, error, onSelect }) {
         </Link>
       </div>
       {error && <div className="alert">{error}</div>}
-      {courses.length === 0 && <p className="muted">No courses yet.</p>}
+      {status === "loading" && <p className="muted">Loading courses...</p>}
+      {status === "succeeded" && courses.length === 0 && <p className="muted">No courses yet.</p>}
       <ul className="record-list">
         {courses.map((c) => (
           <li key={c.id} className="card">
@@ -51,8 +60,8 @@ export default function Home({ courses, error, onSelect }) {
                 {c.department && <span className="pill">{c.department}</span>}
               </div>
               <div className="actions">
-                <button onClick={() => goTo("/update", c)}>Update</button>
-                <button onClick={() => goTo("/delete", c)}>Delete</button>
+                <button onClick={() => navigate(`/update/${c.id}`)}>Update</button>
+                <button onClick={() => navigate(`/delete/${c.id}`)}>Delete</button>
               </div>
             </div>
           </li>

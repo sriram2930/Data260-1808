@@ -1,8 +1,13 @@
 """
-Part-1/models.py -- DATA-260 HW4, Part 2 SQLAlchemy models
+Part-1/models.py -- DATA-260 HW4/HW5 SQLAlchemy models
 
 Course: the primary domain entity (Campus course catalogue and enrolment),
         primary field course_code, secondary field course_title.
+Department: HW5's required "related entity" (the book/author-style second
+         table) -- Course.department_id FKs into it. Kept alongside the old
+         free-text Course.department column from HW4 (used by Part 3's N+1
+         seed data and the EXPLAIN index demo) rather than replacing it, per
+         "keep extending, don't start a new one" / don't break prior parts.
 Section: the "related" table Part 3's N+1 experiment needs -- course
          offerings (semester, instructor, enrolled_count), FK'd to Course.
          200 rows get seeded here, spread across a subset of the 5,000
@@ -23,17 +28,39 @@ from sqlalchemy.orm import relationship
 from db import Base
 
 
+class Department(Base):
+    __tablename__ = "departments"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(128), nullable=False)
+    building = Column(String(128), nullable=True)
+    dept_code = Column(String(16), nullable=False, unique=True, index=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    updated_at = Column(
+        DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False
+    )
+
+    courses = relationship("Course", back_populates="department_ref")
+
+
 class Course(Base):
     __tablename__ = "courses"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    course_code = Column(String(32), nullable=False, index=True)
+    course_code = Column(String(32), nullable=False, unique=True, index=True)
     course_title = Column(String(255), nullable=False)
     submitter_email = Column(String(255), nullable=True)
     description = Column(Text, nullable=True)
-    department = Column(String(64), nullable=True)
+    department = Column(String(64), nullable=True)  # HW4 free-text field, kept as-is
     agree_terms = Column(Boolean, default=False)
+    department_id = Column(Integer, ForeignKey("departments.id"), nullable=True, index=True)
+    seats_available = Column(Integer, default=30, nullable=False)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    updated_at = Column(
+        DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False
+    )
 
+    department_ref = relationship("Department", back_populates="courses")
     sections = relationship("Section", back_populates="course")
 
 
