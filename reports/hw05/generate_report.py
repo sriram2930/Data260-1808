@@ -44,7 +44,7 @@ config_rows = [
     ("Local model", "qwen2.5:1.5b-instruct via Ollama, used by the Part 5 agent loop"),
     ("Repo", "https://github.com/sriram2930/Data260-1808"),
     ("Collaborators", "Sbnikitha and supriyaselvanganesan added as collaborators with repo access"),
-    ("Commit tagged as hw5", "PLACEHOLDER_COMMIT_HASH"),
+    ("Commit tagged as hw5", "5256e97f9f998ec526fb2448cd37baf8ddf4b361"),
 ]
 t = doc.add_table(rows=0, cols=2)
 t.style = "Table Grid"
