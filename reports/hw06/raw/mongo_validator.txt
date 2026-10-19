@@ -1,0 +1,31 @@
+MongoServerError: Document failed validation
+{
+  failingDocumentId: ObjectId('6ad682b2b0a498ee053621e0'),
+  details: {
+    operatorName: '$jsonSchema',
+    schemaRulesNotSatisfied: [
+      {
+        operatorName: 'properties',
+        propertiesNotSatisfied: [
+          {
+            propertyName: 'status',
+            details: [
+              {
+                operatorName: 'enum',
+                specifiedAs: {
+                  enum: [
+                    'draft',
+                    'published',
+                    'archived'
+                  ]
+                },
+                reason: 'value was not found in enum',
+                consideredValue: 'not_valid_enum'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+--- LOGIN ---
+{"id":1,"name":"Course Advisor","email":"advisor@sjsu.edu"}
+HTTP 200
+
+--- POST (create, valid) ---
+{"id":"6ad68288eb92adf274843b4e","title":"Midterm date moved","description":"The CS 272 midterm moves from Oct 20 to Oct 27.","status":"draft","category":"course_update","event_date":"2026-10-27T09:00:00","created_at":"2026-10-19T20:50:16.014805","updated_at":"2026-10-19T20:50:16.014805"}
+HTTP 201
+
+--- POST (missing required title) ---
+{"detail":[{"type":"missing","loc":["body","title"],"msg":"Field required","input":{"category":"general","event_date":"2026-12-01T00:00:00"}}]}
+HTTP 422
+
+--- POST (invalid enum: status) ---
+{"detail":[{"type":"literal_error","loc":["body","status"],"msg":"Input should be 'draft', 'published' or 'archived'","input":"not_a_real_status","ctx":{"expected":"'draft', 'published' or 'archived'"}}]}
+HTTP 422
+
+--- POST (create 2nd, valid, published) ---
+{"id":"6ad68290eb92adf274843b4f","title":"Fall enrollment opens Nov 1","description":"Priority enrollment window for continuing students.","status":"published","category":"enrollment","event_date":"2026-11-01T08:00:00","created_at":"2026-10-19T20:50:24.522088","updated_at":"2026-10-19T20:50:24.522088"}
+HTTP 201
+
+--- GET (by id, 2nd announcement) ---
+{"id":"6ad68290eb92adf274843b4f","title":"Fall enrollment opens Nov 1","description":"Priority enrollment window for continuing students.","status":"published","category":"enrollment","event_date":"2026-11-01T08:00:00","created_at":"2026-10-19T20:50:24.522000","updated_at":"2026-10-19T20:50:24.522000"}
+HTTP 200
+
+--- PUT (update 1st announcement) ---
+{"id":"6ad68288eb92adf274843b4e","title":"Midterm date moved again","description":"Now moved to Oct 29 instead.","status":"archived","category":"course_update","event_date":"2026-10-29T09:00:00","created_at":"2026-10-19T20:50:16.014000","updated_at":"2026-10-19T20:50:34.119000"}
+HTTP 200
+
+--- GET by bad id ---
+{"detail":"Announcement not found"}
+HTTP 404
+
+--- GET list (all announcements) ---
+[{"id":"6ad68290eb92adf274843b4f","title":"Fall enrollment opens Nov 1","description":"Priority enrollment window for continuing students.","status":"published","category":"enrollment","event_date":"2026-11-01T08:00:00","created_at":"2026-10-19T20:50:24.522000","updated_at":"2026-10-19T20:50:24.522000"},{"id":"6ad68288eb92adf274843b4e","title":"Midterm date moved again","description":"Now moved to Oct 29 instead.","status":"archived","category":"course_update","event_date":"2026-10-29T09:00:00","created_at":"2026-10-19T20:50:16.014000","updated_at":"2026-10-19T20:50:34.119000"},{"id":"6ad5e3ee13482f9b4c0c8949","title":"Fall enrollment opens Nov 1","description":"Priority enrollment window for continuing students.","status":"published","category":"enrollment","event_date":"2026-11-01T08:00:00","created_at":"2026-10-19T09:33:34.672000","updated_at":"2026-10-19T09:33:34.672000"}]
+HTTP 200
+
+--- DELETE (1st announcement) ---
+{"ok":true,"deleted_id":"6ad68288eb92adf274843b4e"}
+HTTP 200

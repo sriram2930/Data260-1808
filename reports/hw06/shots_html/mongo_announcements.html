@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mongosh -- s1808_doc.announcements</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">mongosh -- s1808_doc.announcements</span>
+    </div>
+    <div class="body">&gt; db.announcements.find().pretty()
+[
+  {
+    _id: ObjectId(&#x27;6ad5e3ee13482f9b4c0c8949&#x27;),
+    title: &#x27;Fall enrollment opens Nov 1&#x27;,
+    description: &#x27;Priority enrollment window for continuing students.&#x27;,
+    status: &#x27;published&#x27;,
+    category: &#x27;enrollment&#x27;,
+    event_date: ISODate(&#x27;2026-11-01T08:00:00.000Z&#x27;),
+    created_at: ISODate(&#x27;2026-10-19T09:33:34.672Z&#x27;),
+    updated_at: ISODate(&#x27;2026-10-19T09:33:34.672Z&#x27;)
+  },
+  {
+    _id: ObjectId(&#x27;6ad68290eb92adf274843b4f&#x27;),
+    title: &#x27;Fall enrollment opens Nov 1&#x27;,
+    description: &#x27;Priority enrollment window for continuing students.&#x27;,
+    status: &#x27;published&#x27;,
+    category: &#x27;enrollment&#x27;,
+    event_date: ISODate(&#x27;2026-11-01T08:00:00.000Z&#x27;),
+    created_at: ISODate(&#x27;2026-10-19T20:50:24.522Z&#x27;),
+    updated_at: ISODate(&#x27;2026-10-19T20:50:24.522Z&#x27;)
+  }
+]
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bash -- announcements: get / update / get-404 / delete</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">bash -- announcements: get / update / get-404 / delete</span>
+    </div>
+    <div class="body">--- GET (by id, 2nd announcement) ---
+{&quot;id&quot;:&quot;6ad68290eb92adf274843b4f&quot;,&quot;title&quot;:&quot;Fall enrollment opens Nov 1&quot;,&quot;description&quot;:&quot;Priority enrollment window for continuing students.&quot;,&quot;status&quot;:&quot;published&quot;,&quot;category&quot;:&quot;enrollment&quot;,&quot;event_date&quot;:&quot;2026-11-01T08:00:00&quot;,&quot;created_at&quot;:&quot;2026-10-19T20:50:24.522000&quot;,&quot;updated_at&quot;:&quot;2026-10-19T20:50:24.522000&quot;}
+HTTP 200
+
+--- PUT (update 1st announcement) ---
+{&quot;id&quot;:&quot;6ad68288eb92adf274843b4e&quot;,&quot;title&quot;:&quot;Midterm date moved again&quot;,&quot;description&quot;:&quot;Now moved to Oct 29 instead.&quot;,&quot;status&quot;:&quot;archived&quot;,&quot;category&quot;:&quot;course_update&quot;,&quot;event_date&quot;:&quot;2026-10-29T09:00:00&quot;,&quot;created_at&quot;:&quot;2026-10-19T20:50:16.014000&quot;,&quot;updated_at&quot;:&quot;2026-10-19T20:50:34.119000&quot;}
+HTTP 200
+
+--- GET by bad id ---
+{&quot;detail&quot;:&quot;Announcement not found&quot;}
+HTTP 404
+
+--- DELETE (1st announcement) ---
+{&quot;ok&quot;:true,&quot;deleted_id&quot;:&quot;6ad68288eb92adf274843b4e&quot;}
+HTTP 200
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mongosh -- s1808_doc.messages / summaries / episodes</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">mongosh -- s1808_doc.messages / summaries / episodes</span>
+    </div>
+    <div class="body">&gt; db.messages.countDocuments({user_id:&quot;u1_shots&quot;})
+24
+
+&gt; db.summaries.find({user_id:&quot;u1_shots&quot;},{text:1,scope:1,session_id:1,_id:0})
+[
+  {
+    session_id: &#x27;48d6b931a400&#x27;,
+    scope: &#x27;session&#x27;,
+    text: &#x27;- User: Data Science\n&#x27; +
+      &#x27;- Assistant: Offers courses including Data Structures and Algorithms, Database Management Systems, Artificial Intelligence, and more.\n&#x27; +
+      &#x27;- User: Computer Science department\n&#x27; +
+      &#x27;- Assistant: Provides courses such as Fundamentals of Computer Science, Data Structures and Algorithms, Introduction to Programming, and more.\n&#x27; +
+      &#x27;- User: Cloud computing topics\n&#x27; +
+      &#x27;- Assistant: Courses related to cloud computing, including Cloud Computing, Cloud Architecture and Design, Cloud Security and Compliance, Cloud Storage and Backup, Cloud Infrastructure Management, and Cloud Operations and Monitoring.\n&#x27; +
+      &#x27;- User: Student ID\n&#x27; +
+      &#x27;- Assistant: 019151808\n&#x27; +
+      &#x27;- User: Career goal\n&#x27; +
+      &#x27;- Assistant: Not specified in the conversation.\n&#x27; +
+      &#x27;- User: Data Science and AI department\n&#x27; +
+      &#x27;- Assistant: Offers courses including Data Structures and Algorithms, Database Management Systems, Software Engineering, Artificial Intelligence, and more.\n&#x27; +
+      &#x27;- User: First thing mentioned\n&#x27; +
+      &#x27;- Assistant: Name, Sreeram.&#x27;
+  },
+  {
+    session_id: &#x27;48d6b931a400&#x27;,
+    scope: &#x27;session&#x27;,
+    text: &#x27;- **User**: Sreeram, a grad student in Data Science.\n&#x27; +
+      &#x27;- **Assistant**: Greetings Sreeram! Welcome to the Data Science program. What can I help you with today?\n&#x27; +
+      &#x27;- **User**: What courses does the Computer Science department offer?\n&#x27; +
+      &#x27;- **Assistant**: The department offers a range of courses including:\n&#x27; +
+      &#x27;  - Fundamentals of Computer Science\n&#x27; +
+      &#x27;  - Data Structures and Algorithms\n&#x27; +
+      &#x27;  - Introduction to Programming\n&#x27; +
+      &#x27;  - Object-Oriented Programming\n&#x27; +
+      &#x27;  - Database Management Systems\n&#x27; +
+      &#x27;  - Software Engineering\n&#x27; +
+      &#x27;  - Artificial Intelligence\n&#x27; +
+      &#x27;  - Computer Graphics and Multimedia\n&#x27; +
+      &#x27;  - Human-Computer Interaction\n&#x27; +
+      &#x27;  - Security and Cryptography\n&#x27; +
+      &#x27;  - Internet and Web Technologies\n&#x27; +
+      &#x27;  - Operating Systems\n&#x27; +
+      &#x27;  - Compiler Design\n&#x27; +
+      &#x27;  - Computer Networks\n&#x27; +
+      &#x27;  - Advanced Programming Languages\n&#x27; +
+      &#x27;  - Computer Architecture\n&#x27; +
+      &#x27;  - Parallel and Distributed Computing\n&#x27; +
+      &#x27;  - Digital Electronics\n&#x27; +
+      &#x27;  - Machine Learning\n&#x27; +
+      &#x27;  - Natural Language Processing\n&#x27; +
+      &#x27;  - Computer Vision\n&#x27; +
+      &#x27;  - Human-Computer Interaction\n&#x27; +
+      &#x27;  - User Experience Design.\n&#x27; +
+      &quot;- **User**: I&#x27;m particularly interested in cloud computing topics.\n&quot; +
+      &#x27;- **Assistant**: Cloud computing is indeed relevant. Here are some courses related to cloud computing:\n&#x27; +
+      &#x27;  - Cloud Computing\n&#x27; +
+      &#x27;  - Cloud Architecture and Design\n&#x27; +
+      &#x27;  - Cloud Security and Compliance\n&#x27; +
+      &#x27;  - Cloud Storage and Backup\n&#x27; +
+      &#x27;  - Cloud Infrastructure Management\n&#x27; +
+      &#x27;  - Cloud Operations and Monitoring.\n&#x27; +
+      &#x27;- **User**: My advisor is Course Advisor and my student ID is 019151808.\n&#x27; +
+      &#x27;- **Assistant**: Your advisor is Course Advisor, and your student ID is 019151808. Everything is set.&#x27;
+  },
+  {
+    session_id: null,
+    scope: &#x27;user&#x27;,
+    text: &#x27;- Grad student in Data Science\n&#x27; +
+      &#x27;- Interested in cloud computing\n&#x27; +
+      &#x27;- Advisor: Course Advisor, Student ID: 019151808\n&#x27; +
+      &#x27;- Courses offered: Data Science (includes Data Structures, Algorithms, and AI), Computer Science (covers Fundamentals, Programming, and more), Cloud Computing, Software Engineering, Artificial Intelligence, Database Management Systems, and more.\n&#x27; +
+      &quot;- Sreeram&#x27;s first thing mentioned: Data Science and AI department.&quot;
+  }
+]
+
+&gt; db.episodes.find({user_id:&quot;u1_shots&quot;},{embedding:0,_id:0}).limit(5)
+[
+  {
+    user_id: &#x27;u1_shots&#x27;,
+    session_id: &#x27;48d6b931a400&#x27;,
+    fact: &quot;The user&#x27;s name is Sreeram.&quot;,
+    importance: 0.85,
+    created_at: ISODate(&#x27;2026-10-19T20:50:33.304Z&#x27;)
+  },
+  {
+    user_id: &#x27;u1_shots&#x27;,
+    session_id: &#x27;48d6b931a400&#x27;,
+    fact: &#x27;The Computer Science department offers a variety of courses such as algorithms, computer networking, software engineering, and data structures.&#x27;,
+    importance: 0.8,
+    created_at: ISODate(&#x27;2026-10-19T20:50:54.226Z&#x27;)
+  },
+  {
+    user_id: &#x27;u1_shots&#x27;,
+    session_id: &#x27;48d6b931a400&#x27;,
+    fact: &#x27;You are interested in cloud computing.&#x27;,
+    importance: 0.8,
+    created_at: ISODate(&#x27;2026-10-19T20:51:09.818Z&#x27;)
+  },
+  {
+    user_id: &#x27;u1_shots&#x27;,
+    session_id: &#x27;48d6b931a400&#x27;,
+    fact: &#x27;My advisor is Course Advisor&#x27;,
+    importance: 0.8,
+    created_at: ISODate(&#x27;2026-10-19T20:51:23.333Z&#x27;)
+  },
+  {
+    user_id: &#x27;u1_shots&#x27;,
+    session_id: &#x27;48d6b931a400&#x27;,
+    fact: &#x27;Your major is Computer Science.&#x27;,
+    importance: 0.8,
+    created_at: ISODate(&#x27;2026-10-19T20:52:11.529Z&#x27;)
+  }
+]
+</div>
+  </div>
+</body>
+</html>

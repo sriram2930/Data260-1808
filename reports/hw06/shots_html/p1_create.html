@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bash -- announcements: login + create</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">bash -- announcements: login + create</span>
+    </div>
+    <div class="body">--- LOGIN ---
+{&quot;id&quot;:1,&quot;name&quot;:&quot;Course Advisor&quot;,&quot;email&quot;:&quot;advisor@sjsu.edu&quot;}
+HTTP 200
+
+--- POST (create, valid) ---
+{&quot;id&quot;:&quot;6ad68288eb92adf274843b4e&quot;,&quot;title&quot;:&quot;Midterm date moved&quot;,&quot;description&quot;:&quot;The CS 272 midterm moves from Oct 20 to Oct 27.&quot;,&quot;status&quot;:&quot;draft&quot;,&quot;category&quot;:&quot;course_update&quot;,&quot;event_date&quot;:&quot;2026-10-27T09:00:00&quot;,&quot;created_at&quot;:&quot;2026-10-19T20:50:16.014805&quot;,&quot;updated_at&quot;:&quot;2026-10-19T20:50:16.014805&quot;}
+HTTP 201</div>
+  </div>
+</body>
+</html>

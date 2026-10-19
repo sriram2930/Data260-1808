@@ -1,16 +1,19 @@
 """One-off script assembling the HW6 Word report. Not part of the graded
 deliverable, kept here only so the report can be regenerated.
 
-Evidence in this report is real captured terminal/API output (curl,
-mongosh, python test scripts) rather than GUI screenshots (Postman,
-MongoDB Compass), since this homework was built and verified end to end
-without a human driving those GUIs -- noted honestly inline rather than
-pretending otherwise, consistent with every other homework in this repo."""
+Evidence in this report is real PNG screenshots (screenshots/*.png): some
+are a real browser hitting the live FastAPI endpoints directly, others are
+a styled terminal-look page built from real captured curl/mongosh/python
+output by build_terminal_html.py and screenshotted with Playwright
+(shots.mjs) -- not fabricated or reworded, just rendered as an image
+instead of monospace text, since this homework had no Postman/Compass
+GUI driving the API/DB by hand."""
 
 import docx
-from docx.shared import Pt
+from docx.shared import Pt, Inches
 
 doc = docx.Document()
+SCREENSHOTS = "screenshots/"
 
 doc.add_heading("DATA 260 Homework 6 Report", level=0)
 doc.add_paragraph("Sreeram Achutuni")
@@ -27,6 +30,10 @@ def code_block(text):
     run = para.add_run(text)
     run.font.name = "Consolas"
     run.font.size = Pt(9)
+
+
+def shot(filename, width_in=6.3):
+    doc.add_picture(SCREENSHOTS + filename, width=Inches(width_in))
 
 
 def note(text):
@@ -60,11 +67,11 @@ table([
 ])
 
 note(
-    "evidence in this report is real captured terminal/API output (curl, mongosh, python test "
-    "scripts run against the live backend, database, and local model), not GUI screenshots "
-    "(Postman, MongoDB Compass) -- this homework was built and verified end to end without a "
-    "human driving those particular GUIs, the same substitution used for MySQL evidence in "
-    "HW4/HW5 when a Compass-equivalent wasn't in the loop."
+    "evidence below is real screenshots: some are a real browser hitting the live FastAPI "
+    "endpoints directly, the rest are a styled terminal page built from real captured curl/"
+    "mongosh/python output and screenshotted with Playwright, since there was no Postman/Compass "
+    "GUI driving the API/DB by hand for this homework. The text inside every screenshot is exact "
+    "real output, not retyped or reworded."
 )
 
 # ============================================================= PART 1
@@ -101,54 +108,22 @@ code_block(
     '}'
 )
 
-h2("CRUD verified live (output below)")
-code_block(
-    '--- POST (create, valid) ---\n'
-    '{"id":"6ad5e3d413482f9b4c0c8948","title":"Midterm date moved",...}\n'
-    '201\n\n'
-    '--- POST (missing required title) ---\n'
-    '{"detail":[{"type":"missing","loc":["body","title"],"msg":"Field required",...}]}\n'
-    '422\n\n'
-    '--- POST (invalid enum) ---\n'
-    '{"detail":[{"type":"literal_error","loc":["body","status"],\n'
-    '  "msg":"Input should be \'draft\', \'published\' or \'archived\'",...}]}\n'
-    '422\n\n'
-    '--- GET (by id, after creating a 2nd real announcement) ---\n'
-    '{"id":"...","title":"Fall enrollment opens Nov 1","status":"published",\n'
-    ' "category":"enrollment","event_date":"2026-11-01T08:00:00",...}\n'
-    '200\n\n'
-    '--- PUT (update) ---\n'
-    '{"id":"...","title":"Midterm date moved again","status":"archived",...}\n'
-    '200  (updated_at changed, created_at unchanged)\n\n'
-    '--- GET by bad id ---\n'
-    '{"detail":"Announcement not found"}\n'
-    '404\n\n'
-    '--- DELETE ---\n'
-    '{"ok":true,"deleted_id":"..."}\n'
-    '200'
-)
+h2("Live API running (FastAPI auto-generated docs)")
+shot("p1_docs_live.png")
+
+h2("CRUD verified live (screenshots below)")
+p("Login, then create a valid announcement:")
+shot("p1_create.png")
+p("Validation failures -- missing required title, then an invalid status enum:")
+shot("p1_validation.png")
+p("Get by id, update, get a nonexistent id (404), then delete:")
+shot("p1_get_put_delete.png")
 
 h2("MongoDB-level validator rejects bad data independently of the API")
-code_block(
-    '> db.announcements.insertOne({title:"ok title", status:"not_valid_enum", ...})\n'
-    'MongoServerError: Document failed validation'
-)
+shot("mongo_validator.png")
 
 h2("Collection contents (mongosh)")
-code_block(
-    '[\n'
-    '  {\n'
-    '    _id: ObjectId(\'6ad5e3ee13482f9b4c0c8949\'),\n'
-    '    title: \'Fall enrollment opens Nov 1\',\n'
-    '    description: \'Priority enrollment window for continuing students.\',\n'
-    '    status: \'published\',\n'
-    '    category: \'enrollment\',\n'
-    '    event_date: ISODate(\'2026-11-01T08:00:00.000Z\'),\n'
-    '    created_at: ISODate(\'2026-10-19T09:33:34.672Z\'),\n'
-    '    updated_at: ISODate(\'2026-10-19T09:33:34.672Z\')\n'
-    '  }\n'
-    ']'
-)
+shot("mongo_announcements.png")
 
 # ============================================================= PART 2
 h1("Part 2: Short-, Long-, and Episodic Memory")
@@ -220,73 +195,27 @@ code_block(
     '    return [ep for _sim, ep in scored[:k]]'
 )
 
-h2("Conversation excerpt (full 12-turn run in RUN_LOG.txt)")
-code_block(
-    '--- turn 1 (49.2s) ---\n'
-    'user: Hi, my name is Sreeram and I am a grad student in Data Science.\n'
-    'assistant: Hello Sreeram! Welcome to the Data Science program...\n'
-    'used: short_term_count=1, has_session_summary=False, has_lifetime_summary=False, episodic_facts=[]\n\n'
-    '--- turn 6 (24.4s) ---\n'
-    'user: What is the difference between a session summary and a lifetime summary?\n'
-    'assistant: A session summary is a brief summary of a specific event...\n'
-    'used: short_term_count=11, has_session_summary=True, has_lifetime_summary=False,\n'
-    '      episodic_facts=["My advisor\'s title is Course Advisor", "The user\'s name is Sreeram...", ...]\n\n'
-    '--- turn 9 (15.5s) ---\n'
-    'user: What was the first thing I told you about myself?\n'
-    'assistant: I was informed that you are a grad student in Data Science.\n\n'
-    '--- turn 10 (57.5s) ---\n'
-    'user: Do you remember my preferred office hours format?\n'
-    'assistant: Yes, I remember that you prefer online office hours.\n\n'
-    '--- turn 11 (19.4s) ---\n'
-    'user: One more thing, I am also minoring in Business Analytics.\n'
-    'used: ..., has_lifetime_summary=True, ...'
-)
+h2("Conversation excerpt (full 12-turn run in RUN_LOG.txt / chat_demo_shots.log)")
+shot("p2_conversation.png")
 note(
-    "by turn 7, the episodic store had already picked up one wrong fact ('Your major is Computer "
-    "Science', when the user had said Data Science), and it kept resurfacing in later turns "
-    "alongside correct facts. extract_episodes does not re-verify a fact against the conversation "
-    "before storing it, so one hallucinated extraction becomes a persistent, retrievable memory "
-    "from then on. This is a real property of the system as built, documented here rather than "
-    "fixed, since catching it required reading the raw per-turn output, not just the final answer."
+    "by turn 8, the episodic store had already picked up one wrong fact ('Your major is Computer "
+    "Science', when the user had said Data Science in turn 1), and it kept resurfacing in later "
+    "turns alongside correct facts (visible in the GET /api/memory screenshot below). "
+    "extract_episodes does not re-verify a fact against the conversation before storing it, so one "
+    "hallucinated extraction becomes a persistent, retrievable memory from then on. This is a real "
+    "property of the system as built, documented here rather than fixed, since catching it "
+    "required reading the raw per-turn output, not just the final answer. It reproduced "
+    "identically on a second full run of the same 12 messages."
 )
 
-h2("GET /api/memory/u1 (excerpt)")
-code_block(
-    '{\n'
-    '  "messages": [ ... last 16 messages ... ],\n'
-    '  "latest_session_summary": {"scope":"session","text":"- Sreeram is a grad student...",...},\n'
-    '  "latest_lifetime_summary": {"scope":"user","session_id":null,\n'
-    '    "text":"- Sreeram is a grad student in Data Science.\\n- Courses include...\\n- Sreeram prefers online office hours...",...},\n'
-    '  "episodes": [ ... last 20 episodic facts, no embedding vectors ... ]\n'
-    '}'
-)
+h2("GET /api/memory/u1_shots (live browser screenshot)")
+shot("p2_memory_endpoint_live.png")
 
-h2("GET /api/aggregate/u1")
-code_block(
-    '{\n'
-    '  "daily_message_counts": [{"date": "2026-10-19", "count": 24}],\n'
-    '  "recent_summaries": [\n'
-    '    {"scope":"user","session_id":null,"text":"- Sreeram is a grad student in Data Science.\\n..."},\n'
-    '    {"scope":"session","text":"- **User Information**: Sreeram, a grad student...\\n..."},\n'
-    '    {"scope":"session","text":"- Sreeram is a grad student in Data Science.\\n..."}\n'
-    '  ]\n'
-    '}'
-)
+h2("GET /api/aggregate/u1_shots (live browser screenshot)")
+shot("p2_aggregate_endpoint_live.png")
 
 h2("MongoDB collections (mongosh)")
-code_block(
-    '> db.messages.countDocuments({})\n24\n\n'
-    '> db.summaries.find({},{text:1,scope:1,session_id:1})\n'
-    '{ session_id: "962b885ce775", scope: "session", text: "- Sreeram is a grad student..." }\n'
-    '{ session_id: "962b885ce775", scope: "session", text: "- **User Information**: Sreeram..." }\n'
-    '{ session_id: null, scope: "user", text: "- Sreeram is a grad student in Data Science...\\n' \
-    '- Sreeram prefers online office hours for better communication...\\n' \
-    '- Data Science and AI departments offer courses..." }\n\n'
-    '> db.episodes.find({},{embedding:0}).limit(3)\n'
-    '{ fact: "The user\'s name is Sreeram and they are a grad student in Data Science.", importance: 0.8 }\n'
-    '{ fact: "The Computer Science department offers courses in programming languages...", importance: 0.8 }\n'
-    '{ fact: "The user is interested in cloud computing.", importance: 0.8 }'
-)
+shot("mongo_memory.png")
 
 # ============================================================= PART 3
 h1("Part 3: What Memory Costs")
@@ -362,6 +291,8 @@ code_block(
 )
 
 h2("Stress test: 56-line file, 3 planted duplicates, 3 planted contradictions")
+p("Pipeline output (consolidation_result.json):")
+shot("p4_consolidation.png")
 table([
     ("", "Result"),
     ("Lines before", "56"),
@@ -384,18 +315,7 @@ note(
 )
 
 h2("AGENT.md compliance check")
-code_block(
-    '[PASS] has a docstring (AGENT.md: short module-level docstring)\n'
-    '[PASS] does not import ollama directly (AGENT.md: always via ModelClient)\n'
-    '[PASS] does not open a new MongoClient (AGENT.md: reuse existing adapters)\n\n'
-    'overall: PASS\n\n'
-    'Generated function (for reference):\n'
-    'def get_published_announcements(db):\n'
-    '    """Returns the titles of the 3 most recently created and published announcements."""\n'
-    '    announcements = db.announcements.find_and_modify(\n'
-    '        sort=[(-1, "created_date")], limit=3, new=True).pretty()\n'
-    '    return [a["title"] for a in announcements]'
-)
+shot("p4_compliance.png")
 
 h2("Comparing MongoDB memory and file-based memory")
 table([

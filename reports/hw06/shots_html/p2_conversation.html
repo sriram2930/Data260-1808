@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python run_chat_demo.py -- turns 1, 6, 9 (12-turn run, user u1_shots)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python run_chat_demo.py -- turns 1, 6, 9 (12-turn run, user u1_shots)</span>
+    </div>
+    <div class="body">--- turn 1 (24.2s) ---
+user: Hi, my name is Sreeram and I am a grad student in Data Science.
+assistant: Hello Sreeram! Glad to have you on the Data Science program. How can I assist you today?
+used: short_term_count=1, has_session_summary=False, has_lifetime_summary=False, episodic_facts=[]
+
+--- turn 6 (29.8s) ---
+user: What is the difference between a session summary and a lifetime summary?
+assistant: A session summary typically captures information about a specific course or program that a user has interacted with during a single session or session period. It might include details about the courses, activities, or materials covered and any decisions or outcomes made during that time.
+
+A lifetime summary, on the other hand, would encompass a broader scope, capturing a user&#x27;s experiences, achievements, and learning over an extended period, often referring to all courses or programs they&#x27;ve taken and the progression of their education or career. It could include long-term goals, mentorship, extracurricular activities, and overall career progression.
+used: short_term_count=11, has_session_summary=True, has_lifetime_summary=False, episodic_facts=[&#x27;My advisor is Course Advisor&#x27;, &quot;The user&#x27;s name is Sreeram.&quot;, &#x27;You are interested in cloud computing.&#x27;]
+
+--- turn 9 (13.5s) ---
+user: What was the first thing I told you about myself?
+assistant: The first thing I told you about yourself was your name, Sreeram.
+used: short_term_count=12, has_session_summary=True, has_lifetime_summary=False, episodic_facts=[&#x27;My advisor is Course Advisor&#x27;, &quot;The user&#x27;s name is Sreeram.&quot;, &#x27;A session summary is an overview of recent activities, while a lifetime summary includes all historical data.&#x27;]</div>
+  </div>
+</body>
+</html>

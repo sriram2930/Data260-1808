@@ -1,0 +1,23 @@
+> db.announcements.find().pretty()
+[
+  {
+    _id: ObjectId('6ad5e3ee13482f9b4c0c8949'),
+    title: 'Fall enrollment opens Nov 1',
+    description: 'Priority enrollment window for continuing students.',
+    status: 'published',
+    category: 'enrollment',
+    event_date: ISODate('2026-11-01T08:00:00.000Z'),
+    created_at: ISODate('2026-10-19T09:33:34.672Z'),
+    updated_at: ISODate('2026-10-19T09:33:34.672Z')
+  },
+  {
+    _id: ObjectId('6ad68290eb92adf274843b4f'),
+    title: 'Fall enrollment opens Nov 1',
+    description: 'Priority enrollment window for continuing students.',
+    status: 'published',
+    category: 'enrollment',
+    event_date: ISODate('2026-11-01T08:00:00.000Z'),
+    created_at: ISODate('2026-10-19T20:50:24.522Z'),
+    updated_at: ISODate('2026-10-19T20:50:24.522Z')
+  }
+]

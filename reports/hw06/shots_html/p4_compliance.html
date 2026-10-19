@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python verify_agent_compliance.py</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python verify_agent_compliance.py</span>
+    </div>
+    <div class="body">=== Generated function ===
+```python
+def get_published_announcements(db):
+    &quot;&quot;&quot;
+    Returns the titles of the 3 most recently created and published announcements.
+    
+    :param db: A MongoDB database handle.
+    :return: A list of the titles of the 3 most recently created and published announcements.
+    &quot;&quot;&quot;
+    announcements = db.announcements.find_and_modify(
+        sort=[(-1, &quot;created_date&quot;)],
+        limit=3,
+        new=True
+    ).pretty()
+    return [announcement[&quot;title&quot;] for announcement in announcements]
+```
+
+=== AGENT.md compliance checks ===
+[PASS] has a docstring (AGENT.md: &#x27;short module-level docstring explaining what the file is for&#x27;)
+       found a triple-quoted string
+[PASS] does not import ollama directly (AGENT.md: &#x27;always called through ModelClient&#x27;)
+       no direct &#x27;import ollama&#x27;
+[PASS] does not open a new MongoClient (AGENT.md: &#x27;reuse existing adapters ... instead of opening new, parallel connections&#x27;)
+       no direct MongoClient(...) call
+
+overall: PASS</div>
+  </div>
+</body>
+</html>

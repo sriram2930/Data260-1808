@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>bash -- announcements: validation errors (422)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">bash -- announcements: validation errors (422)</span>
+    </div>
+    <div class="body">--- POST (missing required title) ---
+{&quot;detail&quot;:[{&quot;type&quot;:&quot;missing&quot;,&quot;loc&quot;:[&quot;body&quot;,&quot;title&quot;],&quot;msg&quot;:&quot;Field required&quot;,&quot;input&quot;:{&quot;category&quot;:&quot;general&quot;,&quot;event_date&quot;:&quot;2026-12-01T00:00:00&quot;}}]}
+HTTP 422
+
+--- POST (invalid enum: status) ---
+{&quot;detail&quot;:[{&quot;type&quot;:&quot;literal_error&quot;,&quot;loc&quot;:[&quot;body&quot;,&quot;status&quot;],&quot;msg&quot;:&quot;Input should be &#x27;draft&#x27;, &#x27;published&#x27; or &#x27;archived&#x27;&quot;,&quot;input&quot;:&quot;not_a_real_status&quot;,&quot;ctx&quot;:{&quot;expected&quot;:&quot;&#x27;draft&#x27;, &#x27;published&#x27; or &#x27;archived&#x27;&quot;}}]}
+HTTP 422</div>
+  </div>
+</body>
+</html>
