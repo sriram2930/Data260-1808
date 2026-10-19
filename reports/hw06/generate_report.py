@@ -63,7 +63,7 @@ table([
     ("Local model", "qwen2.5:1.5b-instruct via Ollama (generation), sentence-transformers/all-MiniLM-L6-v2 (episodic + duplicate-detection embeddings)"),
     ("Repo", "https://github.com/sriram2930/Data260-1808"),
     ("Collaborators", "Sbnikitha and supriyaselvanganesan have repo access"),
-    ("Commit tagged as hw6", "29ff8ba437e101bb30c5e976f00b760ac5c99528"),
+    ("Commit tagged as hw6", "1dc510029be8ca31159b24fd95eef0163692d5b5"),
 ])
 
 note(
