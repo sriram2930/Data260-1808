@@ -1,0 +1,166 @@
+{
+  "setting": "eviction_compression_policy",
+  "short_term_n": 12,
+  "compress_short_term": true,
+  "mean_prompt_tokens_per_turn": 728.7,
+  "mean_latency_ms": 6535.5,
+  "note": "only 26/30 turns completed before cutting off for time; probes not run",
+  "turns": [
+    {
+      "turn": 1,
+      "prompt": 61,
+      "completion": 20,
+      "latency_ms": 1630.7
+    },
+    {
+      "turn": 2,
+      "prompt": 126,
+      "completion": 16,
+      "latency_ms": 1794.5
+    },
+    {
+      "turn": 3,
+      "prompt": 166,
+      "completion": 40,
+      "latency_ms": 3143.2
+    },
+    {
+      "turn": 4,
+      "prompt": 219,
+      "completion": 40,
+      "latency_ms": 3643.0
+    },
+    {
+      "turn": 5,
+      "prompt": 261,
+      "completion": 84,
+      "latency_ms": 6653.9
+    },
+    {
+      "turn": 6,
+      "prompt": 445,
+      "completion": 35,
+      "latency_ms": 6811.1
+    },
+    {
+      "turn": 7,
+      "prompt": 480,
+      "completion": 44,
+      "latency_ms": 5596.6
+    },
+    {
+      "turn": 8,
+      "prompt": 471,
+      "completion": 20,
+      "latency_ms": 4323.6
+    },
+    {
+      "turn": 9,
+      "prompt": 485,
+      "completion": 30,
+      "latency_ms": 5159.0
+    },
+    {
+      "turn": 10,
+      "prompt": 501,
+      "completion": 21,
+      "latency_ms": 5425.6
+    },
+    {
+      "turn": 11,
+      "prompt": 993,
+      "completion": 22,
+      "latency_ms": 13481.1
+    },
+    {
+      "turn": 12,
+      "prompt": 986,
+      "completion": 23,
+      "latency_ms": 5013.2
+    },
+    {
+      "turn": 13,
+      "prompt": 985,
+      "completion": 29,
+      "latency_ms": 6069.3
+    },
+    {
+      "turn": 14,
+      "prompt": 990,
+      "completion": 23,
+      "latency_ms": 5564.9
+    },
+    {
+      "turn": 15,
+      "prompt": 980,
+      "completion": 25,
+      "latency_ms": 5841.3
+    },
+    {
+      "turn": 16,
+      "prompt": 950,
+      "completion": 11,
+      "latency_ms": 12261.3
+    },
+    {
+      "turn": 17,
+      "prompt": 950,
+      "completion": 61,
+      "latency_ms": 7644.6
+    },
+    {
+      "turn": 18,
+      "prompt": 956,
+      "completion": 22,
+      "latency_ms": 4951.7
+    },
+    {
+      "turn": 19,
+      "prompt": 950,
+      "completion": 21,
+      "latency_ms": 4778.7
+    },
+    {
+      "turn": 20,
+      "prompt": 937,
+      "completion": 21,
+      "latency_ms": 4757.4
+    },
+    {
+      "turn": 21,
+      "prompt": 907,
+      "completion": 20,
+      "latency_ms": 12073.0
+    },
+    {
+      "turn": 22,
+      "prompt": 894,
+      "completion": 21,
+      "latency_ms": 4723.5
+    },
+    {
+      "turn": 23,
+      "prompt": 907,
+      "completion": 24,
+      "latency_ms": 5510.8
+    },
+    {
+      "turn": 24,
+      "prompt": 907,
+      "completion": 71,
+      "latency_ms": 7531.9
+    },
+    {
+      "turn": 25,
+      "prompt": 919,
+      "completion": 27,
+      "latency_ms": 5379.8
+    },
+    {
+      "turn": 26,
+      "prompt": 1521,
+      "completion": 31,
+      "latency_ms": 20159.6
+    }
+  ]
+}

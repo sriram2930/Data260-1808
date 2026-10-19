@@ -609,6 +609,79 @@ retry-policy scenarios, the Part 5 safety rule + MockModel max_steps stop,
 and the full Part 4 offline suite (10/10). Writes
 [`reports/hw05/verification.json`](reports/hw05/verification.json).
 
+# HW6
+
+Builds on HW5 again: the FastAPI backend (`Part-1/`) gains a MongoDB
+document view alongside its existing MySQL tables, a short/long/episodic
+chat-memory system, and (in `Part-4/`, alongside the HW1 `AGENT.md`) a
+second, file-based memory system for comparison.
+
+## Prerequisite: MongoDB (Docker)
+
+```
+docker run -d --name s1808-mongo -p 27017:27017 mongo:7
+.venv\Scripts\python.exe Part-1\init_mongo.py
+```
+
+## Part 1 — MongoDB Document API
+
+Files: [Part-1/db_mongo.py](Part-1/db_mongo.py), [Part-1/models_mongo.py](Part-1/models_mongo.py),
+[Part-1/api_announcements.py](Part-1/api_announcements.py), [Part-1/init_mongo.py](Part-1/init_mongo.py)
+
+`announcements` is the document-oriented view of the campus course
+catalogue domain (course update/enrollment/event notices): `title`
+(required, max 100 chars), `description` (optional), `status` (enum,
+default `draft`), `category` (enum), `event_date` (required), auto
+`created_at`/`updated_at`. Validated twice: Pydantic at the API boundary
+and a real MongoDB `$jsonSchema` validator on the collection, confirmed
+independently by inserting a bad document straight through `mongosh`.
+
+## Part 2 — Short-, Long-, and Episodic Memory
+
+Files: [Part-1/memory.py](Part-1/memory.py), [Part-1/api_chat.py](Part-1/api_chat.py)
+```
+.venv\Scripts\python.exe Part-1\run_chat_demo.py
+```
+`POST /api/chat` saves the message, pulls the last `SHORT_TERM_N` messages,
+the latest session/lifetime summaries, and the top-k episodic facts
+(cosine similarity over `sentence-transformers/all-MiniLM-L6-v2`
+embeddings), and calls the local Ollama model through the HW1
+`ModelClient` adapter. A session summary is generated every
+`SUMMARIZE_EVERY_USER_MSGS` user messages and condensed into a lifetime
+summary once a user has a few of them. `GET /api/memory/{user_id}` and
+`GET /api/aggregate/{user_id}` round out the introspection endpoints.
+
+## Part 3 — What Memory Costs
+
+Files: [Part-1/run_memory_experiments.py](Part-1/run_memory_experiments.py)
+```
+.venv\Scripts\python.exe Part-1\run_memory_experiments.py
+```
+Runs the same fixed 30-message conversation at `SHORT_TERM_N` = 4, 12, 30,
+plus once more at 12 with a short-term message-truncation compression
+policy, asking [`reports/hw06/memory_probes.yaml`](reports/hw06/memory_probes.yaml)'s
+five fixed questions after each run. Full results and the cost estimate:
+[`reports/hw06/METRICS.md`](reports/hw06/METRICS.md).
+
+## Part 4 — File-Based Memory and Consolidation
+
+Files: [Part-4/AGENT.md](Part-4/AGENT.md), [Part-4/MEMORY.md](Part-4/MEMORY.md),
+[Part-4/file_memory.py](Part-4/file_memory.py), [Part-4/memory_cli.py](Part-4/memory_cli.py)
+
+`AGENT.md` now covers five categories (project description, tech stack,
+coding conventions, testing approach, prohibited actions). `/memory`,
+`/compact`, `/dream`, and `/help` are implemented in `memory_cli.py`.
+Consolidation went through three real design iterations before landing on
+one that actually works reliably on this local 1.5B model; see
+`AI_USE.md` and `METRICS.md` for what failed and why.
+
+## HW6 Verification
+
+```
+python verify_hw06.py
+```
+Writes [`reports/hw06/verification.json`](reports/hw06/verification.json).
+
 ## Repository layout
 ```
 Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
@@ -631,6 +704,7 @@ Part-7/   meals_server.py, domain_server.py, envelope.py, retry_policy.py,
           run_fault_injection.py, execute_tool.py, test_tools.py, inspect_tools.py,
           agent.py, run_agent_scenarios.py                                                   (HW5)
 requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py,
-verify_hw05.py                                                                    — shared, repo root
-reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/         — deliverables per assignment spec
+verify_hw05.py, verify_hw06.py                                                    — shared, repo root
+reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/,
+reports/hw06/                                                                     — deliverables per assignment spec
 ```

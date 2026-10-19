@@ -1,0 +1,49 @@
+# memory_probes.yaml -- DATA-260 HW6, Part 3.2
+#
+# Five fixed probe questions asked at the end of the 30-message conversation
+# (as turns 31-35 in the same session), after each SHORT_TERM_N setting and
+# after the eviction/compression policy run. Three probes (q1-q3) target
+# facts planted in the first three user messages, specifically to test
+# whether they survive once the short-term window has scrolled past them --
+# at SHORT_TERM_N=4 they're long gone from the raw window by message 30, so
+# only episodic memory or a session/lifetime summary can carry them forward.
+# q4 targets a fact planted in the middle of the conversation. q5 asks about
+# the conversation as a whole, which a summary should answer well regardless
+# of window size.
+#
+# Scoring (1-5), applied by reading the actual reply text against
+# expected_keywords -- an automated heuristic, not a hosted-model judge:
+#   5 = reply states the expected fact clearly and correctly
+#   3 = reply is vague, partially right, or hedges without being wrong
+#   1 = reply is wrong, contradicts the fact, or claims not to know
+
+questions:
+  - id: q1
+    question: "What is my name?"
+    expected_keywords: ["Priya"]
+    planted_in_message: 1
+    rubric: "5 if 'Priya' appears, 3 if a name is guessed but wrong format, 1 if no name or wrong name"
+
+  - id: q2
+    question: "What is my student ID?"
+    expected_keywords: ["012345678"]
+    planted_in_message: 2
+    rubric: "5 if the exact id appears, 3 if a partial/garbled id appears, 1 if no id or a different id"
+
+  - id: q3
+    question: "What is my favorite subject?"
+    expected_keywords: ["Machine Learning"]
+    planted_in_message: 3
+    rubric: "5 if 'Machine Learning' appears, 3 if a related but different subject is named, 1 if wrong or unknown"
+
+  - id: q4
+    question: "Where was I born?"
+    expected_keywords: ["Chennai"]
+    planted_in_message: 16
+    rubric: "5 if 'Chennai' appears, 3 if a vague place is named, 1 if wrong or unknown"
+
+  - id: q5
+    question: "What have we mostly talked about in this conversation?"
+    expected_keywords: ["course", "enroll", "catalogue", "department"]
+    planted_in_message: null
+    rubric: "5 if the reply correctly characterizes the conversation as being about courses/enrollment, 3 if vague but not wrong, 1 if it describes an unrelated topic"

@@ -1,0 +1,448 @@
+=== run_memory_experiments.py started 2026-10-19T02:43:49 ===
+
+=== Setting: SHORT_TERM_N=4 (SHORT_TERM_N=4, compress=False) ===
+user_id=exp_SHORT_TERM_N=4_715ed9c6
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1030.10it/s]
+  turn  1: prompt=  61 completion= 16 latency_ms=  3998.9
+  turn  2: prompt= 133 completion= 28 latency_ms=  5160.4
+  turn  3: prompt= 172 completion= 26 latency_ms=  4712.5
+  turn  4: prompt= 185 completion= 58 latency_ms=  7846.6
+  turn  5: prompt= 206 completion= 94 latency_ms= 10866.7
+  turn  6: prompt= 361 completion= 68 latency_ms= 11484.6
+  turn  7: prompt= 382 completion=128 latency_ms= 15466.4
+  turn  8: prompt= 419 completion=119 latency_ms= 15479.1
+  turn  9: prompt= 471 completion=120 latency_ms= 17386.8
+  turn 10: prompt= 472 completion=118 latency_ms= 17361.3
+  turn 11: prompt=1400 completion= 14 latency_ms= 25833.3
+  turn 12: prompt=1295 completion= 38 latency_ms=  6490.8
+  turn 13: prompt=1208 completion= 54 latency_ms=  6917.7
+  turn 14: prompt=1248 completion= 38 latency_ms=  7990.4
+  turn 15: prompt=1251 completion= 47 latency_ms=  8385.5
+  turn 16: prompt=2851 completion= 13 latency_ms= 58448.8
+  turn 17: prompt=2838 completion= 55 latency_ms= 11382.0
+  turn 18: prompt=2851 completion=165 latency_ms= 27477.1
+  turn 19: prompt=2989 completion= 43 latency_ms= 11353.2
+  turn 20: prompt=2967 completion=285 latency_ms= 45733.0
+  turn 21: prompt=2955 completion= 47 latency_ms= 62709.3
+  turn 22: prompt=2954 completion=219 latency_ms= 38012.6
+  turn 23: prompt=2879 completion=135 latency_ms= 25362.7
+  turn 24: prompt=2971 completion=403 latency_ms= 62513.5
+  turn 25: prompt=3159 completion=263 latency_ms= 46824.8
+  turn 26: prompt=3243 completion= 48 latency_ms= 66776.4
+  turn 27: prompt=2887 completion=220 latency_ms= 32740.5
+  turn 28: prompt=2848 completion=227 latency_ms= 38001.0
+  turn 29: prompt=3026 completion=218 latency_ms= 45873.1
+  turn 30: prompt=3027 completion= 23 latency_ms= 14942.6
+  probe q1: score=5  reply='Your name is Priya.'
+  probe q2: score=5  reply='Your student ID is 012345678.'
+  probe q3: score=5  reply='Your favorite subject is Machine Learning.'
+  probe q4: score=5  reply='You were born in Chennai, India.'
+  probe q5: score=5  reply='In this conversation, we have mainly discussed course enrollment, including cour'
+
+=== Setting: SHORT_TERM_N=12 (SHORT_TERM_N=12, compress=False) ===
+user_id=exp_SHORT_TERM_N=12_68f267e9
+  turn  1: prompt=  61 completion= 19 latency_ms=  3260.0
+  turn  2: prompt= 124 completion= 41 latency_ms=  5973.2
+  turn  3: prompt= 188 completion= 39 latency_ms=  6799.3
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 178, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 151, in main
+    out = run_one_setting(label, n, compress_short_term=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 104, in run_one_setting
+    result = memory.chat_turn(user_id, session_id, msg, short_term_n, compress_short_term)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\memory.py", line 337, in chat_turn
+    result = get_model_client().complete(built["messages"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-4\src\model_client.py", line 64, in complete
+    response = self._client.chat(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 387, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 139, in _request_raw
+    r = self._client.request(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+=== run_memory_experiments.py started 2026-10-19T11:26:23 ===
+Recovered setting from log: SHORT_TERM_N=4
+
+=== Setting: SHORT_TERM_N=12 (SHORT_TERM_N=12, compress=False) ===
+user_id=exp_SHORT_TERM_N=12_4245363e
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1073.35it/s]
+  turn  1: prompt=  61 completion= 21 latency_ms=  5013.9
+  turn  2: prompt= 128 completion= 40 latency_ms=  5826.0
+  turn  3: prompt= 194 completion= 26 latency_ms=  4151.9
+  turn  4: prompt= 247 completion= 29 latency_ms=  4594.2
+  turn  5: prompt= 301 completion= 63 latency_ms=  8828.0
+  turn  6: prompt= 468 completion= 91 latency_ms= 13046.9
+  turn  7: prompt= 573 completion= 89 latency_ms= 16774.7
+  turn  8: prompt= 629 completion= 48 latency_ms= 11979.5
+  turn  9: prompt= 653 completion=139 latency_ms= 22567.9
+  turn 10: prompt= 760 completion= 64 latency_ms= 17805.2
+  turn 11: prompt=1512 completion= 52 latency_ms= 26609.4
+  turn 12: prompt=1502 completion= 94 latency_ms= 17388.8
+  turn 13: prompt=1510 completion= 52 latency_ms= 15448.7
+  turn 14: prompt=1470 completion= 77 latency_ms= 15777.8
+  turn 15: prompt=1491 completion= 78 latency_ms= 16229.3
+  turn 16: prompt=2082 completion=  9 latency_ms= 38376.0
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 136, in handle_request
+    raise exc
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_sync\http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 126, in read
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 204, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 185, in main
+    out = run_one_setting(label, n, compress_short_term=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 104, in run_one_setting
+    result = memory.chat_turn(user_id, session_id, msg, short_term_n, compress_short_term)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\memory.py", line 337, in chat_turn
+    result = get_model_client().complete(built["messages"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-4\src\model_client.py", line 64, in complete
+    response = self._client.chat(**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 387, in chat
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\ollama\_client.py", line 139, in _request_raw
+    r = self._client.request(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadError: [WinError 10054] An existing connection was forcibly closed by the remote host
+=== run_memory_experiments.py started 2026-10-19T12:06:08 ===
+Recovered setting from log: SHORT_TERM_N=4
+
+=== Setting: SHORT_TERM_N=12 (SHORT_TERM_N=12, compress=False) ===
+user_id=exp_SHORT_TERM_N=12_064aee81
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2183.72it/s]
+  turn  1: prompt=  61 completion= 18 latency_ms=  4769.2
+  turn  2: prompt= 124 completion= 35 latency_ms=  5662.9
+  turn  3: prompt= 183 completion= 44 latency_ms=  5029.8
+  turn  4: prompt= 254 completion= 60 latency_ms=  8594.6
+  turn  5: prompt= 336 completion=278 latency_ms= 29384.8
+  turn  6: prompt= 746 completion=214 latency_ms= 27368.8
+  turn  7: prompt= 965 completion=185 latency_ms= 29981.4
+  turn  8: prompt=1130 completion=138 latency_ms= 30389.9
+  turn  9: prompt=1235 completion=208 latency_ms= 40041.1
+  turn 10: prompt=3270 completion=229 latency_ms= 81365.5
+  turn 11: prompt=1936 completion= 48 latency_ms= 46360.9
+  turn 12: prompt=1753 completion=306 latency_ms= 55000.5
+  turn 13: prompt=1871 completion=255 latency_ms= 53761.0
+  turn 14: prompt=1985 completion=344 latency_ms= 64624.3
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 231, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 212, in main
+    out = run_one_setting(label, n, compress_short_term=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 131, in run_one_setting
+    result = _chat_turn_resilient(user_id, session_id, msg, short_term_n, compress_short_term)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 53, in _chat_turn_resilient
+    return call_with_retry(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-7\retry_policy.py", line 76, in call_with_retry
+    raise exc
+retry_policy.RetryExhausted: all 2 attempts failed: 
+=== run_memory_experiments.py started 2026-10-19T12:30:44 ===
+Recovered setting from log: SHORT_TERM_N=4
+
+=== Setting: SHORT_TERM_N=12 (SHORT_TERM_N=12, compress=False) ===
+user_id=exp_SHORT_TERM_N=12_880c18fe
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2605.06it/s]
+  turn  1: prompt=  61 completion= 19 latency_ms=  3930.0
+  turn  2: prompt= 126 completion= 27 latency_ms=  4127.2
+  turn  3: prompt= 177 completion= 35 latency_ms=  2956.3
+  turn  4: prompt= 242 completion= 45 latency_ms=  4004.8
+  turn  5: prompt= 304 completion=110 latency_ms=  8271.5
+  turn  6: prompt= 595 completion= 97 latency_ms= 11310.1
+  turn  7: prompt= 698 completion=231 latency_ms= 17335.5
+  turn  8: prompt= 909 completion=115 latency_ms= 16136.5
+  turn  9: prompt=1002 completion=122 latency_ms= 17534.7
+  turn 10: prompt=1082 completion= 62 latency_ms= 16199.6
+  turn 11: prompt=1440 completion=200 latency_ms= 27703.5
+  turn 12: prompt=1529 completion=262 latency_ms= 26218.3
+  turn 13: prompt=1681 completion=167 latency_ms= 23506.6
+  turn 14: prompt=1616 completion=206 latency_ms= 26521.5
+  turn 15: prompt=1711 completion=193 latency_ms= 25670.4
+  turn 16: prompt=1862 completion= 11 latency_ms= 24398.9
+  turn 17: prompt=1795 completion=531 latency_ms= 44011.9
+  turn 18: prompt=2138 completion=467 latency_ms= 46266.2
+  turn 19: prompt=2336 completion=128 latency_ms= 37038.0
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 231, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 212, in main
+    out = run_one_setting(label, n, compress_short_term=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 131, in run_one_setting
+    result = _chat_turn_resilient(user_id, session_id, msg, short_term_n, compress_short_term)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-1\run_memory_experiments.py", line 53, in _chat_turn_resilient
+    return call_with_retry(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-7\retry_policy.py", line 76, in call_with_retry
+    raise exc
+retry_policy.RetryExhausted: all 2 attempts failed: 
+=== run_memory_experiments.py started 2026-10-19T12:46:14 ===
+Recovered setting from log: SHORT_TERM_N=4
+
+=== Setting: SHORT_TERM_N=12 (SHORT_TERM_N=12, compress=False) ===
+user_id=exp_SHORT_TERM_N=12_20c3f612
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2263.03it/s]
+  turn  1: prompt=  61 completion= 27 latency_ms=  4425.6
+  turn  2: prompt= 132 completion= 40 latency_ms=  4736.7
+  turn  3: prompt= 196 completion= 29 latency_ms=  2939.7
+  turn  4: prompt= 255 completion= 33 latency_ms=  4339.9
+  turn  5: prompt= 315 completion=121 latency_ms=  8879.6
+  turn  6: prompt= 627 completion= 62 latency_ms= 10295.6
+  turn  7: prompt= 701 completion= 54 latency_ms=  8697.3
+  turn  8: prompt= 729 completion= 60 latency_ms=  8901.6
+  turn  9: prompt= 749 completion= 94 latency_ms= 10511.5
+  turn 10: prompt= 802 completion= 61 latency_ms= 10255.0
+  turn 11: prompt=1606 completion= 75 latency_ms= 24280.2
+  turn 12: prompt=1560 completion= 74 latency_ms= 11527.9
+  turn 13: prompt=1574 completion= 75 latency_ms= 11989.4
+  turn 14: prompt=1593 completion= 54 latency_ms= 10845.8
+  turn 15: prompt=1574 completion= 88 latency_ms= 12279.1
+  turn 16: prompt=1038 completion= 15 latency_ms= 13090.1
+  turn 17: prompt= 999 completion=198 latency_ms= 16294.7
+  turn 18: prompt=1134 completion= 94 latency_ms= 12776.9
+  turn 19: prompt=1147 completion= 73 latency_ms= 12167.5
+  turn 20: prompt=1133 completion=349 latency_ms= 29289.7
+  turn 21: prompt=1278 completion= 94 latency_ms= 20545.9
+  turn 22: prompt=1278 completion=275 latency_ms= 29500.0
+  turn 23: prompt=1549 completion=126 latency_ms= 26361.2
+  turn 24: prompt=1475 completion=276 latency_ms= 33112.7
+  turn 25: prompt=1660 completion=227 latency_ms= 32946.1
+  turn 26: prompt=1889 completion=215 latency_ms= 36190.9
+  turn 27: prompt=1766 completion=322 latency_ms= 39782.8
+  turn 28: prompt=2001 completion=192 latency_ms= 37942.2
+  turn 29: prompt=1915 completion=158 latency_ms= 33618.3
+  turn 30: prompt=1947 completion= 23 latency_ms= 25970.8
+  probe q1: score=5  reply='Your name is Priya.'
+  probe q2: score=5  reply='Your student ID is 012345678.'
+  probe q3: score=5  reply='Your favorite subject is Machine Learning.'
+  probe q4: score=5  reply='You were born in Chennai, India.'
+  probe q5: score=3  reply='We have mostly talked about your name, student ID, favorite subject, and your ro'
+
+=== Setting: SHORT_TERM_N=30 (SHORT_TERM_N=30, compress=False) ===
+user_id=exp_SHORT_TERM_N=30_2feb0ad3
+  turn  1: prompt=  61 completion= 21 latency_ms=  1732.2
+  turn  2: prompt= 128 completion= 56 latency_ms=  3467.8
+  turn  3: prompt= 207 completion= 48 latency_ms=  4403.7
+  turn  4: prompt= 282 completion= 53 latency_ms=  5556.2
+  turn  5: prompt= 356 completion=104 latency_ms=  8876.7
+  turn  6: prompt= 752 completion= 70 latency_ms= 12341.6
+  turn  7: prompt= 839 completion= 70 latency_ms=  9648.7
+  turn  8: prompt= 927 completion= 83 latency_ms= 11711.4
+  turn  9: prompt=1025 completion= 79 latency_ms= 12493.7
+  turn 10: prompt=1115 completion= 73 latency_ms= 13665.4
+  turn 11: prompt=1548 completion= 56 latency_ms= 22654.1
+  turn 12: prompt=1616 completion= 97 latency_ms= 17662.0
+  turn 13: prompt=1730 completion= 60 latency_ms= 18180.0
+  turn 14: prompt=1807 completion= 43 latency_ms= 17780.9
+  turn 15: prompt=1868 completion= 81 latency_ms= 20738.2
+  turn 16: prompt=1877 completion= 29 latency_ms= 25729.3
+  turn 17: prompt=1883 completion= 75 latency_ms= 21646.7
+  turn 18: prompt=1917 completion= 26 latency_ms= 20430.6
+  turn 19: prompt=1883 completion= 22 latency_ms= 22261.6
+  turn 20: prompt=1856 completion= 55 latency_ms= 20071.3
+  turn 21: prompt=1745 completion= 51 latency_ms= 24828.5
+  turn 22: prompt=1740 completion= 83 latency_ms= 20389.8
+  turn 23: prompt=1746 completion= 91 latency_ms= 20771.0
+  turn 24: prompt=1768 completion=118 latency_ms= 22735.8
+  turn 25: prompt=1811 completion=109 latency_ms= 23448.6
+  turn 26: prompt=1935 completion= 42 latency_ms= 27356.0
+  turn 27: prompt=1923 completion=369 latency_ms= 37965.4
+  turn 28: prompt=2202 completion= 65 latency_ms= 24964.5
+  turn 29: prompt=2205 completion= 75 latency_ms= 25741.9
+  turn 30: prompt=2247 completion= 26 latency_ms= 23618.5
+  probe q1: score=5  reply='Your name is Priya.'
+  probe q2: score=5  reply='Your student ID is 012345678.'
+  probe q3: score=5  reply='Your favorite subject is Machine Learning.'
+  probe q4: score=5  reply='You were born in Chennai, India.'
+  probe q5: score=5  reply="We've mostly talked about Priya's course coverage and preferences, including her"
+
+=== Setting: eviction_compression_policy (SHORT_TERM_N=12, compress=True) ===
+user_id=exp_eviction_compression_policy_d97aedfc
+  turn  1: prompt=  61 completion= 20 latency_ms=  1630.7
+  turn  2: prompt= 126 completion= 16 latency_ms=  1794.5
+  turn  3: prompt= 166 completion= 40 latency_ms=  3143.2
+  turn  4: prompt= 219 completion= 40 latency_ms=  3643.0
+  turn  5: prompt= 261 completion= 84 latency_ms=  6653.9
+  turn  6: prompt= 445 completion= 35 latency_ms=  6811.1
+  turn  7: prompt= 480 completion= 44 latency_ms=  5596.6
+  turn  8: prompt= 471 completion= 20 latency_ms=  4323.6
+  turn  9: prompt= 485 completion= 30 latency_ms=  5159.0
+  turn 10: prompt= 501 completion= 21 latency_ms=  5425.6
+  turn 11: prompt= 993 completion= 22 latency_ms= 13481.1
+  turn 12: prompt= 986 completion= 23 latency_ms=  5013.2
+  turn 13: prompt= 985 completion= 29 latency_ms=  6069.3
+  turn 14: prompt= 990 completion= 23 latency_ms=  5564.9
+  turn 15: prompt= 980 completion= 25 latency_ms=  5841.3
+  turn 16: prompt= 950 completion= 11 latency_ms= 12261.3
+  turn 17: prompt= 950 completion= 61 latency_ms=  7644.6
+  turn 18: prompt= 956 completion= 22 latency_ms=  4951.7
+  turn 19: prompt= 950 completion= 21 latency_ms=  4778.7
+  turn 20: prompt= 937 completion= 21 latency_ms=  4757.4
+  turn 21: prompt= 907 completion= 20 latency_ms= 12073.0
+  turn 22: prompt= 894 completion= 21 latency_ms=  4723.5
+  turn 23: prompt= 907 completion= 24 latency_ms=  5510.8
+  turn 24: prompt= 907 completion= 71 latency_ms=  7531.9
+  turn 25: prompt= 919 completion= 27 latency_ms=  5379.8
+  turn 26: prompt=1521 completion= 31 latency_ms= 20159.6
+=== Generated function ===
+```python
+def get_published_announcements(db):
+    """
+    Returns the titles of the 3 most recently created and published announcements.
+    
+    :param db: A MongoDB database handle.
+    :return: A list of the titles of the 3 most recently created and published announcements.
+    """
+    announcements = db.announcements.find_and_modify(
+        sort=[(-1, "created_date")],
+        limit=3,
+        new=True
+    ).pretty()
+    return [announcement["title"] for announcement in announcements]
+```
+
+=== AGENT.md compliance checks ===
+[PASS] has a docstring (AGENT.md: 'short module-level docstring explaining what the file is for')
+       found a triple-quoted string
+[PASS] does not import ollama directly (AGENT.md: 'always called through ModelClient')
+       no direct 'import ollama'
+[PASS] does not open a new MongoClient (AGENT.md: 'reuse existing adapters ... instead of opening new, parallel connections')
+       no direct MongoClient(...) call
+
+overall: PASS

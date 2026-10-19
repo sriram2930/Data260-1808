@@ -1,0 +1,48 @@
+{
+  "before_count": 56,
+  "after_count": 51,
+  "duplicate_groups": [
+    [
+      24,
+      25
+    ],
+    [
+      37,
+      38
+    ]
+  ],
+  "contradictions": [
+    [
+      10,
+      11
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      18,
+      19
+    ]
+  ],
+  "rejected_duplicate_candidates": [
+    [
+      1,
+      3
+    ],
+    [
+      20,
+      54
+    ],
+    [
+      20,
+      55
+    ]
+  ],
+  "contradiction_resolutions": [
+    "SHORT_TERM_N default is 8, previously stated as 12.",
+    "Port 8008 is now the current value, previously stated as port 9000.",
+    "Department deletion is blocked if courses reference it."
+  ],
+  "unresolved_flags": []
+}

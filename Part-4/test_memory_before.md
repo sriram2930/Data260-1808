@@ -1,0 +1,59 @@
+<!-- last_consolidated: 2026-10-01T00:00:00 -->
+# MEMORY.md - Durable Facts (TEST FIXTURE: deliberately messy, for Part 4.5)
+
+- The primary domain entity is Course.
+- Course is the main entity of this project.
+- The secondary/related entity is Department.
+- The relational database is called s1808_rel.
+- MySQL database name is s1808_rel.
+- The document database added in HW6 is called s1808_doc.
+- The local model used for generation is qwen2.5:1.5b-instruct.
+- We use qwen2.5:1.5b-instruct as our LLM.
+- The embedding model used for episodic memory is all-MiniLM-L6-v2.
+- SHORT_TERM_N default is 12.
+- SHORT_TERM_N default is 8.
+- SUMMARIZE_EVERY_USER_MSGS is 5.
+- The FastAPI backend runs on port 8008.
+- The FastAPI backend runs on port 9000.
+- PORT_BASE is computed as 8000 + (SID4 mod 900).
+- SID4 for this student is 1808.
+- PREFIX for this student is s1808.
+- Department deletion is always allowed.
+- Department deletion is blocked if courses reference it.
+- Course has a unique course_code field.
+- Course has a seats_available field with default 30.
+- The React client uses Redux Toolkit for state management.
+- Redux Toolkit was adopted in HW5, replacing plain useState.
+- The MCP domain server exposes exactly three tools.
+- The three MCP domain tools are search_courses, course_detail, department_stats.
+- The meals MCP server is a tutorial exercise, not part of the core domain.
+- Episodic memory stores up to 3 facts per user message.
+- Episodic facts are retrieved by cosine similarity.
+- The safety rule in execute_tool caps search_courses at limit<=20.
+- The agent loop has a max_steps ceiling to prevent infinite loops.
+- MongoDB collections for memory are messages, summaries, episodes.
+- Summaries have a scope of either session or user.
+- A lifetime summary has session_id set to null.
+- The announcements collection is the Part 1 document-oriented entity for HW6.
+- Announcements have a status field with enum draft, published, archived.
+- Announcements have a category field with enum course_update, enrollment, event, general.
+- The retry policy from HW5 uses bounded exponential backoff.
+- HW5's retry policy caps at 2 retries by default.
+- The verify_hwNN.py scripts write a verification.json file.
+- Every homework tags the repository state as hwN.
+- The GitHub repo is data260-1808, shared with two collaborators.
+- Docker is used to run both the MySQL and MongoDB containers locally.
+- The MySQL container maps host port 3307 to container port 3306.
+- The MongoDB container uses the default port 27017.
+- AGENT.md stores durable project and agent instructions.
+- MEMORY.md stores durable facts learned from previous conversations.
+- Consolidation triggers when MEMORY.md exceeds 40 non-comment lines.
+- Consolidation also triggers when the file is more than 24 hours old.
+- The /dream command extracts facts from recent conversation into MEMORY.md.
+- The /compact command consolidates MEMORY.md and reports before/after counts.
+- The /memory command displays the current AGENT.md and MEMORY.md content.
+- Token counts for the chat endpoint come from Ollama's own usage field.
+- The per-component token breakdown (primer/summary/short-term/episodic) is an estimate.
+- Course titles are stored in the course_title field.
+- Course codes follow a DEPT-NUMBER format like CS-00001.
+- The HW1 model adapter is Part-4/src/model_client.py's ModelClient class.

@@ -35,7 +35,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
+import api_announcements
 import api_auth
+import api_chat
 import api_courses
 import api_departments
 import api_n1
@@ -76,6 +78,8 @@ app.include_router(api_auth.router)
 app.include_router(api_courses.router)
 app.include_router(api_departments.router)
 app.include_router(api_n1.router)
+app.include_router(api_announcements.router)
+app.include_router(api_chat.router)
 app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 templates = Jinja2Templates(directory=str(HERE / "templates"))
 

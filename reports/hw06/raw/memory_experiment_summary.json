@@ -1,0 +1,49 @@
+[
+  {
+    "setting": "SHORT_TERM_N=4",
+    "short_term_n": 4,
+    "compress_short_term": false,
+    "mean_prompt_tokens_per_turn": 1790.3,
+    "mean_latency_ms": 25117.7,
+    "mean_probe_quality": 5.0,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "setting": "SHORT_TERM_N=12",
+    "short_term_n": 12,
+    "compress_short_term": false,
+    "mean_prompt_tokens_per_turn": 1156.1,
+    "mean_latency_ms": 18149.8,
+    "mean_probe_quality": 4.6,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      3
+    ],
+    "user_id": "exp_SHORT_TERM_N=12_20c3f612"
+  },
+  {
+    "setting": "SHORT_TERM_N=30",
+    "short_term_n": 30,
+    "compress_short_term": false,
+    "mean_prompt_tokens_per_turn": 1433.3,
+    "mean_latency_ms": 18095.7,
+    "mean_probe_quality": 5.0,
+    "probe_scores": [
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "user_id": "exp_SHORT_TERM_N=30_2feb0ad3"
+  }
+]

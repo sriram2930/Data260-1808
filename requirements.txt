@@ -22,3 +22,5 @@ cryptography
 bcrypt
 mcp[cli]<2
 httpx
+pymongo
+requests

@@ -1,0 +1,61 @@
+{
+  "homework": "hw06",
+  "sid4": 1808,
+  "commit_hash": "2c0cafe966ca8dd3155680e6edb86d726fbe978e",
+  "model": "qwen2.5:1.5b-instruct (Ollama), sentence-transformers/all-MiniLM-L6-v2 (episodic + dedup embeddings)",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "fastapi_responds_on_port_base",
+      "pass": true
+    },
+    {
+      "check": "announcement_crud_roundtrip",
+      "pass": true
+    },
+    {
+      "check": "announcement_missing_title_rejected",
+      "pass": true
+    },
+    {
+      "check": "chat_endpoint_returns_reply_and_used",
+      "pass": true
+    },
+    {
+      "check": "memory_endpoint_responds",
+      "pass": true
+    },
+    {
+      "check": "aggregate_endpoint_responds",
+      "pass": true
+    },
+    {
+      "check": "memory_probes_yaml_has_five_questions",
+      "pass": true
+    },
+    {
+      "check": "part3_experiment_summary_has_all_settings",
+      "pass": true,
+      "detail": "3 settings recorded"
+    },
+    {
+      "check": "file_memory_loads_agent_and_memory_md",
+      "pass": true
+    },
+    {
+      "check": "needs_consolidation_runs",
+      "pass": true
+    },
+    {
+      "check": "cli_help_command_responds",
+      "pass": true
+    },
+    {
+      "check": "cli_memory_command_responds",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-10-19T13:30:53"
+}
