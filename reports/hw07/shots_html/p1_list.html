@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>curl -- GET /api/courses as reader (200)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">curl -- GET /api/courses as reader (200)</span>
+    </div>
+    <div class="body">--- GET /api/courses as reader (expect 200) ---
+[
+  {
+    &quot;id&quot;: 4,
+    &quot;course_code&quot;: &quot;BUS-00002&quot;,
+    &quot;course_title&quot;: &quot;Modern Operating Systems&quot;,
+    &quot;submitter_email&quot;: &quot;faculty2@sjsu.edu&quot;,
+    &quot;description&quot;: &quot;Auto-generated seed course #2 for N+1 load testing.&quot;,
+    &quot;department&quot;: &quot;Business Analytics&quot;,
+    &quot;agree_terms&quot;: true,
+    &quot;department_id&quot;: 3,
+    &quot;seats_available&quot;: 30,
+    &quot;created_at&quot;: &quot;2026-10-05T07:26:49&quot;,
+    &quot;updated_at&quot;: &quot;2026-10-05T07:26:50&quot;
+  },
+  {
+    &quot;id&quot;: 5,
+    &quot;course_code&quot;: &quot;ENGR-00003&quot;,
+    &quot;course_title&quot;: &quot;Seminar in Networks&quot;,
+    &quot;submitter_email&quot;: &quot;faculty3@sjsu.edu&quot;,
+    &quot;description&quot;: &quot;Auto-generated seed course #3 for N+1 load testing.&quot;,
+    &quot;department&quot;: &quot;Engineering&quot;,
+    &quot;agree_terms&quot;: true,
+    &quot;department_id&quot;: 4,
+    &quot;seats_available&quot;: 30,
+    &quot;created_at&quot;: &quot;2026-10-05T07:26:49&quot;,
+    &quot;updated_at&quot;: &quot;2026-10-05T07:26:50&quot;
+  }
+]
+
+
+... (truncated)</div>
+  </div>
+</body>
+</html>

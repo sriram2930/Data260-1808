@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>curl -- POST /api/courses (reader 403, writer 201)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">curl -- POST /api/courses (reader 403, writer 201)</span>
+    </div>
+    <div class="body">--- POST /api/courses as reader (expect 403) ---
+{&quot;detail&quot;:&quot;role &#x27;reader&#x27; is not permitted (needs one of (&#x27;writer&#x27;, &#x27;moderator&#x27;))&quot;}
+HTTP 403
+
+--- POST /api/courses as writer (expect 201) ---
+{&quot;id&quot;:5012,&quot;course_code&quot;:&quot;HW7-002&quot;,&quot;course_title&quot;:&quot;JWT Test Course 2&quot;,&quot;submitter_email&quot;:null,&quot;description&quot;:null,&quot;department&quot;:null,&quot;agree_terms&quot;:false,&quot;department_id&quot;:null,&quot;seats_available&quot;:30,&quot;created_at&quot;:&quot;2026-10-26T06:09:19&quot;,&quot;updated_at&quot;:&quot;2026-10-26T06:09:19&quot;}
+HTTP 201</div>
+  </div>
+</body>
+</html>

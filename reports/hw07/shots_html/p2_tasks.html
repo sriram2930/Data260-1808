@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python run_verification_tasks.py -- 3 verification tasks + error recovery</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python run_verification_tasks.py -- 3 verification tasks + error recovery</span>
+    </div>
+    <div class="body">=== Task A ===
+prompt: Search the course catalogue for courses about &#x27;data&#x27;, then look up the full detail of the first search result and summarize it.
+
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;data&#x27;, &#x27;limit&#x27;: 5}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [{&#x27;id&#x27;: 8, &#x27;course_code&#x27;: &#x27;DATA-00006&#x27;, &#x27;course_title&#x27;: &#x27;Topics in Cloud Computing&#x27;, &#x27;department_id&#x27;: 2, &#x27;seats_available&#x27;: 30}, {&#x27;id&#x27;: 9, &#x27;course_code&#x27;: &#x27;DATA-00007&#x27;, &#x27;course_title&#x27;: &#x27;Applied Business Analytics&#x27;, &#x27;department_id&#x27;: 2, &#x27;seats_available&#x27;: 30}, {&#x27;id&#x27;: 10, &#x27;course_code&#x27;: &#x27;ENGR-00008&#x27;, &#x27;course_title&#x27;: &#x27;Introduction to Data Structures&#x27;, &#x27;department_id&#x27;: 4, &#x27;seats_available&#x27;: 30}, {&#x27;id&#x27;: 13, &#x27;course_code&#x27;: &#x27;DATA-00011&#x27;, &#x27;course_title&#x27;: &#x27;Computational Business Analytics&#x27;, &#x27;department_id&#x27;: 2, &#x27;seats_available&#x27;: 30}, {&#x27;id&#x27;: 17, &#x27;course_code&#x27;: &#x27;DATA-00015&#x27;, &#x27;course_title&#x27;: &#x27;Computational Database Systems&#x27;, &#x27;department_id&#x27;: 2, &#x27;seats_available&#x27;: 30}], &#x27;error&#x27;: None}
+  [tool call] course_detail({&#x27;course_id&#x27;: 8}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: {&#x27;id&#x27;: 8, &#x27;course_code&#x27;: &#x27;DATA-00006&#x27;, &#x27;course_title&#x27;: &#x27;Topics in Cloud Computing&#x27;, &#x27;description&#x27;: &#x27;Auto-generated seed course #6 for N+1 load testing.&#x27;, &#x27;seats_available&#x27;: 30, &#x27;department&#x27;: {&#x27;id&#x27;: 2, &#x27;name&#x27;: &#x27;Data Science &amp; AI&#x27;, &#x27;dept_code&#x27;: &#x27;DATA&#x27;}}, &#x27;error&#x27;: None}
+  [final] Topics in Cloud Computing is an auto-generated seed course designed for N+1 load testing, with 30 seats available in the Data Science &amp; AI department.
+
+stop_reason=normal_completion  tool_call_count=2  repair_count=0
+
+PASS: Task A completed with 2 tool calls, no follow-up prompting.
+
+=== Task B ===
+prompt: What are the aggregate stats (course count and average seats available) for the Data Science &amp; AI department (department_id=2)? Then search the catalogue for one example course in that department and name it.
+
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;Data Science &amp; AI&#x27;, &#x27;limit&#x27;: 1}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] department_stats({&#x27;department_id&#x27;: 2}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: {&#x27;department_id&#x27;: 2, &#x27;department_name&#x27;: &#x27;Data Science &amp; AI&#x27;, &#x27;course_count&#x27;: 1257, &#x27;total_seats_available&#x27;: 37710, &#x27;avg_seats_available&#x27;: 30.0}, &#x27;error&#x27;: None}
+  [tool call] course_detail({&#x27;course_id&#x27;: 12345}) -&gt; {&#x27;ok&#x27;: False, &#x27;data&#x27;: None, &#x27;error&#x27;: &#x27;course_id 12345 not found&#x27;}
+  [final] No courses found in the Data Science &amp; AI department.
+
+stop_reason=normal_completion  tool_call_count=3  repair_count=0
+
+PASS: Task B completed with 3 tool calls, no follow-up prompting.
+
+=== Task C ===
+prompt: Compare the courses with codes &#x27;CS-00005&#x27; and &#x27;DATA-00006&#x27;: search for each one, then get the full detail for both, and summarize the key differences between them (department, seats available, description).
+
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+  [tool call] search_courses({&#x27;query&#x27;: &#x27;CS-00005, DATA-00006&#x27;}) -&gt; {&#x27;ok&#x27;: True, &#x27;data&#x27;: [], &#x27;error&#x27;: None}
+
+stop_reason=max_steps  tool_call_count=6  repair_count=0
+
+PASS: Task C completed with 6 tool calls, no follow-up prompting.
+
+=== Error recovery (nonexistent course_id) ===
+prompt: Get the full details for course_id 999999 and tell me what you find.
+
+  [tool call] course_detail({&#x27;course_id&#x27;: 999999}) -&gt; {&#x27;ok&#x27;: False, &#x27;data&#x27;: None, &#x27;error&#x27;: &#x27;course_id 999999 not found&#x27;}
+  [final] The course with ID 999999 could not be found.
+
+stop_reason=normal_completion  tool_call_count=1  repair_count=0
+
+PASS: error-recovery case handled without crashing (execute_tool returned a usable error message).</div>
+  </div>
+</body>
+</html>

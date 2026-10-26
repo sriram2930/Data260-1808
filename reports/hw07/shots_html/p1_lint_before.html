@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>git commit -- pre-commit hook BLOCKS the commit (5 real ruff errors)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">git commit -- pre-commit hook BLOCKS the commit (5 real ruff errors)</span>
+    </div>
+    <div class="body">[WARNING] Unstaged files detected.
+[INFO] Stashing unstaged files to C:\Users\User\.cache\pre-commit\patch1792995037-21220.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+ruff (legacy alias)......................................................Failed
+- hook id: ruff
+- exit code: 1
+
+I001 [*] Import block is un-sorted or un-formatted
+  --&gt; Part-1\api_courses.py:26:1
+   |
+24 |   &quot;&quot;&quot;
+25 |
+26 | / from __future__ import annotations
+27 | |
+28 | | import datetime
+29 | | import re
+30 | | from typing import Optional
+31 | |
+32 | | from fastapi import APIRouter, Depends, HTTPException
+33 | | from pydantic import BaseModel, Field, field_validator
+34 | | from sqlalchemy.exc import IntegrityError
+35 | | from sqlalchemy.orm import Session
+36 | |
+37 | | from db import get_db
+38 | | from jwt_auth import require_role
+39 | | from models import Course, Department
+   | |_____________________________________^
+40 |
+41 |   router = APIRouter(prefix=&quot;/api/courses&quot;)
+   |
+help: Organize imports
+   |
+31 |
+32 + from db import get_db
+33 | from fastapi import APIRouter, Depends, HTTPException
+34 + from jwt_auth import require_role
+35 + from models import Course, Department
+36 | from pydantic import BaseModel, Field, field_validator
+37 | from sqlalchemy.exc import IntegrityError
+38 | from sqlalchemy.orm import Session
+   -
+   - from db import get_db
+   - from jwt_auth import require_role
+   - from models import Course, Department
+39 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --&gt; Part-1\jwt_auth.py:18:1
+   |
+16 |   &quot;&quot;&quot;
+17 |
+18 | / from __future__ import annotations
+19 | |
+20 | | import datetime
+21 | | import os
+22 | |
+23 | | import bcrypt
+24 | | import jwt
+25 | | from fastapi import APIRouter, Depends, HTTPException
+26 | | from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+27 | | from sqlalchemy.orm import Session
+28 | |
+29 | | from db import get_db
+30 | | from models import User
+   | |_______________________^
+31 |
+32 |   router = APIRouter(prefix=&quot;/auth&quot;)
+   |
+help: Organize imports
+   |
+24 | import jwt
+25 + from db import get_db
+26 | from fastapi import APIRouter, Depends, HTTPException
+27 | from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+   - from sqlalchemy.orm import Session
+   -
+   - from db import get_db
+28 | from models import User
+29 + from sqlalchemy.orm import Session
+30 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --&gt; Part-1\main.py:25:1
+   |
+23 |   &quot;&quot;&quot;
+24 |
+25 | / from __future__ import annotations
+26 | |
+27 | | import secrets
+28 | | from pathlib import Path
+29 | | from typing import Optional
+30 | |
+31 | | from fastapi import FastAPI, Form, Request
+32 | | from fastapi.middleware.cors import CORSMiddleware
+33 | | from fastapi.responses import RedirectResponse
+34 | | from fastapi.staticfiles import StaticFiles
+35 | | from fastapi.templating import Jinja2Templates
+36 | | from starlette.middleware.sessions import SessionMiddleware
+37 | |
+38 | | import api_announcements
+39 | | import api_au</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bike-Share Membership Advisor</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 16px; color: #1a1a1a; }
+  h1 { font-size: 22px; }
+  .panel { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+  label { display: block; margin-top: 10px; font-weight: 600; font-size: 14px; }
+  input[type=text], input[type=url], textarea { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; font-size: 14px; }
+  textarea { height: 70px; }
+  button { margin-top: 14px; padding: 10px 20px; background: #0b5fff; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+  button:disabled { background: #999; }
+  .timeline-step { padding: 8px 10px; border-left: 3px solid #0b5fff; margin-bottom: 6px; background: #f6f8ff; font-size: 13px; font-family: Consolas, monospace; white-space: pre-wrap; }
+  .timeline-step.obs { border-left-color: #16a34a; background: #f1fbf4; }
+  .metrics { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+  .metric { background: #f0f0f0; padding: 8px 14px; border-radius: 6px; font-size: 13px; }
+  .decision { font-size: 18px; font-weight: 700; margin-top: 6px; }
+  #status { font-size: 13px; color: #666; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Bike-Share Membership Advisor (ReAct/MRKL agent)</h1>
+
+  <div class="panel">
+    <form id="runForm">
+      <label for="question">Question</label>
+      <textarea id="question" name="question" required>I'm deciding between an annual membership and paying per ride. My usage: 3 rides/month, 8 minutes each. Use csv_sql to check the trip data, policy_retriever on the pricing page for rates, and calculator for the math. Give me your decision and a cost breakdown.</textarea>
+
+      <label for="pricing_url">Pricing page URL</label>
+      <input type="url" id="pricing_url" name="pricing_url" value="https://divvybikes.com/pricing" required>
+
+      <label for="csv_file">Trip data CSV</label>
+      <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+
+      <button type="submit" id="runBtn">Run</button>
+      <div id="status"></div>
+    </form>
+  </div>
+
+  <div class="panel" id="timelinePanel" style="display:none">
+    <h2>Tool-call timeline</h2>
+    <div id="timeline"></div>
+  </div>
+
+  <div class="panel" id="resultsPanel" style="display:none">
+    <h2>Results</h2>
+    <div class="decision" id="decisionText"></div>
+    <div id="answerText" style="margin-top:10px; white-space:pre-wrap; font-size:14px;"></div>
+    <div class="metrics">
+      <div class="metric" id="stepCount"></div>
+      <div class="metric" id="totalTime"></div>
+      <div class="metric" id="stopReason"></div>
+    </div>
+  </div>
+
+<script>
+document.getElementById('runForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('runBtn');
+  const status = document.getElementById('status');
+  btn.disabled = true;
+  status.textContent = 'Running agent (this can take a minute on a local model)...';
+
+  const fd = new FormData(e.target);
+  try {
+    const res = await fetch('/run', { method: 'POST', body: fd });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    renderResult(data);
+    status.textContent = 'Done.';
+  } catch (err) {
+    status.textContent = 'Error: ' + err.message;
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+function renderResult(data) {
+  const timelineEl = document.getElementById('timeline');
+  timelineEl.innerHTML = '';
+  (data.timeline || []).forEach((step) => {
+    const div = document.createElement('div');
+    if (step.type === 'tool_call') {
+      div.className = 'timeline-step';
+      div.textContent = `CALL  ${step.tool}(${JSON.stringify(step.args)})`;
+    } else {
+      div.className = 'timeline-step obs';
+      div.textContent = `OBS   ${step.tool} -> ${step.content}`;
+    }
+    timelineEl.appendChild(div);
+  });
+  document.getElementById('timelinePanel').style.display = 'block';
+
+  document.getElementById('decisionText').textContent = data.final_answer
+    ? (data.final_answer.match(/Buy Monthly Membership|Pay Per Ride\/Minute/i) || [''])[0]
+    : '(no final answer)';
+  document.getElementById('answerText').textContent = data.final_answer || '(none)';
+  document.getElementById('stepCount').textContent = `Steps: ${data.step_count}`;
+  document.getElementById('totalTime').textContent = `Total time: ${data.total_time_ms} ms`;
+  document.getElementById('stopReason').textContent = `Stop reason: ${data.stop_reason}`;
+  document.getElementById('resultsPanel').style.display = 'block';
+}
+</script>
+</body>
+</html>

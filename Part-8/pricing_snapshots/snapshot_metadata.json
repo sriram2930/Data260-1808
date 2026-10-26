@@ -1,0 +1,8 @@
+{
+  "source_url": "https://divvybikes.com/pricing",
+  "access_date_utc": "2026-10-26T06:25:59.029611+00:00",
+  "sha256_raw_html": "640dbb6307c4f7d150a1c6384b030c4551557daffd7d4da7cffe5950b208441a",
+  "raw_html_bytes": 241386,
+  "raw_html_file": "divvy_pricing_raw.html",
+  "extracted_text_file": "divvy_pricing_text.txt"
+}

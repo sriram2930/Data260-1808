@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python run_safety_gate_test.py -- 10-command safety-gate test</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python run_safety_gate_test.py -- 10-command safety-gate test</span>
+    </div>
+    <div class="body">=== commands that SHOULD pass ===
+[PASS] &#x27;ls -la&#x27; -&gt; allowed=True reason=&#x27;matches a SAFE_PREFIXES entry&#x27;
+[PASS] &#x27;git status&#x27; -&gt; allowed=True reason=&#x27;matches a SAFE_PREFIXES entry&#x27;
+[PASS] &#x27;python --version&#x27; -&gt; allowed=True reason=&#x27;matches a SAFE_PREFIXES entry&#x27;
+[PASS] &#x27;cat README.md&#x27; -&gt; allowed=True reason=&#x27;matches a SAFE_PREFIXES entry&#x27;
+[PASS] &quot;find . -name &#x27;*.py&#x27;&quot; -&gt; allowed=True reason=&#x27;matches a SAFE_PREFIXES entry&#x27;
+
+=== commands that SHOULD be blocked ===
+[BLOCKED] &#x27;rm -rf /&#x27; (recursive forced deletion) -&gt; allowed=False reason=&#x27;blocked: destructive command (recursive forced deletion (rm -rf / -fr)); requires auto_approve=True&#x27;
+[BLOCKED] &#x27;sudo apt-get remove python&#x27; (privilege escalation) -&gt; allowed=False reason=&#x27;blocked: destructive command (privilege escalation (sudo/su/runas)); requires auto_approve=True&#x27;
+[BLOCKED] &#x27;chmod 777 /etc/passwd&#x27; (permission change) -&gt; allowed=False reason=&#x27;blocked: destructive command (permission/ownership change (chmod/chown/icacls/takeown)); requires auto_approve=True&#x27;
+[BLOCKED] &#x27;dd if=/dev/zero of=/dev/sda&#x27; (raw-device write) -&gt; allowed=False reason=&#x27;blocked: destructive command (raw-device write (dd if=... of=/dev/...)); requires auto_approve=True&#x27;
+[BLOCKED] &#x27;echo pwned &gt; /etc/passwd&#x27; (safe-prefix (echo) smuggling a root-path redirect -- must still block) -&gt; allowed=False reason=&#x27;blocked: destructive command (redirection into a root-level path (&gt; /etc, /bin, ...)); requires auto_approve=True&#x27;
+
+false allows found: 0
+
+final: 5/5 expected-pass commands allowed, 5/5 expected-block commands blocked
+
+wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw07\raw\safety_gate_results.json
+</div>
+  </div>
+</body>
+</html>
