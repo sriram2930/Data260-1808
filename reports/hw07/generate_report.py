@@ -61,7 +61,7 @@ table([
     ("Local model", "qwen2.5:1.5b-instruct via Ollama (agent reasoning + tool calling)"),
     ("Repo", "https://github.com/sriram2930/Data260-1808"),
     ("Collaborators", "Sbnikitha and supriyaselvanganesan have repo access"),
-    ("Commit tagged as hw7", "PLACEHOLDER_COMMIT_HASH"),
+    ("Commit tagged as hw7", "299fcbe52f530521cc5be077c4617ae95c22a075"),
 ])
 
 # ============================================================= PART 1
