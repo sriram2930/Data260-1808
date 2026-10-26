@@ -22,10 +22,9 @@ from __future__ import annotations
 
 import datetime
 
+from db import Base
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
-
-from db import Base
 
 
 class Department(Base):
@@ -83,6 +82,8 @@ class User(Base):
     name = Column(String(128), nullable=False)
     email = Column(String(255), nullable=False, unique=True)
     password_hash = Column(String(255), nullable=False)
+    username = Column(String(64), nullable=True, unique=True)  # HW7: JWT login identity
+    role = Column(String(16), nullable=True)  # HW7: reader | writer | moderator
 
 
 class UserSession(Base):

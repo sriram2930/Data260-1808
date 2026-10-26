@@ -24,3 +24,6 @@ mcp[cli]<2
 httpx
 pymongo
 requests
+pyjwt
+ruff
+pre-commit

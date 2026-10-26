@@ -28,13 +28,6 @@ import secrets
 from pathlib import Path
 from typing import Optional
 
-from fastapi import FastAPI, Form, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import RedirectResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-from starlette.middleware.sessions import SessionMiddleware
-
 import api_announcements
 import api_auth
 import api_chat
@@ -42,6 +35,13 @@ import api_courses
 import api_departments
 import api_n1
 import auth
+import jwt_auth
+from fastapi import FastAPI, Form, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from starlette.middleware.sessions import SessionMiddleware
 
 HERE = Path(__file__).parent
 PORT_BASE = 8008
@@ -75,6 +75,7 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(api_auth.router)
+app.include_router(jwt_auth.router)
 app.include_router(api_courses.router)
 app.include_router(api_departments.router)
 app.include_router(api_n1.router)

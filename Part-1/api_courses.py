@@ -1,21 +1,26 @@
 """
-Part-1/api_courses.py -- DATA-260 HW4/HW5 (Course CRUD JSON API)
+Part-1/api_courses.py -- DATA-260 HW4/HW5/HW7 (Course CRUD JSON API)
 
 REST endpoints for the Course entity, backed by MySQL (models.Course) instead
 of the in-memory list main.py used through HW2/HW3. This is what the React
-client and the Postman screenshots hit. All operations require a valid
-session (see api_auth.require_user) -- only logged-in users may view or
-modify records, per the assignment.
+client and the Postman screenshots hit.
+
+HW7, Part 1: migrated from the HW4 server-side session mechanism (api_auth.
+require_user, now unused on these routes -- that code stays reachable as
+history at the `hw4` tag) to JWT bearer auth with roles:
+  - list/read (GET)      -- any authenticated role
+  - create (POST)/update (PUT) -- writer or moderator
+  - delete (DELETE)      -- moderator only
 
 HW5 additions: course_code is now unique + format-validated, department_id
 (FK to Department) replaces free-form department entry on new/updated rows,
 and seats_available is a numeric field with a default.
 
-    POST   /api/courses         add a new course
-    GET    /api/courses         list all courses
-    GET    /api/courses/{id}    get one course by id
-    PUT    /api/courses/{id}    update a course
-    DELETE /api/courses/{id}    delete a course
+    POST   /api/courses         add a new course      (writer, moderator)
+    GET    /api/courses         list all courses       (any role)
+    GET    /api/courses/{id}    get one course by id   (any role)
+    PUT    /api/courses/{id}    update a course        (writer, moderator)
+    DELETE /api/courses/{id}    delete a course         (moderator)
 """
 
 from __future__ import annotations
@@ -24,14 +29,13 @@ import datetime
 import re
 from typing import Optional
 
+from db import get_db
 from fastapi import APIRouter, Depends, HTTPException
+from jwt_auth import require_role
+from models import Course, Department
 from pydantic import BaseModel, Field, field_validator
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
-
-from api_auth import require_user
-from db import get_db
-from models import Course, Department, User
 
 router = APIRouter(prefix="/api/courses")
 
@@ -89,7 +93,7 @@ def _check_department_exists(db: Session, department_id: Optional[int]) -> None:
 
 @router.post("", response_model=CourseOut, status_code=201)
 def create_course(
-    payload: CourseIn, db: Session = Depends(get_db), _user: User = Depends(require_user)
+    payload: CourseIn, db: Session = Depends(get_db), _claims: dict = Depends(require_role("writer", "moderator"))
 ):
     _check_department_exists(db, payload.department_id)
     rec = Course(**payload.model_dump())
@@ -104,13 +108,13 @@ def create_course(
 
 
 @router.get("", response_model=list[CourseOut])
-def list_courses(db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def list_courses(db: Session = Depends(get_db), _claims: dict = Depends(require_role())):
     return db.query(Course).order_by(Course.id).all()
 
 
 @router.get("/{course_id}", response_model=CourseOut)
 def get_course(
-    course_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)
+    course_id: int, db: Session = Depends(get_db), _claims: dict = Depends(require_role())
 ):
     rec = db.query(Course).filter_by(id=course_id).first()
     if not rec:
@@ -123,7 +127,7 @@ def update_course(
     course_id: int,
     payload: CourseIn,
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _claims: dict = Depends(require_role("writer", "moderator")),
 ):
     rec = db.query(Course).filter_by(id=course_id).first()
     if not rec:
@@ -142,7 +146,7 @@ def update_course(
 
 @router.delete("/{course_id}")
 def delete_course(
-    course_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)
+    course_id: int, db: Session = Depends(get_db), _claims: dict = Depends(require_role("moderator"))
 ):
     rec = db.query(Course).filter_by(id=course_id).first()
     if not rec:
