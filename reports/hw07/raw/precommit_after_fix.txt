@@ -1,0 +1,10 @@
+[WARNING] Unstaged files detected.
+[INFO] Stashing unstaged files to C:\Users\User\.cache\pre-commit\patch1792995074-22108.
+ruff (legacy alias)......................................................Passed
+[INFO] Restored changes from C:\Users\User\.cache\pre-commit\patch1792995074-22108.
+[main 56468c2] HW7 Part 1: JWT bearer auth with role-based authorization on Course routes
+ 8 files changed, 248 insertions(+), 27 deletions(-)
+ create mode 100644 .pre-commit-config.yaml
+ create mode 100644 Part-1/jwt_auth.py
+ create mode 100644 Part-1/migrate_hw07.py
+ create mode 100644 pyproject.toml

@@ -1,0 +1,67 @@
+--- login valid (advisor/moderator) ---
+{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZHZpc29yIiwicm9sZSI6Im1vZGVyYXRvciIsImlhdCI6MTc5Mjk5NDk1OCwiZXhwIjoxNzkyOTk4NTU4fQ.yIfgOw4MqU0yi7junNHRkcwCuyewIeKlcD6goLpmS-g","token_type":"bearer","role":"moderator"}
+HTTP 200
+
+--- login invalid password ---
+{"detail":"Invalid username or password"}
+HTTP 401
+
+--- GET /auth/me, no token ---
+{"detail":"Missing bearer token"}
+HTTP 401
+
+--- GET /auth/me, invalid token ---
+{"detail":"Invalid or expired token: Invalid header padding"}
+HTTP 401
+
+--- GET /auth/me, valid moderator token ---
+{"username":"advisor","role":"moderator"}
+HTTP 200
+
+--- POST /api/courses as reader (expect 403) ---
+{"detail":"role 'reader' is not permitted (needs one of ('writer', 'moderator'))"}
+HTTP 403
+
+--- POST /api/courses as writer (expect 201) ---
+{"id":5012,"course_code":"HW7-002","course_title":"JWT Test Course 2","submitter_email":null,"description":null,"department":null,"agree_terms":false,"department_id":null,"seats_available":30,"created_at":"2026-10-26T06:09:19","updated_at":"2026-10-26T06:09:19"}
+HTTP 201
+
+--- GET /api/courses as reader (expect 200) ---
+[
+  {
+    "id": 4,
+    "course_code": "BUS-00002",
+    "course_title": "Modern Operating Systems",
+    "submitter_email": "faculty2@sjsu.edu",
+    "description": "Auto-generated seed course #2 for N+1 load testing.",
+    "department": "Business Analytics",
+    "agree_terms": true,
+    "department_id": 3,
+    "seats_available": 30,
+    "created_at": "2026-10-05T07:26:49",
+    "updated_at": "2026-10-05T07:26:50"
+  },
+  {
+    "id": 5,
+    "course_code": "ENGR-00003",
+    "course_title": "Seminar in Networks",
+    "submitter_email": "faculty3@sjsu.edu",
+    "description": "Auto-generated seed course #3 for N+1 load testing.",
+    "department": "Engineering",
+    "agree_terms": true,
+    "department_id": 4,
+    "seats_available": 30,
+    "created_at": "2026-10-05T07:26:49",
+    "updated_at": "2026-10-05T07:26:50"
+  }
+]
+
+
+
+--- DELETE /api/courses/5012 as writer (expect 403) ---
+{"detail":"role 'writer' is not permitted (needs one of ('moderator',))"}
+HTTP 403
+
+--- DELETE /api/courses/5012 as moderator (expect 200) ---
+{"ok":true,"deleted_id":5012}
+HTTP 200

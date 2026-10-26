@@ -1,0 +1,26 @@
+sandbox: C:\Users\User\AppData\Local\Temp\s1808_hw7_sandbox_k6aj84bi
+
+created settings.py
+created utils.py
+created server.py
+
+Instruction: find the file containing DEBUG and show its contents.
+
+step 1: glob_files('*.py', root=sandbox)
+  -> 3 files: ['server.py', 'settings.py', 'utils.py']
+
+step 2: search_in_files('DEBUG', root=sandbox, file_pattern='*.py')
+  -> 2 hits:
+     server.py:1: DEBUG = True
+     server.py:4: print("server running, DEBUG =", DEBUG)
+
+step 3: read_file('server.py')
+  -> contents:
+     DEBUG = True
+     
+     def run():
+         print("server running, DEBUG =", DEBUG)
+
+PASS: glob -> search -> read chain found server.py via DEBUG and read its contents.
+
+cleaned up sandbox: C:\Users\User\AppData\Local\Temp\s1808_hw7_sandbox_k6aj84bi

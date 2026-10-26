@@ -1,0 +1,19 @@
+=== commands that SHOULD pass ===
+[PASS] 'ls -la' -> allowed=True reason='matches a SAFE_PREFIXES entry'
+[PASS] 'git status' -> allowed=True reason='matches a SAFE_PREFIXES entry'
+[PASS] 'python --version' -> allowed=True reason='matches a SAFE_PREFIXES entry'
+[PASS] 'cat README.md' -> allowed=True reason='matches a SAFE_PREFIXES entry'
+[PASS] "find . -name '*.py'" -> allowed=True reason='matches a SAFE_PREFIXES entry'
+
+=== commands that SHOULD be blocked ===
+[BLOCKED] 'rm -rf /' (recursive forced deletion) -> allowed=False reason='blocked: destructive command (recursive forced deletion (rm -rf / -fr)); requires auto_approve=True'
+[BLOCKED] 'sudo apt-get remove python' (privilege escalation) -> allowed=False reason='blocked: destructive command (privilege escalation (sudo/su/runas)); requires auto_approve=True'
+[BLOCKED] 'chmod 777 /etc/passwd' (permission change) -> allowed=False reason='blocked: destructive command (permission/ownership change (chmod/chown/icacls/takeown)); requires auto_approve=True'
+[BLOCKED] 'dd if=/dev/zero of=/dev/sda' (raw-device write) -> allowed=False reason='blocked: destructive command (raw-device write (dd if=... of=/dev/...)); requires auto_approve=True'
+[BLOCKED] 'echo pwned > /etc/passwd' (safe-prefix (echo) smuggling a root-path redirect -- must still block) -> allowed=False reason='blocked: destructive command (redirection into a root-level path (> /etc, /bin, ...)); requires auto_approve=True'
+
+false allows found: 0
+
+final: 5/5 expected-pass commands allowed, 5/5 expected-block commands blocked
+
+wrote C:\Users\User\Desktop\Data_260_HW-1\data260-1808\reports\hw07\raw\safety_gate_results.json

@@ -1,0 +1,197 @@
+[WARNING] Unstaged files detected.
+[INFO] Stashing unstaged files to C:\Users\User\.cache\pre-commit\patch1792995037-21220.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+ruff (legacy alias)......................................................Failed
+- hook id: ruff
+- exit code: 1
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> Part-1\api_courses.py:26:1
+   |
+24 |   """
+25 |
+26 | / from __future__ import annotations
+27 | |
+28 | | import datetime
+29 | | import re
+30 | | from typing import Optional
+31 | |
+32 | | from fastapi import APIRouter, Depends, HTTPException
+33 | | from pydantic import BaseModel, Field, field_validator
+34 | | from sqlalchemy.exc import IntegrityError
+35 | | from sqlalchemy.orm import Session
+36 | |
+37 | | from db import get_db
+38 | | from jwt_auth import require_role
+39 | | from models import Course, Department
+   | |_____________________________________^
+40 |
+41 |   router = APIRouter(prefix="/api/courses")
+   |
+help: Organize imports
+   |
+31 |
+32 + from db import get_db
+33 | from fastapi import APIRouter, Depends, HTTPException
+34 + from jwt_auth import require_role
+35 + from models import Course, Department
+36 | from pydantic import BaseModel, Field, field_validator
+37 | from sqlalchemy.exc import IntegrityError
+38 | from sqlalchemy.orm import Session
+   -
+   - from db import get_db
+   - from jwt_auth import require_role
+   - from models import Course, Department
+39 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> Part-1\jwt_auth.py:18:1
+   |
+16 |   """
+17 |
+18 | / from __future__ import annotations
+19 | |
+20 | | import datetime
+21 | | import os
+22 | |
+23 | | import bcrypt
+24 | | import jwt
+25 | | from fastapi import APIRouter, Depends, HTTPException
+26 | | from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+27 | | from sqlalchemy.orm import Session
+28 | |
+29 | | from db import get_db
+30 | | from models import User
+   | |_______________________^
+31 |
+32 |   router = APIRouter(prefix="/auth")
+   |
+help: Organize imports
+   |
+24 | import jwt
+25 + from db import get_db
+26 | from fastapi import APIRouter, Depends, HTTPException
+27 | from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+   - from sqlalchemy.orm import Session
+   -
+   - from db import get_db
+28 | from models import User
+29 + from sqlalchemy.orm import Session
+30 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> Part-1\main.py:25:1
+   |
+23 |   """
+24 |
+25 | / from __future__ import annotations
+26 | |
+27 | | import secrets
+28 | | from pathlib import Path
+29 | | from typing import Optional
+30 | |
+31 | | from fastapi import FastAPI, Form, Request
+32 | | from fastapi.middleware.cors import CORSMiddleware
+33 | | from fastapi.responses import RedirectResponse
+34 | | from fastapi.staticfiles import StaticFiles
+35 | | from fastapi.templating import Jinja2Templates
+36 | | from starlette.middleware.sessions import SessionMiddleware
+37 | |
+38 | | import api_announcements
+39 | | import api_auth
+40 | | import api_chat
+41 | | import api_courses
+42 | | import api_departments
+43 | | import api_n1
+44 | | import auth
+45 | | import jwt_auth
+   | |_______________^
+46 |
+47 |   HERE = Path(__file__).parent
+   |
+help: Organize imports
+   |
+30 |
+   - from fastapi import FastAPI, Form, Request
+   - from fastapi.middleware.cors import CORSMiddleware
+   - from fastapi.responses import RedirectResponse
+   - from fastapi.staticfiles import StaticFiles
+   - from fastapi.templating import Jinja2Templates
+   - from starlette.middleware.sessions import SessionMiddleware
+   -
+31 | import api_announcements
+--------------------------------------------------------------------------------
+38 | import jwt_auth
+39 + from fastapi import FastAPI, Form, Request
+40 + from fastapi.middleware.cors import CORSMiddleware
+41 + from fastapi.responses import RedirectResponse
+42 + from fastapi.staticfiles import StaticFiles
+43 + from fastapi.templating import Jinja2Templates
+44 + from starlette.middleware.sessions import SessionMiddleware
+45 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> Part-1\migrate_hw07.py:14:1
+   |
+12 |   """
+13 |
+14 | / from __future__ import annotations
+15 | |
+16 | | import bcrypt
+17 | | from sqlalchemy import text
+18 | |
+19 | | from db import db_session_basede26, engine
+20 | | import models  # noqa: F401
+21 | | from models import User
+   | |_______________________^
+22 |
+23 |   DEMO_USERS = [
+   |
+help: Organize imports
+   |
+16 | import bcrypt
+   - from sqlalchemy import text
+   -
+   - from db import db_session_basede26, engine
+17 | import models  # noqa: F401
+18 + from db import db_session_basede26, engine
+19 | from models import User
+20 + from sqlalchemy import text
+21 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> Part-1\models.py:21:1
+   |
+19 |   """
+20 |
+21 | / from __future__ import annotations
+22 | |
+23 | | import datetime
+24 | |
+25 | | from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String, Text
+26 | | from sqlalchemy.orm import relationship
+27 | |
+28 | | from db import Base
+   | |___________________^
+help: Organize imports
+   |
+24 |
+25 + from db import Base
+26 | from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Integer, String, Text
+27 | from sqlalchemy.orm import relationship
+   -
+   - from db import Base
+28 |
+   |
+
+Found 5 errors.
+[*] 5 fixable with `--fix`.
+
+[INFO] Restored changes from C:\Users\User\.cache\pre-commit\patch1792995037-21220.

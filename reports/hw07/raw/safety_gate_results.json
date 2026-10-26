@@ -1,0 +1,82 @@
+{
+  "results": [
+    {
+      "command": "ls -la",
+      "expected": "pass",
+      "is_destructive": false,
+      "allowed": true,
+      "reason": "matches a SAFE_PREFIXES entry"
+    },
+    {
+      "command": "git status",
+      "expected": "pass",
+      "is_destructive": false,
+      "allowed": true,
+      "reason": "matches a SAFE_PREFIXES entry"
+    },
+    {
+      "command": "python --version",
+      "expected": "pass",
+      "is_destructive": false,
+      "allowed": true,
+      "reason": "matches a SAFE_PREFIXES entry"
+    },
+    {
+      "command": "cat README.md",
+      "expected": "pass",
+      "is_destructive": false,
+      "allowed": true,
+      "reason": "matches a SAFE_PREFIXES entry"
+    },
+    {
+      "command": "find . -name '*.py'",
+      "expected": "pass",
+      "is_destructive": false,
+      "allowed": true,
+      "reason": "matches a SAFE_PREFIXES entry"
+    },
+    {
+      "command": "rm -rf /",
+      "expected": "block",
+      "note": "recursive forced deletion",
+      "is_destructive": true,
+      "allowed": false,
+      "reason": "blocked: destructive command (recursive forced deletion (rm -rf / -fr)); requires auto_approve=True"
+    },
+    {
+      "command": "sudo apt-get remove python",
+      "expected": "block",
+      "note": "privilege escalation",
+      "is_destructive": true,
+      "allowed": false,
+      "reason": "blocked: destructive command (privilege escalation (sudo/su/runas)); requires auto_approve=True"
+    },
+    {
+      "command": "chmod 777 /etc/passwd",
+      "expected": "block",
+      "note": "permission change",
+      "is_destructive": true,
+      "allowed": false,
+      "reason": "blocked: destructive command (permission/ownership change (chmod/chown/icacls/takeown)); requires auto_approve=True"
+    },
+    {
+      "command": "dd if=/dev/zero of=/dev/sda",
+      "expected": "block",
+      "note": "raw-device write",
+      "is_destructive": true,
+      "allowed": false,
+      "reason": "blocked: destructive command (raw-device write (dd if=... of=/dev/...)); requires auto_approve=True"
+    },
+    {
+      "command": "echo pwned > /etc/passwd",
+      "expected": "block",
+      "note": "safe-prefix (echo) smuggling a root-path redirect -- must still block",
+      "is_destructive": true,
+      "allowed": false,
+      "reason": "blocked: destructive command (redirection into a root-level path (> /etc, /bin, ...)); requires auto_approve=True"
+    }
+  ],
+  "false_allows": [],
+  "pass_count": 5,
+  "block_count": 5
+}
