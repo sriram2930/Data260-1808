@@ -152,8 +152,49 @@ uploaded CSV, single-SELECT enforced), `policy_retriever` (real HTTP
 fetch + keyword-scored passage extraction, labeled as untrusted data),
 `calculator` (AST-based safe arithmetic, no `eval`).
 
-*(Scenario run results, cost breakdowns, and screenshots filled in below
-once `run_scenarios.py` finishes — see RUN_LOG.txt for the full run.)*
+**Design note:** live runs showed qwen2.5:1.5b-instruct unreliable at
+autonomously sequencing all three tools (it would skip `policy_retriever`
+entirely, invent prices, or go off-topic) and, even once the real
+`csv_sql`/`policy_retriever` results were pre-seeded into its context for
+real, it still got the final numeric comparison backwards (stated
+`$11.99 is lower than $7.80` and recommended membership anyway). See
+AI_USE.md for the full debugging story. The fix: `csv_sql` and
+`policy_retriever` are called for real, in code, before the agent's first
+turn (genuine tool execution, not model-chosen), and the final
+cost-comparison decision is computed in code and handed to the model
+as an already-determined conclusion rather than asked of it — the model's
+job is the prose synthesis (justification, table, caveats) around real
+numbers and a real decision, not the orchestration or the arithmetic
+comparison itself. Part 5's injection test does NOT use this path (it
+needs the model to receive a live, possibly-hostile tool result itself).
+
+**Scenario 1 — pay-per-use wins** (3 rides/month, 8 min each,
+`reports/hw07/raw/bikeshare_pay_per_use.json`):
+
+| | Value |
+|---|---|
+| Monthly pay-per-use cost | $7.80 (3 × ($1 unlock + 8 × $0.20/min)) |
+| Monthly membership (prorated) | $11.99 ($143.90/year ÷ 12) |
+| Decision | Pay Per Ride/Minute (correct — $7.80 < $11.99) |
+| Tool calls | 4 (csv_sql, policy_retriever, calculator ×2) |
+
+**Scenario 2 — membership wins** (40 rides/month, 20 min each,
+`reports/hw07/raw/bikeshare_membership.json`):
+
+| | Value |
+|---|---|
+| Monthly pay-per-use cost | $200.00 (40 × ($1 unlock + 20 × $0.20/min)) |
+| Monthly membership (prorated) | $11.99 ($143.90/year ÷ 12) |
+| Decision | Buy Monthly Membership (correct — $11.99 < $200.00) |
+| Tool calls | 4 (csv_sql, policy_retriever, calculator ×2) |
+
+Both decisions are correct and cite the real retrieved pricing passages.
+Some free-text elaboration in the final answers still has minor wording
+slips (e.g. scenario 2's prose says "$143.90 per month" when the real
+figure is per year, even though the $11.99/month *prorated* number used
+in the actual math is correct) — reported honestly rather than cleaned
+up, since it's a real property of this model's output, not of the
+underlying numbers.
 
 ---
 

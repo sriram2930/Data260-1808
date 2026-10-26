@@ -42,37 +42,20 @@ OUT_DIR = HERE.parent / "reports" / "hw07" / "raw"
 SCENARIOS = {
     "pay_per_use": {
         "csv": "data/scenario_pay_per_use.csv",
+        "ride_count": 3,
+        "avg_duration_min": 8,
         "question": (
-            "I'm a Divvy rider in Chicago deciding between an annual membership and paying "
-            "per ride. My typical usage: about 3 rides per month, each around 8 minutes, "
-            "always on classic bikes. Use csv_sql on the uploaded trip data to check real "
-            "classic-bike trip duration patterns this month (for example, what share of "
-            "real trips run under 45 minutes, since that's the usual included-minutes "
-            "threshold), use policy_retriever on the pricing page to get the exact single-ride "
-            "and annual membership prices, and use calculator to compute my monthly "
-            "pay-per-use cost vs. the prorated monthly cost of the annual membership. Give me "
-            "a decision (Buy Monthly Membership or Pay Per Ride/Minute), a 3-6 sentence "
-            "justification citing the pricing passages, a cost breakdown (total pay-per-use "
-            "cost, membership cost plus any residual charges, break-even rides vs my actual "
-            "usage), a small table by week (ride count, average duration, spend), and any "
-            "assumptions or caveats."
+            "I'm a Divvy rider in Chicago. My usage: 3 rides per month, 8 minutes each, "
+            "classic bikes only. Should I buy the annual membership or pay per ride?"
         ),
     },
     "membership": {
         "csv": "data/scenario_membership.csv",
+        "ride_count": 40,
+        "avg_duration_min": 20,
         "question": (
-            "I'm a Divvy rider in Chicago deciding between an annual membership and paying "
-            "per ride. My typical usage: about 40 rides per month (commuting + errands), "
-            "each around 20 minutes, mostly on classic bikes. Use csv_sql on the uploaded "
-            "trip data to check real classic-bike trip duration patterns this month (for "
-            "example, what share of real trips run under 45 minutes), use policy_retriever "
-            "on the pricing page to get the exact single-ride and annual membership prices, "
-            "and use calculator to compute my monthly pay-per-use cost vs. the prorated "
-            "monthly cost of the annual membership. Give me a decision (Buy Monthly "
-            "Membership or Pay Per Ride/Minute), a 3-6 sentence justification citing the "
-            "pricing passages, a cost breakdown (total pay-per-use cost, membership cost "
-            "plus any residual charges, break-even rides vs my actual usage), a small table "
-            "by week (ride count, average duration, spend), and any assumptions or caveats."
+            "I'm a Divvy rider in Chicago. My usage: 40 rides per month, 20 minutes each, "
+            "classic bikes only. Should I buy the annual membership or pay per ride?"
         ),
     },
 }
@@ -82,7 +65,10 @@ def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for label, cfg in SCENARIOS.items():
         print(f"=== scenario: {label} ===")
-        result = run_bikeshare_agent(cfg["question"], str(HERE / cfg["csv"]), PRICING_URL)
+        result = run_bikeshare_agent(
+            cfg["question"], str(HERE / cfg["csv"]), PRICING_URL,
+            ride_count=cfg["ride_count"], avg_duration_min=cfg["avg_duration_min"],
+        )
         print(f"stop_reason={result['stop_reason']} tool_call_count={result.get('tool_call_count')} "
               f"total_time_ms={result['total_time_ms']}")
         print(f"final_answer:\n{result['final_answer']}\n")

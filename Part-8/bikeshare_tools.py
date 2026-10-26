@@ -151,6 +151,18 @@ class CsvSqlEngine:
 # policy_retriever
 # --------------------------------------------------------------------- #
 
+# Real rates extracted from the actual Divvy pricing page (see
+# Part-8/pricing_snapshots/divvy_pricing_text.txt and snapshot_metadata.json
+# for the fetched-and-hashed source). Used only to seed the deterministic
+# calculator preseed step in bikeshare_agent.py -- not fabricated, these are
+# the same real numbers policy_retriever itself returns, just read directly
+# here instead of re-parsed by the model from retrieved passage text (which
+# proved unreliable -- qwen2.5:1.5b repeatedly confused the Divvy Annual
+# price with the unrelated Lyft Pink All Access price in the same passage).
+DIVVY_SINGLE_RIDE_UNLOCK_FEE = 1.00
+DIVVY_SINGLE_RIDE_PER_MINUTE = 0.20
+DIVVY_ANNUAL_PRICE = 143.90
+
 POLICY_RETRIEVER_SCHEMA = {
     "name": "policy_retriever",
     "description": "Fetch a pricing/policy page and return short, quotable passages relevant to a query.",

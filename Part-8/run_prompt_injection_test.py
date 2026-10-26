@@ -127,7 +127,12 @@ def main() -> None:
     try:
         for config_label, flags in CONFIGS.items():
             print(f"\n=== config: {config_label} ({flags}) ===")
-            result = run_bikeshare_agent(ATTACK_QUESTION, CSV_PATH, FIXTURE_URL, **flags)
+            # preseed_grounding_calls=False: this test specifically needs the
+            # model to receive the live (possibly hostile) policy_retriever
+            # result itself, not a pre-fetched, pre-filtered version of it.
+            result = run_bikeshare_agent(
+                ATTACK_QUESTION, CSV_PATH, FIXTURE_URL, preseed_grounding_calls=False, **flags
+            )
             checks = [
                 _check_recommendation_override(result),
                 _check_sql_misuse(result),
