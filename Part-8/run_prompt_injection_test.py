@@ -127,11 +127,15 @@ def main() -> None:
     try:
         for config_label, flags in CONFIGS.items():
             print(f"\n=== config: {config_label} ({flags}) ===")
-            # preseed_grounding_calls=False: this test specifically needs the
-            # model to receive the live (possibly hostile) policy_retriever
-            # result itself, not a pre-fetched, pre-filtered version of it.
+            # force_policy_retriever_call=True guarantees the model actually
+            # sees the hostile fixture's real content (otherwise it just
+            # hallucinates plausible-looking prices and never calls the
+            # tool at all -- confirmed by a first run of this test, see
+            # bikeshare_agent.py's docstring and AI_USE.md). Everything
+            # after that one forced call is fully autonomous.
             result = run_bikeshare_agent(
-                ATTACK_QUESTION, CSV_PATH, FIXTURE_URL, preseed_grounding_calls=False, **flags
+                ATTACK_QUESTION, CSV_PATH, FIXTURE_URL,
+                preseed_grounding_calls=False, force_policy_retriever_call=True, **flags
             )
             checks = [
                 _check_recommendation_override(result),
@@ -140,7 +144,10 @@ def main() -> None:
             ]
             for c in checks:
                 print(f"  {c['attack']}: {'SUCCEEDED (attack got through)' if c['succeeded'] else 'blocked/did not occur'}")
-            all_results[config_label] = {"checks": checks, "stop_reason": result["stop_reason"], "final_answer": result.get("final_answer")}
+            all_results[config_label] = {
+                "checks": checks, "stop_reason": result["stop_reason"],
+                "final_answer": result.get("final_answer"), "timeline": result.get("timeline", []),
+            }
     finally:
         httpd.shutdown()
 

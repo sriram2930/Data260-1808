@@ -682,6 +682,77 @@ python verify_hw06.py
 ```
 Writes [`reports/hw06/verification.json`](reports/hw06/verification.json).
 
+# HW7
+
+JWT auth + RBAC, a schema-validated agent loop with bounded repair,
+Reflexion self-correction, a framework-based bike-share ReAct/MRKL agent,
+prompt-injection red-teaming, and file tools with a safety gate.
+
+## Part 1 — JWT Authentication, Role-based authorization, and Linting
+
+Files: [Part-1/jwt_auth.py](Part-1/jwt_auth.py), [Part-1/migrate_hw07.py](Part-1/migrate_hw07.py)
+
+`/api/courses` migrated from HW4's session cookie to JWT bearer auth with
+three roles (`reader`, `writer`, `moderator`); HW4's session code stays as
+history at the `hw4` tag. Ruff + pre-commit set up at the repo root
+(`pyproject.toml`, `.pre-commit-config.yaml`) — the first real commit
+attempt was genuinely blocked by 5 real import-order errors.
+
+## Part 2 — Agent Loop with Bounded Repair
+
+Files: [Part-7/agent.py](Part-7/agent.py), [Part-7/tool_schemas.py](Part-7/tool_schemas.py),
+[Part-7/run_reliability_test.py](Part-7/run_reliability_test.py)
+
+Extends the HW5 agent loop: an unknown tool or a schema-invalid argument
+is reprompted once with the specific problem, then stops cleanly. 20-attempt
+reliability run: 90% well-formed before repair, 95% after.
+
+## Part 3 — Reflexion and Bounded Self-Correction
+
+Files: [Part-7/reflexion.py](Part-7/reflexion.py), [Part-7/verifiers.py](Part-7/verifiers.py)
+
+Up to 2 retries, token-budgeted, deterministic per-task verifiers that
+check the final answer against that run's own real tool results. Reflections
+never touch `SYSTEM_PROMPT` or tool permissions.
+
+## Part 4 — Framework ReAct/MRKL Public-Data Exercise
+
+Files: [Part-8/bikeshare_agent.py](Part-8/bikeshare_agent.py), [Part-8/bikeshare_tools.py](Part-8/bikeshare_tools.py),
+[Part-8/ui_server.py](Part-8/ui_server.py)
+```
+.venv\Scripts\python.exe Part-8\run_scenarios.py
+```
+`langgraph.prebuilt.create_react_agent` + `ChatOllama` + three real tools
+(`csv_sql`, `policy_retriever`, `calculator`) over real public Divvy
+(Chicago) trip data and the real Divvy pricing page. See `AI_USE.md` for
+why the acceptance-case runs pre-seed the first two tool calls and the
+final cost comparison rather than leaving full orchestration to a 1.5B
+local model.
+
+## Part 5 — Prompt Injection and Tool Security
+
+Files: [Part-8/run_prompt_injection_test.py](Part-8/run_prompt_injection_test.py),
+[Part-8/hostile_fixture/hostile_pricing.html](Part-8/hostile_fixture/hostile_pricing.html)
+
+Threat model in [`reports/hw07/THREAT_MODEL.md`](reports/hw07/THREAT_MODEL.md).
+Both defenses (untrusted-data labeling, `csv_sql`'s single-SELECT
+enforcement) are already built into Part 4's tools.
+
+## Part 6 — File Tools and a Safety Gate
+
+Files: [Part-9/file_tools.py](Part-9/file_tools.py)
+
+Six file tools plus `SAFE_PREFIXES`, `confirm_bash`, and an independent
+`is_destructive` deny-list. 10-command safety-gate test: 5/5 pass, 5/5
+blocked, 0 false allows.
+
+## HW7 Verification
+
+```
+python verify_hw07.py
+```
+Writes [`reports/hw07/verification.json`](reports/hw07/verification.json).
+
 ## Repository layout
 ```
 Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task-def.json  (HW1)
@@ -690,10 +761,13 @@ Part-1/   index.html, app.js, Dockerfile, nginx.conf, DOMAIN_SCHEMA.md, ecs-task
           db.py, models.py, init_db.py, api_auth.py, api_courses.py, api_n1.py,
           seed_n1.py, run_n1_experiment.py, explain_index_demo.py, migrations/              (HW4)
           api_departments.py, migrate_hw05.py                                               (HW5)
+          db_mongo.py, models_mongo.py, api_announcements.py, memory.py, api_chat.py        (HW6)
+          jwt_auth.py, migrate_hw07.py                                                      (HW7)
 Part-2/   agents_demo.py, sample_input.json                                                 (HW1)
           agent_graph.py, run_schema_experiments.py                                         (HW2)
 Part-3/   run_nondeterminism.py  (imports run_pipeline from ../Part-2/agents_demo.py)        (HW1)
 Part-4/   hw1_client.py, AGENT.md, smoke_test_conversation.txt, src/model_client.py          (HW1)
+          MEMORY.md, file_memory.py, memory_cli.py                                          (HW6)
 Part-5/   fetch_corpus.py, corpus/, rag_compare.py, run_retrieval_comparison.py,
           compute_metrics.py                                                                (HW3)
           rag_qa.py, run_rag_qa.py                                                          (HW4)
@@ -703,8 +777,16 @@ Part-6/   src/App.jsx, src/Home.jsx, src/Login.jsx, src/CreateRecord.jsx,
 Part-7/   meals_server.py, domain_server.py, envelope.py, retry_policy.py,
           run_fault_injection.py, execute_tool.py, test_tools.py, inspect_tools.py,
           agent.py, run_agent_scenarios.py                                                   (HW5)
+          tool_schemas.py, hw07_tasks.py, run_verification_tasks.py,
+          run_reliability_test.py, reflexion.py, verifiers.py,
+          run_reflexion_compare.py                                                           (HW7)
+Part-8/   bikeshare_tools.py, bikeshare_agent.py, build_scenarios.py, run_scenarios.py,
+          run_prompt_injection_test.py, ui_server.py, ui_static/, hostile_fixture/,
+          pricing_snapshots/, data/                                                          (HW7)
+Part-9/   file_tools.py, run_integration_test.py, run_safety_gate_test.py                     (HW7)
 requirements.txt, verify_hw01.py, verify_hw02.py, verify_hw03.py, verify_hw04.py,
-verify_hw05.py, verify_hw06.py                                                    — shared, repo root
+verify_hw05.py, verify_hw06.py, verify_hw07.py, pyproject.toml,
+.pre-commit-config.yaml                                                           — shared, repo root
 reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/,
-reports/hw06/                                                                     — deliverables per assignment spec
+reports/hw06/, reports/hw07/                                                      — deliverables per assignment spec
 ```

@@ -1,0 +1,70 @@
+{
+  "homework": "hw07",
+  "sid4": 1808,
+  "commit_hash": "fcd62618de2fb49a62188cf8f8333c99e7801ca5",
+  "model": "qwen2.5:1.5b-instruct (Ollama)",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "jwt_login_valid_credentials",
+      "pass": true
+    },
+    {
+      "check": "jwt_login_invalid_credentials_401",
+      "pass": true
+    },
+    {
+      "check": "rbac_reader_create_forbidden_403",
+      "pass": true
+    },
+    {
+      "check": "rbac_moderator_list_200",
+      "pass": true
+    },
+    {
+      "check": "agent_loop_completes_real_task",
+      "pass": true,
+      "detail": "tool_call_count=2 stop_reason=normal_completion"
+    },
+    {
+      "check": "verifier_runs_and_passes_on_correct_answer",
+      "pass": true
+    },
+    {
+      "check": "bikeshare_csv_at_least_500_rows",
+      "pass": true,
+      "detail": "800 rows"
+    },
+    {
+      "check": "pricing_snapshot_has_hash_url_date",
+      "pass": true
+    },
+    {
+      "check": "calculator_tool_safe_arithmetic",
+      "pass": true
+    },
+    {
+      "check": "hostile_fixture_exists",
+      "pass": true
+    },
+    {
+      "check": "attack_checks_run_and_report_not_succeeded_on_clean_result",
+      "pass": true
+    },
+    {
+      "check": "is_destructive_returns_bool",
+      "pass": true
+    },
+    {
+      "check": "confirm_bash_blocks_destructive_without_confirmation",
+      "pass": true
+    },
+    {
+      "check": "confirm_bash_allows_safe_prefix",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-10-26T11:40:07"
+}

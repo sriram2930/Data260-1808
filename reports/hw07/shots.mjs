@@ -15,6 +15,8 @@ const PAGES = [
   "p1_lint_before", "p1_lint_after",
   "p2_tasks", "p2_reliability",
   "p3_reflection",
+  "p4_scenario_pay_per_use", "p4_scenario_membership", "p4_snapshot_metadata",
+  "p5_attack_results",
   "p6_integration_test", "p6_safety_gate_test",
 ];
 
