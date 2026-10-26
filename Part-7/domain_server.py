@@ -35,8 +35,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "Part-1"))
 
 from db import db_session_basede26  # noqa: E402
+from envelope import fail, ok  # noqa: E402
 from models import Course, Department  # noqa: E402
-from envelope import ok, fail  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,

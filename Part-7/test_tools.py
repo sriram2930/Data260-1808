@@ -30,9 +30,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "Part-1"))
 
 from db import Base  # noqa: E402
-from models import Course, Department  # noqa: E402
-
 from execute_tool import execute_tool  # noqa: E402
+from models import Course, Department  # noqa: E402
 
 TEST_DEPT_ID = 1
 TEST_COURSE_1_ID = 1

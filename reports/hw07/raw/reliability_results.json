@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "total_attempts": 21,
+    "total_slots": 20,
+    "total_runs": 6,
+    "well_formed_before_repair_rate": 0.9,
+    "well_formed_after_repair_rate": 0.95,
+    "failures": {
+      "malformed_arguments": 2,
+      "unknown_tool": 0,
+      "text_when_tool_required": 0,
+      "lost_multi_step_chain": 1
+    }
+  },
+  "attempts": [
+    {
+      "task": "A",
+      "run": 1,
+      "step": 1,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "A",
+      "run": 1,
+      "step": 2,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "B",
+      "run": 2,
+      "step": 1,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "malformed_arguments",
+      "problems": [
+        "missing required field: 'query'",
+        "unexpected field: 'department_id'"
+      ]
+    },
+    {
+      "task": "B",
+      "run": 2,
+      "step": 2,
+      "tool": "department_stats",
+      "is_first_attempt": false,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "B",
+      "run": 2,
+      "step": 3,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": false,
+      "classification": "malformed_arguments",
+      "problems": [
+        "missing required field: 'query'",
+        "unexpected field: 'department_id'"
+      ]
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 1,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 2,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 3,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 4,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 5,
+      "tool": "department_stats",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 3,
+      "step": 6,
+      "tool": "department_stats",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "A",
+      "run": 4,
+      "step": 1,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "A",
+      "run": 4,
+      "step": 2,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "B",
+      "run": 5,
+      "step": 1,
+      "tool": "department_stats",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "B",
+      "run": 5,
+      "step": 2,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 1,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 2,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 3,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 4,
+      "tool": "search_courses",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 5,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    },
+    {
+      "task": "C",
+      "run": 6,
+      "step": 6,
+      "tool": "course_detail",
+      "is_first_attempt": true,
+      "resolved": true,
+      "classification": "well_formed"
+    }
+  ],
+  "run_summaries": [
+    {
+      "run": 1,
+      "task": "A",
+      "stop_reason": "normal_completion",
+      "tool_call_count": 2,
+      "repair_count": 0,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": false
+    },
+    {
+      "run": 2,
+      "task": "B",
+      "stop_reason": "repair_failed",
+      "tool_call_count": 1,
+      "repair_count": 1,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": true
+    },
+    {
+      "run": 3,
+      "task": "C",
+      "stop_reason": "max_steps",
+      "tool_call_count": 6,
+      "repair_count": 0,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": false
+    },
+    {
+      "run": 4,
+      "task": "A",
+      "stop_reason": "normal_completion",
+      "tool_call_count": 2,
+      "repair_count": 0,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": false
+    },
+    {
+      "run": 5,
+      "task": "B",
+      "stop_reason": "normal_completion",
+      "tool_call_count": 2,
+      "repair_count": 0,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": false
+    },
+    {
+      "run": 6,
+      "task": "C",
+      "stop_reason": "max_steps",
+      "tool_call_count": 6,
+      "repair_count": 0,
+      "text_when_tool_required": false,
+      "lost_multi_step_chain": false
+    }
+  ]
+}
