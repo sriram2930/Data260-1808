@@ -1,5 +1,5 @@
 --- login valid (advisor/moderator) ---
-{"access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZHZpc29yIiwicm9sZSI6Im1vZGVyYXRvciIsImlhdCI6MTc5Mjk5NDk1OCwiZXhwIjoxNzkyOTk4NTU4fQ.yIfgOw4MqU0yi7junNHRkcwCuyewIeKlcD6goLpmS-g","token_type":"bearer","role":"moderator"}
+{"access_token":"REDACTED-JWT-example-only-not-a-live-credential","token_type":"bearer","role":"moderator"}
 HTTP 200
 
 --- login invalid password ---
