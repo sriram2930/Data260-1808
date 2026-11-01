@@ -1,0 +1,11 @@
+--- POST /api/courses (CREATE) ---
+{"correlation_id":"10493efd-3878-4f46-b73d-0f65377a48fb","success":true,"entity_id":"0f974db9-3a6a-42bd-b621-7b87d2798b1f","message":"Entity created"}
+HTTP 200
+
+--- GET /api/courses/{id} (found) ---
+{"correlation_id":"d0e4487a-1b94-46e6-989e-78143142049f","success":true,"entity":{"course_id":"3d2c1a25-641d-47f6-bce8-11644d1cfd5b","course_code":"API-TEST-01","course_title":"API Test Course","description":null,"department":null,"seats_available":30}}
+HTTP 200
+
+--- GET /api/courses/{id} (not found) ---
+{"detail":"Entity not found"}
+HTTP 404

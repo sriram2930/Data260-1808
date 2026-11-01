@@ -1,0 +1,7 @@
+NAMES             IMAGE                             STATUS         PORTS
+s1808-api         data260-1808-s1808-api            Up 3 minutes   0.0.0.0:8008->8008/tcp, [::]:8008->8008/tcp
+s1808-worker      data260-1808-s1808-worker         Up 3 minutes   
+s1808-kafka       confluentinc/cp-kafka:7.5.0       Up 7 minutes   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0   Up 7 minutes   2181/tcp, 2888/tcp, 3888/tcp
+s1808-mongo       mongo:7                           Up 12 days     0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp
+s1808-mysql       mysql:8                           Up 3 weeks     0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp

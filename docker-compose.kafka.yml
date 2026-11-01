@@ -1,0 +1,73 @@
+# DATA-260 HW8 -- Kafka infrastructure (Zookeeper + single-broker Kafka),
+# the worker/consumer service, and the FastAPI service, all named s1808-*
+# to match this project's existing container naming convention
+# (s1808-mysql, s1808-mongo) and to avoid colliding with an unrelated
+# "kafka-pipeline-*" container pair already on this machine from a
+# different project.
+#
+# Two Kafka listeners, not one: PLAINTEXT (internal, s1808-kafka:29092) for
+# container-to-container traffic (worker, api), and PLAINTEXT_HOST
+# (localhost:9092) for host-run scripts (homework_demo.py, Part 3's
+# failure tests). A single "localhost:9092" advertised listener works for
+# the initial bootstrap from inside a container too, but every request
+# after that uses the ADVERTISED address from broker metadata -- which is
+# "localhost", meaning the container itself from a container's point of
+# view, not the Kafka container (confirmed: this produces a real
+# ECONNREFUSED on every request past the first one; see AI_USE.md).
+#
+# auto.create.topics.enable=false on purpose: every topic is created
+# explicitly via `kafka-topics --create` (reports/hw08/raw/topics_created.txt),
+# which is itself required evidence for Part 2.II, not just a formality.
+
+services:
+  s1808-zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: s1808-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  s1808-kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: s1808-kafka
+    depends_on:
+      - s1808-zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: s1808-zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://s1808-kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+
+  s1808-worker:
+    build:
+      context: ./Part-10
+      dockerfile: Dockerfile.worker
+    container_name: s1808-worker
+    depends_on:
+      - s1808-kafka
+    # plain depends_on only waits for the Kafka container to START, not to
+    # finish booting (~15-20s) -- restart: on-failure lets this container
+    # retry until Kafka is actually accepting connections, rather than
+    # crashing once and staying dead.
+    restart: on-failure
+    environment:
+      BOOTSTRAP_SERVERS: s1808-kafka:29092
+
+  s1808-api:
+    build:
+      context: ./Part-10
+      dockerfile: Dockerfile.api
+    container_name: s1808-api
+    depends_on:
+      - s1808-kafka
+    restart: on-failure
+    ports:
+      - "8008:8008"
+    environment:
+      BOOTSTRAP_SERVERS: s1808-kafka:29092

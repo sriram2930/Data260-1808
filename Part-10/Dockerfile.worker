@@ -1,0 +1,18 @@
+# DATA-260 HW8, Part 1 -- Kafka worker/consumer service container
+FROM python:3.12-slim
+
+# Without this, Python fully buffers stdout when it isn't a TTY (true for
+# any container's main process) -- log lines can sit unflushed for a long
+# time, or be lost entirely if the container is killed/restarted before
+# the buffer fills. Several real processing delays during development
+# turned out to be this: the worker had already handled the message, the
+# log line just hadn't been flushed to `docker logs` yet.
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+COPY requirements.worker.txt .
+RUN pip install --no-cache-dir -r requirements.worker.txt
+
+COPY kafka_config.py entity_store.py worker.py ./
+
+CMD ["python", "-u", "worker.py"]

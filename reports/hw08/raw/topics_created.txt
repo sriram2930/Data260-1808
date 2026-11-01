@@ -1,0 +1,26 @@
+--- Part 1 topics ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_requests.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_responses.
+--- Part 2 topics ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_inbox.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_tasks.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_drafts.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_final.
+--- Part 3 dead-letter topic ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_dead_letter.
+--- list ---
+__consumer_offsets
+s1808_dead_letter
+s1808_drafts
+s1808_entity_requests
+s1808_entity_responses
+s1808_final
+s1808_inbox
+s1808_tasks

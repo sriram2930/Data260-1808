@@ -1,0 +1,15 @@
+# DATA-260 HW8, Part 1 -- FastAPI Kafka client/wrapper service container
+FROM python:3.12-slim
+
+# See Dockerfile.worker for why this matters -- unflushed/lost log lines,
+# not an actual processing delay, in a buffered stdout.
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /app
+COPY requirements.api.txt .
+RUN pip install --no-cache-dir -r requirements.api.txt
+
+COPY kafka_config.py api.py ./
+
+EXPOSE 8008
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8008"]
