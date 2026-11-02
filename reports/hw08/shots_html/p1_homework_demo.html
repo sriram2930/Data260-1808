@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python homework_demo.py -- CREATE_ENTITY -&gt; GET_ENTITY, correlation_id preserved</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python homework_demo.py -- CREATE_ENTITY -&gt; GET_ENTITY, correlation_id preserved</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">main()
+  consumer = KafkaConsumer(
+2026-11-01 00:13:20,004 CLIENT === STEP 1-7: CREATE_ENTITY ===
+2026-11-01 00:13:20,004 CLIENT --- CREATE_ENTITY (correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc) ---
+2026-11-01 00:13:20,005 CLIENT SEND  -&gt; s1808_entity_requests: {&quot;correlation_id&quot;: &quot;9b494b67-8025-4fbf-9f4e-d71d93c844fc&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;CREATE_ENTITY&quot;, &quot;data&quot;: {&quot;course_code&quot;: &quot;DATA-00500&quot;, &quot;course_title&quot;: &quot;HW8 Kafka Demo Course&quot;, &quot;description&quot;: &quot;Created by homework_demo.py to demonstrate the request/response flow.&quot;, &quot;department&quot;: &quot;Data Science &amp; AI&quot;, &quot;seats_available&quot;: 25}}
+2026-11-01 00:13:20,021 CLIENT (worker.py&#x27;s own log shows it receiving, processing, and replying to this request)
+2026-11-01 00:13:20,033 CLIENT RECV  &lt;- s1808_entity_responses: {&quot;correlation_id&quot;: &quot;9b494b67-8025-4fbf-9f4e-d71d93c844fc&quot;, &quot;success&quot;: true, &quot;entity_id&quot;: &quot;28b40e2d-5d7a-4fec-9533-a7eb1401c0a3&quot;, &quot;message&quot;: &quot;Entity created&quot;}
+2026-11-01 00:13:20,033 CLIENT correlation_id preserved: 9b494b67-8025-4fbf-9f4e-d71d93c844fc
+2026-11-01 00:13:20,033 CLIENT extracted entity_id from CREATE_ENTITY response: 28b40e2d-5d7a-4fec-9533-a7eb1401c0a3
+2026-11-01 00:13:20,534 CLIENT === STEP 8-10: GET_ENTITY using the extracted entity_id ===
+2026-11-01 00:13:20,534 CLIENT --- GET_ENTITY (correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9) ---
+2026-11-01 00:13:20,534 CLIENT SEND  -&gt; s1808_entity_requests: {&quot;correlation_id&quot;: &quot;b895f87a-2d16-4f7b-9ca9-eda495dd7cb9&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;GET_ENTITY&quot;, &quot;data&quot;: {&quot;entity_id&quot;: &quot;28b40e2d-5d7a-4fec-9533-a7eb1401c0a3&quot;}}
+2026-11-01 00:13:20,544 CLIENT (worker.py&#x27;s own log shows it receiving, processing, and replying to this request)
+2026-11-01 00:13:20,558 CLIENT RECV  &lt;- s1808_entity_responses: {&quot;correlation_id&quot;: &quot;b895f87a-2d16-4f7b-9ca9-eda495dd7cb9&quot;, &quot;success&quot;: true, &quot;entity&quot;: {&quot;course_id&quot;: &quot;28b40e2d-5d7a-4fec-9533-a7eb1401c0a3&quot;, &quot;course_code&quot;: &quot;DATA-00500&quot;, &quot;course_title&quot;: &quot;HW8 Kafka Demo Course&quot;, &quot;description&quot;: &quot;Created by homework_demo.py to demonstrate the request/response flow.&quot;, &quot;department&quot;: &quot;Data Science &amp; AI&quot;, &quot;seats_available&quot;: 25}}
+2026-11-01 00:13:20,558 CLIENT correlation_id preserved: b895f87a-2d16-4f7b-9ca9-eda495dd7cb9
+2026-11-01 00:13:20,558 CLIENT retrieved entity: {
+  &quot;course_id&quot;: &quot;28b40e2d-5d7a-4fec-9533-a7eb1401c0a3&quot;,
+  &quot;course_code&quot;: &quot;DATA-00500&quot;,
+  &quot;course_title&quot;: &quot;HW8 Kafka Demo Course&quot;,
+  &quot;description&quot;: &quot;Created by homework_demo.py to demonstrate the request/response flow.&quot;,
+  &quot;department&quot;: &quot;Data Science &amp; AI&quot;,
+  &quot;seats_available&quot;: 25
+}
+2026-11-01 00:13:20,558 CLIENT DEMO COMPLETE -- CREATE_ENTITY and GET_ENTITY both round-tripped with correlation_id preserved.</div>
+  </div>
+</body>
+</html>

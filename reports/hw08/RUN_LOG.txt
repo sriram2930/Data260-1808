@@ -1,0 +1,338 @@
+======================================================================
+Part 1: topics created
+======================================================================
+--- Part 1 topics ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_requests.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_responses.
+--- Part 2 topics ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_inbox.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_tasks.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_drafts.
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_final.
+--- Part 3 dead-letter topic ---
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_dead_letter.
+--- list ---
+__consumer_offsets
+s1808_dead_letter
+s1808_drafts
+s1808_entity_requests
+s1808_entity_responses
+s1808_final
+s1808_inbox
+s1808_tasks
+
+
+======================================================================
+Part 1: docker ps
+======================================================================
+NAMES             IMAGE                             STATUS         PORTS
+s1808-api         data260-1808-s1808-api            Up 3 minutes   0.0.0.0:8008->8008/tcp, [::]:8008->8008/tcp
+s1808-worker      data260-1808-s1808-worker         Up 3 minutes   
+s1808-kafka       confluentinc/cp-kafka:7.5.0       Up 7 minutes   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0   Up 7 minutes   2181/tcp, 2888/tcp, 3888/tcp
+s1808-mongo       mongo:7                           Up 12 days     0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp
+s1808-mysql       mysql:8                           Up 3 weeks     0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+
+
+======================================================================
+Part 1: homework_demo.py (CREATE_ENTITY -> GET_ENTITY)
+======================================================================
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\homework_demo.py:131: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  main()
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\homework_demo.py:96: DeprecationWarning: value_deserializer does not implement kafka.serializer.Deserializer
+  consumer = KafkaConsumer(
+2026-11-01 00:13:20,004 CLIENT === STEP 1-7: CREATE_ENTITY ===
+2026-11-01 00:13:20,004 CLIENT --- CREATE_ENTITY (correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc) ---
+2026-11-01 00:13:20,005 CLIENT SEND  -> s1808_entity_requests: {"correlation_id": "9b494b67-8025-4fbf-9f4e-d71d93c844fc", "reply_to": "s1808_entity_responses", "operation": "CREATE_ENTITY", "data": {"course_code": "DATA-00500", "course_title": "HW8 Kafka Demo Course", "description": "Created by homework_demo.py to demonstrate the request/response flow.", "department": "Data Science & AI", "seats_available": 25}}
+2026-11-01 00:13:20,021 CLIENT (worker.py's own log shows it receiving, processing, and replying to this request)
+2026-11-01 00:13:20,033 CLIENT RECV  <- s1808_entity_responses: {"correlation_id": "9b494b67-8025-4fbf-9f4e-d71d93c844fc", "success": true, "entity_id": "28b40e2d-5d7a-4fec-9533-a7eb1401c0a3", "message": "Entity created"}
+2026-11-01 00:13:20,033 CLIENT correlation_id preserved: 9b494b67-8025-4fbf-9f4e-d71d93c844fc
+2026-11-01 00:13:20,033 CLIENT extracted entity_id from CREATE_ENTITY response: 28b40e2d-5d7a-4fec-9533-a7eb1401c0a3
+2026-11-01 00:13:20,534 CLIENT === STEP 8-10: GET_ENTITY using the extracted entity_id ===
+2026-11-01 00:13:20,534 CLIENT --- GET_ENTITY (correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9) ---
+2026-11-01 00:13:20,534 CLIENT SEND  -> s1808_entity_requests: {"correlation_id": "b895f87a-2d16-4f7b-9ca9-eda495dd7cb9", "reply_to": "s1808_entity_responses", "operation": "GET_ENTITY", "data": {"entity_id": "28b40e2d-5d7a-4fec-9533-a7eb1401c0a3"}}
+2026-11-01 00:13:20,544 CLIENT (worker.py's own log shows it receiving, processing, and replying to this request)
+2026-11-01 00:13:20,558 CLIENT RECV  <- s1808_entity_responses: {"correlation_id": "b895f87a-2d16-4f7b-9ca9-eda495dd7cb9", "success": true, "entity": {"course_id": "28b40e2d-5d7a-4fec-9533-a7eb1401c0a3", "course_code": "DATA-00500", "course_title": "HW8 Kafka Demo Course", "description": "Created by homework_demo.py to demonstrate the request/response flow.", "department": "Data Science & AI", "seats_available": 25}}
+2026-11-01 00:13:20,558 CLIENT correlation_id preserved: b895f87a-2d16-4f7b-9ca9-eda495dd7cb9
+2026-11-01 00:13:20,558 CLIENT retrieved entity: {
+  "course_id": "28b40e2d-5d7a-4fec-9533-a7eb1401c0a3",
+  "course_code": "DATA-00500",
+  "course_title": "HW8 Kafka Demo Course",
+  "description": "Created by homework_demo.py to demonstrate the request/response flow.",
+  "department": "Data Science & AI",
+  "seats_available": 25
+}
+2026-11-01 00:13:20,558 CLIENT DEMO COMPLETE -- CREATE_ENTITY and GET_ENTITY both round-tripped with correlation_id preserved.
+
+
+======================================================================
+Part 1: worker.py (host) log
+======================================================================
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\worker.py:55: DeprecationWarning: value_deserializer does not implement kafka.serializer.Deserializer
+  consumer = KafkaConsumer(
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\worker.py:106: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  main()
+2026-10-31 23:56:54,734 WORKER Consumer is ready and listening on s1808_entity_requests...
+2026-10-31 23:57:16,484 WORKER received request: correlation_id=ffe5bf44-2942-4a38-9264-aa52ebd4fcc1 operation=CREATE_ENTITY data={'course_code': 'DATA-00500', 'course_title': 'HW8 Kafka Demo Course', 'description': 'Created by homework_demo.py to demonstrate the request/response flow.', 'department': 'Data Science & AI', 'seats_available': 25}
+2026-10-31 23:57:16,484 WORKER processing operation=CREATE_ENTITY ...
+2026-10-31 23:57:16,504 WORKER sent response to s1808_entity_responses: correlation_id=ffe5bf44-2942-4a38-9264-aa52ebd4fcc1 success=True (0.04ms)
+2026-10-31 23:57:17,013 WORKER received request: correlation_id=6f1f1bd3-c180-4944-92a2-e54ea1b12f7c operation=GET_ENTITY data={'entity_id': '3af6bf0f-9f7d-4620-863d-f875310c04cd'}
+2026-10-31 23:57:17,013 WORKER processing operation=GET_ENTITY ...
+2026-10-31 23:57:17,018 WORKER sent response to s1808_entity_responses: correlation_id=6f1f1bd3-c180-4944-92a2-e54ea1b12f7c success=True (0.01ms)
+2026-10-31 23:57:50,015 WORKER received request: correlation_id=388e3fbc-f719-43a2-9680-d7903e68f801 operation=CREATE_ENTITY data={'course_code': 'BAD-001'}
+2026-10-31 23:57:50,015 WORKER processing operation=CREATE_ENTITY ...
+2026-10-31 23:57:50,017 WORKER sent response to s1808_entity_responses: correlation_id=388e3fbc-f719-43a2-9680-d7903e68f801 success=False (0.01ms)
+2026-10-31 23:57:50,021 WORKER received request: correlation_id=104ad6fc-23ea-4f34-baeb-a932c34e4ddd operation=CREATE_ENTITY data={'course_code': '', 'course_title': 'x'}
+2026-10-31 23:57:50,021 WORKER processing operation=CREATE_ENTITY ...
+2026-10-31 23:57:50,026 WORKER sent response to s1808_entity_responses: correlation_id=104ad6fc-23ea-4f34-baeb-a932c34e4ddd success=False (0.00ms)
+2026-10-31 23:57:50,026 WORKER received request: correlation_id=547af347-25ef-42a7-90e0-a76dbce41ad5 operation=DELETE_ENTITY data={'entity_id': 'whatever'}
+2026-10-31 23:57:50,026 WORKER processing operation=DELETE_ENTITY ...
+2026-10-31 23:57:50,026 WORKER sent response to s1808_entity_responses: correlation_id=547af347-25ef-42a7-90e0-a76dbce41ad5 success=False (0.00ms)
+2026-10-31 23:57:50,036 WORKER received request: correlation_id=2a485d49-758d-4b55-9221-b2e151afe7c7 operation=GET_ENTITY data={'entity_id': '00000000-0000-0000-0000-000000000000'}
+2026-10-31 23:57:50,036 WORKER processing operation=GET_ENTITY ...
+2026-10-31 23:57:50,036 WORKER sent response to s1808_entity_responses: correlation_id=2a485d49-758d-4b55-9221-b2e151afe7c7 success=False (0.00ms)
+
+
+======================================================================
+Part 1: containerized worker log
+======================================================================
+/app/worker.py:55: DeprecationWarning: value_deserializer does not implement kafka.serializer.Deserializer
+  consumer = KafkaConsumer(
+/app/worker.py:106: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  main()
+2026-11-01 07:11:01,164 WORKER Consumer is ready and listening on s1808_entity_requests...
+2026-11-01 07:13:20,021 WORKER received request: correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc operation=CREATE_ENTITY data={'course_code': 'DATA-00500', 'course_title': 'HW8 Kafka Demo Course', 'description': 'Created by homework_demo.py to demonstrate the request/response flow.', 'department': 'Data Science & AI', 'seats_available': 25}
+2026-11-01 07:13:20,021 WORKER processing operation=CREATE_ENTITY ...
+2026-11-01 07:13:20,033 WORKER sent response to s1808_entity_responses: correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc success=True (0.05ms)
+2026-11-01 07:13:20,545 WORKER received request: correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9 operation=GET_ENTITY data={'entity_id': '28b40e2d-5d7a-4fec-9533-a7eb1401c0a3'}
+2026-11-01 07:13:20,545 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:20,558 WORKER sent response to s1808_entity_responses: correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9 success=True (0.01ms)
+2026-11-01 07:13:25,023 WORKER received request: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 operation=CREATE_ENTITY data={'course_code': 'API-TEST-01', 'course_title': 'API Test Course'}
+2026-11-01 07:13:25,023 WORKER processing operation=CREATE_ENTITY ...
+2026-11-01 07:13:25,026 WORKER sent response to s1808_entity_responses: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 success=True (0.04ms)
+2026-11-01 07:13:30,260 WORKER received request: correlation_id=351d1169-9760-491a-9f20-c717889ed560 operation=GET_ENTITY data={'entity_id': '3d2c1a25-641d-47f6-bce8-11644d1cfd5b'}
+2026-11-01 07:13:30,260 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:30,263 WORKER sent response to s1808_entity_responses: correlation_id=351d1169-9760-491a-9f20-c717889ed560 success=True (0.01ms)
+2026-11-01 07:13:30,353 WORKER received request: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be operation=GET_ENTITY data={'entity_id': '00000000-0000-0000-0000-000000000000'}
+2026-11-01 07:13:30,354 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:30,358 WORKER sent response to s1808_entity_responses: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be success=False (0.00ms)
+
+
+======================================================================
+Part 1: containerized api log
+======================================================================
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8008 (Press CTRL+C to quit)
+2026-11-01 07:10:59,308 API response listener ready, assigned: {TopicPartition(topic='s1808_entity_responses', partition=0)}
+2026-11-01 07:13:25,015 API sending request: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 operation=CREATE_ENTITY data={'course_code': 'API-TEST-01', 'course_title': 'API Test Course'}
+2026-11-01 07:13:25,027 API received response: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 success=True
+INFO:     172.27.0.1:44278 - "POST /api/courses HTTP/1.1" 200 OK
+2026-11-01 07:13:30,255 API sending request: correlation_id=351d1169-9760-491a-9f20-c717889ed560 operation=GET_ENTITY data={'entity_id': '3d2c1a25-641d-47f6-bce8-11644d1cfd5b'}
+2026-11-01 07:13:30,264 API received response: correlation_id=351d1169-9760-491a-9f20-c717889ed560 success=True
+INFO:     172.27.0.1:59994 - "GET /api/courses/3d2c1a25-641d-47f6-bce8-11644d1cfd5b HTTP/1.1" 200 OK
+2026-11-01 07:13:30,348 API sending request: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be operation=GET_ENTITY data={'entity_id': '00000000-0000-0000-0000-000000000000'}
+2026-11-01 07:13:30,360 API received response: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be success=False
+INFO:     172.27.0.1:59996 - "GET /api/courses/00000000-0000-0000-0000-000000000000 HTTP/1.1" 404 Not Found
+
+
+======================================================================
+Part 1: api curl evidence
+======================================================================
+--- POST /api/courses (CREATE) ---
+{"correlation_id":"10493efd-3878-4f46-b73d-0f65377a48fb","success":true,"entity_id":"0f974db9-3a6a-42bd-b621-7b87d2798b1f","message":"Entity created"}
+HTTP 200
+
+--- GET /api/courses/{id} (found) ---
+{"correlation_id":"d0e4487a-1b94-46e6-989e-78143142049f","success":true,"entity":{"course_id":"3d2c1a25-641d-47f6-bce8-11644d1cfd5b","course_code":"API-TEST-01","course_title":"API Test Course","description":null,"department":null,"seats_available":30}}
+HTTP 200
+
+--- GET /api/courses/{id} (not found) ---
+{"detail":"Entity not found"}
+HTTP 404
+
+
+======================================================================
+Part 1: error cases
+======================================================================
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\test_error_cases.py:92: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  main()
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-10\test_error_cases.py:60: DeprecationWarning: value_deserializer does not implement kafka.serializer.Deserializer
+  consumer = KafkaConsumer(
+2026-11-01 00:13:53,910 CLIENT --- CREATE_ENTITY missing required field (course_title) ---
+2026-11-01 00:13:53,910 CLIENT SEND  -> {"correlation_id": "dae39c1f-0599-4a43-818b-5cbfa7b93c4b", "reply_to": "s1808_entity_responses", "operation": "CREATE_ENTITY", "data": {"course_code": "BAD-001"}}
+2026-11-01 00:13:53,937 CLIENT RECV  <- {"correlation_id": "dae39c1f-0599-4a43-818b-5cbfa7b93c4b", "success": false, "error": "missing or empty required field: 'course_title'"}
+2026-11-01 00:13:53,937 CLIENT --- CREATE_ENTITY empty required field ---
+2026-11-01 00:13:53,937 CLIENT SEND  -> {"correlation_id": "ddbb2b1a-8172-4449-a358-6e0f86aa1fd6", "reply_to": "s1808_entity_responses", "operation": "CREATE_ENTITY", "data": {"course_code": "", "course_title": "x"}}
+2026-11-01 00:13:53,947 CLIENT RECV  <- {"correlation_id": "ddbb2b1a-8172-4449-a358-6e0f86aa1fd6", "success": false, "error": "missing or empty required field: 'course_code'"}
+2026-11-01 00:13:53,947 CLIENT --- unknown operation ---
+2026-11-01 00:13:53,947 CLIENT SEND  -> {"correlation_id": "43c7b90b-15d7-4bf2-85b7-fb81c2491fd4", "reply_to": "s1808_entity_responses", "operation": "DELETE_ENTITY", "data": {"entity_id": "whatever"}}
+2026-11-01 00:13:53,955 CLIENT RECV  <- {"correlation_id": "43c7b90b-15d7-4bf2-85b7-fb81c2491fd4", "success": false, "error": "Unknown operation"}
+2026-11-01 00:13:53,955 CLIENT --- GET_ENTITY for a nonexistent entity_id ---
+2026-11-01 00:13:53,955 CLIENT SEND  -> {"correlation_id": "78da1fdf-6228-4d22-86d5-4e3a30dbab06", "reply_to": "s1808_entity_responses", "operation": "GET_ENTITY", "data": {"entity_id": "00000000-0000-0000-0000-000000000000"}}
+2026-11-01 00:13:53,965 CLIENT RECV  <- {"correlation_id": "78da1fdf-6228-4d22-86d5-4e3a30dbab06", "success": false, "error": "Entity not found"}
+2026-11-01 00:13:53,965 CLIENT ALL ERROR CASES BEHAVED AS EXPECTED (success=false, clean error, correlation_id preserved each time).
+
+
+======================================================================
+Part 2: planner.log
+======================================================================
+2026-11-01 00:16:37,145 PLANNER ready and listening on s1808_inbox...
+2026-11-01 00:17:11,062 PLANNER received from s1808_inbox: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:17:30,849 PLANNER HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-11-01 00:17:30,850 PLANNER planned for question='What is a race condition in concurrent programming?'
+2026-11-01 00:17:30,876 PLANNER sent to s1808_tasks: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+
+======================================================================
+Part 2: writer.log
+======================================================================
+2026-11-01 00:16:39,740 WRITER ready and listening on s1808_tasks...
+2026-11-01 00:17:30,876 WRITER received from s1808_tasks: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:17:45,154 WRITER HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-11-01 00:17:45,154 WRITER wrote draft for question='What is a race condition in concurrent programming?'
+2026-11-01 00:17:45,179 WRITER sent to s1808_drafts: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+
+======================================================================
+Part 2: reviewer.log
+======================================================================
+2026-11-01 00:16:42,673 REVIEWER ready and listening on s1808_drafts...
+2026-11-01 00:17:45,185 REVIEWER received from s1808_drafts: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:18:01,540 REVIEWER HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-11-01 00:18:01,542 REVIEWER reviewed and approved answer for question='What is a race condition in concurrent programming?'
+2026-11-01 00:18:01,567 REVIEWER sent to s1808_final: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+
+======================================================================
+Part 2: send_question.log (full journey)
+======================================================================
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\send_question.py:36: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = make_producer()
+2026-11-01 00:17:11,046 CLIENT --- question (correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43) ---
+2026-11-01 00:17:11,046 CLIENT SEND -> s1808_inbox: What is a race condition in concurrent programming?
+2026-11-01 00:18:01,565 CLIENT RECV <- s1808_final: status=approved
+2026-11-01 00:18:01,567 CLIENT ANSWER: A race condition in concurrent programming occurs when multiple threads access shared resources without proper synchronization, leading to unpredictable results. It happens when two or more threads attempt to access and modify the same shared variable, causing their actions to interfere. Race conditions can result in the incorrect outcome of a process, such as inconsistent data values, and can lead to data corruption or loss in concurrent applications, affecting the reliability and functionality of the system. By employing appropriate synchronization techniques, such as locks, semaphores, or atomic operations, race conditions can be mitigated, ensuring the reliability and functionality of concurrent programs.
+
+
+======================================================================
+Part 3.I: idempotency / duplicate delivery
+======================================================================
+2026-11-01 18:25:48,861 TEST topic creation note: [Error 36] TopicAlreadyExistsError: Request 'CreateTopicsRequest(version=7, topics=[CreatableTopic(name='s1808_idempotency_in', num_partitions=1, replication_factor=1, assignments=[], configs=[]), CreatableTopic(name='s1808_idempotency_out', num_partitions=1, replication_factor=1, assignments=[], configs=[])], timeout_ms=30000, validate_only=False)' failed with response 'CreateTopicsResponse(version=7, throttle_time_ms=0, topics=[CreatableTopicResult(version=7, name='s1808_idempotency_in', topic_id=None, error_code=36, error_message="Topic 's1808_idempotency_in' already exists.", topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[]), CreatableTopicResult(version=7, name='s1808_idempotency_out', topic_id=None, error_code=36, error_message="Topic 's1808_idempotency_out' already exists.", topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[])])'.
+2026-11-01 18:25:52,336 TEST ready and listening on s1808_idempotency_in...
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_idempotency.py:69: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = make_producer()
+2026-11-01 18:25:56,383 TEST --- first send (correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4) ---
+2026-11-01 18:25:56,428 TEST received from s1808_idempotency_in: correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:25:56,441 TEST first processing result: {'echo': 'original payload', 'processed_count_at_handling_time': 1, 'correlation_id': '9e9ad154-414d-4dd9-80ae-b869a4155eb4'}
+2026-11-01 18:25:56,443 TEST process() call count after first send: 1
+2026-11-01 18:25:56,443 TEST --- REPLAY: same message, same correlation_id ---
+2026-11-01 18:25:56,446 TEST sent to s1808_idempotency_out: correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:25:56,463 TEST DUPLICATE detected, dropping (no side effect): correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:26:04,489 TEST process() call count after replay: 1 (expected: still 1 -- no second call)
+2026-11-01 18:26:04,489 TEST second output message produced by the replay: None (expected: None)
+2026-11-01 18:26:04,489 TEST PASS: replay was dropped before reaching process() -- no second side effect.
+
+
+======================================================================
+Part 3.II: consumer death
+======================================================================
+2026-11-01 19:00:10,302 TEST seeded s1808_writer_deathtest_76b8d597's offset to latest on s1808_tasks (skipping prior backlog)
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_consumer_death.py:77: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = make_producer()
+2026-11-01 19:00:13,462 TEST === spawning writer.py (attempt 1), group_id=s1808_writer_deathtest_76b8d597 ===
+2026-11-01 19:00:18,645 TEST [writer attempt 1] 2026-11-01 19:00:18,645 WRITER ready and listening on s1808_tasks...
+2026-11-01 19:00:19,647 TEST SEND -> s1808_tasks: correlation_id=7d6ebc2d-3e21-429b-8db7-ab9701693319
+2026-11-01 19:00:19,742 TEST [writer attempt 1] 2026-11-01 19:00:19,740 WRITER received from s1808_tasks: correlation_id=7d6ebc2d-3e21-429b-8db7-ab9701693319
+2026-11-01 19:00:19,742 TEST === killing writer.py NOW, mid-processing (before the model call returns) ===
+2026-11-01 19:00:19,747 TEST writer.py (attempt 1) killed. Checking consumer group offset...
+2026-11-01 19:00:23,429 TEST consumer group state after kill:
+GROUP                           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+s1808_writer_deathtest_76b8d597 s1808_tasks     0          16              16              0               kafka-python-3.0.12-9f00fc28-fb04-4586-ae7d-63afa3daec66 /172.27.0.1     kafka-python-3.0.12
+s1808_writer_deathtest_76b8d597 s1808_tasks     1          36              37              1               kafka-python-3.0.12-9f00fc28-fb04-4586-ae7d-63afa3daec66 /172.27.0.1     kafka-python-3.0.12
+2026-11-01 19:00:25,427 TEST draft present after kill (expected: None, message was never fully processed): None
+2026-11-01 19:00:25,427 TEST === restarting writer.py (attempt 2) ===
+2026-11-01 19:01:03,581 TEST [writer attempt 2] 2026-11-01 19:01:03,581 WRITER ready and listening on s1808_tasks...
+2026-11-01 19:05:26,416 TEST Consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max_poll_interval_ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max_poll_interval_ms or by reducing the maximum size of batches returned in poll() with max_poll_records.
+2026-11-01 19:21:51,316 TEST [writer attempt 2] 2026-11-01 19:21:51,313 WRITER <KafkaConnection node_id=1 host=[::1:9092<-56761] broker_version=(3, 5) (connected)>: Request timed out after 30000 ms. Closing connection.
+Traceback (most recent call last):
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_consumer_death.py", line 173, in <module>
+    main()
+  File "C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_consumer_death.py", line 152, in main
+    assert redelivered, "the message was not redelivered to the restarted writer -- offset must have advanced on the kill"
+           ^^^^^^^^^^^
+AssertionError: the message was not redelivered to the restarted writer -- offset must have advanced on the kill
+
+
+======================================================================
+Part 3.III: poison message
+======================================================================
+2026-11-01 19:23:31,543 TEST topic creation note: [Error 36] TopicAlreadyExistsError: Request 'CreateTopicsRequest(version=7, topics=[CreatableTopic(name='s1808_poison_in', num_partitions=1, replication_factor=1, assignments=[], configs=[]), CreatableTopic(name='s1808_poison_out', num_partitions=1, replication_factor=1, assignments=[], configs=[])], timeout_ms=30000, validate_only=False)' failed with response 'CreateTopicsResponse(version=7, throttle_time_ms=0, topics=[CreatableTopicResult(version=7, name='s1808_poison_in', topic_id=None, error_code=36, error_message="Topic 's1808_poison_in' already exists.", topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[]), CreatableTopicResult(version=7, name='s1808_poison_out', topic_id=None, error_code=36, error_message="Topic 's1808_poison_out' already exists.", topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[])])'.
+2026-11-01 19:23:34,720 TEST ready and listening on s1808_poison_in...
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_poison_message.py:69: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = make_producer()
+2026-11-01 19:23:41,845 TEST --- sending POISON message (missing 'payload' field, correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79) ---
+2026-11-01 19:23:41,850 TEST --- sending a GOOD message right after it (correlation_id=b3911d0a-7557-4b59-a2b0-0c67fa71bc97) ---
+2026-11-01 19:23:41,850 TEST received from s1808_poison_in: correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79
+2026-11-01 19:23:41,850 TEST processing failed (attempt 1/3) for correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79: 'payload'
+2026-11-01 19:23:42,359 TEST processing failed (attempt 2/3) for correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79: 'payload'
+2026-11-01 19:23:42,859 TEST processing failed (attempt 3/3) for correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79: 'payload'
+2026-11-01 19:23:42,866 TEST exhausted 3 retries, sent to s1808_dead_letter: correlation_id=6a97d631-4ac4-42a3-8ee2-0bd9d43aba79
+2026-11-01 19:23:42,889 TEST received from s1808_poison_in: correlation_id=b3911d0a-7557-4b59-a2b0-0c67fa71bc97
+2026-11-01 19:23:42,966 TEST sent to s1808_poison_out: correlation_id=b3911d0a-7557-4b59-a2b0-0c67fa71bc97
+2026-11-01 19:23:43,283 TEST dead-letter record for the poison message: {
+  "correlation_id": "6a97d631-4ac4-42a3-8ee2-0bd9d43aba79",
+  "original_topic": "s1808_poison_in",
+  "original_message": {
+    "correlation_id": "6a97d631-4ac4-42a3-8ee2-0bd9d43aba79",
+    "not_payload": "oops"
+  },
+  "error": "'payload'",
+  "retries": 3
+}
+2026-11-01 19:23:43,283 TEST output for the good message that followed it: {'echo': 'this one is fine', 'correlation_id': 'b3911d0a-7557-4b59-a2b0-0c67fa71bc97'}
+2026-11-01 19:23:43,283 TEST PASS: poison message retried, dead-lettered, and did not block the message behind it.
+
+
+======================================================================
+Part 3.IV: ordering
+======================================================================
+2026-11-01 00:22:24,257 ORDERTEST ENTITY_ID = course-261808 (derived from VERIFY_SEED=261808)
+2026-11-01 00:22:24,257 ORDERTEST 
+========== RUN 1: no message key ==========
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_ordering.py:69: DeprecationWarning: value_deserializer does not implement kafka.serializer.Deserializer
+  consumer: KafkaConsumer = KafkaConsumer(
+C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_ordering.py:103: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = make_producer()
+2026-11-01 00:22:30,268 ORDERTEST --- sending 20 messages, keyed=False ---
+2026-11-01 00:22:30,409 ORDERTEST instance-B ready, assigned partitions: [0]
+2026-11-01 00:22:30,409 ORDERTEST instance-A ready, assigned partitions: [1]
+2026-11-01 00:22:35,471 ORDERTEST partitions used (unkeyed): [0, 1]
+2026-11-01 00:22:35,471 ORDERTEST arrival order of seq numbers (merged across instances): [3, 4, 6, 7, 8, 10, 12, 13, 15, 20, 5, 9, 11, 14, 16, 17, 18, 19]
+2026-11-01 00:22:35,471 ORDERTEST global arrival order matches original send order 1..20? False
+2026-11-01 00:22:35,471 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 5, 'correlation_id': 'unkeyed-4ab352d1-3b1c-4781-8cd9-69a79210af25'}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 9, 'correlation_id': 'unkeyed-42d84b5e-64b0-4e68-a2f7-0534e42f0d0b'}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 11, 'correlation_id': 'unkeyed-c2358399-e632-4d94-b3a2-99986d7bc46a'}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 14, 'correlation_id': 'unkeyed-64ce4b68-be35-45e3-8b75-6c7134a39461'}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 16, 'correlation_id': 'unkeyed-5ae32bf0-1063-4e70-baf7-5e878898810f'}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {'instance': 'instance-A', 'partition': 1, 'seq': 17, 'correlation_id': 'unkeyed-020d675c-10fa-421c-8c9e-d946c2da1c82'}
+2026-11-01 00:22:37,473 ORDERTEST 
+========== RUN 2: keyed by entity_id ==========
+2026-11-01 00:22:40,614 ORDERTEST instance-A ready, assigned partitions: [0]
+2026-11-01 00:22:40,634 ORDERTEST instance-B ready, assigned partitions: [1]
+2026-11-01 00:22:43,488 ORDERTEST --- sending 20 messages, keyed=True ---
+2026-11-01 00:22:48,767 ORDERTEST partitions used (keyed): [1] (expected: exactly 1)
+2026-11-01 00:22:48,767 ORDERTEST consumer instances that received anything (keyed): ['instance-B'] (expected: exactly 1)
+2026-11-01 00:22:48,767 ORDERTEST arrival order of seq numbers (keyed): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-11-01 00:22:48,767 ORDERTEST order preserved (keyed)? True (expected: True)
+2026-11-01 00:22:48,769 ORDERTEST PASS: keying by entity_id confined all 20 related messages to one partition, in order.
+2026-11-01 00:22:48,771 ORDERTEST wrote ../reports/hw08/raw/ordering_results.json
+

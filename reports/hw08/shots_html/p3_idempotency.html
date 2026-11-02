@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python test_idempotency.py -- duplicate delivery / idempotency</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python test_idempotency.py -- duplicate delivery / idempotency</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">2026-11-01 18:25:48,861 TEST topic creation note: [Error 36] TopicAlreadyExistsError: Request &#x27;CreateTopicsRequest(version=7, topics=[CreatableTopic(name=&#x27;s1808_idempotency_in&#x27;, num_partitions=1, replication_factor=1, assignments=[], configs=[]), CreatableTopic(name=&#x27;s1808_idempotency_out&#x27;, num_partitions=1, replication_factor=1, assignments=[], configs=[])], timeout_ms=30000, validate_only=False)&#x27; failed with response &#x27;CreateTopicsResponse(version=7, throttle_time_ms=0, topics=[CreatableTopicResult(version=7, name=&#x27;s1808_idempotency_in&#x27;, topic_id=None, error_code=36, error_message=&quot;Topic &#x27;s1808_idempotency_in&#x27; already exists.&quot;, topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[]), CreatableTopicResult(version=7, name=&#x27;s1808_idempotency_out&#x27;, topic_id=None, error_code=36, error_message=&quot;Topic &#x27;s1808_idempotency_out&#x27; already exists.&quot;, topic_config_error_code=0, num_partitions=-1, replication_factor=-1, configs=[])])&#x27;.
+2026-11-01 18:25:52,336 TEST ready and listening on s1808_idempotency_in...
+  producer = make_producer()
+2026-11-01 18:25:56,383 TEST --- first send (correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4) ---
+2026-11-01 18:25:56,428 TEST received from s1808_idempotency_in: correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:25:56,441 TEST first processing result: {&#x27;echo&#x27;: &#x27;original payload&#x27;, &#x27;processed_count_at_handling_time&#x27;: 1, &#x27;correlation_id&#x27;: &#x27;9e9ad154-414d-4dd9-80ae-b869a4155eb4&#x27;}
+2026-11-01 18:25:56,443 TEST process() call count after first send: 1
+2026-11-01 18:25:56,443 TEST --- REPLAY: same message, same correlation_id ---
+2026-11-01 18:25:56,446 TEST sent to s1808_idempotency_out: correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:25:56,463 TEST DUPLICATE detected, dropping (no side effect): correlation_id=9e9ad154-414d-4dd9-80ae-b869a4155eb4
+2026-11-01 18:26:04,489 TEST process() call count after replay: 1 (expected: still 1 -- no second call)
+2026-11-01 18:26:04,489 TEST second output message produced by the replay: None (expected: None)
+2026-11-01 18:26:04,489 TEST PASS: replay was dropped before reaching process() -- no second side effect.</div>
+  </div>
+</body>
+</html>

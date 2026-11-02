@@ -1,0 +1,47 @@
+{
+  "homework": "hw08",
+  "sid4": 1808,
+  "commit_hash": "7f604bdad10eff3498106735a3b68c9b7952a1e4",
+  "model": "qwen2.5:1.5b-instruct (Ollama), used by Part 2's Planner/Writer/Reviewer",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "checks": [
+    {
+      "check": "create_entity_via_kafka_api",
+      "pass": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "get_entity_round_trip",
+      "pass": true
+    },
+    {
+      "check": "get_unknown_entity_returns_404",
+      "pass": true
+    },
+    {
+      "check": "create_entity_missing_field_422",
+      "pass": true
+    },
+    {
+      "check": "all_required_topics_exist",
+      "pass": true,
+      "detail": "all 7 present"
+    },
+    {
+      "check": "s1808_tasks_has_two_partitions",
+      "pass": true,
+      "detail": "found 2 partitions"
+    },
+    {
+      "check": "kafka_utils_constants_sane",
+      "pass": true
+    },
+    {
+      "check": "entity_store_create_get_and_validation",
+      "pass": true
+    }
+  ],
+  "all_passed": true,
+  "generated_at": "2026-11-01T19:26:21"
+}

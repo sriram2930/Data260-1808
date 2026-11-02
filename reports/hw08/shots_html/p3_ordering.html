@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python test_ordering.py -- unkeyed (out of order) vs keyed by entity_id (in order)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python test_ordering.py -- unkeyed (out of order) vs keyed by entity_id (in order)</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">2026-11-01 00:22:24,257 ORDERTEST ENTITY_ID = course-261808 (derived from VERIFY_SEED=261808)
+2026-11-01 00:22:24,257 ORDERTEST 
+  consumer: KafkaConsumer = KafkaConsumer(
+  producer = make_producer()
+2026-11-01 00:22:30,268 ORDERTEST --- sending 20 messages, keyed=False ---
+2026-11-01 00:22:30,409 ORDERTEST instance-B ready, assigned partitions: [0]
+2026-11-01 00:22:30,409 ORDERTEST instance-A ready, assigned partitions: [1]
+2026-11-01 00:22:35,471 ORDERTEST partitions used (unkeyed): [0, 1]
+2026-11-01 00:22:35,471 ORDERTEST arrival order of seq numbers (merged across instances): [3, 4, 6, 7, 8, 10, 12, 13, 15, 20, 5, 9, 11, 14, 16, 17, 18, 19]
+2026-11-01 00:22:35,471 ORDERTEST global arrival order matches original send order 1..20? False
+2026-11-01 00:22:35,471 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 5, &#x27;correlation_id&#x27;: &#x27;unkeyed-4ab352d1-3b1c-4781-8cd9-69a79210af25&#x27;}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 9, &#x27;correlation_id&#x27;: &#x27;unkeyed-42d84b5e-64b0-4e68-a2f7-0534e42f0d0b&#x27;}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 11, &#x27;correlation_id&#x27;: &#x27;unkeyed-c2358399-e632-4d94-b3a2-99986d7bc46a&#x27;}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 14, &#x27;correlation_id&#x27;: &#x27;unkeyed-64ce4b68-be35-45e3-8b75-6c7134a39461&#x27;}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 16, &#x27;correlation_id&#x27;: &#x27;unkeyed-5ae32bf0-1063-4e70-baf7-5e878898810f&#x27;}
+2026-11-01 00:22:35,472 ORDERTEST   sample: {&#x27;instance&#x27;: &#x27;instance-A&#x27;, &#x27;partition&#x27;: 1, &#x27;seq&#x27;: 17, &#x27;correlation_id&#x27;: &#x27;unkeyed-020d675c-10fa-421c-8c9e-d946c2da1c82&#x27;}
+2026-11-01 00:22:37,473 ORDERTEST 
+2026-11-01 00:22:40,614 ORDERTEST instance-A ready, assigned partitions: [0]
+2026-11-01 00:22:40,634 ORDERTEST instance-B ready, assigned partitions: [1]
+2026-11-01 00:22:43,488 ORDERTEST --- sending 20 messages, keyed=True ---
+2026-11-01 00:22:48,767 ORDERTEST partitions used (keyed): [1] (expected: exactly 1)
+2026-11-01 00:22:48,767 ORDERTEST consumer instances that received anything (keyed): [&#x27;instance-B&#x27;] (expected: exactly 1)
+2026-11-01 00:22:48,767 ORDERTEST arrival order of seq numbers (keyed): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+2026-11-01 00:22:48,767 ORDERTEST order preserved (keyed)? True (expected: True)
+2026-11-01 00:22:48,769 ORDERTEST PASS: keying by entity_id confined all 20 related messages to one partition, in order.
+2026-11-01 00:22:48,771 ORDERTEST wrote ../reports/hw08/raw/ordering_results.json</div>
+  </div>
+</body>
+</html>

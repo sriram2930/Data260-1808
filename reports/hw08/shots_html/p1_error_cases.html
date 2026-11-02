@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python test_error_cases.py -- missing field / unknown operation / not-found</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python test_error_cases.py -- missing field / unknown operation / not-found</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">main()
+  consumer = KafkaConsumer(
+2026-11-01 00:13:53,910 CLIENT --- CREATE_ENTITY missing required field (course_title) ---
+2026-11-01 00:13:53,910 CLIENT SEND  -&gt; {&quot;correlation_id&quot;: &quot;dae39c1f-0599-4a43-818b-5cbfa7b93c4b&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;CREATE_ENTITY&quot;, &quot;data&quot;: {&quot;course_code&quot;: &quot;BAD-001&quot;}}
+2026-11-01 00:13:53,937 CLIENT RECV  &lt;- {&quot;correlation_id&quot;: &quot;dae39c1f-0599-4a43-818b-5cbfa7b93c4b&quot;, &quot;success&quot;: false, &quot;error&quot;: &quot;missing or empty required field: &#x27;course_title&#x27;&quot;}
+2026-11-01 00:13:53,937 CLIENT --- CREATE_ENTITY empty required field ---
+2026-11-01 00:13:53,937 CLIENT SEND  -&gt; {&quot;correlation_id&quot;: &quot;ddbb2b1a-8172-4449-a358-6e0f86aa1fd6&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;CREATE_ENTITY&quot;, &quot;data&quot;: {&quot;course_code&quot;: &quot;&quot;, &quot;course_title&quot;: &quot;x&quot;}}
+2026-11-01 00:13:53,947 CLIENT RECV  &lt;- {&quot;correlation_id&quot;: &quot;ddbb2b1a-8172-4449-a358-6e0f86aa1fd6&quot;, &quot;success&quot;: false, &quot;error&quot;: &quot;missing or empty required field: &#x27;course_code&#x27;&quot;}
+2026-11-01 00:13:53,947 CLIENT --- unknown operation ---
+2026-11-01 00:13:53,947 CLIENT SEND  -&gt; {&quot;correlation_id&quot;: &quot;43c7b90b-15d7-4bf2-85b7-fb81c2491fd4&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;DELETE_ENTITY&quot;, &quot;data&quot;: {&quot;entity_id&quot;: &quot;whatever&quot;}}
+2026-11-01 00:13:53,955 CLIENT RECV  &lt;- {&quot;correlation_id&quot;: &quot;43c7b90b-15d7-4bf2-85b7-fb81c2491fd4&quot;, &quot;success&quot;: false, &quot;error&quot;: &quot;Unknown operation&quot;}
+2026-11-01 00:13:53,955 CLIENT --- GET_ENTITY for a nonexistent entity_id ---
+2026-11-01 00:13:53,955 CLIENT SEND  -&gt; {&quot;correlation_id&quot;: &quot;78da1fdf-6228-4d22-86d5-4e3a30dbab06&quot;, &quot;reply_to&quot;: &quot;s1808_entity_responses&quot;, &quot;operation&quot;: &quot;GET_ENTITY&quot;, &quot;data&quot;: {&quot;entity_id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;}}
+2026-11-01 00:13:53,965 CLIENT RECV  &lt;- {&quot;correlation_id&quot;: &quot;78da1fdf-6228-4d22-86d5-4e3a30dbab06&quot;, &quot;success&quot;: false, &quot;error&quot;: &quot;Entity not found&quot;}
+2026-11-01 00:13:53,965 CLIENT ALL ERROR CASES BEHAVED AS EXPECTED (success=false, clean error, correlation_id preserved each time).</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>docker logs s1808-api -- FastAPI send/receive sequence</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">docker logs s1808-api -- FastAPI send/receive sequence</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">2026-11-01 07:10:59,308 API response listener ready, assigned: {TopicPartition(topic=&#x27;s1808_entity_responses&#x27;, partition=0)}
+2026-11-01 07:13:25,015 API sending request: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 operation=CREATE_ENTITY data={&#x27;course_code&#x27;: &#x27;API-TEST-01&#x27;, &#x27;course_title&#x27;: &#x27;API Test Course&#x27;}
+2026-11-01 07:13:25,027 API received response: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 success=True
+2026-11-01 07:13:30,255 API sending request: correlation_id=351d1169-9760-491a-9f20-c717889ed560 operation=GET_ENTITY data={&#x27;entity_id&#x27;: &#x27;3d2c1a25-641d-47f6-bce8-11644d1cfd5b&#x27;}
+2026-11-01 07:13:30,264 API received response: correlation_id=351d1169-9760-491a-9f20-c717889ed560 success=True
+2026-11-01 07:13:30,348 API sending request: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be operation=GET_ENTITY data={&#x27;entity_id&#x27;: &#x27;00000000-0000-0000-0000-000000000000&#x27;}
+2026-11-01 07:13:30,360 API received response: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be success=False</div>
+  </div>
+</body>
+</html>

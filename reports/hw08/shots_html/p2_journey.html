@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>One complete message journey: s1808_inbox -&gt; s1808_final (correlation_id preserved)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">One complete message journey: s1808_inbox -&gt; s1808_final (correlation_id preserved)</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">=== PLANNER ===
+2026-11-01 00:16:37,145 PLANNER ready and listening on s1808_inbox...
+2026-11-01 00:17:11,062 PLANNER received from s1808_inbox: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:17:30,849 PLANNER HTTP Request: POST http://localhost:11434/api/chat &quot;HTTP/1.1 200 OK&quot;
+2026-11-01 00:17:30,850 PLANNER planned for question=&#x27;What is a race condition in concurrent programming?&#x27;
+2026-11-01 00:17:30,876 PLANNER sent to s1808_tasks: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+=== WRITER ===
+2026-11-01 00:16:39,740 WRITER ready and listening on s1808_tasks...
+2026-11-01 00:17:30,876 WRITER received from s1808_tasks: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:17:45,154 WRITER HTTP Request: POST http://localhost:11434/api/chat &quot;HTTP/1.1 200 OK&quot;
+2026-11-01 00:17:45,154 WRITER wrote draft for question=&#x27;What is a race condition in concurrent programming?&#x27;
+2026-11-01 00:17:45,179 WRITER sent to s1808_drafts: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+=== REVIEWER ===
+2026-11-01 00:16:42,673 REVIEWER ready and listening on s1808_drafts...
+2026-11-01 00:17:45,185 REVIEWER received from s1808_drafts: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+2026-11-01 00:18:01,540 REVIEWER HTTP Request: POST http://localhost:11434/api/chat &quot;HTTP/1.1 200 OK&quot;
+2026-11-01 00:18:01,542 REVIEWER reviewed and approved answer for question=&#x27;What is a race condition in concurrent programming?&#x27;
+2026-11-01 00:18:01,567 REVIEWER sent to s1808_final: correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43
+
+=== CLIENT (send_question.py) ===
+producer = make_producer()
+2026-11-01 00:17:11,046 CLIENT --- question (correlation_id=52db7270-8e2b-4f13-8672-ce2994099e43) ---
+2026-11-01 00:17:11,046 CLIENT SEND -&gt; s1808_inbox: What is a race condition in concurrent programming?
+2026-11-01 00:18:01,565 CLIENT RECV &lt;- s1808_final: status=approved
+2026-11-01 00:18:01,567 CLIENT ANSWER: A race condition in concurrent programming occurs when multiple threads access shared resources without proper synchronization, leading to unpredictable results. It happens when two or more threads attempt to access and modify the same shared variable, causing their actions to interfere. Race conditions can result in the incorrect outcome of a process, such as inconsistent data values, and can lead to data corruption or loss in concurrent applications, affecting the reliability and functionality of the system. By employing appropriate synchronization techniques, such as locks, semaphores, or atomic operations, race conditions can be mitigated, ensuring the reliability and functionality of concurrent programs.</div>
+  </div>
+</body>
+</html>

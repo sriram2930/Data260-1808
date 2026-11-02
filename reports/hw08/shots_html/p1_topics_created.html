@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>kafka-topics --create -- all 7 required topics</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">kafka-topics --create -- all 7 required topics</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">--- Part 1 topics ---
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_requests.
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_entity_responses.
+--- Part 2 topics ---
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_inbox.
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_tasks.
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_drafts.
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_final.
+--- Part 3 dead-letter topic ---
+WARNING: Due to limitations in metric names, topics with a period (&#x27;.&#x27;) or underscore (&#x27;_&#x27;) could collide. To avoid issues it is best to use either, but not both.
+Created topic s1808_dead_letter.
+--- list ---
+__consumer_offsets
+s1808_dead_letter
+s1808_drafts
+s1808_entity_requests
+s1808_entity_responses
+s1808_final
+s1808_inbox
+s1808_tasks
+</div>
+  </div>
+</body>
+</html>

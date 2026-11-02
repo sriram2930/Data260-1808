@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python test_consumer_death.py -- kill mid-processing -&gt; offset NOT committed</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">python test_consumer_death.py -- kill mid-processing -&gt; offset NOT committed</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">2026-11-01 19:00:10,302 TEST seeded s1808_writer_deathtest_76b8d597&#x27;s offset to latest on s1808_tasks (skipping prior backlog)
+  producer = make_producer()
+2026-11-01 19:00:13,462 TEST === spawning writer.py (attempt 1), group_id=s1808_writer_deathtest_76b8d597 ===
+2026-11-01 19:00:18,645 TEST [writer attempt 1] 2026-11-01 19:00:18,645 WRITER ready and listening on s1808_tasks...
+2026-11-01 19:00:19,647 TEST SEND -&gt; s1808_tasks: correlation_id=7d6ebc2d-3e21-429b-8db7-ab9701693319
+2026-11-01 19:00:19,742 TEST [writer attempt 1] 2026-11-01 19:00:19,740 WRITER received from s1808_tasks: correlation_id=7d6ebc2d-3e21-429b-8db7-ab9701693319
+2026-11-01 19:00:19,742 TEST === killing writer.py NOW, mid-processing (before the model call returns) ===
+2026-11-01 19:00:19,747 TEST writer.py (attempt 1) killed. Checking consumer group offset...
+2026-11-01 19:00:23,429 TEST consumer group state after kill:
+GROUP                           TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID                                              HOST            CLIENT-ID
+s1808_writer_deathtest_76b8d597 s1808_tasks     0          16              16              0               kafka-python-3.0.12-9f00fc28-fb04-4586-ae7d-63afa3daec66 /172.27.0.1     kafka-python-3.0.12
+s1808_writer_deathtest_76b8d597 s1808_tasks     1          36              37              1               kafka-python-3.0.12-9f00fc28-fb04-4586-ae7d-63afa3daec66 /172.27.0.1     kafka-python-3.0.12
+2026-11-01 19:00:25,427 TEST draft present after kill (expected: None, message was never fully processed): None
+2026-11-01 19:00:25,427 TEST === restarting writer.py (attempt 2) ===
+2026-11-01 19:01:03,581 TEST [writer attempt 2] 2026-11-01 19:01:03,581 WRITER ready and listening on s1808_tasks...
+2026-11-01 19:05:26,416 TEST Consumer poll timeout has expired. This means the time between subsequent calls to poll() was longer than the configured max_poll_interval_ms, which typically implies that the poll loop is spending too much time processing messages. You can address this either by increasing max_poll_interval_ms or by reducing the maximum size of batches returned in poll() with max_poll_records.
+Traceback (most recent call last):
+  File &quot;C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_consumer_death.py&quot;, line 173, in &lt;module&gt;
+    main()
+  File &quot;C:\Users\User\Desktop\Data_260_HW-1\data260-1808\Part-11\test_consumer_death.py&quot;, line 152, in main
+    assert redelivered, &quot;the message was not redelivered to the restarted writer -- offset must have advanced on the kill&quot;
+           ^^^^^^^^^^^
+AssertionError: the message was not redelivered to the restarted writer -- offset must have advanced on the kill</div>
+  </div>
+</body>
+</html>

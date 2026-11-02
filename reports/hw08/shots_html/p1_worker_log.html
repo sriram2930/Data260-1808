@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>docker logs s1808-worker -- full receive/process/reply sequence</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #21262d;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+  .titletext {
+    color: #8b949e;
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="titletext">docker logs s1808-worker -- full receive/process/reply sequence</span>
+      <span class="titletext" style="margin-left:auto;">Sreeram Achutuni -- SID 019151808</span>
+    </div>
+    <div class="body">consumer = KafkaConsumer(
+  main()
+2026-11-01 07:11:01,164 WORKER Consumer is ready and listening on s1808_entity_requests...
+2026-11-01 07:13:20,021 WORKER received request: correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc operation=CREATE_ENTITY data={&#x27;course_code&#x27;: &#x27;DATA-00500&#x27;, &#x27;course_title&#x27;: &#x27;HW8 Kafka Demo Course&#x27;, &#x27;description&#x27;: &#x27;Created by homework_demo.py to demonstrate the request/response flow.&#x27;, &#x27;department&#x27;: &#x27;Data Science &amp; AI&#x27;, &#x27;seats_available&#x27;: 25}
+2026-11-01 07:13:20,021 WORKER processing operation=CREATE_ENTITY ...
+2026-11-01 07:13:20,033 WORKER sent response to s1808_entity_responses: correlation_id=9b494b67-8025-4fbf-9f4e-d71d93c844fc success=True (0.05ms)
+2026-11-01 07:13:20,545 WORKER received request: correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9 operation=GET_ENTITY data={&#x27;entity_id&#x27;: &#x27;28b40e2d-5d7a-4fec-9533-a7eb1401c0a3&#x27;}
+2026-11-01 07:13:20,545 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:20,558 WORKER sent response to s1808_entity_responses: correlation_id=b895f87a-2d16-4f7b-9ca9-eda495dd7cb9 success=True (0.01ms)
+2026-11-01 07:13:25,023 WORKER received request: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 operation=CREATE_ENTITY data={&#x27;course_code&#x27;: &#x27;API-TEST-01&#x27;, &#x27;course_title&#x27;: &#x27;API Test Course&#x27;}
+2026-11-01 07:13:25,023 WORKER processing operation=CREATE_ENTITY ...
+2026-11-01 07:13:25,026 WORKER sent response to s1808_entity_responses: correlation_id=69517882-f43c-47c9-ad2d-5c580ad8cb23 success=True (0.04ms)
+2026-11-01 07:13:30,260 WORKER received request: correlation_id=351d1169-9760-491a-9f20-c717889ed560 operation=GET_ENTITY data={&#x27;entity_id&#x27;: &#x27;3d2c1a25-641d-47f6-bce8-11644d1cfd5b&#x27;}
+2026-11-01 07:13:30,260 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:30,263 WORKER sent response to s1808_entity_responses: correlation_id=351d1169-9760-491a-9f20-c717889ed560 success=True (0.01ms)
+2026-11-01 07:13:30,353 WORKER received request: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be operation=GET_ENTITY data={&#x27;entity_id&#x27;: &#x27;00000000-0000-0000-0000-000000000000&#x27;}
+2026-11-01 07:13:30,354 WORKER processing operation=GET_ENTITY ...
+2026-11-01 07:13:30,358 WORKER sent response to s1808_entity_responses: correlation_id=001f30c6-2a5e-4c8a-bda3-135189ecc3be success=False (0.00ms)</div>
+  </div>
+</body>
+</html>
