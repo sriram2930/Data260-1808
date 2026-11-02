@@ -60,7 +60,7 @@ table([
     ("Local model", "qwen2.5:1.5b-instruct via Ollama (Part 2's Planner/Writer/Reviewer)"),
     ("Repo", "https://github.com/sriram2930/Data260-1808"),
     ("Collaborators", "Sbnikitha and supriyaselvanganesan have repo access"),
-    ("Commit tagged as hw8", "PLACEHOLDER_COMMIT_HASH"),
+    ("Commit tagged as hw8", "b9bc4af690a5fb105794a01bf541404132aa41d2"),
 ])
 
 # ============================================================= PART 1
