@@ -126,7 +126,7 @@ table([
     ("Embeddings / vector store", "sentence-transformers/all-MiniLM-L6-v2 (384-d, normalised); Redis Stack 7.2 (redis/redis-stack-server), FLAT index, COSINE"),
     ("Databases / broker", "MySQL 8 (s1808_rel), Kafka 7.5 + Zookeeper (HW8 stack, unchanged)"),
     ("cache_cases.yaml committed in", f"{CASES_COMMIT}, before any threshold sweep was run"),
-    ("Commit tagged as hw9", FINAL_HASH),
+    ("HW9 code commit (tag hw9 is on the report-only commit after it)", FINAL_HASH),
 ], widths=[2.2, 4.6])
 
 # ------------------------------------------------------------------ PART 1
