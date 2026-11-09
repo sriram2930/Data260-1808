@@ -1,0 +1,77 @@
+# DATA-260 HW9, Part 3.1 -- labeled test set for the semantic cache (Student: Achutuni, SID4 1808)
+#
+# The cache is warmed with the 10 "seed" questions below. Every case is then sent
+# to the cache and labeled with whether it SHOULD hit.
+#
+#   exact_duplicate   -- identical text to a seed; should hit
+#   paraphrase        -- same meaning, different words, same correct answer; should hit
+#   similar_different -- near-identical wording, but a DIFFERENT correct answer (different
+#                        course / department / term); must NOT hit
+#   unrelated         -- outside the course catalogue; must NOT hit
+#
+# `seed` names the cached question a hit would return. `correct_answer` is the
+# ground-truth answer read from s1808_rel (departments / courses / sections) when
+# this file was written. This file is committed BEFORE any threshold sweep and
+# is not edited after seeing results; any labeling mistake is documented in the
+# report instead.
+
+seeds:
+  - {id: S01, query: "Where is the Computer Science department located?", correct_answer: "Engineering Building, Room 310"}
+  - {id: S02, query: "What is the title of course CS-00005?", correct_answer: "Statistical Operating Systems"}
+  - {id: S03, query: "How many seats are available in course DATA-00006?", correct_answer: "25"}
+  - {id: S04, query: "What is the department code for Data Science & AI?", correct_answer: "DATA"}
+  - {id: S05, query: "Who teaches CS-00020 in Fall 2026?", correct_answer: "Chen Kim"}
+  - {id: S06, query: "Which department offers ENGR-00003?", correct_answer: "Engineering"}
+  - {id: S07, query: "What building is the Business Analytics department in?", correct_answer: "Lucas Hall, Room 310"}
+  - {id: S08, query: "How many seats are available in course CS-00005?", correct_answer: "30"}
+  - {id: S09, query: "What is the title of course DATA-00016?", correct_answer: "Principles of Data Structures"}
+  - {id: S10, query: "What is the enrolled count for the Fall 2026 section of CS-00020?", correct_answer: "45"}
+
+cases:
+  # ---- 10 exact duplicates (should hit) -----------------------------------
+  - {id: C01, category: exact_duplicate, should_hit: true, seed: S01, query: "Where is the Computer Science department located?"}
+  - {id: C02, category: exact_duplicate, should_hit: true, seed: S02, query: "What is the title of course CS-00005?"}
+  - {id: C03, category: exact_duplicate, should_hit: true, seed: S03, query: "How many seats are available in course DATA-00006?"}
+  - {id: C04, category: exact_duplicate, should_hit: true, seed: S04, query: "What is the department code for Data Science & AI?"}
+  - {id: C05, category: exact_duplicate, should_hit: true, seed: S05, query: "Who teaches CS-00020 in Fall 2026?"}
+  - {id: C06, category: exact_duplicate, should_hit: true, seed: S06, query: "Which department offers ENGR-00003?"}
+  - {id: C07, category: exact_duplicate, should_hit: true, seed: S07, query: "What building is the Business Analytics department in?"}
+  - {id: C08, category: exact_duplicate, should_hit: true, seed: S08, query: "How many seats are available in course CS-00005?"}
+  - {id: C09, category: exact_duplicate, should_hit: true, seed: S09, query: "What is the title of course DATA-00016?"}
+  - {id: C10, category: exact_duplicate, should_hit: true, seed: S10, query: "What is the enrolled count for the Fall 2026 section of CS-00020?"}
+
+  # ---- 10 paraphrases (should hit; same correct answer as the seed) -------
+  - {id: C11, category: paraphrase, should_hit: true, seed: S01, query: "In which building can I find the Computer Science department?"}
+  - {id: C12, category: paraphrase, should_hit: true, seed: S02, query: "What is the name of course CS-00005?"}
+  - {id: C13, category: paraphrase, should_hit: true, seed: S03, query: "How many open seats does DATA-00006 have?"}
+  - {id: C14, category: paraphrase, should_hit: true, seed: S04, query: "Which code identifies the Data Science & AI department?"}
+  - {id: C15, category: paraphrase, should_hit: true, seed: S05, query: "Who is the instructor for CS-00020 during Fall 2026?"}
+  - {id: C16, category: paraphrase, should_hit: true, seed: S06, query: "ENGR-00003 is offered by which department?"}
+  - {id: C17, category: paraphrase, should_hit: true, seed: S07, query: "Where is the Business Analytics department housed?"}
+  - {id: C18, category: paraphrase, should_hit: true, seed: S08, query: "What is the number of seats still available for CS-00005?"}
+  - {id: C19, category: paraphrase, should_hit: true, seed: S09, query: "What is course DATA-00016 called?"}
+  - {id: C20, category: paraphrase, should_hit: true, seed: S10, query: "How many students are enrolled in the Fall 2026 section of CS-00020?"}
+
+  # ---- 10 superficially similar, DIFFERENT correct answer (should miss) ----
+  - {id: C21, category: similar_different, should_hit: false, near_seed: S01, query: "Where is the Data Science & AI department located?", correct_answer: "MacQuarrie Hall, Room 420"}
+  - {id: C22, category: similar_different, should_hit: false, near_seed: S02, query: "What is the title of course CS-00020?", correct_answer: "Principles of Statistics"}
+  - {id: C23, category: similar_different, should_hit: false, near_seed: S03, query: "How many seats are available in course DATA-00007?", correct_answer: "12"}
+  - {id: C24, category: similar_different, should_hit: false, near_seed: S04, query: "What is the department code for Business Analytics?", correct_answer: "BUS"}
+  - {id: C25, category: similar_different, should_hit: false, near_seed: S05, query: "Who teaches ENGR-00040 in Fall 2026?", correct_answer: "Omar Patel"}
+  - {id: C26, category: similar_different, should_hit: false, near_seed: S06, query: "Which department offers CS-00005?", correct_answer: "Computer Science"}
+  - {id: C27, category: similar_different, should_hit: false, near_seed: S07, query: "What building is the Engineering department in?", correct_answer: "Engineering Building, Room 100"}
+  - {id: C28, category: similar_different, should_hit: false, near_seed: S08, query: "How many seats are available in course CS-00018?", correct_answer: "8"}
+  - {id: C29, category: similar_different, should_hit: false, near_seed: S09, query: "What is the title of course DATA-00015?", correct_answer: "Computational Database Systems"}
+  - {id: C30, category: similar_different, should_hit: false, near_seed: S10, query: "What is the enrolled count for the Fall 2026 section of ENGR-00040?", correct_answer: "33"}
+
+  # ---- 10 unrelated (should miss) ------------------------------------------
+  - {id: C31, category: unrelated, should_hit: false, query: "What is the capital of France?"}
+  - {id: C32, category: unrelated, should_hit: false, query: "How do I bake sourdough bread at home?"}
+  - {id: C33, category: unrelated, should_hit: false, query: "Who won the 2018 FIFA World Cup?"}
+  - {id: C34, category: unrelated, should_hit: false, query: "Explain how photosynthesis works."}
+  - {id: C35, category: unrelated, should_hit: false, query: "What is the tallest mountain in the world?"}
+  - {id: C36, category: unrelated, should_hit: false, query: "Write a haiku about autumn rain."}
+  - {id: C37, category: unrelated, should_hit: false, query: "How many planets are in the solar system?"}
+  - {id: C38, category: unrelated, should_hit: false, query: "What is a good recipe for vegetable curry?"}
+  - {id: C39, category: unrelated, should_hit: false, query: "How does a blockchain reach consensus?"}
+  - {id: C40, category: unrelated, should_hit: false, query: "Who painted the Mona Lisa?"}
