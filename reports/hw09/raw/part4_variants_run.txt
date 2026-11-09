@@ -1,0 +1,17 @@
+=== Part 4.4 final test | student Sreeramachandrasai Achutuni ===
+lessons in lessons.json: ['lesson_001'] | kept after validation: ['lesson_001']
+
+Baseline               correct=15/20 incorrect= 5 avg_attempts=1.00 avg_latency=3.17s (first-attempt correct 15/20)
+   failed: te09, te10, te12, te13, te14
+Evaluator Repair       correct=16/20 incorrect= 4 avg_attempts=1.25 avg_latency=2.94s (first-attempt correct 15/20)
+   failed: te09, te12, te13, te14
+Lesson Memory          correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.45s (first-attempt correct 15/20)
+   failed: te09, te13
+Validated Improvement  correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.47s (first-attempt correct 15/20)
+   failed: te09, te13
+
+| Variant | Correct | Incorrect | Avg attempts | Avg latency (s) |
+| Baseline | 15 | 5 | 1.0 | 3.17 |
+| Evaluator Repair | 16 | 4 | 1.25 | 2.94 |
+| Lesson Memory | 18 | 2 | 1.25 | 3.45 |
+| Validated Improvement | 18 | 2 | 1.25 | 3.47 |

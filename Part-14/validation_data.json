@@ -1,0 +1,82 @@
+[
+  {
+    "id": "va01",
+    "question": "Who teaches BUS-00180 and in which semester?"
+  },
+  {
+    "id": "va02",
+    "question": "Who is the instructor for CS-00185, and how many students are enrolled?"
+  },
+  {
+    "id": "va03",
+    "question": "What is the title of DATA-00211 and which department offers it?"
+  },
+  {
+    "id": "va04",
+    "question": "What is the title of BUS-00002, and which department offers it?"
+  },
+  {
+    "id": "va05",
+    "question": "How many seats are available in DATA-00007?"
+  },
+  {
+    "id": "va06",
+    "question": "How many seats are available in CS-00018, and what is its title?"
+  },
+  {
+    "id": "va07",
+    "question": "Where is the Data Science & AI department located, and what is its department code?"
+  },
+  {
+    "id": "va08",
+    "question": "What is the department code and building for Engineering?"
+  },
+  {
+    "id": "va09",
+    "question": "Which has more available seats, CS-00005 or CS-00018?"
+  },
+  {
+    "id": "va10",
+    "question": "How many students are enrolled in the Spring 2027 section of DATA-00241, and who teaches it?"
+  },
+  {
+    "id": "va11",
+    "question": "Which semester is BUS-00220 offered, and who teaches it?"
+  },
+  {
+    "id": "va12",
+    "question": "What is the tallest mountain in the world?"
+  },
+  {
+    "id": "va13",
+    "question": "Write a haiku about autumn rain."
+  },
+  {
+    "id": "va14",
+    "question": "What is a good recipe for vegetable curry?"
+  },
+  {
+    "id": "va15",
+    "question": "How many seats are available in course ENGR-09999?"
+  },
+  {
+    "id": "va16",
+    "question": "Who teaches CS-08888 in Fall 2026?"
+  },
+  {
+    "id": "va17",
+    "question": "What is the title and seat count of ENGR-00004?"
+  },
+  {
+    "id": "va18",
+    "question": "Who teaches BUS-00227 and how many students are enrolled?"
+  },
+  {
+    "id": "va19",
+    "question": "Which department offers CS-00024, and what is its title?"
+  },
+  {
+    "id": "va20",
+    "question": "Where is the Business Analytics department located?"
+  }
+]

@@ -1,0 +1,25 @@
+PASS p1_key_has_prefix s1808:views:course:4
+PASS p1_counts_1_to_9 
+PASS p1_no_db_write_before_10 
+PASS p1_returns_10_and_syncs 
+PASS p1_no_sync_on_11 
+PASS p2_vector_index_exists s1808:idx:semcache
+PASS p2_first_is_miss 
+PASS p2_duplicate_is_hit_without_agent sim=1.0
+PASS p2_unrelated_is_miss 
+PASS p2_latency_fields_present 
+PASS p3_cases_40_in_4_categories_of_10 {'exact_duplicate': 10, 'paraphrase': 10, 'similar_different': 10, 'unrelated': 10}
+PASS p3_sweep_has_5_thresholds [0.75, 0.8, 0.85, 0.9, 0.95]
+PASS p3_stale_hit_invalidated_to_miss 
+PASS p3_rebuilt_entry_is_valid_hit 
+PASS p3_version_marker_changes_with_data 
+PASS p4_datasets_contain_only_questions 
+PASS p4_no_question_shared_across_splits 
+PASS p4_lessons_have_required_fields 1 lessons
+PASS p4_evaluator_passes_correct 
+PASS p4_evaluator_revises_wrong 
+PASS p4_evaluator_revises_unsupported 
+PASS p4_evaluator_passes_decline 
+PASS p4_stops_after_two_attempts 
+
+23/23 checks passed

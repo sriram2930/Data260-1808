@@ -1,0 +1,18 @@
+=== Part 4.1 controlled revision | student Sreeramachandrasai Achutuni ===
+
+QUESTION: Who teaches ENGR-00040 and how many students are enrolled in that section?
+
+--- attempt 1: initial answer (INJECTED incomplete answer)
+  answer     : ENGR-00040 is taught in the Fall semester by one of the faculty members.
+  evaluation : REVISE
+  explanation: The answer is missing or misstates: instructor, enrolled count.
+  feedback   : Revise the answer. The reference dataset says: instructor = 'Omar Patel'; enrolled count = '33'. State each of these explicitly.
+
+--- attempt 2: revised answer (model, using feedback)
+  answer     : ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.
+  evaluation : PASS
+  explanation: Every required fact from the reference dataset appears in the answer.
+
+FINAL RESULT  : PASS
+ATTEMPTS      : 2 (maximum 2)
+FINAL RESPONSE: ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.

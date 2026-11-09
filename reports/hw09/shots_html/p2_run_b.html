@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-13/part2_demo.py -- queries 8-14 + summary</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-13/part2_demo.py -- queries 8-14 + summary &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">23:48:09 CACHE MISS  best_sim=0.191 query=&#x27;What is the capital of France?&#x27; (agent 18888 ms)
+#8  [new       ] is_cached=False sim=0.191 latency=18956 ms
+     Q: What is the capital of France?
+     A: &#x27;The capital of France is Paris. Paris is the largest city in France and its cultural, economic, and political center.&#x27;
+
+23:48:37 CACHE MISS  best_sim=0.703 query=&#x27;Who teaches CS-00020 in Fall 2026?&#x27; (agent 28013 ms)
+#9  [new       ] is_cached=False sim=0.7033 latency=28086 ms
+     Q: Who teaches CS-00020 in Fall 2026?
+     A: &#x27;The instructor of CS-00020 in Fall 2026 is Chen Kim.&#x27;
+
+23:48:37 CACHE HIT   sim=0.903 query=&#x27;Who is the instructor for CS-00020 during Fall 2026?&#x27; matched=&#x27;Who teaches CS-00020 in Fall 2026?&#x27;
+#10 [paraphrase] is_cached=True  sim=0.9031 latency=90 ms
+     Q: Who is the instructor for CS-00020 during Fall 2026?
+     A: &#x27;The instructor of CS-00020 in Fall 2026 is Chen Kim.&#x27;
+
+23:48:59 CACHE MISS  best_sim=0.650 query=&#x27;What is the title of course DATA-00016?&#x27; (agent 21656 ms)
+#11 [new       ] is_cached=False sim=0.6498 latency=21747 ms
+     Q: What is the title of course DATA-00016?
+     A: &#x27;The title of course DATA-00016 is &quot;Principles of Data Structures&quot;.&#x27;
+
+23:48:59 CACHE HIT   sim=1.000 query=&#x27;What is the title of course DATA-00016?&#x27; matched=&#x27;What is the title of course DATA-00016?&#x27;
+#12 [duplicate ] is_cached=True  sim=1.0 latency=28 ms
+     Q: What is the title of course DATA-00016?
+     A: &#x27;The title of course DATA-00016 is &quot;Principles of Data Structures&quot;.&#x27;
+
+23:49:20 CACHE MISS  best_sim=0.411 query=&#x27;Which department offers ENGR-00003?&#x27; (agent 20446 ms)
+#13 [new       ] is_cached=False sim=0.4109 latency=20487 ms
+     Q: Which department offers ENGR-00003?
+     A: &#x27;The department offering ENGR-00003 is the Engineering department.&#x27;
+
+23:49:37 CACHE MISS  best_sim=0.549 query=&#x27;What building is the Engineering department in?&#x27; (agent 17480 ms)
+#14 [new       ] is_cached=False sim=0.549 latency=17530 ms
+     Q: What building is the Engineering department in?
+     A: &#x27;The Engineering department is located in the Engineering Building, Room 100.&#x27;
+
+=== Summary ===
+queries: 14 | hits: 6 | misses: 8 | hit rate: 42.9%
+avg latency cached     : 60.4 ms  (n=6)
+avg latency not cached : 23245.7 ms  (n=8)</div>
+  </div>
+</body>
+</html>

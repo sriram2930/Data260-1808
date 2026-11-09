@@ -1,0 +1,31 @@
+=== Part 4.2 lesson reuse | student Sreeramachandrasai Achutuni ===
+
+[1] Question A with a controlled failing first answer (injected): Who teaches BUS-00134, and what is the term?
+    evaluator: REVISE  patterns=['missing_fact:instructor', 'missing_fact:semester']
+    -> lesson created: {"lesson_id": "lesson_001", "failure_pattern": "The answer omits the instructor.", "correction": "When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.", "created_at": "2026-11-09", "use_count": 0, "trigger": "instructor", "pattern_key": "missing_fact:instructor", "status": "kept"}
+    -> lesson created: {"lesson_id": "lesson_002", "failure_pattern": "The answer omits the semester.", "correction": "When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.", "created_at": "2026-11-09", "use_count": 0, "trigger": "semester", "pattern_key": "missing_fact:semester", "status": "kept"}
+
+[2] lessons file now contains:
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The answer omits the instructor.",
+    "correction": "When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.",
+    "created_at": "2026-11-09",
+    "use_count": 0
+  },
+  {
+    "lesson_id": "lesson_002",
+    "failure_pattern": "The answer omits the semester.",
+    "correction": "When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.",
+    "created_at": "2026-11-09",
+    "use_count": 0
+  }
+]
+
+[3] LATER related question B: Who teaches CS-00185 and in which semester?
+    lessons loaded before answering: ['lesson_001', 'lesson_002']
+    answer    : Omar Kim teaches CS-00185 in Summer 2027.
+    evaluation: PASS  (attempts=1)
+
+[4] use_count after reuse: [('lesson_001', 1), ('lesson_002', 1)]

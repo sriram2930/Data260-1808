@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>redis-cli FT.INFO -- Part 2 vector index</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">redis-cli FT.INFO -- Part 2 vector index &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ redis-cli FT.INFO s1808:idx:semcache   (index definition, first lines)
+index_name
+s1808:idx:semcache
+index_options
+
+index_definition
+key_type
+HASH
+prefixes
+s1808:semcache:
+default_score
+1
+attributes
+identifier
+query
+attribute
+query
+type
+TEXT
+WEIGHT
+1
+identifier
+embedding
+attribute
+embedding
+type
+VECTOR
+algorithm
+FLAT
+data_type
+FLOAT32
+dim
+384
+distance_metric
+COSINE
+num_docs
+0
+max_doc_id
+66
+num_terms
+61
+num_records
+629
+inverted_sz_mb
+0.0032215118408203125</div>
+  </div>
+</body>
+</html>

@@ -27,3 +27,4 @@ requests
 pyjwt
 ruff
 pre-commit
+redis

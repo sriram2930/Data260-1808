@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-13/part2_demo.py -- queries 1-7</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-13/part2_demo.py -- queries 1-7 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-13/part2_demo.py
+=== Part 2: semantic cache | student Sreeramachandrasai Achutuni | threshold=0.85 ===
+flushed 0 old cache entries
+
+23:47:01 CACHE MISS  best_sim=n/a query=&#x27;Where is the Computer Science department located?&#x27; (agent 30033 ms)
+#1  [new       ] is_cached=False sim=None latency=30144 ms
+     Q: Where is the Computer Science department located?
+     A: &#x27;The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.&#x27;
+
+23:47:01 CACHE HIT   sim=1.000 query=&#x27;Where is the Computer Science department located?&#x27; matched=&#x27;Where is the Computer Science department located?&#x27;
+#2  [duplicate ] is_cached=True  sim=1.0 latency=49 ms
+     Q: Where is the Computer Science department located?
+     A: &#x27;The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.&#x27;
+
+23:47:01 CACHE HIT   sim=0.902 query=&#x27;In which building can I find the Computer Science department?&#x27; matched=&#x27;Where is the Computer Science department located?&#x27;
+#3  [paraphrase] is_cached=True  sim=0.9023 latency=52 ms
+     Q: In which building can I find the Computer Science department?
+     A: &#x27;The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.&#x27;
+
+23:47:23 CACHE MISS  best_sim=0.394 query=&#x27;What is the title of course CS-00005?&#x27; (agent 21786 ms)
+#4  [new       ] is_cached=False sim=0.3941 latency=21835 ms
+     Q: What is the title of course CS-00005?
+     A: &#x27;The title of course CS-00005 is &quot;Statistical Operating Systems,&quot; and it is offered by the Computer Science department. As of the available facts, there are 30 s&#x27;
+
+23:47:23 CACHE HIT   sim=0.938 query=&#x27;What is the name of course CS-00005?&#x27; matched=&#x27;What is the title of course CS-00005?&#x27;
+#5  [paraphrase] is_cached=True  sim=0.9377 latency=69 ms
+     Q: What is the name of course CS-00005?
+     A: &#x27;The title of course CS-00005 is &quot;Statistical Operating Systems,&quot; and it is offered by the Computer Science department. As of the available facts, there are 30 s&#x27;
+
+23:47:50 CACHE MISS  best_sim=0.388 query=&#x27;How many seats are available in course DATA-00006?&#x27; (agent 27102 ms)
+#6  [new       ] is_cached=False sim=0.3879 latency=27181 ms
+     Q: How many seats are available in course DATA-00006?
+     A: &#x27;There are 25 seats available in course DATA-00006.&#x27;
+
+23:47:50 CACHE HIT   sim=1.000 query=&#x27;How many seats are available in course DATA-00006?&#x27; matched=&#x27;How many seats are available in course DATA-00006?&#x27;
+#7  [duplicate ] is_cached=True  sim=1.0 latency=75 ms
+     Q: How many seats are available in course DATA-00006?
+     A: &#x27;There are 25 seats available in course DATA-00006.&#x27;</div>
+  </div>
+</body>
+</html>

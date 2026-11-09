@@ -1,0 +1,500 @@
+{
+  "results": [
+    {
+      "question": "Who teaches CS-00020 and in which semester?",
+      "final_answer": "Chen Kim teaches CS-00020 in the Fall 2026 semester.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "Chen Kim teaches CS-00020 in the Fall 2026 semester.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 3358.1254999153316,
+      "id": "tr01"
+    },
+    {
+      "question": "Who is the instructor for ENGR-00040, and how many students are enrolled in that section?",
+      "final_answer": "The instructor for ENGR-00040 is Omar Patel, and there are 33 students enrolled in that section.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The instructor for ENGR-00040 is Omar Patel, and there are 33 students enrolled in that section.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 1499.9639000743628,
+      "id": "tr02"
+    },
+    {
+      "question": "Which semester is BUS-00065 offered, and who teaches it?",
+      "final_answer": "BUS-00065 is offered in the Fall 2026 semester, taught by instructor Omar Lopez.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "BUS-00065 is offered in the Fall 2026 semester, taught by instructor Omar Lopez.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 1798.4505998902023,
+      "id": "tr03"
+    },
+    {
+      "question": "What is the title of CS-00121 and which department offers it?",
+      "final_answer": "The title of CS-00121 is \"Seminar in Data Structures\" and it is offered by the Computer Science department.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The title of CS-00121 is \"Seminar in Data Structures\" and it is offered by the Computer Science department.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2297.3457002080977,
+      "id": "tr04"
+    },
+    {
+      "question": "What is the title of ENGR-00003, and which department offers it?",
+      "final_answer": "The title of ENGR-00003 is \"Seminar in Networks\", and it is offered by the Engineering department.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The title of ENGR-00003 is \"Seminar in Networks\", and it is offered by the Engineering department.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 3557.32459994033,
+      "id": "tr05"
+    },
+    {
+      "question": "How many seats are available in CS-00005?",
+      "final_answer": "There are 30 seats available in CS-00005.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "There are 30 seats available in CS-00005.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2415.8464996144176,
+      "id": "tr06"
+    },
+    {
+      "question": "How many seats are available in DATA-00006, and what is its title?",
+      "final_answer": "DATA-00006, titled \"Topics in Cloud Computing,\" has 25 seats available.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "DATA-00006, titled \"Topics in Cloud Computing,\" has 25 seats available.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2764.0567999333143,
+      "id": "tr07"
+    },
+    {
+      "question": "Where is the Computer Science department located, and what is its department code?",
+      "final_answer": "The Computer Science department is located in the Engineering Building, Room 310, and its department code is CS.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The Computer Science department is located in the Engineering Building, Room 310, and its department code is CS.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 1692.7634002640843,
+      "id": "tr08"
+    },
+    {
+      "question": "What is the department code and building for Business Analytics?",
+      "final_answer": "The department code for Business Analytics is BUS, and it is located in Lucas Hall, Room 310.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The department code for Business Analytics is BUS, and it is located in Lucas Hall, Room 310.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2359.896100126207,
+      "id": "tr09"
+    },
+    {
+      "question": "Which has more available seats, DATA-00006 or DATA-00007?",
+      "final_answer": "DATA-00006 has 25 seats available, while DATA-00007 has 12 seats available.",
+      "final_result": "PASS",
+      "attempts": 2,
+      "first_attempt_result": "REVISE",
+      "first_attempt_patterns": [
+        "missing_fact:seats",
+        "missing_fact:seats"
+      ],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "DATA-00006 has more available seats.",
+          "result": "REVISE",
+          "explanation": "The answer is missing or misstates: number of seats, number of seats.",
+          "feedback": "Revise the answer. The reference dataset says: number of seats = 'DATA-00006 has 25 seats'; number of seats = 'DATA-00007 has 12 seats'. State each of these explicitly.",
+          "patterns": [
+            "missing_fact:seats",
+            "missing_fact:seats"
+          ],
+          "lessons_used": []
+        },
+        {
+          "attempt": 2,
+          "answer": "DATA-00006 has 25 seats available, while DATA-00007 has 12 seats available.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 5079.020000062883,
+      "id": "tr10"
+    },
+    {
+      "question": "How many students are enrolled in the Fall 2026 section of CS-00020, and who teaches it?",
+      "final_answer": "There are 45 students enrolled in the Fall 2026 section of CS-00020, taught by instructor Chen Kim.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "There are 45 students enrolled in the Fall 2026 section of CS-00020, taught by instructor Chen Kim.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 3386.693799868226,
+      "id": "tr11"
+    },
+    {
+      "question": "What is the capital of France?",
+      "final_answer": "The capital of France is Paris.",
+      "final_result": "REVISE",
+      "attempts": 2,
+      "first_attempt_result": "REVISE",
+      "first_attempt_patterns": [
+        "unsupported_answer"
+      ],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The capital of France is Paris.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        },
+        {
+          "attempt": 2,
+          "answer": "The capital of France is Paris.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 3094.729600008577,
+      "id": "tr12"
+    },
+    {
+      "question": "Who won the 2018 FIFA World Cup?",
+      "final_answer": "The 2018 FIFA World Cup was won by France.",
+      "final_result": "REVISE",
+      "attempts": 2,
+      "first_attempt_result": "REVISE",
+      "first_attempt_patterns": [
+        "unsupported_answer"
+      ],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The 2018 FIFA World Cup was won by France.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        },
+        {
+          "attempt": 2,
+          "answer": "The 2018 FIFA World Cup was won by France.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 4483.072599861771,
+      "id": "tr13"
+    },
+    {
+      "question": "How do I bake sourdough bread?",
+      "final_answer": "Baking sourdough bread typically involves mixing flour and water to create a starter, then kneading the dough, letting it rise, and finally baking it in an oven.",
+      "final_result": "REVISE",
+      "attempts": 2,
+      "first_attempt_result": "REVISE",
+      "first_attempt_patterns": [
+        "unsupported_answer"
+      ],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "Baking sourdough bread typically involves mixing flour and water to create a starter, then kneading the dough, letting it rise, and finally baking it in an oven.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        },
+        {
+          "attempt": 2,
+          "answer": "Baking sourdough bread typically involves mixing flour and water to create a starter, then kneading the dough, letting it rise, and finally baking it in an oven.",
+          "result": "REVISE",
+          "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+          "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 6572.330700233579,
+      "id": "tr14"
+    },
+    {
+      "question": "How many seats are available in course CS-09999?",
+      "final_answer": "There are no seats available in course CS-09999 as it does not exist in the catalogue.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "There are no seats available in course CS-09999 as it does not exist in the catalogue.",
+          "result": "PASS",
+          "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2158.7886000052094,
+      "id": "tr15"
+    },
+    {
+      "question": "Who teaches DATA-09001 in Fall 2026?",
+      "final_answer": "There is no course with the code DATA-09001 in the catalogue, so no one teaches it in Fall 2026.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "There is no course with the code DATA-09001 in the catalogue, so no one teaches it in Fall 2026.",
+          "result": "PASS",
+          "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2542.365999892354,
+      "id": "tr16"
+    },
+    {
+      "question": "What is the title and seat count of CS-00018?",
+      "final_answer": "The title of CS-00018 is \"Introduction to Cloud Computing\" and it has 8 seats available.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The title of CS-00018 is \"Introduction to Cloud Computing\" and it has 8 seats available.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2136.62840006873,
+      "id": "tr17"
+    },
+    {
+      "question": "Who teaches BUS-00134, and what is the term?",
+      "final_answer": "Wei Brown teaches BUS-00134 in Summer 2027.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "Wei Brown teaches BUS-00134 in Summer 2027.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 1811.6709999740124,
+      "id": "tr18"
+    },
+    {
+      "question": "Which department offers DATA-00016 and what is its title?",
+      "final_answer": "The Data Science & AI department offers the course 'Principles of Data Structures', which has 30 seats available.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The Data Science & AI department offers the course 'Principles of Data Structures', which has 30 seats available.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2389.7338998503983,
+      "id": "tr19"
+    },
+    {
+      "question": "What building is the Engineering department in, and what is its department code?",
+      "final_answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+      "final_result": "PASS",
+      "attempts": 1,
+      "first_attempt_result": "PASS",
+      "first_attempt_patterns": [],
+      "trace": [
+        {
+          "attempt": 1,
+          "answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+          "result": "PASS",
+          "explanation": "Every required fact from the reference dataset appears in the answer.",
+          "feedback": "",
+          "patterns": [],
+          "lessons_used": []
+        }
+      ],
+      "latency_ms": 2859.985399991274,
+      "id": "tr20"
+    }
+  ],
+  "patterns": {
+    "missing_fact:seats": 1,
+    "unsupported_answer": 3
+  },
+  "lessons_created": [
+    {
+      "lesson_id": "lesson_001",
+      "failure_pattern": "The answer gives general-knowledge or unsupported content for a question the catalogue cannot answer.",
+      "correction": "If no catalogue facts are provided, or the facts say a course does not exist, reply that you can only answer course catalogue questions and do not have that information. Never answer from general knowledge.",
+      "created_at": "2026-11-09",
+      "use_count": 0,
+      "trigger": "no_facts",
+      "pattern_key": "unsupported_answer",
+      "status": "candidate"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-12/counter_demo.py -- Part 1</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-12/counter_demo.py -- Part 1 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-12/counter_demo.py
+=== Testing Counter ===
+(student: Sreeramachandrasai Achutuni | key s1808:views:course:7 | course CS-00005)
+
+Access #1: Total = 1   [redis=1 db=0]
+Access #2: Total = 2   [redis=2 db=0]
+Access #3: Total = 3   [redis=3 db=0]
+Access #4: Total = 4   [redis=4 db=0]
+Access #5: Total = 5   [redis=5 db=0]
+Access #6: Total = 6   [redis=6 db=0]
+Access #7: Total = 7   [redis=7 db=0]
+Access #8: Total = 8   [redis=8 db=0]
+Access #9: Total = 9   [redis=9 db=0]
+✓ Synced views to database
+Access #10: Total = 10   [redis=10 db=10]
+Access #11: Total = 11   [redis=11 db=10]
+Access #12: Total = 12   [redis=12 db=10]
+Access #13: Total = 13   [redis=13 db=10]
+Access #14: Total = 14   [redis=14 db=10]
+Access #15: Total = 15   [redis=15 db=10]
+Access #16: Total = 16   [redis=16 db=10]
+Access #17: Total = 17   [redis=17 db=10]
+Access #18: Total = 18   [redis=18 db=10]
+Access #19: Total = 19   [redis=19 db=10]
+✓ Synced views to database
+Access #20: Total = 20   [redis=20 db=20]
+Access #21: Total = 21   [redis=21 db=20]
+Access #22: Total = 22   [redis=22 db=20]
+Access #23: Total = 23   [redis=23 db=20]
+Access #24: Total = 24   [redis=24 db=20]
+Access #25: Total = 25   [redis=25 db=20]
+
+Final: redis=25  db.view_count=20 (last sync at 20; 21-25 live only in Redis)</div>
+  </div>
+</body>
+</html>

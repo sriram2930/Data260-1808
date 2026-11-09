@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-14/demo_lesson_reuse.py -- Part 4.2</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-14/demo_lesson_reuse.py -- Part 4.2 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-14/demo_lesson_reuse.py
+=== Part 4.2 lesson reuse | student Sreeramachandrasai Achutuni ===
+
+[1] Question A with a controlled failing first answer (injected): Who teaches BUS-00134, and what is the term?
+    evaluator: REVISE  patterns=[&#x27;missing_fact:instructor&#x27;, &#x27;missing_fact:semester&#x27;]
+    -&gt; lesson created: {&quot;lesson_id&quot;: &quot;lesson_001&quot;, &quot;failure_pattern&quot;: &quot;The answer omits the instructor.&quot;, &quot;correction&quot;: &quot;When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.&quot;, &quot;created_at&quot;: &quot;2026-11-09&quot;, &quot;use_count&quot;: 0, &quot;trigger&quot;: &quot;instructor&quot;, &quot;pattern_key&quot;: &quot;missing_fact:instructor&quot;, &quot;status&quot;: &quot;kept&quot;}
+    -&gt; lesson created: {&quot;lesson_id&quot;: &quot;lesson_002&quot;, &quot;failure_pattern&quot;: &quot;The answer omits the semester.&quot;, &quot;correction&quot;: &quot;When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.&quot;, &quot;created_at&quot;: &quot;2026-11-09&quot;, &quot;use_count&quot;: 0, &quot;trigger&quot;: &quot;semester&quot;, &quot;pattern_key&quot;: &quot;missing_fact:semester&quot;, &quot;status&quot;: &quot;kept&quot;}
+
+[2] lessons file now contains:
+[
+  {
+    &quot;lesson_id&quot;: &quot;lesson_001&quot;,
+    &quot;failure_pattern&quot;: &quot;The answer omits the instructor.&quot;,
+    &quot;correction&quot;: &quot;When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.&quot;,
+    &quot;created_at&quot;: &quot;2026-11-09&quot;,
+    &quot;use_count&quot;: 0
+  },
+  {
+    &quot;lesson_id&quot;: &quot;lesson_002&quot;,
+    &quot;failure_pattern&quot;: &quot;The answer omits the semester.&quot;,
+    &quot;correction&quot;: &quot;When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.&quot;,
+    &quot;created_at&quot;: &quot;2026-11-09&quot;,
+    &quot;use_count&quot;: 0
+  }
+]
+
+[3] LATER related question B: Who teaches CS-00185 and in which semester?
+    lessons loaded before answering: [&#x27;lesson_001&#x27;, &#x27;lesson_002&#x27;]
+    answer    : Omar Kim teaches CS-00185 in Summer 2027.
+    evaluation: PASS  (attempts=1)
+
+[4] use_count after reuse: [(&#x27;lesson_001&#x27;, 1), (&#x27;lesson_002&#x27;, 1)]</div>
+  </div>
+</body>
+</html>

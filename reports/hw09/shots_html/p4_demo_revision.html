@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-14/demo_revision.py -- Part 4.1</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-14/demo_revision.py -- Part 4.1 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-14/demo_revision.py
+=== Part 4.1 controlled revision | student Sreeramachandrasai Achutuni ===
+
+QUESTION: Who teaches ENGR-00040 and how many students are enrolled in that section?
+
+--- attempt 1: initial answer (INJECTED incomplete answer)
+  answer     : ENGR-00040 is taught in the Fall semester by one of the faculty members.
+  evaluation : REVISE
+  explanation: The answer is missing or misstates: instructor, enrolled count.
+  feedback   : Revise the answer. The reference dataset says: instructor = &#x27;Omar Patel&#x27;; enrolled count = &#x27;33&#x27;. State each of these explicitly.
+
+--- attempt 2: revised answer (model, using feedback)
+  answer     : ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.
+  evaluation : PASS
+  explanation: Every required fact from the reference dataset appears in the answer.
+
+FINAL RESULT  : PASS
+ATTEMPTS      : 2 (maximum 2)
+FINAL RESPONSE: ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.</div>
+  </div>
+</body>
+</html>

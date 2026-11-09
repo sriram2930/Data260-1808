@@ -1,0 +1,62 @@
+{
+  "first": {
+    "question": "How many seats are available in course CS-00005?",
+    "answer": "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available.",
+    "is_cached": false,
+    "similarity": null,
+    "matched_query": null,
+    "latency_ms": 31427.7,
+    "embed_ms": 25.8,
+    "search_ms": 2.0,
+    "agent_ms": 31387.9,
+    "facts_ms": 10.4,
+    "stale_evicted": null,
+    "data_version": "94e7ebde7185"
+  },
+  "stale_hit": {
+    "question": "What is the number of seats still available for CS-00005?",
+    "answer": "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available.",
+    "is_cached": true,
+    "similarity": 0.9201,
+    "matched_query": "How many seats are available in course CS-00005?",
+    "latency_ms": 57.4,
+    "embed_ms": 55.4,
+    "search_ms": 2.0,
+    "agent_ms": 0.0,
+    "stale_evicted": null
+  },
+  "invalidated": {
+    "question": "What is the number of seats still available for CS-00005?",
+    "answer": "The number of seats still available for CS-00005 is 12.",
+    "is_cached": false,
+    "similarity": null,
+    "matched_query": null,
+    "latency_ms": 19192.2,
+    "embed_ms": 65.2,
+    "search_ms": 2.4,
+    "agent_ms": 19098.7,
+    "facts_ms": 9.3,
+    "stale_evicted": {
+      "cached_query": "How many seats are available in course CS-00005?",
+      "stored_version": "94e7ebde7185",
+      "current_version": "67c93395bcff"
+    },
+    "data_version": "67c93395bcff"
+  },
+  "fresh_hit": {
+    "question": "What is the number of seats still available for CS-00005?",
+    "answer": "The number of seats still available for CS-00005 is 12.",
+    "is_cached": true,
+    "similarity": 1.0,
+    "matched_query": "What is the number of seats still available for CS-00005?",
+    "latency_ms": 100.4,
+    "embed_ms": 80.3,
+    "search_ms": 2.7,
+    "agent_ms": 0.0,
+    "stale_evicted": null
+  },
+  "overhead_ms": {
+    "without": 40.68,
+    "with": 57.52666666666667
+  }
+}

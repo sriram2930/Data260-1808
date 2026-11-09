@@ -1,0 +1,17 @@
+$ docker ps --filter name=s1808 --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"
+NAMES             IMAGE                                STATUS          PORTS
+s1808-redis       redis/redis-stack-server:7.2.0-v10   Up 44 minutes   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+s1808-worker      data260-1808-s1808-worker            Up 44 minutes   
+s1808-kafka       confluentinc/cp-kafka:7.5.0          Up 45 minutes   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0      Up 45 minutes   2181/tcp, 2888/tcp, 3888/tcp
+s1808-mysql       mysql:8                              Up 45 minutes   0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+
+$ docker exec s1808-redis redis-cli GET s1808:views:course:7
+25
+
+$ docker exec s1808-redis redis-cli --scan --pattern "s1808:views:*"
+s1808:views:course:7
+
+$ mysql s1808_rel: SELECT id, course_code, view_count FROM courses WHERE id = 7
+id	course_code	view_count
+7	CS-00005	20

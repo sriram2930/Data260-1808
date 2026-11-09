@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-14/run_variants.py -- Part 4.4 final test</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-14/run_variants.py -- Part 4.4 final test &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-14/run_variants.py
+=== Part 4.4 final test | student Sreeramachandrasai Achutuni ===
+lessons in lessons.json: [&#x27;lesson_001&#x27;] | kept after validation: [&#x27;lesson_001&#x27;]
+
+Baseline               correct=15/20 incorrect= 5 avg_attempts=1.00 avg_latency=3.17s (first-attempt correct 15/20)
+   failed: te09, te10, te12, te13, te14
+Evaluator Repair       correct=16/20 incorrect= 4 avg_attempts=1.25 avg_latency=2.94s (first-attempt correct 15/20)
+   failed: te09, te12, te13, te14
+Lesson Memory          correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.45s (first-attempt correct 15/20)
+   failed: te09, te13
+Validated Improvement  correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.47s (first-attempt correct 15/20)
+   failed: te09, te13
+
+| Variant | Correct | Incorrect | Avg attempts | Avg latency (s) |
+| Baseline | 15 | 5 | 1.0 | 3.17 |
+| Evaluator Repair | 16 | 4 | 1.25 | 2.94 |
+| Lesson Memory | 18 | 2 | 1.25 | 3.45 |
+| Validated Improvement | 18 | 2 | 1.25 | 3.47 |</div>
+  </div>
+</body>
+</html>

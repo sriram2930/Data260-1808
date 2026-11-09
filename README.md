@@ -790,3 +790,26 @@ verify_hw05.py, verify_hw06.py, verify_hw07.py, pyproject.toml,
 reports/hw01/, reports/hw02/, reports/hw03/, reports/hw04/, reports/hw05/,
 reports/hw06/, reports/hw07/                                                      — deliverables per assignment spec
 ```
+
+---
+
+# HW9 — Redis counter, semantic cache, threshold economics, self-improving agents
+
+Folders: `Part-12/` (Redis view counter), `Part-13/` (semantic cache, `cache_cases.yaml`, sweep,
+stale-answer demo), `Part-14/` (Answering + Evaluator agents, datasets, lessons). Report, raw evidence and
+screenshots: `reports/hw09/`. All Redis keys start with `s1808:`.
+
+Infrastructure (in addition to the HW8 stack): Redis Stack for the vector index.
+```
+docker run -d --name s1808-redis -p 6379:6379 redis/redis-stack-server:7.2.0-v10
+docker start s1808-mysql s1808-zookeeper s1808-kafka
+python Part-11/planner.py ; python Part-11/writer.py ; python Part-11/reviewer.py   # three terminals
+cd Part-1 && python migrate_hw09.py && cd ..          # adds courses.view_count
+python Part-13/seed_hw09.py                           # distinct seat counts for a few courses
+python Part-12/counter_demo.py                        # Part 1
+python Part-13/part2_demo.py                          # Part 2 (real Kafka pipeline on misses)
+python Part-13/part3_precompute.py && python Part-13/part3_sweep.py   # Part 3.2-3.4
+python Part-13/part3_stale_demo.py                    # Part 3.5
+python Part-14/run_training.py && python Part-14/run_validation.py && python Part-14/run_variants.py   # Part 4
+python verify_hw09.py                                 # self-check, writes reports/hw09/verification.json
+```

@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-13/part3_sweep.py -- Part 3.2 threshold sweep</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-13/part3_sweep.py -- Part 3.2 threshold sweep &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-13/part3_sweep.py
+threshold | hit rate | false-hit rate | missed-hit rate | mean latency (ms) | total cost
+  0.75    |   70.0%  |     40.0%     |       0.0%      |      8815.1     | $16.060
+  0.80    |   62.5%  |     25.0%     |       0.0%      |     10337.3     | $10.075
+  0.85    |   60.0%  |     25.0%     |       5.0%      |     10824.0     | $10.080
+  0.90    |   57.5%  |     20.0%     |       5.0%      |     11752.8     | $8.085
+  0.95    |   37.5%  |     20.0%     |      45.0%      |     16764.5     | $8.125
+
+Sensitivity of total cost to the false-hit cost (C_MISS fixed at $0.005):
+  C_FALSE=$ 0.10: 0.75=$0.860  0.80=$0.575  0.85=$0.580  0.90=$0.485  0.95=$0.525   -&gt; cheapest: 0.90
+  C_FALSE=$ 2.00: 0.75=$16.060  0.80=$10.075  0.85=$10.080  0.90=$8.085  0.95=$8.125   -&gt; cheapest: 0.90
+  C_FALSE=$20.00: 0.75=$160.060  0.80=$100.075  0.85=$100.080  0.90=$80.085  0.95=$80.125   -&gt; cheapest: 0.90
+
+False hits by threshold (similarity to nearest seed):
+  0.75: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861), C25(0.796), C21(0.795), C24(0.781)
+  0.80: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861)
+  0.85: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861)
+  0.90: C23(0.994), C28(0.983), C29(0.979), C22(0.957)
+  0.95: C23(0.994), C28(0.983), C29(0.979), C22(0.957)</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>docker ps / redis-cli / mysql -- Part 1</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">docker ps / redis-cli / mysql -- Part 1 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ docker ps --filter name=s1808 --format &quot;table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}&quot;
+NAMES             IMAGE                                STATUS          PORTS
+s1808-redis       redis/redis-stack-server:7.2.0-v10   Up 44 minutes   0.0.0.0:6379-&gt;6379/tcp, [::]:6379-&gt;6379/tcp
+s1808-worker      data260-1808-s1808-worker            Up 44 minutes   
+s1808-kafka       confluentinc/cp-kafka:7.5.0          Up 45 minutes   0.0.0.0:9092-&gt;9092/tcp, [::]:9092-&gt;9092/tcp
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0      Up 45 minutes   2181/tcp, 2888/tcp, 3888/tcp
+s1808-mysql       mysql:8                              Up 45 minutes   0.0.0.0:3307-&gt;3306/tcp, [::]:3307-&gt;3306/tcp
+
+$ docker exec s1808-redis redis-cli GET s1808:views:course:7
+25
+
+$ docker exec s1808-redis redis-cli --scan --pattern &quot;s1808:views:*&quot;
+s1808:views:course:7
+
+$ mysql s1808_rel: SELECT id, course_code, view_count FROM courses WHERE id = 7
+id	course_code	view_count
+7	CS-00005	20</div>
+  </div>
+</body>
+</html>

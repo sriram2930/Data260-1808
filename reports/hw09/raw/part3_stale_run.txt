@@ -1,0 +1,26 @@
+=== Part 3.5: stale answers and invalidation | student Sreeramachandrasai Achutuni ===
+
+[1] DB: CS-00005 seats_available = 30   data_version = 94e7ebde7185
+    log: CACHE MISS  best_sim=n/a query='How many seats are available in course CS-00005?' (agent 31388 ms)
+  [1] first ask (miss -> pipeline -> cached with its data_version): is_cached=False sim=None latency=31428 ms
+    answer: "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available."
+
+[2] UPDATE courses SET seats_available = 12 WHERE course_code='CS-00005'
+    DB now says 12   data_version now = 67c93395bcff   (cached entry still stores 94e7ebde7185)
+    log: CACHE HIT   sim=0.920 query='What is the number of seats still available for CS-00005?' matched='How many seats are available in course CS-00005?'
+  [3] paraphrase, NO validation (STALE HIT: cache serves the old answer): is_cached=True sim=0.9201 latency=57 ms
+    answer: "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available."
+
+[4] Invalidation strategy ON: on every hit, re-hash the source rows and compare to the stored data_version
+    log: CACHE STALE  query='What is the number of seats still available for CS-00005?' matched='How many seats are available in course CS-00005?' sim=0.920 stored_ver=94e7ebde7185 current_ver=67c93395bcff -> evicted
+    log: CACHE MISS  best_sim=n/a query='What is the number of seats still available for CS-00005?' (agent 19099 ms)
+  [4] same paraphrase, validation ON (stale detected -> evicted -> pipeline re-run): is_cached=False sim=None latency=19192 ms
+    answer: 'The number of seats still available for CS-00005 is 12.'
+    stale_evicted: {"cached_query": "How many seats are available in course CS-00005?", "stored_version": "94e7ebde7185", "current_version": "67c93395bcff"}
+    log: CACHE HIT   sim=1.000 query='What is the number of seats still available for CS-00005?' matched='What is the number of seats still available for CS-00005?'
+  [5] again (entry rebuilt with the new data_version -> valid fresh hit): is_cached=True sim=1.0 latency=100 ms
+    answer: 'The number of seats still available for CS-00005 is 12.'
+
+[6] validation overhead on a valid hit (15 each): without=40.7 ms  with=57.5 ms
+
+[7] restored CS-00005 seats_available = 30

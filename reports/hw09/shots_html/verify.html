@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python verify_hw09.py</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python verify_hw09.py &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python verify_hw09.py
+PASS p1_key_has_prefix s1808:views:course:4
+PASS p1_counts_1_to_9 
+PASS p1_no_db_write_before_10 
+PASS p1_returns_10_and_syncs 
+PASS p1_no_sync_on_11 
+PASS p2_vector_index_exists s1808:idx:semcache
+PASS p2_first_is_miss 
+PASS p2_duplicate_is_hit_without_agent sim=1.0
+PASS p2_unrelated_is_miss 
+PASS p2_latency_fields_present 
+PASS p3_cases_40_in_4_categories_of_10 {&#x27;exact_duplicate&#x27;: 10, &#x27;paraphrase&#x27;: 10, &#x27;similar_different&#x27;: 10, &#x27;unrelated&#x27;: 10}
+PASS p3_sweep_has_5_thresholds [0.75, 0.8, 0.85, 0.9, 0.95]
+PASS p3_stale_hit_invalidated_to_miss 
+PASS p3_rebuilt_entry_is_valid_hit 
+PASS p3_version_marker_changes_with_data 
+PASS p4_datasets_contain_only_questions 
+PASS p4_no_question_shared_across_splits 
+PASS p4_lessons_have_required_fields 1 lessons
+PASS p4_evaluator_passes_correct 
+PASS p4_evaluator_revises_wrong 
+PASS p4_evaluator_revises_unsupported 
+PASS p4_evaluator_passes_decline 
+PASS p4_stops_after_two_attempts 
+
+23/23 checks passed</div>
+  </div>
+</body>
+</html>

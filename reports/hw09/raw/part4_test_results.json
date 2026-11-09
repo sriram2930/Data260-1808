@@ -1,0 +1,1997 @@
+{
+  "table": [
+    {
+      "variant": "Baseline",
+      "correct": 15,
+      "incorrect": 5,
+      "avg_attempts": 1.0,
+      "avg_latency_s": 3.17,
+      "first_attempt_correct": 15
+    },
+    {
+      "variant": "Evaluator Repair",
+      "correct": 16,
+      "incorrect": 4,
+      "avg_attempts": 1.25,
+      "avg_latency_s": 2.94,
+      "first_attempt_correct": 15
+    },
+    {
+      "variant": "Lesson Memory",
+      "correct": 18,
+      "incorrect": 2,
+      "avg_attempts": 1.25,
+      "avg_latency_s": 3.45,
+      "first_attempt_correct": 15
+    },
+    {
+      "variant": "Validated Improvement",
+      "correct": 18,
+      "incorrect": 2,
+      "avg_attempts": 1.25,
+      "avg_latency_s": 3.47,
+      "first_attempt_correct": 15
+    }
+  ],
+  "detail": {
+    "Baseline": [
+      {
+        "question": "Who teaches DATA-00272 and in which semester?",
+        "final_answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4998.399400152266,
+        "id": "te01"
+      },
+      {
+        "question": "Who is the instructor for ENGR-00327, and how many students are enrolled in that section?",
+        "final_answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3868.3488997630775,
+        "id": "te02"
+      },
+      {
+        "question": "Who teaches BUS-00265, and in which semester is it offered?",
+        "final_answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3595.449599903077,
+        "id": "te03"
+      },
+      {
+        "question": "What is the title of DATA-00015, and which department offers it?",
+        "final_answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3700.152500066906,
+        "id": "te04"
+      },
+      {
+        "question": "What is the title of CS-00025 and which department offers it?",
+        "final_answer": "The title of CS-00025 is \"Advanced Distributed Systems\", and it is offered by the Computer Science department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of CS-00025 is \"Advanced Distributed Systems\", and it is offered by the Computer Science department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3425.0337998382747,
+        "id": "te05"
+      },
+      {
+        "question": "How many seats are available in DATA-00007, and what is its title?",
+        "final_answer": "DATA-00007 has 12 seats available and is titled \"Applied Business Analytics\".",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00007 has 12 seats available and is titled \"Applied Business Analytics\".",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2776.9724000245333,
+        "id": "te06"
+      },
+      {
+        "question": "How many seats are available in CS-00020?",
+        "final_answer": "There are 30 seats available in CS-00020.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There are 30 seats available in CS-00020.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2890.9841999411583,
+        "id": "te07"
+      },
+      {
+        "question": "Where is the Engineering department located, and what is its department code?",
+        "final_answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2562.1866998262703,
+        "id": "te08"
+      },
+      {
+        "question": "What are the building and department code for Data Science & AI?",
+        "final_answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+        "final_result": "REVISE",
+        "attempts": 1,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:building"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2282.3972003534436,
+        "id": "te09"
+      },
+      {
+        "question": "Which has more available seats, CS-00018 or DATA-00006?",
+        "final_answer": "DATA-00006 has more available seats.",
+        "final_result": "REVISE",
+        "attempts": 1,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:seats",
+          "missing_fact:seats"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00006 has more available seats.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: number of seats, number of seats.",
+            "feedback": "Revise the answer. The reference dataset says: number of seats = 'CS-00018 has 8 seats'; number of seats = 'DATA-00006 has 25 seats'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:seats",
+              "missing_fact:seats"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2895.762200001627,
+        "id": "te10"
+      },
+      {
+        "question": "How many students are enrolled in the Fall 2026 section of BUS-00065, and who teaches it?",
+        "final_answer": "There are 35 students enrolled in the Fall 2026 section of BUS-00065, taught by instructor Omar Lopez.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There are 35 students enrolled in the Fall 2026 section of BUS-00065, taught by instructor Omar Lopez.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3886.9817997328937,
+        "id": "te11"
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "final_answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+        "final_result": "REVISE",
+        "attempts": 1,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1144.269899930805,
+        "id": "te12"
+      },
+      {
+        "question": "How does a blockchain reach consensus?",
+        "final_answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to validate transactions and add new blocks to the chain.",
+        "final_result": "REVISE",
+        "attempts": 1,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to validate transactions and add new blocks to the chain.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2806.6620999015868,
+        "id": "te13"
+      },
+      {
+        "question": "Explain how photosynthesis works.",
+        "final_answer": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy stored in glucose.",
+        "final_result": "REVISE",
+        "attempts": 1,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy stored in glucose.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1638.9011000283062,
+        "id": "te14"
+      },
+      {
+        "question": "How many seats are available in course DATA-09999?",
+        "final_answer": "There is no course with the code DATA-09999 in the catalogue, so there are no seats available for that course.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There is no course with the code DATA-09999 in the catalogue, so there are no seats available for that course.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2734.851600136608,
+        "id": "te15"
+      },
+      {
+        "question": "Who teaches BUS-07777 in Spring 2027?",
+        "final_answer": "There is no course with BUS-07777 as a code in the catalogue, so it is impossible to determine who teaches it in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There is no course with BUS-07777 as a code in the catalogue, so it is impossible to determine who teaches it in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4112.874899990857,
+        "id": "te16"
+      },
+      {
+        "question": "What is the title and seat count of DATA-00028?",
+        "final_answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3626.56780006364,
+        "id": "te17"
+      },
+      {
+        "question": "Who teaches CS-00121 and how many students are enrolled?",
+        "final_answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3567.0941998250782,
+        "id": "te18"
+      },
+      {
+        "question": "Which department offers DATA-00241, and what is its title?",
+        "final_answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 5044.952900148928,
+        "id": "te19"
+      },
+      {
+        "question": "Where is the Computer Science department located?",
+        "final_answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1932.7072999440134,
+        "id": "te20"
+      }
+    ],
+    "Evaluator Repair": [
+      {
+        "question": "Who teaches DATA-00272 and in which semester?",
+        "final_answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3423.7069999799132,
+        "id": "te01"
+      },
+      {
+        "question": "Who is the instructor for ENGR-00327, and how many students are enrolled in that section?",
+        "final_answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1917.0268001034856,
+        "id": "te02"
+      },
+      {
+        "question": "Who teaches BUS-00265, and in which semester is it offered?",
+        "final_answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1584.1826000250876,
+        "id": "te03"
+      },
+      {
+        "question": "What is the title of DATA-00015, and which department offers it?",
+        "final_answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2604.471799917519,
+        "id": "te04"
+      },
+      {
+        "question": "What is the title of CS-00025 and which department offers it?",
+        "final_answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2506.5791998058558,
+        "id": "te05"
+      },
+      {
+        "question": "How many seats are available in DATA-00007, and what is its title?",
+        "final_answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2389.2672997899354,
+        "id": "te06"
+      },
+      {
+        "question": "How many seats are available in CS-00020?",
+        "final_answer": "There are 30 seats available in CS-00020.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There are 30 seats available in CS-00020.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1800.6107001565397,
+        "id": "te07"
+      },
+      {
+        "question": "Where is the Engineering department located, and what is its department code?",
+        "final_answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2526.6388999298215,
+        "id": "te08"
+      },
+      {
+        "question": "What are the building and department code for Data Science & AI?",
+        "final_answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:building"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3282.7500998973846,
+        "id": "te09"
+      },
+      {
+        "question": "Which has more available seats, CS-00018 or DATA-00006?",
+        "final_answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:seats",
+          "missing_fact:seats"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00006 has more available seats.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: number of seats, number of seats.",
+            "feedback": "Revise the answer. The reference dataset says: number of seats = 'CS-00018 has 8 seats'; number of seats = 'DATA-00006 has 25 seats'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:seats",
+              "missing_fact:seats"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4196.877700276673,
+        "id": "te10"
+      },
+      {
+        "question": "How many students are enrolled in the Fall 2026 section of BUS-00065, and who teaches it?",
+        "final_answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2527.162399608642,
+        "id": "te11"
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "final_answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3750.8070999756455,
+        "id": "te12"
+      },
+      {
+        "question": "How does a blockchain reach consensus?",
+        "final_answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 7337.880599778146,
+        "id": "te13"
+      },
+      {
+        "question": "Explain how photosynthesis works.",
+        "final_answer": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy stored in glucose.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy stored in glucose.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "Photosynthesis is the process by which plants convert light energy from the sun into chemical energy stored in glucose.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4505.997600033879,
+        "id": "te14"
+      },
+      {
+        "question": "How many seats are available in course DATA-09999?",
+        "final_answer": "There is no course with the code DATA-09999 in the catalogue, so there are no seats available for that course.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There is no course with the code DATA-09999 in the catalogue, so there are no seats available for that course.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2075.8225000463426,
+        "id": "te15"
+      },
+      {
+        "question": "Who teaches BUS-07777 in Spring 2027?",
+        "final_answer": "There is no course with BUS-07777 as a code in the catalogue, so it is impossible to determine who teaches it in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There is no course with BUS-07777 as a code in the catalogue, so it is impossible to determine who teaches it in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2538.0068998783827,
+        "id": "te16"
+      },
+      {
+        "question": "What is the title and seat count of DATA-00028?",
+        "final_answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2186.402800027281,
+        "id": "te17"
+      },
+      {
+        "question": "Who teaches CS-00121 and how many students are enrolled?",
+        "final_answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1702.9006001539528,
+        "id": "te18"
+      },
+      {
+        "question": "Which department offers DATA-00241, and what is its title?",
+        "final_answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3774.639899842441,
+        "id": "te19"
+      },
+      {
+        "question": "Where is the Computer Science department located?",
+        "final_answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2218.7238996848464,
+        "id": "te20"
+      }
+    ],
+    "Lesson Memory": [
+      {
+        "question": "Who teaches DATA-00272 and in which semester?",
+        "final_answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3226.081300061196,
+        "id": "te01"
+      },
+      {
+        "question": "Who is the instructor for ENGR-00327, and how many students are enrolled in that section?",
+        "final_answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1769.4485001266003,
+        "id": "te02"
+      },
+      {
+        "question": "Who teaches BUS-00265, and in which semester is it offered?",
+        "final_answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1735.6283999979496,
+        "id": "te03"
+      },
+      {
+        "question": "What is the title of DATA-00015, and which department offers it?",
+        "final_answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1940.531300380826,
+        "id": "te04"
+      },
+      {
+        "question": "What is the title of CS-00025 and which department offers it?",
+        "final_answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1611.2453998066485,
+        "id": "te05"
+      },
+      {
+        "question": "How many seats are available in DATA-00007, and what is its title?",
+        "final_answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2468.805099837482,
+        "id": "te06"
+      },
+      {
+        "question": "How many seats are available in CS-00020?",
+        "final_answer": "There are 30 seats available in CS-00020.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There are 30 seats available in CS-00020.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2190.044099930674,
+        "id": "te07"
+      },
+      {
+        "question": "Where is the Engineering department located, and what is its department code?",
+        "final_answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3507.893499918282,
+        "id": "te08"
+      },
+      {
+        "question": "What are the building and department code for Data Science & AI?",
+        "final_answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:building"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4287.21689991653,
+        "id": "te09"
+      },
+      {
+        "question": "Which has more available seats, CS-00018 or DATA-00006?",
+        "final_answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:seats",
+          "missing_fact:seats"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00006 has more available seats.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: number of seats, number of seats.",
+            "feedback": "Revise the answer. The reference dataset says: number of seats = 'CS-00018 has 8 seats'; number of seats = 'DATA-00006 has 25 seats'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:seats",
+              "missing_fact:seats"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4173.3571998775005,
+        "id": "te10"
+      },
+      {
+        "question": "How many students are enrolled in the Fall 2026 section of BUS-00065, and who teaches it?",
+        "final_answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2538.4586001746356,
+        "id": "te11"
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "final_answer": "I apologize, but I do not have the information to answer this question.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "I apologize, but I do not have the information to answer this question.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 3614.9069997482,
+        "id": "te12"
+      },
+      {
+        "question": "How does a blockchain reach consensus?",
+        "final_answer": "Blockchain consensus is reached through proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "Blockchain consensus is reached through proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 8622.210800182074,
+        "id": "te13"
+      },
+      {
+        "question": "Explain how photosynthesis works.",
+        "final_answer": "I apologize, but I do not have the ability to answer questions about courses or departments that do not exist in the reference dataset. My knowledge is limited to the information provided in the catalogue facts, and I cannot answer from general knowledge.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Photosynthesis is the process by which plants convert light energy into chemical energy, using water and carbon dioxide to produce glucose and oxygen. The process occurs in the chloroplasts of plant cells and involves the absorption of light by chlorophyll, the conversion of light energy into chemical energy, and the production of glucose and oxygen as byproducts.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "I apologize, but I do not have the ability to answer questions about courses or departments that do not exist in the reference dataset. My knowledge is limited to the information provided in the catalogue facts, and I cannot answer from general knowledge.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 10457.90409995243,
+        "id": "te14"
+      },
+      {
+        "question": "How many seats are available in course DATA-09999?",
+        "final_answer": "I can only answer course catalogue questions. There is no course with the code DATA-09999 in the catalogue.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer course catalogue questions. There is no course with the code DATA-09999 in the catalogue.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 2931.0033000074327,
+        "id": "te15"
+      },
+      {
+        "question": "Who teaches BUS-07777 in Spring 2027?",
+        "final_answer": "I can only answer course catalogue questions. There is no course BUS-07777 in the catalogue, so I cannot provide information about who teaches it in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer course catalogue questions. There is no course BUS-07777 in the catalogue, so I cannot provide information about who teaches it in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 5175.224599894136,
+        "id": "te16"
+      },
+      {
+        "question": "What is the title and seat count of DATA-00028?",
+        "final_answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2664.922600146383,
+        "id": "te17"
+      },
+      {
+        "question": "Who teaches CS-00121 and how many students are enrolled?",
+        "final_answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1682.7373998239636,
+        "id": "te18"
+      },
+      {
+        "question": "Which department offers DATA-00241, and what is its title?",
+        "final_answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2666.4589000865817,
+        "id": "te19"
+      },
+      {
+        "question": "Where is the Computer Science department located?",
+        "final_answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1762.0764002203941,
+        "id": "te20"
+      }
+    ],
+    "Validated Improvement": [
+      {
+        "question": "Who teaches DATA-00272 and in which semester?",
+        "final_answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Sam Rossi teaches DATA-00272 in the Fall 2026 semester.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3476.7379998229444,
+        "id": "te01"
+      },
+      {
+        "question": "Who is the instructor for ENGR-00327, and how many students are enrolled in that section?",
+        "final_answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The instructor for ENGR-00327 is Sam Khan, and there are 35 students enrolled in that section.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1873.5213000327349,
+        "id": "te02"
+      },
+      {
+        "question": "Who teaches BUS-00265, and in which semester is it offered?",
+        "final_answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Wei Garcia teaches BUS-00265 Principles of Software Engineering in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1823.485399596393,
+        "id": "te03"
+      },
+      {
+        "question": "What is the title of DATA-00015, and which department offers it?",
+        "final_answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00015 is \"Computational Database Systems\", and it is offered by the Data Science & AI department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2731.1180997639894,
+        "id": "te04"
+      },
+      {
+        "question": "What is the title of CS-00025 and which department offers it?",
+        "final_answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of CS-00025 is \"Advanced Distributed Systems\" and it is offered by the Computer Science department.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2600.276699755341,
+        "id": "te05"
+      },
+      {
+        "question": "How many seats are available in DATA-00007, and what is its title?",
+        "final_answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00007 has 12 seats available and its title is \"Applied Business Analytics\".",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1911.6389001719654,
+        "id": "te06"
+      },
+      {
+        "question": "How many seats are available in CS-00020?",
+        "final_answer": "There are 30 seats available in CS-00020.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "There are 30 seats available in CS-00020.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1288.213400170207,
+        "id": "te07"
+      },
+      {
+        "question": "Where is the Engineering department located, and what is its department code?",
+        "final_answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Engineering department is located in the Engineering Building, Room 100, and its department code is ENGR.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2458.733799867332,
+        "id": "te08"
+      },
+      {
+        "question": "What are the building and department code for Data Science & AI?",
+        "final_answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:building"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "The building code is MacQuarrie Hall and the department code is DATA.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: building.",
+            "feedback": "Revise the answer. The reference dataset says: building = 'MacQuarrie Hall, Room 420'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:building"
+            ],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3303.1718996353447,
+        "id": "te09"
+      },
+      {
+        "question": "Which has more available seats, CS-00018 or DATA-00006?",
+        "final_answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "missing_fact:seats",
+          "missing_fact:seats"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "DATA-00006 has more available seats.",
+            "result": "REVISE",
+            "explanation": "The answer is missing or misstates: number of seats, number of seats.",
+            "feedback": "Revise the answer. The reference dataset says: number of seats = 'CS-00018 has 8 seats'; number of seats = 'DATA-00006 has 25 seats'. State each of these explicitly.",
+            "patterns": [
+              "missing_fact:seats",
+              "missing_fact:seats"
+            ],
+            "lessons_used": []
+          },
+          {
+            "attempt": 2,
+            "answer": "CS-00018 has 8 seats, while DATA-00006 has 25 seats.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 5219.742899760604,
+        "id": "te10"
+      },
+      {
+        "question": "How many students are enrolled in the Fall 2026 section of BUS-00065, and who teaches it?",
+        "final_answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Fall 2026 section of BUS-00065, titled 'Applied Enrollment Systems', is taught by instructor Omar Lopez and has 35 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 4216.440999880433,
+        "id": "te11"
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "final_answer": "I apologize, but I do not have the information to answer this question.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Mona Lisa is a painting by Leonardo da Vinci.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "I apologize, but I do not have the information to answer this question.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 3855.9785997495055,
+        "id": "te12"
+      },
+      {
+        "question": "How does a blockchain reach consensus?",
+        "final_answer": "Blockchain consensus is reached through proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+        "final_result": "REVISE",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "A blockchain reaches consensus through a process called proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "Blockchain consensus is reached through proof of work, where miners compete to solve complex mathematical problems to add new blocks to the chain. This ensures the integrity and security of the transactions.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 7316.459800116718,
+        "id": "te13"
+      },
+      {
+        "question": "Explain how photosynthesis works.",
+        "final_answer": "I apologize, but I do not have the ability to answer questions about courses or departments that do not exist in the reference dataset. My knowledge is limited to the information provided in the catalogue facts, and I cannot answer from general knowledge.",
+        "final_result": "PASS",
+        "attempts": 2,
+        "first_attempt_result": "REVISE",
+        "first_attempt_patterns": [
+          "unsupported_answer"
+        ],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Photosynthesis is the process by which plants convert light energy into chemical energy, using water and carbon dioxide to produce glucose and oxygen. The process occurs in the chloroplasts of plant cells and involves the absorption of light by chlorophyll, the conversion of light energy into chemical energy, and the production of glucose and oxygen as byproducts.",
+            "result": "REVISE",
+            "explanation": "The answer gives unsupported content for a question the reference dataset cannot answer.",
+            "feedback": "This question is not about a course or department in the reference dataset (or names a course that does not exist). Do not answer from general knowledge; say you can only answer course catalogue questions and do not have that information.",
+            "patterns": [
+              "unsupported_answer"
+            ],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          },
+          {
+            "attempt": 2,
+            "answer": "I apologize, but I do not have the ability to answer questions about courses or departments that do not exist in the reference dataset. My knowledge is limited to the information provided in the catalogue facts, and I cannot answer from general knowledge.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 11423.254299908876,
+        "id": "te14"
+      },
+      {
+        "question": "How many seats are available in course DATA-09999?",
+        "final_answer": "I can only answer course catalogue questions. There is no course with the code DATA-09999 in the catalogue.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer course catalogue questions. There is no course with the code DATA-09999 in the catalogue.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 3281.9472001865506,
+        "id": "te15"
+      },
+      {
+        "question": "Who teaches BUS-07777 in Spring 2027?",
+        "final_answer": "I can only answer course catalogue questions. There is no course BUS-07777 in the catalogue, so I cannot provide information about who teaches it in Spring 2027.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "I can only answer course catalogue questions. There is no course BUS-07777 in the catalogue, so I cannot provide information about who teaches it in Spring 2027.",
+            "result": "PASS",
+            "explanation": "Correctly declined: the question is outside the catalogue or names a record that does not exist.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": [
+              "lesson_001"
+            ]
+          }
+        ],
+        "latency_ms": 3473.5798998735845,
+        "id": "te16"
+      },
+      {
+        "question": "What is the title and seat count of DATA-00028?",
+        "final_answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The title of DATA-00028 is \"Advanced Database Systems\" and it has a seat count of 30.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 2132.660500239581,
+        "id": "te17"
+      },
+      {
+        "question": "Who teaches CS-00121 and how many students are enrolled?",
+        "final_answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "Omar Khan teaches CS-00121, which has 45 students enrolled.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1746.088100131601,
+        "id": "te18"
+      },
+      {
+        "question": "Which department offers DATA-00241, and what is its title?",
+        "final_answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Data Science & AI department offers DATA-00241, titled 'Foundations of Linear Algebra', in Spring 2027 with 22 enrolled students.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 3334.8146001808345,
+        "id": "te19"
+      },
+      {
+        "question": "Where is the Computer Science department located?",
+        "final_answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+        "final_result": "PASS",
+        "attempts": 1,
+        "first_attempt_result": "PASS",
+        "first_attempt_patterns": [],
+        "trace": [
+          {
+            "attempt": 1,
+            "answer": "The Computer Science department is located in the Engineering Building, Room 310.",
+            "result": "PASS",
+            "explanation": "Every required fact from the reference dataset appears in the answer.",
+            "feedback": "",
+            "patterns": [],
+            "lessons_used": []
+          }
+        ],
+        "latency_ms": 1996.1334001272917,
+        "id": "te20"
+      }
+    ]
+  }
+}

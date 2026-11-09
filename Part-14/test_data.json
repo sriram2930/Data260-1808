@@ -1,0 +1,82 @@
+[
+  {
+    "id": "te01",
+    "question": "Who teaches DATA-00272 and in which semester?"
+  },
+  {
+    "id": "te02",
+    "question": "Who is the instructor for ENGR-00327, and how many students are enrolled in that section?"
+  },
+  {
+    "id": "te03",
+    "question": "Who teaches BUS-00265, and in which semester is it offered?"
+  },
+  {
+    "id": "te04",
+    "question": "What is the title of DATA-00015, and which department offers it?"
+  },
+  {
+    "id": "te05",
+    "question": "What is the title of CS-00025 and which department offers it?"
+  },
+  {
+    "id": "te06",
+    "question": "How many seats are available in DATA-00007, and what is its title?"
+  },
+  {
+    "id": "te07",
+    "question": "How many seats are available in CS-00020?"
+  },
+  {
+    "id": "te08",
+    "question": "Where is the Engineering department located, and what is its department code?"
+  },
+  {
+    "id": "te09",
+    "question": "What are the building and department code for Data Science & AI?"
+  },
+  {
+    "id": "te10",
+    "question": "Which has more available seats, CS-00018 or DATA-00006?"
+  },
+  {
+    "id": "te11",
+    "question": "How many students are enrolled in the Fall 2026 section of BUS-00065, and who teaches it?"
+  },
+  {
+    "id": "te12",
+    "question": "Who painted the Mona Lisa?"
+  },
+  {
+    "id": "te13",
+    "question": "How does a blockchain reach consensus?"
+  },
+  {
+    "id": "te14",
+    "question": "Explain how photosynthesis works."
+  },
+  {
+    "id": "te15",
+    "question": "How many seats are available in course DATA-09999?"
+  },
+  {
+    "id": "te16",
+    "question": "Who teaches BUS-07777 in Spring 2027?"
+  },
+  {
+    "id": "te17",
+    "question": "What is the title and seat count of DATA-00028?"
+  },
+  {
+    "id": "te18",
+    "question": "Who teaches CS-00121 and how many students are enrolled?"
+  },
+  {
+    "id": "te19",
+    "question": "Which department offers DATA-00241, and what is its title?"
+  },
+  {
+    "id": "te20",
+    "question": "Where is the Computer Science department located?"
+  }
+]

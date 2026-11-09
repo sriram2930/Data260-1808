@@ -1,0 +1,12 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The answer gives general-knowledge or unsupported content for a question the catalogue cannot answer.",
+    "correction": "If no catalogue facts are provided, or the facts say a course does not exist, reply that you can only answer course catalogue questions and do not have that information. Never answer from general knowledge.",
+    "created_at": "2026-11-09",
+    "use_count": 0,
+    "trigger": "no_facts",
+    "pattern_key": "unsupported_answer",
+    "status": "kept"
+  }
+]

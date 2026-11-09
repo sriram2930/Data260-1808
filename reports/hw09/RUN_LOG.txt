@@ -1,0 +1,464 @@
+======================================================================
+Part 1: view counter (Part-12/counter_demo.py)
+======================================================================
+=== Testing Counter ===
+(student: Sreeramachandrasai Achutuni | key s1808:views:course:7 | course CS-00005)
+
+Access #1: Total = 1   [redis=1 db=0]
+Access #2: Total = 2   [redis=2 db=0]
+Access #3: Total = 3   [redis=3 db=0]
+Access #4: Total = 4   [redis=4 db=0]
+Access #5: Total = 5   [redis=5 db=0]
+Access #6: Total = 6   [redis=6 db=0]
+Access #7: Total = 7   [redis=7 db=0]
+Access #8: Total = 8   [redis=8 db=0]
+Access #9: Total = 9   [redis=9 db=0]
+✓ Synced views to database
+Access #10: Total = 10   [redis=10 db=10]
+Access #11: Total = 11   [redis=11 db=10]
+Access #12: Total = 12   [redis=12 db=10]
+Access #13: Total = 13   [redis=13 db=10]
+Access #14: Total = 14   [redis=14 db=10]
+Access #15: Total = 15   [redis=15 db=10]
+Access #16: Total = 16   [redis=16 db=10]
+Access #17: Total = 17   [redis=17 db=10]
+Access #18: Total = 18   [redis=18 db=10]
+Access #19: Total = 19   [redis=19 db=10]
+✓ Synced views to database
+Access #20: Total = 20   [redis=20 db=20]
+Access #21: Total = 21   [redis=21 db=20]
+Access #22: Total = 22   [redis=22 db=20]
+Access #23: Total = 23   [redis=23 db=20]
+Access #24: Total = 24   [redis=24 db=20]
+Access #25: Total = 25   [redis=25 db=20]
+
+Final: redis=25  db.view_count=20 (last sync at 20; 21-25 live only in Redis)
+
+======================================================================
+Part 1: infrastructure evidence
+======================================================================
+$ docker ps --filter name=s1808 --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"
+NAMES             IMAGE                                STATUS          PORTS
+s1808-redis       redis/redis-stack-server:7.2.0-v10   Up 44 minutes   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+s1808-worker      data260-1808-s1808-worker            Up 44 minutes   
+s1808-kafka       confluentinc/cp-kafka:7.5.0          Up 45 minutes   0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0      Up 45 minutes   2181/tcp, 2888/tcp, 3888/tcp
+s1808-mysql       mysql:8                              Up 45 minutes   0.0.0.0:3307->3306/tcp, [::]:3307->3306/tcp
+
+$ docker exec s1808-redis redis-cli GET s1808:views:course:7
+25
+
+$ docker exec s1808-redis redis-cli --scan --pattern "s1808:views:*"
+s1808:views:course:7
+
+$ mysql s1808_rel: SELECT id, course_code, view_count FROM courses WHERE id = 7
+id	course_code	view_count
+7	CS-00005	20
+
+======================================================================
+Part 2: vector index
+======================================================================
+$ redis-cli FT.INFO s1808:idx:semcache   (index definition, first lines)
+index_name
+s1808:idx:semcache
+index_options
+
+index_definition
+key_type
+HASH
+prefixes
+s1808:semcache:
+default_score
+1
+attributes
+identifier
+query
+attribute
+query
+type
+TEXT
+WEIGHT
+1
+identifier
+embedding
+attribute
+embedding
+type
+VECTOR
+algorithm
+FLAT
+data_type
+FLOAT32
+dim
+384
+distance_metric
+COSINE
+num_docs
+0
+max_doc_id
+66
+num_terms
+61
+num_records
+629
+inverted_sz_mb
+0.0032215118408203125
+
+======================================================================
+Part 2: 14-query semantic cache run
+======================================================================
+=== Part 2: semantic cache | student Sreeramachandrasai Achutuni | threshold=0.85 ===
+flushed 0 old cache entries
+
+23:47:01 CACHE MISS  best_sim=n/a query='Where is the Computer Science department located?' (agent 30033 ms)
+#1  [new       ] is_cached=False sim=None latency=30144 ms
+     Q: Where is the Computer Science department located?
+     A: 'The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.'
+
+23:47:01 CACHE HIT   sim=1.000 query='Where is the Computer Science department located?' matched='Where is the Computer Science department located?'
+#2  [duplicate ] is_cached=True  sim=1.0 latency=49 ms
+     Q: Where is the Computer Science department located?
+     A: 'The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.'
+
+23:47:01 CACHE HIT   sim=0.902 query='In which building can I find the Computer Science department?' matched='Where is the Computer Science department located?'
+#3  [paraphrase] is_cached=True  sim=0.9023 latency=52 ms
+     Q: In which building can I find the Computer Science department?
+     A: 'The Computer Science department is located in the Engineering Building, Room 310. The department code for Computer Science is CS.'
+
+23:47:23 CACHE MISS  best_sim=0.394 query='What is the title of course CS-00005?' (agent 21786 ms)
+#4  [new       ] is_cached=False sim=0.3941 latency=21835 ms
+     Q: What is the title of course CS-00005?
+     A: 'The title of course CS-00005 is "Statistical Operating Systems," and it is offered by the Computer Science department. As of the available facts, there are 30 s'
+
+23:47:23 CACHE HIT   sim=0.938 query='What is the name of course CS-00005?' matched='What is the title of course CS-00005?'
+#5  [paraphrase] is_cached=True  sim=0.9377 latency=69 ms
+     Q: What is the name of course CS-00005?
+     A: 'The title of course CS-00005 is "Statistical Operating Systems," and it is offered by the Computer Science department. As of the available facts, there are 30 s'
+
+23:47:50 CACHE MISS  best_sim=0.388 query='How many seats are available in course DATA-00006?' (agent 27102 ms)
+#6  [new       ] is_cached=False sim=0.3879 latency=27181 ms
+     Q: How many seats are available in course DATA-00006?
+     A: 'There are 25 seats available in course DATA-00006.'
+
+23:47:50 CACHE HIT   sim=1.000 query='How many seats are available in course DATA-00006?' matched='How many seats are available in course DATA-00006?'
+#7  [duplicate ] is_cached=True  sim=1.0 latency=75 ms
+     Q: How many seats are available in course DATA-00006?
+     A: 'There are 25 seats available in course DATA-00006.'
+
+23:48:09 CACHE MISS  best_sim=0.191 query='What is the capital of France?' (agent 18888 ms)
+#8  [new       ] is_cached=False sim=0.191 latency=18956 ms
+     Q: What is the capital of France?
+     A: 'The capital of France is Paris. Paris is the largest city in France and its cultural, economic, and political center.'
+
+23:48:37 CACHE MISS  best_sim=0.703 query='Who teaches CS-00020 in Fall 2026?' (agent 28013 ms)
+#9  [new       ] is_cached=False sim=0.7033 latency=28086 ms
+     Q: Who teaches CS-00020 in Fall 2026?
+     A: 'The instructor of CS-00020 in Fall 2026 is Chen Kim.'
+
+23:48:37 CACHE HIT   sim=0.903 query='Who is the instructor for CS-00020 during Fall 2026?' matched='Who teaches CS-00020 in Fall 2026?'
+#10 [paraphrase] is_cached=True  sim=0.9031 latency=90 ms
+     Q: Who is the instructor for CS-00020 during Fall 2026?
+     A: 'The instructor of CS-00020 in Fall 2026 is Chen Kim.'
+
+23:48:59 CACHE MISS  best_sim=0.650 query='What is the title of course DATA-00016?' (agent 21656 ms)
+#11 [new       ] is_cached=False sim=0.6498 latency=21747 ms
+     Q: What is the title of course DATA-00016?
+     A: 'The title of course DATA-00016 is "Principles of Data Structures".'
+
+23:48:59 CACHE HIT   sim=1.000 query='What is the title of course DATA-00016?' matched='What is the title of course DATA-00016?'
+#12 [duplicate ] is_cached=True  sim=1.0 latency=28 ms
+     Q: What is the title of course DATA-00016?
+     A: 'The title of course DATA-00016 is "Principles of Data Structures".'
+
+23:49:20 CACHE MISS  best_sim=0.411 query='Which department offers ENGR-00003?' (agent 20446 ms)
+#13 [new       ] is_cached=False sim=0.4109 latency=20487 ms
+     Q: Which department offers ENGR-00003?
+     A: 'The department offering ENGR-00003 is the Engineering department.'
+
+23:49:37 CACHE MISS  best_sim=0.549 query='What building is the Engineering department in?' (agent 17480 ms)
+#14 [new       ] is_cached=False sim=0.549 latency=17530 ms
+     Q: What building is the Engineering department in?
+     A: 'The Engineering department is located in the Engineering Building, Room 100.'
+
+=== Summary ===
+queries: 14 | hits: 6 | misses: 8 | hit rate: 42.9%
+avg latency cached     : 60.4 ms  (n=6)
+avg latency not cached : 23245.7 ms  (n=8)
+
+======================================================================
+Part 3.2: threshold sweep
+======================================================================
+threshold | hit rate | false-hit rate | missed-hit rate | mean latency (ms) | total cost
+  0.75    |   70.0%  |     40.0%     |       0.0%      |      8815.1     | $16.060
+  0.80    |   62.5%  |     25.0%     |       0.0%      |     10337.3     | $10.075
+  0.85    |   60.0%  |     25.0%     |       5.0%      |     10824.0     | $10.080
+  0.90    |   57.5%  |     20.0%     |       5.0%      |     11752.8     | $8.085
+  0.95    |   37.5%  |     20.0%     |      45.0%      |     16764.5     | $8.125
+
+Sensitivity of total cost to the false-hit cost (C_MISS fixed at $0.005):
+  C_FALSE=$ 0.10: 0.75=$0.860  0.80=$0.575  0.85=$0.580  0.90=$0.485  0.95=$0.525   -> cheapest: 0.90
+  C_FALSE=$ 2.00: 0.75=$16.060  0.80=$10.075  0.85=$10.080  0.90=$8.085  0.95=$8.125   -> cheapest: 0.90
+  C_FALSE=$20.00: 0.75=$160.060  0.80=$100.075  0.85=$100.080  0.90=$80.085  0.95=$80.125   -> cheapest: 0.90
+
+False hits by threshold (similarity to nearest seed):
+  0.75: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861), C25(0.796), C21(0.795), C24(0.781)
+  0.80: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861)
+  0.85: C23(0.994), C28(0.983), C29(0.979), C22(0.957), C30(0.861)
+  0.90: C23(0.994), C28(0.983), C29(0.979), C22(0.957)
+  0.95: C23(0.994), C28(0.983), C29(0.979), C22(0.957)
+
+======================================================================
+Part 3.5: stale answer + invalidation
+======================================================================
+=== Part 3.5: stale answers and invalidation | student Sreeramachandrasai Achutuni ===
+
+[1] DB: CS-00005 seats_available = 30   data_version = 94e7ebde7185
+    log: CACHE MISS  best_sim=n/a query='How many seats are available in course CS-00005?' (agent 31388 ms)
+  [1] first ask (miss -> pipeline -> cached with its data_version): is_cached=False sim=None latency=31428 ms
+    answer: "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available."
+
+[2] UPDATE courses SET seats_available = 12 WHERE course_code='CS-00005'
+    DB now says 12   data_version now = 67c93395bcff   (cached entry still stores 94e7ebde7185)
+    log: CACHE HIT   sim=0.920 query='What is the number of seats still available for CS-00005?' matched='How many seats are available in course CS-00005?'
+  [3] paraphrase, NO validation (STALE HIT: cache serves the old answer): is_cached=True sim=0.9201 latency=57 ms
+    answer: "The course CS-00005 titled 'Statistical Operating Systems' offered by the Computer Science department has 30 seats available."
+
+[4] Invalidation strategy ON: on every hit, re-hash the source rows and compare to the stored data_version
+    log: CACHE STALE  query='What is the number of seats still available for CS-00005?' matched='How many seats are available in course CS-00005?' sim=0.920 stored_ver=94e7ebde7185 current_ver=67c93395bcff -> evicted
+    log: CACHE MISS  best_sim=n/a query='What is the number of seats still available for CS-00005?' (agent 19099 ms)
+  [4] same paraphrase, validation ON (stale detected -> evicted -> pipeline re-run): is_cached=False sim=None latency=19192 ms
+    answer: 'The number of seats still available for CS-00005 is 12.'
+    stale_evicted: {"cached_query": "How many seats are available in course CS-00005?", "stored_version": "94e7ebde7185", "current_version": "67c93395bcff"}
+    log: CACHE HIT   sim=1.000 query='What is the number of seats still available for CS-00005?' matched='What is the number of seats still available for CS-00005?'
+  [5] again (entry rebuilt with the new data_version -> valid fresh hit): is_cached=True sim=1.0 latency=100 ms
+    answer: 'The number of seats still available for CS-00005 is 12.'
+
+[6] validation overhead on a valid hit (15 each): without=40.7 ms  with=57.5 ms
+
+[7] restored CS-00005 seats_available = 30
+
+======================================================================
+Part 4: training run (final prompt format)
+======================================================================
+=== Part 4 training run | student Sreeramachandrasai Achutuni | evaluator-repair, no lessons ===
+tr01 first=PASS   final=PASS   attempts=1 []  | Who teaches CS-00020 and in which semester?
+tr02 first=PASS   final=PASS   attempts=1 []  | Who is the instructor for ENGR-00040, and how many students are enrolled in that section?
+tr03 first=PASS   final=PASS   attempts=1 []  | Which semester is BUS-00065 offered, and who teaches it?
+tr04 first=PASS   final=PASS   attempts=1 []  | What is the title of CS-00121 and which department offers it?
+tr05 first=PASS   final=PASS   attempts=1 []  | What is the title of ENGR-00003, and which department offers it?
+tr06 first=PASS   final=PASS   attempts=1 []  | How many seats are available in CS-00005?
+tr07 first=PASS   final=PASS   attempts=1 []  | How many seats are available in DATA-00006, and what is its title?
+tr08 first=PASS   final=PASS   attempts=1 []  | Where is the Computer Science department located, and what is its department code?
+tr09 first=PASS   final=PASS   attempts=1 []  | What is the department code and building for Business Analytics?
+tr10 first=REVISE final=PASS   attempts=2 ['missing_fact:seats', 'missing_fact:seats']  | Which has more available seats, DATA-00006 or DATA-00007?
+tr11 first=PASS   final=PASS   attempts=1 []  | How many students are enrolled in the Fall 2026 section of CS-00020, and who teaches it?
+tr12 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | What is the capital of France?
+tr13 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | Who won the 2018 FIFA World Cup?
+tr14 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | How do I bake sourdough bread?
+tr15 first=PASS   final=PASS   attempts=1 []  | How many seats are available in course CS-09999?
+tr16 first=PASS   final=PASS   attempts=1 []  | Who teaches DATA-09001 in Fall 2026?
+tr17 first=PASS   final=PASS   attempts=1 []  | What is the title and seat count of CS-00018?
+tr18 first=PASS   final=PASS   attempts=1 []  | Who teaches BUS-00134, and what is the term?
+tr19 first=PASS   final=PASS   attempts=1 []  | Which department offers DATA-00016 and what is its title?
+tr20 first=PASS   final=PASS   attempts=1 []  | What building is the Engineering department in, and what is its department code?
+
+Failure patterns on first attempts (distinct questions):
+  unsupported_answer: 3
+  missing_fact:seats: 1
+  -> created lesson_001 (trigger=no_facts): The answer gives general-knowledge or unsupported content for a question the catalogue cannot answer.
+
+training: first-attempt PASS 16/20 | after repair PASS 17/20
+
+======================================================================
+Part 4: training run v1 (single-prompt feedback; superseded, kept as evidence)
+======================================================================
+=== Part 4 training run | student Sreeramachandrasai Achutuni | evaluator-repair, no lessons ===
+tr01 first=PASS   final=PASS   attempts=1 []  | Who teaches CS-00020 and in which semester?
+tr02 first=PASS   final=PASS   attempts=1 []  | Who is the instructor for ENGR-00040, and how many students are enrolled in that section?
+tr03 first=PASS   final=PASS   attempts=1 []  | Which semester is BUS-00065 offered, and who teaches it?
+tr04 first=PASS   final=PASS   attempts=1 []  | What is the title of CS-00121 and which department offers it?
+tr05 first=PASS   final=PASS   attempts=1 []  | What is the title of ENGR-00003, and which department offers it?
+tr06 first=PASS   final=PASS   attempts=1 []  | How many seats are available in CS-00005?
+tr07 first=PASS   final=PASS   attempts=1 []  | How many seats are available in DATA-00006, and what is its title?
+tr08 first=PASS   final=PASS   attempts=1 []  | Where is the Computer Science department located, and what is its department code?
+tr09 first=PASS   final=PASS   attempts=1 []  | What is the department code and building for Business Analytics?
+tr10 first=REVISE final=REVISE attempts=2 ['missing_fact:seats', 'missing_fact:seats']  | Which has more available seats, DATA-00006 or DATA-00007?
+tr11 first=PASS   final=PASS   attempts=1 []  | How many students are enrolled in the Fall 2026 section of CS-00020, and who teaches it?
+tr12 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | What is the capital of France?
+tr13 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | Who won the 2018 FIFA World Cup?
+tr14 first=REVISE final=REVISE attempts=2 ['unsupported_answer']  | How do I bake sourdough bread?
+tr15 first=PASS   final=PASS   attempts=1 []  | How many seats are available in course CS-09999?
+tr16 first=PASS   final=PASS   attempts=1 []  | Who teaches DATA-09001 in Fall 2026?
+tr17 first=PASS   final=PASS   attempts=1 []  | What is the title and seat count of CS-00018?
+tr18 first=PASS   final=PASS   attempts=1 []  | Who teaches BUS-00134, and what is the term?
+tr19 first=PASS   final=PASS   attempts=1 []  | Which department offers DATA-00016 and what is its title?
+tr20 first=PASS   final=PASS   attempts=1 []  | What building is the Engineering department in, and what is its department code?
+
+Failure patterns on first attempts (distinct questions):
+  unsupported_answer: 3
+  missing_fact:seats: 1
+  -> created lesson_001 (trigger=no_facts): The answer gives general-knowledge or unsupported content for a question the catalogue cannot answer.
+
+training: first-attempt PASS 16/20 | after repair PASS 16/20
+
+======================================================================
+Part 4.3: validation
+======================================================================
+=== Part 4.3 validation | student Sreeramachandrasai Achutuni ===
+BEFORE (no lessons): 16/20 correct
+
+lesson_001 [unsupported_answer] AFTER: 17/20 correct | fixed=['va14'] regressed=[] new_unsupported=[] -> KEPT
+
+lessons.json statuses: {'lesson_001': 'kept'}
+
+======================================================================
+Part 4.4: final test, four variants
+======================================================================
+=== Part 4.4 final test | student Sreeramachandrasai Achutuni ===
+lessons in lessons.json: ['lesson_001'] | kept after validation: ['lesson_001']
+
+Baseline               correct=15/20 incorrect= 5 avg_attempts=1.00 avg_latency=3.17s (first-attempt correct 15/20)
+   failed: te09, te10, te12, te13, te14
+Evaluator Repair       correct=16/20 incorrect= 4 avg_attempts=1.25 avg_latency=2.94s (first-attempt correct 15/20)
+   failed: te09, te12, te13, te14
+Lesson Memory          correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.45s (first-attempt correct 15/20)
+   failed: te09, te13
+Validated Improvement  correct=18/20 incorrect= 2 avg_attempts=1.25 avg_latency=3.47s (first-attempt correct 15/20)
+   failed: te09, te13
+
+| Variant | Correct | Incorrect | Avg attempts | Avg latency (s) |
+| Baseline | 15 | 5 | 1.0 | 3.17 |
+| Evaluator Repair | 16 | 4 | 1.25 | 2.94 |
+| Lesson Memory | 18 | 2 | 1.25 | 3.45 |
+| Validated Improvement | 18 | 2 | 1.25 | 3.47 |
+
+======================================================================
+Part 4.1: controlled revision demo
+======================================================================
+=== Part 4.1 controlled revision | student Sreeramachandrasai Achutuni ===
+
+QUESTION: Who teaches ENGR-00040 and how many students are enrolled in that section?
+
+--- attempt 1: initial answer (INJECTED incomplete answer)
+  answer     : ENGR-00040 is taught in the Fall semester by one of the faculty members.
+  evaluation : REVISE
+  explanation: The answer is missing or misstates: instructor, enrolled count.
+  feedback   : Revise the answer. The reference dataset says: instructor = 'Omar Patel'; enrolled count = '33'. State each of these explicitly.
+
+--- attempt 2: revised answer (model, using feedback)
+  answer     : ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.
+  evaluation : PASS
+  explanation: Every required fact from the reference dataset appears in the answer.
+
+FINAL RESULT  : PASS
+ATTEMPTS      : 2 (maximum 2)
+FINAL RESPONSE: ENGR-00040 is taught in the Fall semester by instructor Omar Patel, who has 33 students enrolled in that section.
+
+======================================================================
+Part 4.2: lesson reuse demo
+======================================================================
+=== Part 4.2 lesson reuse | student Sreeramachandrasai Achutuni ===
+
+[1] Question A with a controlled failing first answer (injected): Who teaches BUS-00134, and what is the term?
+    evaluator: REVISE  patterns=['missing_fact:instructor', 'missing_fact:semester']
+    -> lesson created: {"lesson_id": "lesson_001", "failure_pattern": "The answer omits the instructor.", "correction": "When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.", "created_at": "2026-11-09", "use_count": 0, "trigger": "instructor", "pattern_key": "missing_fact:instructor", "status": "kept"}
+    -> lesson created: {"lesson_id": "lesson_002", "failure_pattern": "The answer omits the semester.", "correction": "When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.", "created_at": "2026-11-09", "use_count": 0, "trigger": "semester", "pattern_key": "missing_fact:semester", "status": "kept"}
+
+[2] lessons file now contains:
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The answer omits the instructor.",
+    "correction": "When the question asks about the instructor, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.",
+    "created_at": "2026-11-09",
+    "use_count": 0
+  },
+  {
+    "lesson_id": "lesson_002",
+    "failure_pattern": "The answer omits the semester.",
+    "correction": "When the question asks about the semester, read it from the catalogue facts and state it explicitly in the answer, together with every other item the question asks for.",
+    "created_at": "2026-11-09",
+    "use_count": 0
+  }
+]
+
+[3] LATER related question B: Who teaches CS-00185 and in which semester?
+    lessons loaded before answering: ['lesson_001', 'lesson_002']
+    answer    : Omar Kim teaches CS-00185 in Summer 2027.
+    evaluation: PASS  (attempts=1)
+
+[4] use_count after reuse: [('lesson_001', 1), ('lesson_002', 1)]
+
+======================================================================
+verify_hw09.py
+======================================================================
+PASS p1_key_has_prefix s1808:views:course:4
+PASS p1_counts_1_to_9 
+PASS p1_no_db_write_before_10 
+PASS p1_returns_10_and_syncs 
+PASS p1_no_sync_on_11 
+PASS p2_vector_index_exists s1808:idx:semcache
+PASS p2_first_is_miss 
+PASS p2_duplicate_is_hit_without_agent sim=1.0
+PASS p2_unrelated_is_miss 
+PASS p2_latency_fields_present 
+PASS p3_cases_40_in_4_categories_of_10 {'exact_duplicate': 10, 'paraphrase': 10, 'similar_different': 10, 'unrelated': 10}
+PASS p3_sweep_has_5_thresholds [0.75, 0.8, 0.85, 0.9, 0.95]
+PASS p3_stale_hit_invalidated_to_miss 
+PASS p3_rebuilt_entry_is_valid_hit 
+PASS p3_version_marker_changes_with_data 
+PASS p4_datasets_contain_only_questions 
+PASS p4_no_question_shared_across_splits 
+PASS p4_lessons_have_required_fields 1 lessons
+PASS p4_evaluator_passes_correct 
+PASS p4_evaluator_revises_wrong 
+PASS p4_evaluator_revises_unsupported 
+PASS p4_evaluator_passes_decline 
+PASS p4_stops_after_two_attempts 
+
+23/23 checks passed
+
+======================================================================
+Part 3.2: pipeline precompute (real HW8 pipeline, one run per distinct query)
+======================================================================
+[1/40]   15951 ms  Where is the Computer Science department located?  ->  'The Computer Science department is located in the Engineering Building, Room 310. This spe'
+[2/40]   19374 ms  What is the title of course CS-00005?  ->  "The course CS-00005 is titled 'Statistical Operating Systems'. This course is offered by t"
+[3/40]   16763 ms  How many seats are available in course DATA-00006?  ->  'There are 25 seats available in course DATA-00006.'
+[4/40]   18151 ms  What is the department code for Data Science & AI?  ->  'The department code for Data Science & AI is **DATA**.'
+[5/40]   28081 ms  Who teaches CS-00020 in Fall 2026?  ->  'Chen Kim teaches CS-00020 in Fall 2026.'
+[6/40]   14754 ms  Which department offers ENGR-00003?  ->  'The Engineering department offers the course titled "Seminar in Networks", which currently'
+[7/40]   18520 ms  What building is the Business Analytics department in?  ->  'The Business Analytics department is located in Lucas Hall, specifically in Room 310. This'
+[8/40]   29671 ms  How many seats are available in course CS-00005?  ->  'Course CS-00005, titled "Statistical Operating Systems," is offered by the Computer Scienc'
+[9/40]   23336 ms  What is the title of course DATA-00016?  ->  'The title of course DATA-00016 is "Principles of Data Structures".'
+[10/40]   50894 ms  What is the enrolled count for the Fall 2026 section of CS-00020?  ->  'The enrolled count for the Fall 2026 section of CS-00020 is 45.'
+[11/40]   19800 ms  In which building can I find the Computer Science department?  ->  'The Computer Science department can be found in Engineering Building, Room 310.'
+[12/40]   19240 ms  What is the name of course CS-00005?  ->  'The course CS-00005 is titled "Statistical Operating Systems." This course is offered by t'
+[13/40]   19404 ms  How many open seats does DATA-00006 have?  ->  'The number of open seats in DATA-00006 is 25.'
+[14/40]   19946 ms  Which code identifies the Data Science & AI department?  ->  'The Data Science & AI department is identified by its department code DATA, which is locat'
+[15/40]   29529 ms  Who is the instructor for CS-00020 during Fall 2026?  ->  'The instructor for CS-00020 during Fall 2026 is Chen Kim.'
+[16/40]   23348 ms  ENGR-00003 is offered by which department?  ->  'The department offering ENGR-00003 is the Engineering department. This course is titled "S'
+[17/40]   18478 ms  Where is the Business Analytics department housed?  ->  'The Business Analytics department is located in Lucas Hall, Room 310. The department code '
+[18/40]   34622 ms  What is the number of seats still available for CS-00005?  ->  'The number of seats still available for CS-00005 is 30.'
+[19/40]   25914 ms  What is course DATA-00016 called?  ->  "Course DATA-00016 is titled 'Principles of Data Structures'. It is offered by the Data Sci"
+[20/40]   28047 ms  How many students are enrolled in the Fall 2026 section of CS-00020?  ->  'The Fall 2026 section of CS-00020, "Principles of Statistics," offered by the Computer Sci'
+[21/40]   20478 ms  Where is the Data Science & AI department located?  ->  'The Data Science & AI department is located at MacQuarrie Hall, Room 420. This department '
+[22/40]   24346 ms  What is the title of course CS-00020?  ->  'The title of course CS-00020 is "Principles of Statistics". This course is offered by the '
+[23/40]   19353 ms  How many seats are available in course DATA-00007?  ->  'There are 12 seats available in course DATA-00007: Applied Business Analytics.'
+[24/40]   14106 ms  What is the department code for Business Analytics?  ->  'The department code for Business Analytics is **BUS**.'
+[25/40]   26510 ms  Who teaches ENGR-00040 in Fall 2026?  ->  'Omar Patel is the instructor for ENGR-00040 in Fall 2026.'
+[26/40]   20276 ms  Which department offers CS-00005?  ->  'The department that offers CS-00005, the course titled "Statistical Operating Systems," is'
+[27/40]   19334 ms  What building is the Engineering department in?  ->  'The Engineering department is located in the Engineering Building, Room 100.'
+[28/40]   23509 ms  How many seats are available in course CS-00018?  ->  'The course CS-00018 titled "Introduction to Cloud Computing" offered by the Computer Scien'
+[29/40]   17438 ms  What is the title of course DATA-00015?  ->  'The title of course DATA-00015 is "Computational Database Systems".'
+[30/40]   37100 ms  What is the enrolled count for the Fall 2026 section of ENGR-00040?  ->  'The enrolled count for the Fall 2026 section of ENGR-00040, titled "Statistical Database S'
+[31/40]   19522 ms  What is the capital of France?  ->  'The capital of France is Paris.'
+[32/40]   59133 ms  How do I bake sourdough bread at home?  ->  'To bake sourdough bread at home, find a reliable recipe or follow a basic sourdough bread '
+[33/40]   25394 ms  Who won the 2018 FIFA World Cup?  ->  'France won the 2018 FIFA World Cup.'
+[34/40]   40151 ms  Explain how photosynthesis works.  ->  'Photosynthesis is the process by which plants convert light energy into chemical energy, s'
+[35/40]   24262 ms  What is the tallest mountain in the world?  ->  'The tallest mountain in the world is Mount Everest. It stands at approximately 8,848 meter'
+[36/40]   16726 ms  Write a haiku about autumn rain.  ->  "Autumn's cool breeze whispers through the trees,\nRaindrops dance on leaves, a gentle chime"
+[37/40]   17857 ms  How many planets are in the solar system?  ->  'There are eight planets in the solar system.'
+[38/40]   46974 ms  What is a good recipe for vegetable curry?  ->  'A good recipe for vegetable curry typically features a mixture of colorful, fresh vegetabl'
+[39/40]   38814 ms  How does a blockchain reach consensus?  ->  'A blockchain achieves consensus through the use of cryptographic techniques and consensus '
+[40/40]   22533 ms  Who painted the Mona Lisa?  ->  'The Mona Lisa is a famous painting by Leonardo da Vinci, and it is often associated with t'
+done: 40 distinct queries

@@ -1,0 +1,202 @@
+{
+  "Where is the Computer Science department located?": {
+    "answer": "The Computer Science department is located in the Engineering Building, Room 310. This specific room serves as the primary workspace for faculty and students in the field of computer science.",
+    "agent_ms": 15951.0,
+    "data_version": "5eb8661f63ad"
+  },
+  "What is the title of course CS-00005?": {
+    "answer": "The course CS-00005 is titled 'Statistical Operating Systems'. This course is offered by the Computer Science department and currently has 30 seats available.",
+    "agent_ms": 19373.5,
+    "data_version": "94e7ebde7185"
+  },
+  "How many seats are available in course DATA-00006?": {
+    "answer": "There are 25 seats available in course DATA-00006.",
+    "agent_ms": 16763.1,
+    "data_version": "249b5b35f943"
+  },
+  "What is the department code for Data Science & AI?": {
+    "answer": "The department code for Data Science & AI is **DATA**.",
+    "agent_ms": 18150.8,
+    "data_version": "8bd562cd0413"
+  },
+  "Who teaches CS-00020 in Fall 2026?": {
+    "answer": "Chen Kim teaches CS-00020 in Fall 2026.",
+    "agent_ms": 28081.4,
+    "data_version": "d4b60bd8cadd"
+  },
+  "Which department offers ENGR-00003?": {
+    "answer": "The Engineering department offers the course titled \"Seminar in Networks\", which currently has 30 seats available.",
+    "agent_ms": 14753.6,
+    "data_version": "6dfcbfe95d40"
+  },
+  "What building is the Business Analytics department in?": {
+    "answer": "The Business Analytics department is located in Lucas Hall, specifically in Room 310. This means that the building where the department is situated is Lucas Hall.",
+    "agent_ms": 18519.7,
+    "data_version": "90666a5cd4ea"
+  },
+  "How many seats are available in course CS-00005?": {
+    "answer": "Course CS-00005, titled \"Statistical Operating Systems,\" is offered by the Computer Science department. According to the course catalogue, the number of seats available for this course is 30.",
+    "agent_ms": 29670.7,
+    "data_version": "94e7ebde7185"
+  },
+  "What is the title of course DATA-00016?": {
+    "answer": "The title of course DATA-00016 is \"Principles of Data Structures\".",
+    "agent_ms": 23336.1,
+    "data_version": "92547aa88fe7"
+  },
+  "What is the enrolled count for the Fall 2026 section of CS-00020?": {
+    "answer": "The enrolled count for the Fall 2026 section of CS-00020 is 45.",
+    "agent_ms": 50894.2,
+    "data_version": "d4b60bd8cadd"
+  },
+  "In which building can I find the Computer Science department?": {
+    "answer": "The Computer Science department can be found in Engineering Building, Room 310.",
+    "agent_ms": 19799.5,
+    "data_version": "5eb8661f63ad"
+  },
+  "What is the name of course CS-00005?": {
+    "answer": "The course CS-00005 is titled \"Statistical Operating Systems.\" This course is offered by the Computer Science department. It has 30 seats available for enrollment.",
+    "agent_ms": 19239.7,
+    "data_version": "94e7ebde7185"
+  },
+  "How many open seats does DATA-00006 have?": {
+    "answer": "The number of open seats in DATA-00006 is 25.",
+    "agent_ms": 19403.6,
+    "data_version": "249b5b35f943"
+  },
+  "Which code identifies the Data Science & AI department?": {
+    "answer": "The Data Science & AI department is identified by its department code DATA, which is located in MacQuarrie Hall, Room 420.",
+    "agent_ms": 19945.9,
+    "data_version": "8bd562cd0413"
+  },
+  "Who is the instructor for CS-00020 during Fall 2026?": {
+    "answer": "The instructor for CS-00020 during Fall 2026 is Chen Kim.",
+    "agent_ms": 29529.4,
+    "data_version": "d4b60bd8cadd"
+  },
+  "ENGR-00003 is offered by which department?": {
+    "answer": "The department offering ENGR-00003 is the Engineering department. This course is titled \"Seminar in Networks\" and has available seats numbered 30.",
+    "agent_ms": 23347.7,
+    "data_version": "6dfcbfe95d40"
+  },
+  "Where is the Business Analytics department housed?": {
+    "answer": "The Business Analytics department is located in Lucas Hall, Room 310. The department code for Business Analytics is BUS.",
+    "agent_ms": 18478.0,
+    "data_version": "90666a5cd4ea"
+  },
+  "What is the number of seats still available for CS-00005?": {
+    "answer": "The number of seats still available for CS-00005 is 30.",
+    "agent_ms": 34621.7,
+    "data_version": "94e7ebde7185"
+  },
+  "What is course DATA-00016 called?": {
+    "answer": "Course DATA-00016 is titled 'Principles of Data Structures'. It is offered by the Data Science & AI department and has a capacity of seats_available = 30.",
+    "agent_ms": 25913.9,
+    "data_version": "92547aa88fe7"
+  },
+  "How many students are enrolled in the Fall 2026 section of CS-00020?": {
+    "answer": "The Fall 2026 section of CS-00020, \"Principles of Statistics,\" offered by the Computer Science department, has an enrolled count of 45 students. This indicates that the course is fully occupied and not available for new enrollments.",
+    "agent_ms": 28047.3,
+    "data_version": "d4b60bd8cadd"
+  },
+  "Where is the Data Science & AI department located?": {
+    "answer": "The Data Science & AI department is located at MacQuarrie Hall, Room 420. This department is part of the broader Data Science and Artificial Intelligence faculty.",
+    "agent_ms": 20478.3,
+    "data_version": "8bd562cd0413"
+  },
+  "What is the title of course CS-00020?": {
+    "answer": "The title of course CS-00020 is \"Principles of Statistics\". This course is offered by the Computer Science department and is scheduled for the Fall 2026 semester. As of the last enrollment count, there are 45 seats available.",
+    "agent_ms": 24345.6,
+    "data_version": "d4b60bd8cadd"
+  },
+  "How many seats are available in course DATA-00007?": {
+    "answer": "There are 12 seats available in course DATA-00007: Applied Business Analytics.",
+    "agent_ms": 19353.2,
+    "data_version": "70b2bf70f212"
+  },
+  "What is the department code for Business Analytics?": {
+    "answer": "The department code for Business Analytics is **BUS**.",
+    "agent_ms": 14105.9,
+    "data_version": "90666a5cd4ea"
+  },
+  "Who teaches ENGR-00040 in Fall 2026?": {
+    "answer": "Omar Patel is the instructor for ENGR-00040 in Fall 2026.",
+    "agent_ms": 26510.3,
+    "data_version": "c73c44bd50b4"
+  },
+  "Which department offers CS-00005?": {
+    "answer": "The department that offers CS-00005, the course titled \"Statistical Operating Systems,\" is the Computer Science department. This course has seats available for 30 students.",
+    "agent_ms": 20275.9,
+    "data_version": "94e7ebde7185"
+  },
+  "What building is the Engineering department in?": {
+    "answer": "The Engineering department is located in the Engineering Building, Room 100.",
+    "agent_ms": 19334.2,
+    "data_version": "e85b49c90d62"
+  },
+  "How many seats are available in course CS-00018?": {
+    "answer": "The course CS-00018 titled \"Introduction to Cloud Computing\" offered by the Computer Science department has exactly 8 seats available. This confirms the availability of seats for the course as stated in the course catalogue.",
+    "agent_ms": 23509.0,
+    "data_version": "717ca313e015"
+  },
+  "What is the title of course DATA-00015?": {
+    "answer": "The title of course DATA-00015 is \"Computational Database Systems\".",
+    "agent_ms": 17438.1,
+    "data_version": "a1d6be13b936"
+  },
+  "What is the enrolled count for the Fall 2026 section of ENGR-00040?": {
+    "answer": "The enrolled count for the Fall 2026 section of ENGR-00040, titled \"Statistical Database Systems,\" offered by the Engineering department and with 30 seats available, is 33.",
+    "agent_ms": 37099.6,
+    "data_version": "c73c44bd50b4"
+  },
+  "What is the capital of France?": {
+    "answer": "The capital of France is Paris.",
+    "agent_ms": 19522.0,
+    "data_version": "none"
+  },
+  "How do I bake sourdough bread at home?": {
+    "answer": "To bake sourdough bread at home, find a reliable recipe or follow a basic sourdough bread recipe online, knead the dough with a stand mixer or your hands ensuring it becomes smooth and stretchy, let the dough rest at room temperature overnight, preheat your oven to 450\u00b0F (230\u00b0C), divide the dough into four pieces, place them on a floured baking sheet or loaf pan, let them rise covered with a damp cloth in a warm place, bake the loaves for 30 minutes, then reduce the temperature to 400\u00b0F (200\u00b0C) and continue baking for 15-20 minutes or until the crust is golden brown, remove the loaves from the oven, cool them completely on a wire rack, and slice before enjoying your homemade sourdough bread.",
+    "agent_ms": 59133.2,
+    "data_version": "none"
+  },
+  "Who won the 2018 FIFA World Cup?": {
+    "answer": "France won the 2018 FIFA World Cup.",
+    "agent_ms": 25394.1,
+    "data_version": "none"
+  },
+  "Explain how photosynthesis works.": {
+    "answer": "Photosynthesis is the process by which plants convert light energy into chemical energy, storing it in the form of glucose\u2014a type of sugar. The process begins when plants absorb carbon dioxide and water from the atmosphere. The captured sunlight is then used to break down water molecules, releasing oxygen as a byproduct. This chemical energy is stored in the bonds of glucose, which the plant can later use for energy. The entire process occurs primarily in the chloroplasts within the leaves of the plant, where chlorophyll is abundant and efficiently captures light.",
+    "agent_ms": 40151.5,
+    "data_version": "none"
+  },
+  "What is the tallest mountain in the world?": {
+    "answer": "The tallest mountain in the world is Mount Everest. It stands at approximately 8,848 meters (29,029 feet) above sea level.",
+    "agent_ms": 24261.8,
+    "data_version": "none"
+  },
+  "Write a haiku about autumn rain.": {
+    "answer": "Autumn's cool breeze whispers through the trees,\nRaindrops dance on leaves, a gentle chime,\nNature's melody, crisp and serene.",
+    "agent_ms": 16726.3,
+    "data_version": "none"
+  },
+  "How many planets are in the solar system?": {
+    "answer": "There are eight planets in the solar system.",
+    "agent_ms": 17856.8,
+    "data_version": "none"
+  },
+  "What is a good recipe for vegetable curry?": {
+    "answer": "A good recipe for vegetable curry typically features a mixture of colorful, fresh vegetables such as carrots, bell peppers, zucchini, and potatoes. A base of either chicken or vegetable stock is essential. The key to a flavorful vegetable curry is the addition of aromatic spices like cumin, coriander, turmeric, and ginger. The vegetables are typically saut\u00e9ed first to release their natural flavors, then added to the curry along with the spices. A good way to balance the flavors is to add a splash of coconut milk or yogurt towards the end of cooking to thicken the curry. After simmering for a few minutes until all flavors are well combined and the curry is thick, the dish is seasoned to taste and ready to serve.",
+    "agent_ms": 46973.7,
+    "data_version": "none"
+  },
+  "How does a blockchain reach consensus?": {
+    "answer": "A blockchain achieves consensus through the use of cryptographic techniques and consensus algorithms. These algorithms ensure that all participants in the network agree on the current state of the blockchain by employing mechanisms such as Proof of Work, Proof of Stake, or Delegated Proof of Stake. These algorithms require a majority vote, which can be facilitated by different methods depending on the chosen algorithm. Once consensus is reached, new transactions are added to the blockchain, thereby maintaining its integrity and security.",
+    "agent_ms": 38813.5,
+    "data_version": "none"
+  },
+  "Who painted the Mona Lisa?": {
+    "answer": "The Mona Lisa is a famous painting by Leonardo da Vinci, and it is often associated with the Mona Lisa painting. The Mona Lisa was indeed painted by Leonardo da Vinci, showcasing his mastery in various artistic techniques and features.",
+    "agent_ms": 22533.3,
+    "data_version": "none"
+  }
+}

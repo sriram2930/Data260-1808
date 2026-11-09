@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-14/run_training.py -- Part 4 training</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-14/run_training.py -- Part 4 training &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-14/run_training.py
+=== Part 4 training run | student Sreeramachandrasai Achutuni | evaluator-repair, no lessons ===
+tr01 first=PASS   final=PASS   attempts=1 []  | Who teaches CS-00020 and in which semester?
+tr02 first=PASS   final=PASS   attempts=1 []  | Who is the instructor for ENGR-00040, and how many students are enrolled in that section?
+tr03 first=PASS   final=PASS   attempts=1 []  | Which semester is BUS-00065 offered, and who teaches it?
+tr04 first=PASS   final=PASS   attempts=1 []  | What is the title of CS-00121 and which department offers it?
+tr05 first=PASS   final=PASS   attempts=1 []  | What is the title of ENGR-00003, and which department offers it?
+tr06 first=PASS   final=PASS   attempts=1 []  | How many seats are available in CS-00005?
+tr07 first=PASS   final=PASS   attempts=1 []  | How many seats are available in DATA-00006, and what is its title?
+tr08 first=PASS   final=PASS   attempts=1 []  | Where is the Computer Science department located, and what is its department code?
+tr09 first=PASS   final=PASS   attempts=1 []  | What is the department code and building for Business Analytics?
+tr10 first=REVISE final=PASS   attempts=2 [&#x27;missing_fact:seats&#x27;, &#x27;missing_fact:seats&#x27;]  | Which has more available seats, DATA-00006 or DATA-00007?
+tr11 first=PASS   final=PASS   attempts=1 []  | How many students are enrolled in the Fall 2026 section of CS-00020, and who teaches it?
+tr12 first=REVISE final=REVISE attempts=2 [&#x27;unsupported_answer&#x27;]  | What is the capital of France?
+tr13 first=REVISE final=REVISE attempts=2 [&#x27;unsupported_answer&#x27;]  | Who won the 2018 FIFA World Cup?
+tr14 first=REVISE final=REVISE attempts=2 [&#x27;unsupported_answer&#x27;]  | How do I bake sourdough bread?
+tr15 first=PASS   final=PASS   attempts=1 []  | How many seats are available in course CS-09999?
+tr16 first=PASS   final=PASS   attempts=1 []  | Who teaches DATA-09001 in Fall 2026?
+tr17 first=PASS   final=PASS   attempts=1 []  | What is the title and seat count of CS-00018?
+tr18 first=PASS   final=PASS   attempts=1 []  | Who teaches BUS-00134, and what is the term?
+tr19 first=PASS   final=PASS   attempts=1 []  | Which department offers DATA-00016 and what is its title?
+tr20 first=PASS   final=PASS   attempts=1 []  | What building is the Engineering department in, and what is its department code?
+
+Failure patterns on first attempts (distinct questions):
+  unsupported_answer: 3
+  missing_fact:seats: 1
+  -&gt; created lesson_001 (trigger=no_facts): The answer gives general-knowledge or unsupported content for a question the catalogue cannot answer.
+
+training: first-attempt PASS 16/20 | after repair PASS 17/20</div>
+  </div>
+</body>
+</html>

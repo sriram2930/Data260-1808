@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-13/part3_stale_demo.py -- Part 3.5</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-13/part3_stale_demo.py -- Part 3.5 &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-13/part3_stale_demo.py
+=== Part 3.5: stale answers and invalidation | student Sreeramachandrasai Achutuni ===
+
+[1] DB: CS-00005 seats_available = 30   data_version = 94e7ebde7185
+    log: CACHE MISS  best_sim=n/a query=&#x27;How many seats are available in course CS-00005?&#x27; (agent 31388 ms)
+  [1] first ask (miss -&gt; pipeline -&gt; cached with its data_version): is_cached=False sim=None latency=31428 ms
+    answer: &quot;The course CS-00005 titled &#x27;Statistical Operating Systems&#x27; offered by the Computer Science department has 30 seats available.&quot;
+
+[2] UPDATE courses SET seats_available = 12 WHERE course_code=&#x27;CS-00005&#x27;
+    DB now says 12   data_version now = 67c93395bcff   (cached entry still stores 94e7ebde7185)
+    log: CACHE HIT   sim=0.920 query=&#x27;What is the number of seats still available for CS-00005?&#x27; matched=&#x27;How many seats are available in course CS-00005?&#x27;
+  [3] paraphrase, NO validation (STALE HIT: cache serves the old answer): is_cached=True sim=0.9201 latency=57 ms
+    answer: &quot;The course CS-00005 titled &#x27;Statistical Operating Systems&#x27; offered by the Computer Science department has 30 seats available.&quot;
+
+[4] Invalidation strategy ON: on every hit, re-hash the source rows and compare to the stored data_version
+    log: CACHE STALE  query=&#x27;What is the number of seats still available for CS-00005?&#x27; matched=&#x27;How many seats are available in course CS-00005?&#x27; sim=0.920 stored_ver=94e7ebde7185 current_ver=67c93395bcff -&gt; evicted
+    log: CACHE MISS  best_sim=n/a query=&#x27;What is the number of seats still available for CS-00005?&#x27; (agent 19099 ms)
+  [4] same paraphrase, validation ON (stale detected -&gt; evicted -&gt; pipeline re-run): is_cached=False sim=None latency=19192 ms
+    answer: &#x27;The number of seats still available for CS-00005 is 12.&#x27;
+    stale_evicted: {&quot;cached_query&quot;: &quot;How many seats are available in course CS-00005?&quot;, &quot;stored_version&quot;: &quot;94e7ebde7185&quot;, &quot;current_version&quot;: &quot;67c93395bcff&quot;}
+    log: CACHE HIT   sim=1.000 query=&#x27;What is the number of seats still available for CS-00005?&#x27; matched=&#x27;What is the number of seats still available for CS-00005?&#x27;
+  [5] again (entry rebuilt with the new data_version -&gt; valid fresh hit): is_cached=True sim=1.0 latency=100 ms
+    answer: &#x27;The number of seats still available for CS-00005 is 12.&#x27;
+
+[6] validation overhead on a valid hit (15 each): without=40.7 ms  with=57.5 ms
+
+[7] restored CS-00005 seats_available = 30</div>
+  </div>
+</body>
+</html>

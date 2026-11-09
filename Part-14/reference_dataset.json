@@ -1,0 +1,293 @@
+{
+  "description": "Ground truth for the HW9 Part 4 Evaluator Agent: course catalogue facts exported from s1808_rel. Course codes not listed here do not exist in the catalogue.",
+  "departments": [
+    {
+      "name": "Computer Science",
+      "dept_code": "CS",
+      "building": "Engineering Building, Room 310"
+    },
+    {
+      "name": "Data Science & AI",
+      "dept_code": "DATA",
+      "building": "MacQuarrie Hall, Room 420"
+    },
+    {
+      "name": "Business Analytics",
+      "dept_code": "BUS",
+      "building": "Lucas Hall, Room 310"
+    },
+    {
+      "name": "Engineering",
+      "dept_code": "ENGR",
+      "building": "Engineering Building, Room 100"
+    }
+  ],
+  "courses": [
+    {
+      "course_code": "BUS-00002",
+      "course_title": "Modern Operating Systems",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "BUS-00065",
+      "course_title": "Applied Enrollment Systems",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Omar Lopez",
+          "enrolled_count": 35
+        }
+      ]
+    },
+    {
+      "course_code": "BUS-00134",
+      "course_title": "Advanced Database Systems",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Summer 2027",
+          "instructor": "Wei Brown",
+          "enrolled_count": 27
+        }
+      ]
+    },
+    {
+      "course_code": "BUS-00180",
+      "course_title": "Statistical Distributed Systems",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Spring 2027",
+          "instructor": "Sam Kim",
+          "enrolled_count": 23
+        }
+      ]
+    },
+    {
+      "course_code": "BUS-00220",
+      "course_title": "Introduction to Business Analytics",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Chen Patel",
+          "enrolled_count": 29
+        }
+      ]
+    },
+    {
+      "course_code": "BUS-00227",
+      "course_title": "Seminar in Algorithms",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Sam Nguyen",
+          "enrolled_count": 8
+        }
+      ]
+    },
+    {
+      "course_code": "BUS-00265",
+      "course_title": "Principles of Software Engineering",
+      "department": "Business Analytics",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Spring 2027",
+          "instructor": "Wei Garcia",
+          "enrolled_count": 10
+        }
+      ]
+    },
+    {
+      "course_code": "CS-00005",
+      "course_title": "Statistical Operating Systems",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "CS-00018",
+      "course_title": "Introduction to Cloud Computing",
+      "department": "Computer Science",
+      "seats_available": 8,
+      "sections": []
+    },
+    {
+      "course_code": "CS-00020",
+      "course_title": "Principles of Statistics",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Chen Kim",
+          "enrolled_count": 45
+        }
+      ]
+    },
+    {
+      "course_code": "CS-00024",
+      "course_title": "Applied Operating Systems",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "CS-00025",
+      "course_title": "Advanced Distributed Systems",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "CS-00121",
+      "course_title": "Seminar in Data Structures",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Spring 2027",
+          "instructor": "Omar Khan",
+          "enrolled_count": 45
+        }
+      ]
+    },
+    {
+      "course_code": "CS-00185",
+      "course_title": "Modern Data Structures",
+      "department": "Computer Science",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Summer 2027",
+          "instructor": "Omar Kim",
+          "enrolled_count": 34
+        }
+      ]
+    },
+    {
+      "course_code": "DATA-00006",
+      "course_title": "Topics in Cloud Computing",
+      "department": "Data Science & AI",
+      "seats_available": 25,
+      "sections": []
+    },
+    {
+      "course_code": "DATA-00007",
+      "course_title": "Applied Business Analytics",
+      "department": "Data Science & AI",
+      "seats_available": 12,
+      "sections": []
+    },
+    {
+      "course_code": "DATA-00015",
+      "course_title": "Computational Database Systems",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "DATA-00016",
+      "course_title": "Principles of Data Structures",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "DATA-00028",
+      "course_title": "Advanced Database Systems",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "DATA-00211",
+      "course_title": "Seminar in Networks",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Spring 2027",
+          "instructor": "Fatima Nguyen",
+          "enrolled_count": 12
+        }
+      ]
+    },
+    {
+      "course_code": "DATA-00241",
+      "course_title": "Foundations of Linear Algebra",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Spring 2027",
+          "instructor": "Omar Nguyen",
+          "enrolled_count": 22
+        }
+      ]
+    },
+    {
+      "course_code": "DATA-00272",
+      "course_title": "Advanced Algorithms",
+      "department": "Data Science & AI",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Sam Rossi",
+          "enrolled_count": 40
+        }
+      ]
+    },
+    {
+      "course_code": "ENGR-00003",
+      "course_title": "Seminar in Networks",
+      "department": "Engineering",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "ENGR-00004",
+      "course_title": "Advanced Linear Algebra",
+      "department": "Engineering",
+      "seats_available": 30,
+      "sections": []
+    },
+    {
+      "course_code": "ENGR-00040",
+      "course_title": "Statistical Database Systems",
+      "department": "Engineering",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Omar Patel",
+          "enrolled_count": 33
+        }
+      ]
+    },
+    {
+      "course_code": "ENGR-00327",
+      "course_title": "Principles of Machine Learning",
+      "department": "Engineering",
+      "seats_available": 30,
+      "sections": [
+        {
+          "semester": "Fall 2026",
+          "instructor": "Sam Khan",
+          "enrolled_count": 35
+        }
+      ]
+    }
+  ]
+}

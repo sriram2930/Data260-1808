@@ -1,0 +1,126 @@
+{
+  "homework": "hw09",
+  "sid4": 1808,
+  "commit_hash": "1686f9f597110c8ab88f35367f4371de77a0ac6f",
+  "seed": 1808,
+  "verify_seed": 261808,
+  "model": "qwen2.5:1.5b-instruct (Ollama) via the shared ModelClient; embeddings all-MiniLM-L6-v2",
+  "checks": [
+    {
+      "check": "p1_key_has_prefix",
+      "pass": true,
+      "detail": "s1808:views:course:4"
+    },
+    {
+      "check": "p1_counts_1_to_9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_no_db_write_before_10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_returns_10_and_syncs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_no_sync_on_11",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_vector_index_exists",
+      "pass": true,
+      "detail": "s1808:idx:semcache"
+    },
+    {
+      "check": "p2_first_is_miss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_duplicate_is_hit_without_agent",
+      "pass": true,
+      "detail": "sim=1.0"
+    },
+    {
+      "check": "p2_unrelated_is_miss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_latency_fields_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p3_cases_40_in_4_categories_of_10",
+      "pass": true,
+      "detail": "{'exact_duplicate': 10, 'paraphrase': 10, 'similar_different': 10, 'unrelated': 10}"
+    },
+    {
+      "check": "p3_sweep_has_5_thresholds",
+      "pass": true,
+      "detail": "[0.75, 0.8, 0.85, 0.9, 0.95]"
+    },
+    {
+      "check": "p3_stale_hit_invalidated_to_miss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p3_rebuilt_entry_is_valid_hit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p3_version_marker_changes_with_data",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_datasets_contain_only_questions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_no_question_shared_across_splits",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_lessons_have_required_fields",
+      "pass": true,
+      "detail": "1 lessons"
+    },
+    {
+      "check": "p4_evaluator_passes_correct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_evaluator_revises_wrong",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_evaluator_revises_unsupported",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_evaluator_passes_decline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p4_stops_after_two_attempts",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "all_pass": true
+}

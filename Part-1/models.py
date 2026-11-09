@@ -54,6 +54,7 @@ class Course(Base):
     agree_terms = Column(Boolean, default=False)
     department_id = Column(Integer, ForeignKey("departments.id"), nullable=True, index=True)
     seats_available = Column(Integer, default=30, nullable=False)
+    view_count = Column(Integer, default=0, nullable=False, server_default="0")  # HW9: synced from Redis every 10th view
     created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
     updated_at = Column(
         DateTime, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow, nullable=False

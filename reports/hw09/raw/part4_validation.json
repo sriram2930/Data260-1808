@@ -1,0 +1,365 @@
+{
+  "before": {
+    "va01": {
+      "question": "Who teaches BUS-00180 and in which semester?",
+      "answer": "Sam Kim teaches BUS-00180 in Spring 2027.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va02": {
+      "question": "Who is the instructor for CS-00185, and how many students are enrolled?",
+      "answer": "The instructor for CS-00185 is Omar Kim, and there are 34 students enrolled.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va03": {
+      "question": "What is the title of DATA-00211 and which department offers it?",
+      "answer": "The title of DATA-00211 is \"Seminar in Networks\", and it is offered by the Data Science & AI department.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va04": {
+      "question": "What is the title of BUS-00002, and which department offers it?",
+      "answer": "The title of BUS-00002 is \"Modern Operating Systems\", and it is offered by the Business Analytics department.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va05": {
+      "question": "How many seats are available in DATA-00007?",
+      "answer": "There are 12 seats available in DATA-00007.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va06": {
+      "question": "How many seats are available in CS-00018, and what is its title?",
+      "answer": "There are 8 seats available in CS-00018, and the course title is \"Introduction to Cloud Computing\".",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va07": {
+      "question": "Where is the Data Science & AI department located, and what is its department code?",
+      "answer": "The Data Science & AI department is located in MacQuarrie Hall, Room 420, and its department code is DATA.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va08": {
+      "question": "What is the department code and building for Engineering?",
+      "answer": "The department code for Engineering is ENGR, and the building is Engineering Building, Room 100.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va09": {
+      "question": "Which has more available seats, CS-00005 or CS-00018?",
+      "answer": "CS-00018 has more available seats.",
+      "pass": false,
+      "patterns": [
+        "missing_fact:seats",
+        "missing_fact:seats",
+        "missing_fact:compare"
+      ],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va10": {
+      "question": "How many students are enrolled in the Spring 2027 section of DATA-00241, and who teaches it?",
+      "answer": "In the Spring 2027 section of DATA-00241, which is titled \"Foundations of Linear Algebra\" and taught by instructor Omar Nguyen, there are 22 students enrolled.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va11": {
+      "question": "Which semester is BUS-00220 offered, and who teaches it?",
+      "answer": "BUS-00220 is offered in the Fall 2026 semester, taught by instructor Chen Patel.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va12": {
+      "question": "What is the tallest mountain in the world?",
+      "answer": "The tallest mountain in the world is Mount Everest, located in the Himalayas, standing at 8,848 meters (29,029 feet) above sea level.",
+      "pass": false,
+      "patterns": [
+        "unsupported_answer"
+      ],
+      "decline_expected": true,
+      "lessons_used": []
+    },
+    "va13": {
+      "question": "Write a haiku about autumn rain.",
+      "answer": "Autumn's gentle shower, leaves whispering,  \nRain dances on the crisp, cool earth,  \nNature's symphony.",
+      "pass": false,
+      "patterns": [
+        "unsupported_answer"
+      ],
+      "decline_expected": true,
+      "lessons_used": []
+    },
+    "va14": {
+      "question": "What is a good recipe for vegetable curry?",
+      "answer": "A good recipe for vegetable curry typically includes a base of coconut milk or vegetable stock, a blend of spices such as cumin, coriander, and turmeric, and a variety of vegetables like carrots, potatoes, and bell peppers.",
+      "pass": false,
+      "patterns": [
+        "unsupported_answer"
+      ],
+      "decline_expected": true,
+      "lessons_used": []
+    },
+    "va15": {
+      "question": "How many seats are available in course ENGR-09999?",
+      "answer": "There are no seats available in course ENGR-09999 as it does not exist in the catalogue.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": true,
+      "lessons_used": []
+    },
+    "va16": {
+      "question": "Who teaches CS-08888 in Fall 2026?",
+      "answer": "There is no course with the code CS-08888 in the catalogue, so no one is teaching it in Fall 2026.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": true,
+      "lessons_used": []
+    },
+    "va17": {
+      "question": "What is the title and seat count of ENGR-00004?",
+      "answer": "The title of ENGR-00004 is \"Advanced Linear Algebra\" and it seats 30 students.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va18": {
+      "question": "Who teaches BUS-00227 and how many students are enrolled?",
+      "answer": "Sam Nguyen teaches BUS-00227, which has 8 students enrolled.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va19": {
+      "question": "Which department offers CS-00024, and what is its title?",
+      "answer": "The Computer Science department offers CS-00024, which is titled 'Applied Operating Systems'.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    },
+    "va20": {
+      "question": "Where is the Business Analytics department located?",
+      "answer": "The Business Analytics department is located in Lucas Hall, Room 310.",
+      "pass": true,
+      "patterns": [],
+      "decline_expected": false,
+      "lessons_used": []
+    }
+  },
+  "lessons": {
+    "lesson_001": {
+      "correct_after": 17,
+      "fixed": [
+        "va14"
+      ],
+      "regressed": [],
+      "new_unsupported": [],
+      "decision": "kept",
+      "after": {
+        "va01": {
+          "question": "Who teaches BUS-00180 and in which semester?",
+          "answer": "Sam Kim teaches BUS-00180 in Spring 2027.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va02": {
+          "question": "Who is the instructor for CS-00185, and how many students are enrolled?",
+          "answer": "The instructor for CS-00185 is Omar Kim, and there are 34 students enrolled.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va03": {
+          "question": "What is the title of DATA-00211 and which department offers it?",
+          "answer": "The title of DATA-00211 is \"Seminar in Networks\", and it is offered by the Data Science & AI department.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va04": {
+          "question": "What is the title of BUS-00002, and which department offers it?",
+          "answer": "The title of BUS-00002 is \"Modern Operating Systems\", and it is offered by the Business Analytics department.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va05": {
+          "question": "How many seats are available in DATA-00007?",
+          "answer": "There are 12 seats available in DATA-00007.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va06": {
+          "question": "How many seats are available in CS-00018, and what is its title?",
+          "answer": "There are 8 seats available in CS-00018, and the course title is \"Introduction to Cloud Computing\".",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va07": {
+          "question": "Where is the Data Science & AI department located, and what is its department code?",
+          "answer": "The Data Science & AI department is located in MacQuarrie Hall, Room 420, and its department code is DATA.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va08": {
+          "question": "What is the department code and building for Engineering?",
+          "answer": "The department code for Engineering is ENGR, and the building is Engineering Building, Room 100.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va09": {
+          "question": "Which has more available seats, CS-00005 or CS-00018?",
+          "answer": "CS-00018 has more available seats than CS-00005.",
+          "pass": false,
+          "patterns": [
+            "missing_fact:seats",
+            "missing_fact:seats",
+            "missing_fact:compare"
+          ],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va10": {
+          "question": "How many students are enrolled in the Spring 2027 section of DATA-00241, and who teaches it?",
+          "answer": "In the Spring 2027 section of DATA-00241, which is titled \"Foundations of Linear Algebra,\" taught by instructor Omar Nguyen, there are 22 students enrolled.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va11": {
+          "question": "Which semester is BUS-00220 offered, and who teaches it?",
+          "answer": "BUS-00220 is offered in the Fall 2026 semester, taught by instructor Chen Patel.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va12": {
+          "question": "What is the tallest mountain in the world?",
+          "answer": "The tallest mountain in the world is Mount Everest, which stands at 8,848 meters (29,029 feet) above sea level.",
+          "pass": false,
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "decline_expected": true,
+          "lessons_used": [
+            "lesson_001"
+          ]
+        },
+        "va13": {
+          "question": "Write a haiku about autumn rain.",
+          "answer": "Autumn's gentle shower, leaves whispering,  \nRain paints the world in hues of gold,  \nPeace in every droplet's fall.",
+          "pass": false,
+          "patterns": [
+            "unsupported_answer"
+          ],
+          "decline_expected": true,
+          "lessons_used": [
+            "lesson_001"
+          ]
+        },
+        "va14": {
+          "question": "What is a good recipe for vegetable curry?",
+          "answer": "I'm sorry, but I don't have any catalogue facts to draw upon for a recipe.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": true,
+          "lessons_used": [
+            "lesson_001"
+          ]
+        },
+        "va15": {
+          "question": "How many seats are available in course ENGR-09999?",
+          "answer": "I can only answer course catalogue questions. There is no course ENGR-09999 in the catalogue, so I cannot provide information about its seats.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": true,
+          "lessons_used": [
+            "lesson_001"
+          ]
+        },
+        "va16": {
+          "question": "Who teaches CS-08888 in Fall 2026?",
+          "answer": "I can only answer course catalogue questions. There is no course with code CS-08888 in the catalogue.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": true,
+          "lessons_used": [
+            "lesson_001"
+          ]
+        },
+        "va17": {
+          "question": "What is the title and seat count of ENGR-00004?",
+          "answer": "The title of ENGR-00004 is \"Advanced Linear Algebra\" and it seats 30 students.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va18": {
+          "question": "Who teaches BUS-00227 and how many students are enrolled?",
+          "answer": "Sam Nguyen teaches BUS-00227, which has 8 students enrolled.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va19": {
+          "question": "Which department offers CS-00024, and what is its title?",
+          "answer": "The Computer Science department offers CS-00024, which is titled 'Applied Operating Systems'.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        },
+        "va20": {
+          "question": "Where is the Business Analytics department located?",
+          "answer": "The Business Analytics department is located in Lucas Hall, Room 310.",
+          "pass": true,
+          "patterns": [],
+          "decline_expected": false,
+          "lessons_used": []
+        }
+      }
+    }
+  }
+}
