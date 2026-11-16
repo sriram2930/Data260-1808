@@ -1,0 +1,205 @@
+[
+  {
+    "case_id": "c01",
+    "trace_id": "915a9181-34c3-45ce-a2be-bb72fefc584e",
+    "question": "How many seats are left in CS-00018?",
+    "facts": [
+      "Course CS-00018: title 'Introduction to Cloud Computing', offered by the Computer Science department, seats_available = 8."
+    ],
+    "plan": "- Determine the current status of seat availability\n- Check the provided seat_available value for the course in question\n- Confirm the course title and department\n- Verify the current availability level",
+    "draft": "The current status of seat availability in CS-00018, 'Introduction to Cloud Computing' offered by the Computer Science department, is that there are 8 seats available. This value directly corresponds to the 'seats_available' field in the course catalog facts provided. The course's title is 'Introduction to Cloud Computing', and it is offered by the Computer Science department."
+  },
+  {
+    "case_id": "c02",
+    "trace_id": "8d820956-95b4-4a41-bb4a-170da3b8dd84",
+    "question": "Tell me the title and department of DATA-00016.",
+    "facts": [
+      "Course DATA-00016: title 'Principles of Data Structures', offered by the Data Science & AI department, seats_available = 30."
+    ],
+    "plan": "- Course title: Principles of Data Structures\n- Department: Data Science & AI\n- Seats available: 30",
+    "draft": "The course titled \"Principles of Data Structures\" is offered by the Data Science & AI department and has 30 seats available."
+  },
+  {
+    "case_id": "c03",
+    "trace_id": "82973488-c6f3-4368-b289-7387f120db30",
+    "question": "Who is teaching BUS-00134 and when is it offered?",
+    "facts": [
+      "Course BUS-00134: title 'Advanced Database Systems', offered by the Business Analytics department, seats_available = 30.",
+      "Section of BUS-00134: Summer 2027, instructor Wei Brown, enrolled_count = 27."
+    ],
+    "plan": "- Identify the course BUS-00134 and its title 'Advanced Database Systems'.\n- Determine that it is offered by the Business Analytics department.\n- Confirm that the enrollment count for the current section is 27, which is less than the capacity of 30.\n- Determine that this section is in the Summer 2027 semester.\n- Confirm that the instructor for this section is Wei Brown.",
+    "draft": "The course BUS-00134 titled \"Advanced Database Systems\" is offered by the Business Analytics department and is currently taught by instructor Wei Brown. The section is open for enrollment through the Summer 2027 semester and has 27 out of the 30 seats available."
+  },
+  {
+    "case_id": "c04",
+    "trace_id": "b6013740-6648-46f5-b4ef-8f66f291261c",
+    "question": "What is the enrollment of CS-00185 and who is its instructor?",
+    "facts": [
+      "Course CS-00185: title 'Modern Data Structures', offered by the Computer Science department, seats_available = 30.",
+      "Section of CS-00185: Summer 2027, instructor Omar Kim, enrolled_count = 34."
+    ],
+    "plan": "- Identify the course ID: CS-00185\n- Retrieve the enrollment count: 34\n- Identify the instructor: Omar Kim\n- Determine the section: Summer 2027",
+    "draft": "The course CS-00185, titled \"Modern Data Structures,\" is offered by the Computer Science department and has a seat availability of 30. The Summer 2027 section of the course, taught by instructor Omar Kim, currently has 34 students enrolled."
+  },
+  {
+    "case_id": "c05",
+    "trace_id": "1c33db60-7016-4b1f-b4c8-dcb88ceb0948",
+    "question": "Where is the Computer Science department housed?",
+    "facts": [
+      "Department Computer Science: department code CS, located in Engineering Building, Room 310."
+    ],
+    "plan": "- The Computer Science department is housed in the Engineering Building.\n- The specific room number where the department is located is Room 310.\n- The department code for the Computer Science department is CS.",
+    "draft": "The Computer Science department is housed in the Engineering Building, specifically in Room 310. The department code for the Computer Science department is CS."
+  },
+  {
+    "case_id": "c06",
+    "trace_id": "311dd098-8816-4cea-9eea-fad5bcc92b4c",
+    "question": "What building is Business Analytics in, and what is its department code?",
+    "facts": [
+      "Department Business Analytics: department code BUS, located in Lucas Hall, Room 310."
+    ],
+    "plan": "- Business Analytics building: Lucas Hall\n- Business Analytics department code: BUS\n- Business Analytics room number: 310",
+    "draft": "Business Analytics is housed in Lucas Hall, specifically in Room 310, and its department code is BUS."
+  },
+  {
+    "case_id": "c07",
+    "trace_id": "d3e86da7-1495-4fb1-b241-4139195863b2",
+    "question": "Compare the seat availability of DATA-00006 and DATA-00007.",
+    "facts": [
+      "Course DATA-00006: title 'Topics in Cloud Computing', offered by the Data Science & AI department, seats_available = 25.",
+      "Course DATA-00007: title 'Applied Business Analytics', offered by the Data Science & AI department, seats_available = 12."
+    ],
+    "plan": "- Compare the seat availability of DATA-00006 and DATA-00007.\n- DATA-00006 is titled \"Topics in Cloud Computing\" and offered by the Data Science & AI department, with 25 seats available.\n- DATA-00007 is titled \"Applied Business Analytics\" and also offered by the Data Science & AI department, with 12 seats available.",
+    "draft": "Course DATA-00006, titled \"Topics in Cloud Computing,\" is offered by the Data Science & AI department and has 25 seats available. In contrast, Course DATA-00007, known as \"Applied Business Analytics,\" is also offered by the same department but only has 12 seats available."
+  },
+  {
+    "case_id": "c08",
+    "trace_id": "62481ad4-366b-4863-a6a7-e3b2f9bef6d9",
+    "question": "Which course has more seats, CS-00005 or CS-00018, and by how many?",
+    "facts": [
+      "Course CS-00005: title 'Statistical Operating Systems', offered by the Computer Science department, seats_available = 30.",
+      "Course CS-00018: title 'Introduction to Cloud Computing', offered by the Computer Science department, seats_available = 8."
+    ],
+    "plan": "- Determine which course has more seats\n  - Compare the number of seats available for each course\n\n  - Course CS-00005: 30 seats\n  - Course CS-00018: 8 seats\n\n- Calculate the difference in seats between the two courses\n  - Subtract the smaller number from the larger number\n\n  - Difference: 30 - 8 = 22",
+    "draft": "Based on the course catalogue facts provided, Course CS-00005 has more seats than Course CS-00018. Specifically, there are 30 seats available for the course titled \"Statistical Operating Systems,\" compared to 8 seats for \"Introduction to Cloud Computing.\" The difference in seats between the two courses is 22. Therefore, Course CS-00005 has 22 more seats than Course CS-00018."
+  },
+  {
+    "case_id": "c09",
+    "trace_id": "086c152b-89fe-4393-89c3-ec69ec9654b0",
+    "question": "List the sections of ENGR-00040 with instructor and enrollment.",
+    "facts": [
+      "Course ENGR-00040: title 'Statistical Database Systems', offered by the Engineering department, seats_available = 30.",
+      "Section of ENGR-00040: Fall 2026, instructor Omar Patel, enrolled_count = 33."
+    ],
+    "plan": "- ENGR-00040\n- Sections\n- Fall 2026\n- Instructor: Omar Patel\n- Enrollment: 33",
+    "draft": "The course ENGR-00040 titled \"Statistical Database Systems\" is offered by the Engineering department and has seats available for 30 students. The Fall 2026 section of ENGR-00040 is led by instructor Omar Patel, and there are 33 students enrolled."
+  },
+  {
+    "case_id": "c10",
+    "trace_id": "c2dd7d47-8398-4354-8264-b46dd106a3e9",
+    "question": "I want to take DATA-00272. Who teaches it and is it full?",
+    "facts": [
+      "Course DATA-00272: title 'Advanced Algorithms', offered by the Data Science & AI department, seats_available = 30.",
+      "Section of DATA-00272: Fall 2026, instructor Sam Rossi, enrolled_count = 40."
+    ],
+    "plan": "- Identify the instructor of DATA-00272.\n- Check the enrollment status of the course.\n- Determine if the course is full based on the enrollment count.",
+    "draft": "According to the course catalogue facts, the instructor of DATA-00272, which is titled 'Advanced Algorithms', is Sam Rossi. Additionally, the section of the course offered in the Fall 2026 is being taught by Sam Rossi and is currently enrolled in by 40 students. Therefore, the course is not full."
+  },
+  {
+    "case_id": "c11",
+    "trace_id": "38450798-570e-4bb5-9942-b058d85d8ee2",
+    "question": "What is CS-00121 about?",
+    "facts": [
+      "Course CS-00121: title 'Seminar in Data Structures', offered by the Computer Science department, seats_available = 30.",
+      "Section of CS-00121: Spring 2027, instructor Omar Khan, enrolled_count = 45."
+    ],
+    "plan": "- Course CS-00121: A seminar focusing on data structures\n- Offering department: Computer Science\n- Course title: Seminar in Data Structures\n- Course offered in: Spring 2027\n- Instructor: Omar Khan\n- Seats available: 30\n- Student enrollment: 45",
+    "draft": "CS-00121 is a seminar titled \"Seminar in Data Structures\" offered by the Computer Science department in Spring 2027. The course is filled with 45 students, but there are 30 seats available."
+  },
+  {
+    "case_id": "c12",
+    "trace_id": "627fae77-5e74-4152-a795-228b7aa5b428",
+    "question": "Is DATA-00241 offered in Fall 2026?",
+    "facts": [
+      "Course DATA-00241: title 'Foundations of Linear Algebra', offered by the Data Science & AI department, seats_available = 30.",
+      "Section of DATA-00241: Spring 2027, instructor Omar Nguyen, enrolled_count = 22."
+    ],
+    "plan": "- Check the course catalog for DATA-00241.\n- Look for the section in the catalog.\n- Find the enrollment information for Spring 2027.\n- Verify if DATA-00241 is offered in Fall 2026.\n- Confirm if the course is available with seats remaining.",
+    "draft": "To determine if DATA-00241 is offered in Fall 2026, we need to cross-reference the information from the course catalog. According to the facts provided, the course DATA-00241 is titled \"Foundations of Linear Algebra\" and is offered by the Data Science & AI department. The catalog shows that the course is available with seats available and the enrollment count for the Spring 2027 section is 22. Since there is no direct mention of Fall 2026 in the facts provided, we cannot confirm if the course is offered in Fall 2026 based solely on the facts given. The enrollment count and availability of seats in Spring 2027 do not necessarily indicate the course's schedule for Fall 2026."
+  },
+  {
+    "case_id": "c13",
+    "trace_id": "ef8fe77b-2c9a-4ad6-a0b8-64802d48c3c5",
+    "question": "Summarize everything you know about BUS-00227.",
+    "facts": [
+      "Course BUS-00227: title 'Seminar in Algorithms', offered by the Business Analytics department, seats_available = 30.",
+      "Section of BUS-00227: Fall 2026, instructor Sam Nguyen, enrolled_count = 8."
+    ],
+    "plan": "- **Course Title and Department:** Seminar in Algorithms (BUS-00227), offered by the Business Analytics department.\n- **Section Details:** Fall 2026, taught by Instructor Sam Nguyen, with 8 enrolled students.\n- **Capacity and Seat Availability:** 30 seats available, meaning there is room for more students.",
+    "draft": "The course titled \"Seminar in Algorithms\" (BUS-00227) is offered by the Business Analytics department. It is scheduled for the Fall 2026 semester, taught by Instructor Sam Nguyen. Currently, there are 8 students enrolled in the course, which leaves 22 seats available. This indicates that the course has capacity for more students."
+  },
+  {
+    "case_id": "c14",
+    "trace_id": "659b93e4-c05b-4fc2-8ceb-4432338415b7",
+    "question": "Which department offers Advanced Database Systems?",
+    "facts": [],
+    "plan": "- Research university database department\n- Look for specific program that focuses on advanced database systems\n- Check current course offerings and graduate programs\n- Review faculty expertise in advanced database management\n- Verify accreditation status of the program\n- Confirm if there are any online or distance learning options",
+    "draft": "After conducting research into the database department at [University Name], it is clear that they offer a specialized program known as \"Advanced Database Systems\" as part of their graduate studies. This program is designed to provide in-depth knowledge and skills in database management, focusing on advanced techniques and technologies. While not explicitly mentioned in the initial query, it is worth noting that the university has various graduate programs in computer science, including courses that cover database systems. The faculty members are known for their expertise in advanced database management and systems, ensuring that the curriculum remains up-to-date and relevant. The university holds accreditation for its graduate programs in computer science, which is an assurance of quality education and expertise. There are no reported online or distance learning options for the Advanced Database Systems program at this institution."
+  },
+  {
+    "case_id": "c15",
+    "trace_id": "8ee0b06f-73d6-4ed3-96d8-26078a7b4692",
+    "question": "How many courses does the Engineering department offer?",
+    "facts": [
+      "Department Engineering: department code ENGR, located in Engineering Building, Room 100."
+    ],
+    "plan": "- Department Engineering: Offers a comprehensive range of courses.\n- Course catalogue facts available for specific courses.\n- Typically includes foundational and advanced engineering courses.\n- Approximately 20 courses across various disciplines.\n- Courses cover topics such as mechanical engineering, electrical engineering, computer engineering, and more.",
+    "draft": "The Engineering department offers a wide array of courses across multiple disciplines, providing a solid foundation and advanced training in both foundational and specialized engineering fields. The department, which has a department code ENGR, is located in the Engineering Building, Room 100, and offers approximately 20 courses. These courses typically cover essential topics such as mechanical engineering, electrical engineering, computer engineering, and more, ensuring that students can pursue their interests and develop skills in specific areas of engineering."
+  },
+  {
+    "case_id": "c16",
+    "trace_id": "eca16b7c-9794-4f25-af4e-6f7e48d0ac3c",
+    "question": "Who painted the Mona Lisa?",
+    "facts": [],
+    "plan": "- The Mona Lisa is a well-known painting.\n- It is attributed to Leonardo da Vinci.\n- The painting is housed at the Louvre Museum in Paris.\n- The subject is a woman with a mysterious smile.",
+    "draft": "The Mona Lisa is a renowned portrait painted by the renowned Italian Renaissance artist Leonardo da Vinci. The subject of the painting is a woman with a mysterious smile, often seen as a woman with a mysterious smile. The painting is currently housed at the Louvre Museum in Paris."
+  },
+  {
+    "case_id": "c17",
+    "trace_id": "c01283e1-e61c-4ad4-80bf-3f3725aa1161",
+    "question": "Explain how a hash table handles collisions.",
+    "facts": [],
+    "plan": "- The hash table uses a hash function to compute an index for an element.\n- If the table is full, the elements are rehashed.\n- When a collision occurs, multiple elements are stored in the same table index.\n- Different collision resolution techniques are used, such as linear probing, chaining, or open addressing.\n- Chaining involves storing elements as linked lists at the same index, allowing for easy rehashing.\n- Linear probing involves sequentially probing a few elements before the collision occurs.\n- Open addressing involves finding a free slot at the same index to insert the element.",
+    "draft": "A hash table uses a hash function to convert keys into indices for storing elements. If a table is full, the elements are rehashed, meaning a new hash function is applied to compute the new index. When a collision occurs—multiple elements hash to the same index—the elements are resolved using collision resolution techniques. These include chaining, where elements are stored in linked lists at the same index, and open addressing, where a free slot is found to insert the element, ensuring the hash table remains balanced. Chaining is efficient for chaining because it allows for easy rehashing without shifting elements. Linear probing is simpler but may require more rehashing since it sequentially checks elements. Open addressing, while potentially slower, ensures constant-time average performance."
+  },
+  {
+    "case_id": "c18",
+    "trace_id": "e7c79f16-d0e3-4759-b22a-ee4044285bb3",
+    "question": "How many seats are available in CS-09999?",
+    "facts": [
+      "No course with code CS-09999 exists in the catalogue."
+    ],
+    "plan": "- **Verify the course code**: Confirm that CS-09999 is indeed an invalid course code not listed in the catalog.\n- **Review course descriptions**: Check if there is a specific course description or information available for CS-09999, which could provide context for the question.\n- **Gather enrollment details**: Attempt to find any unofficial or unofficial enrollment figures for CS-09999, as the official catalog does not contain the course.\n- **Look for supplementary materials**: Investigate if there are any external sources, such as unofficial course websites or discussion forums, where CS-09999 might be listed or discussed.",
+    "draft": "The course catalogue does not contain any course with the code CS-09999. As there is no such course listed, we cannot verify the number of seats that might be available. Additionally, the course description is not available, and there is no official enrollment data within the catalog. To answer this question, we would need external sources that might contain the course information or enrollment details."
+  },
+  {
+    "case_id": "c19",
+    "trace_id": "da5f588e-55b8-442f-bcec-d7c8fce5dbb0",
+    "question": "Who teaches DATA-08888 in Spring 2027?",
+    "facts": [
+      "No course with code DATA-08888 exists in the catalogue."
+    ],
+    "plan": "- Identify the course catalog entry for DATA-08888\n- Verify if a course with this code exists in the catalogue\n- If the course does not exist, find alternative courses with similar codes\n- Determine if any courses have been taught in Spring 2027\n- If no specific course is taught in Spring 2027, inquire about the most recent taught course\n- If the course is still available, determine if it was taught in Spring 2027\n- If no course is taught in Spring 2027, provide information on courses that were or were not taught in that semester",
+    "draft": "The course DATA-08888 does not exist in the current course catalog. As a consequence, no course with this code was offered in Spring 2027. It is recommended to inquire about the availability of DATA-08888 through the registrar's office to determine if such a course was previously offered or if there are any related courses that could be taught in the upcoming semester."
+  },
+  {
+    "case_id": "c20",
+    "trace_id": "6b4936f6-5935-4881-9844-7d1cfe949a01",
+    "question": "What prerequisites does DATA-00006 have?",
+    "facts": [
+      "Course DATA-00006: title 'Topics in Cloud Computing', offered by the Data Science & AI department, seats_available = 25."
+    ],
+    "plan": "- **Prerequisite Courses**: None explicitly listed for the course DATA-00006 titled \"Topics in Cloud Computing\" offered by the Data Science & AI department, with seats_available at 25.",
+    "draft": "The course DATA-00006 titled \"Topics in Cloud Computing\" offered by the Data Science & AI department, as per the provided facts, does not have any explicitly listed prerequisites. However, this is typical for courses that are generally open to students from across the institution, including those from other departments. The course is designed to meet the interests and needs of the Data Science & AI department as well as other disciplines interested in cloud computing. The seats available at 25 suggest that the course is popular and has a robust demand from the institution, indicating that it is a well-received and valued course within the department."
+  }
+]
