@@ -77,6 +77,15 @@ def shot(name, width=6.5, caption=None):
         r.font.size = Pt(10)
 
 
+def cshot(name, width=6.3, caption=None):
+    doc.add_picture(str(HERE / "code_shots" / name), width=Inches(width))
+    if caption:
+        c = doc.add_paragraph()
+        r = c.add_run(caption)
+        r.italic = True
+        r.font.size = Pt(10)
+
+
 def table(data, widths=None, size=10):
     t = doc.add_table(rows=0, cols=len(data[0]))
     t.style = "Table Grid"
@@ -134,17 +143,7 @@ h1("Part 1: Redis-backed view counter")
 p("Primary entity: Course. A new column courses.view_count (migration Part-1/migrate_hw09.py) holds the durable count; "
   "CourseStore.increment_course_views(course_id) in Part-12/course_store.py is the one new method. Key format: "
   "s1808:views:course:<id>.")
-code(
-    "def increment_course_views(self, course_id: int) -> int:\n"
-    "    count = self.redis_client.incr(self.views_key(course_id))      # atomic, in-memory\n"
-    "    if count % SYNC_EVERY == 0:                                    # every 10th increment\n"
-    "        with self._session_factory() as session:\n"
-    "            session.execute(text(\"UPDATE courses SET view_count = :c WHERE id = :id\"),\n"
-    "                            {\"c\": count, \"id\": course_id})\n"
-    "            session.commit()\n"
-    "        log.info(\"Synced views to database\")\n"
-    "    return count"
-)
+cshot("c1_increment_views.png", width=5.8, caption="Part-12/course_store.py: increment_course_views (INCR, sync every 10th, log line).")
 shot("p1_counter.png", caption="Part 1: 25 accesses of CS-00005. The DB column changes only at access 10 and 20.")
 shot("p1_infra.png", caption="Redis holds 25, MySQL view_count holds 20; the Redis container runs next to the HW8 stack.")
 p("Result: 25 accesses cost 25 Redis INCRs and 2 database UPDATEs instead of 25. Trade-off: the database lags Redis by up "
@@ -160,8 +159,8 @@ p("The cache sits at the ingress of the course Q&A endpoint (Part-13/semantic_ca
   "s1808_final); the query, embedding, final answer and a data-version marker are stored, and is_cached=False is returned. "
   "Timestamps are taken around the embedding, the Redis search, and the agent call.")
 p("Core of the request handler (Part-13/semantic_cache.py, excerpt):")
-code(src("Part-13/semantic_cache.py", "def handle(self, question", "# ---- miss path"), size=7.5)
-code(src("Part-13/semantic_cache.py", "# ---- miss path", "def make_cache_with_kafka")[:1900], size=7.5)
+cshot("c2a_cache_handle_hit.png", caption="Part-13/semantic_cache.py: SemanticCache.handle, embed + KNN search + threshold check + hit path (with stale validation).")
+cshot("c2b_cache_handle_miss.png", width=5.6, caption="Same method, miss path: facts, real HW8 pipeline, store, return is_cached=False.")
 shot("p2_index.png", caption="The vector index on the s1808:semcache: key prefix (HASH, FLAT, FLOAT32, COSINE).")
 shot("p2_run_a.png", caption="14 queries at threshold 0.85, part 1 of 2 (misses call the real Kafka pipeline).")
 shot("p2_run_b.png", caption="Part 2 of 2, with the summary.")
@@ -264,18 +263,11 @@ p("The agents exchange plain dicts. The Answering Agent retrieves live catalogue
   "feedback goes back to the Answering Agent as a new chat turn after its own previous answer. solve() allows at most 2 answer "
   "attempts: it stops on the first PASS or after the second attempt, whatever the result. The Evaluator is deterministic (rules "
   "and string matching over the reference data), not an LLM judge.")
-code(
-    "def solve(question, answerer, evaluator, max_attempts=2, ...):\n"
-    "    for attempt in range(1, max_attempts + 1):\n"
-    "        out = answerer.answer(question, feedback=feedback, previous_answer=prev, ...)\n"
-    "        ev = evaluator.evaluate(question, out['answer'])      # PASS | REVISE + feedback\n"
-    "        if ev.result == 'PASS': break\n"
-    "        feedback, prev = ev.feedback, out['answer']          # loop ends after attempt 2",
-)
+cshot("c3_solve_loop.png", caption="Part-14/agents.py: solve(), at most 2 attempts, stops on the first PASS.")
 p("Answering Agent (Part-14/agents.py, AnsweringAgent.answer):", bold=True)
-code(src("Part-14/agents.py", "    def answer(self, question: str, feedback", "# ----"), size=7.5)
+cshot("c4_answering_agent.png", caption="Part-14/agents.py: AnsweringAgent.answer (facts, lessons in the system prompt, multi-turn feedback).")
 p("Evaluator Agent (Part-14/agents.py, EvaluatorAgent.evaluate):", bold=True)
-code(src("Part-14/agents.py", "    def evaluate(self, question: str, answer: str)", "# ----"), size=7.5)
+cshot("c5_evaluator.png", caption="Part-14/agents.py: EvaluatorAgent.evaluate (excerpt: the decline / unsupported-answer rule; the remaining checks are in the file).")
 h2("4.1 Controlled revision sequence")
 p("The first answer is injected (incomplete on purpose) so the repair path can be shown reliably; the revision is real model output.")
 shot("p4_demo_revision.png", caption="Question, initial answer, evaluator feedback, revised answer, final evaluation, attempts, final response.")
