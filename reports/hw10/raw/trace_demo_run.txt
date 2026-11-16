@@ -1,0 +1,29 @@
+=== Part 4.2 trace examples | student Sreeramachandrasai Achutuni | threshold 0.9
+miss: {'trace_id': 'b1bccf21-3913-4835-bc2a-d5b86d555fae', 'is_cached': False, 'status': 'ok', 'latency_ms': 15588.4}
+hit : {'trace_id': '3bb3a89a-a327-49ee-a788-17a4f331ddf8', 'is_cached': True, 'similarity': 1.0, 'status': 'ok', 'latency_ms': 29.0}
+fail: {'trace_id': 'c2d639eb-3140-4b57-9932-641a42a6b56f', 'status': 'error', 'failed_stage': 'planner', 'error': "planner failed after 3 retries: 'question'", 'latency_ms': 1025.4}
+
+=== 1. CACHE MISS (agent path completed) | trace_id=b1bccf21-3913-4835-bc2a-d5b86d555fae
+stage         status  start_time                      end_time                                ms  detail
+request       ok      2026-11-16T08:53:54.515+00:00   2026-11-16T08:54:10.103+00:00      15587.6  path=cache_miss
+cache_lookup  ok      2026-11-16T08:53:54.515+00:00   2026-11-16T08:53:54.537+00:00         21.5  cache_hit=False
+facts_lookup  ok      2026-11-16T08:53:54.537+00:00   2026-11-16T08:53:54.638+00:00        101.0  
+queue_inbox   ok      2026-11-16T08:53:54.643+00:00   2026-11-16T08:53:54.654+00:00         11.0  
+planner       ok      2026-11-16T08:53:54.654+00:00   2026-11-16T08:53:59.310+00:00       4656.9  attempts=1
+queue_tasks   ok      2026-11-16T08:53:59.312+00:00   2026-11-16T08:53:59.317+00:00          5.7  
+writer        ok      2026-11-16T08:53:59.317+00:00   2026-11-16T08:54:04.841+00:00       5523.7  attempts=1
+queue_drafts  ok      2026-11-16T08:54:04.842+00:00   2026-11-16T08:54:04.847+00:00          6.0  
+reviewer      ok      2026-11-16T08:54:04.847+00:00   2026-11-16T08:54:10.093+00:00       5245.6  attempts=1
+queue_final   ok      2026-11-16T08:54:10.094+00:00   2026-11-16T08:54:10.099+00:00          5.4  
+evaluation    ok      2026-11-16T08:54:20.645+00:00   2026-11-16T08:56:47.690+00:00     147045.4  
+
+=== 2. CACHE HIT | trace_id=3bb3a89a-a327-49ee-a788-17a4f331ddf8
+stage         status  start_time                      end_time                                ms  detail
+request       ok      2026-11-16T08:54:10.105+00:00   2026-11-16T08:54:10.133+00:00         28.5  path=cache_hit
+cache_lookup  ok      2026-11-16T08:54:10.105+00:00   2026-11-16T08:54:10.132+00:00         27.4  cache_hit=True, similarity=1.0
+
+=== 3. FAILED (malformed message) | trace_id=c2d639eb-3140-4b57-9932-641a42a6b56f
+stage         status  start_time                      end_time                                ms  detail
+queue_inbox   ok      2026-11-16T08:54:10.134+00:00   2026-11-16T08:54:10.139+00:00          5.1  
+request       error   2026-11-16T08:54:10.134+00:00   2026-11-16T08:54:11.159+00:00       1024.9  planner failed after 3 retries: 'question'
+planner       error   2026-11-16T08:54:10.139+00:00   2026-11-16T08:54:11.141+00:00       1002.3  KeyError: 'question'

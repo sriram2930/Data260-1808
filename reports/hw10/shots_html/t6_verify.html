@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python verify_hw10.py</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python verify_hw10.py &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python verify_hw10.py
+PASS p41_every_span_has_required_fields 885 spans
+PASS p41_status_values 
+PASS p41_error_spans_carry_error_text 
+PASS p42_miss_trace_has_all_stages [&#x27;cache_lookup&#x27;, &#x27;evaluation&#x27;, &#x27;facts_lookup&#x27;, &#x27;planner&#x27;, &#x27;queue_drafts&#x27;, &#x27;queue_final&#x27;, &#x27;queue_inbox&#x27;, &#x27;queue_tasks&#x27;, &#x27;request&#x27;, &#x27;reviewer&#x27;, &#x27;writer&#x27;]
+PASS p42_miss_trace_all_ok 
+PASS p42_miss_lookup_says_miss 
+PASS p42_hit_trace_lookup_says_hit 
+PASS p42_hit_trace_has_no_kafka_stage [&#x27;cache_lookup&#x27;, &#x27;request&#x27;]
+PASS p42_failed_trace_names_stage_and_error planner: KeyError: &#x27;question&#x27;
+PASS p42_three_distinct_trace_ids 
+PASS p41_same_id_on_plan_draft_final tasks/drafts/final all carry the trace_id as correlation_id
+PASS p41_no_second_request_identifier no extra id fields on any message
+PASS p43_50_requests 
+PASS p43_none_served_from_cache 
+PASS p43_max_similarity_below_threshold max 0.836 &lt; 0.9
+PASS p43_table_recomputes_from_spans planner p50 5775.6 p95 9064.5
+PASS p31_20_cases_20_labels 
+PASS p31_labels_in_1_to_5 
+PASS p31_frozen_before_judge_scores labels committed 1794815198 &lt; judge_runs.json created 1794816528
+PASS p31_files_unmodified_since_commit 
+PASS p32_spearman_recomputes rho=-0.2554495932399395
+PASS p32_mad_recomputes MAD=1.25
+PASS p33_repeatability_recomputes 0/20 cases changed across 3 runs
+PASS p33_three_runs_20_scores_each 
+PASS p2_records_have_four_criteria 51 evaluated traces
+PASS p2_scores_on_1_to_5_scale 
+PASS p2_improvement_has_both_scores_diff_interpretation 
+PASS p2_message_metadata_kept 
+PASS p2_plan_draft_final_joined_on_trace_id 
+PASS p1_three_pages 
+PASS p1_uses_streamlit_caching 
+PASS p1_trace_id_input_and_windows_stated 
+PASS prefix_s1808_on_cache_keys 
+33/33 checks passed</div>
+  </div>
+</body>
+</html>

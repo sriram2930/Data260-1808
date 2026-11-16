@@ -54,7 +54,7 @@ def make_process(model: ModelClient):
 def main() -> None:
     group_id = os.environ.get("WRITER_GROUP_ID", "s1808_writer")
     model = _TimedModelClient()
-    run_consumer_agent(log, TASKS_TOPIC, DRAFTS_TOPIC, group_id, make_process(model))
+    run_consumer_agent(log, TASKS_TOPIC, DRAFTS_TOPIC, group_id, make_process(model), stage="writer")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,98 @@
+=== Part 3 judge validation | student Sreeramachandrasai Achutuni | qwen3:8b | 3 runs x 20 drafts
+run1 c01 human=3 judge=4 (38s) 
+run1 c02 human=5 judge=4 (27s) 
+run1 c03 human=4 judge=4 (36s) 
+run1 c04 human=5 judge=4 (47s) 
+run1 c05 human=4 judge=4 (29s) 
+run1 c06 human=5 judge=5 (23s) 
+run1 c07 human=5 judge=5 (30s) 
+run1 c08 human=4 judge=4 (57s) 
+run1 c09 human=4 judge=3 (40s) 
+run1 c10 human=5 judge=2 (36s) 
+run1 c11 human=4 judge=4 (52s) 
+run1 c12 human=5 judge=3 (60s) 
+run1 c13 human=4 judge=4 (38s) 
+run1 c14 human=5 judge=1 (42s) 
+run1 c15 human=5 judge=4 (39s) 
+run1 c16 human=5 judge=1 (41s) 
+run1 c17 human=5 judge=3 (54s) 
+run1 c18 human=5 judge=3 (48s) 
+run1 c19 human=5 judge=3 (45s) 
+run1 c20 human=4 judge=3 (43s) 
+run2 c01 human=3 judge=4 (38s) 
+run2 c02 human=5 judge=4 (26s) 
+run2 c03 human=4 judge=4 (35s) 
+run2 c04 human=5 judge=4 (43s) 
+run2 c05 human=4 judge=4 (30s) 
+run2 c06 human=5 judge=5 (24s) 
+run2 c07 human=5 judge=5 (30s) 
+run2 c08 human=4 judge=4 (55s) 
+run2 c09 human=4 judge=3 (36s) 
+run2 c10 human=5 judge=2 (36s) 
+run2 c11 human=4 judge=4 (46s) 
+run2 c12 human=5 judge=3 (52s) 
+run2 c13 human=4 judge=4 (34s) 
+run2 c14 human=5 judge=1 (39s) 
+run2 c15 human=5 judge=4 (33s) 
+run2 c16 human=5 judge=1 (31s) 
+run2 c17 human=5 judge=3 (44s) 
+run2 c18 human=5 judge=3 (35s) 
+run2 c19 human=5 judge=3 (35s) 
+run2 c20 human=4 judge=3 (38s) 
+run3 c01 human=3 judge=4 (34s) 
+run3 c02 human=5 judge=4 (26s) 
+run3 c03 human=4 judge=4 (34s) 
+run3 c04 human=5 judge=4 (47s) 
+run3 c05 human=4 judge=4 (33s) 
+run3 c06 human=5 judge=5 (26s) 
+run3 c07 human=5 judge=5 (31s) 
+run3 c08 human=4 judge=4 (52s) 
+run3 c09 human=4 judge=3 (39s) 
+run3 c10 human=5 judge=2 (38s) 
+run3 c11 human=4 judge=4 (44s) 
+run3 c12 human=5 judge=3 (55s) 
+run3 c13 human=4 judge=4 (35s) 
+run3 c14 human=5 judge=1 (38s) 
+run3 c15 human=5 judge=4 (33s) 
+run3 c16 human=5 judge=1 (33s) 
+run3 c17 human=5 judge=3 (45s) 
+run3 c18 human=5 judge=3 (36s) 
+run3 c19 human=5 judge=3 (35s) 
+run3 c20 human=4 judge=3 (40s) 
+{
+  "spearman_rho": -0.2554495932399395,
+  "spearman_p": 0.2770330319534983,
+  "mean_abs_diff": 1.25,
+  "mean_signed_diff_judge_minus_human": -1.15,
+  "exact_agreement": 7,
+  "within_one": 13,
+  "repeatability": {
+    "n_runs": 3,
+    "cases_changed": 0,
+    "pct_cases_changed": 0.0,
+    "pair_comparisons": 60,
+    "pairs_with_change": 0,
+    "pct_pairs_changed": 0.0,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0,
+    "mean_abs_change_when_changed": 0.0
+  },
+  "per_run_agreement": [
+    {
+      "run": 1,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    },
+    {
+      "run": 2,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    },
+    {
+      "run": 3,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    }
+  ]
+}
+VERDICT: Would NOT use this judge alone to gate a deployment yet. Bars: rho=-0.255 (bar >= 0.80: NOT met); MAD=1.25 (bar <= 0.50: NOT met); repeatability max change 0 (bar 0: met). Evidence still required: a larger labeled set (>= 100 cases, several labelers with inter-annotator agreement), cases with known-bad drafts to measure false passes, a second judge model or prompt to test sensitivity, and a score-vs-outcome check on real failures; with n=20 the Spearman confidence interval is wide.

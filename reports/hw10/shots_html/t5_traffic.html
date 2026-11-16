@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-15/traffic_demo.py -- Part 1.1 traffic mix</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-15/traffic_demo.py -- Part 1.1 traffic mix &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-15/traffic_demo.py
+=== Part 1.1 traffic mix | student Sreeramachandrasai Achutuni | threshold 0.9
+first-time     MISS sim=0.5306   38594.4 ms status=ok | What is the title of CS-00024 and which department offers it?
+first-time     MISS sim=0.3942   21301.2 ms status=ok | Who teaches ENGR-00327 and in which semester?
+first-time     MISS sim=0.8382   17120.3 ms status=ok | How many seats are available in DATA-00015?
+first-time     MISS sim=0.4908   13713.5 ms status=ok | Where is the Data Science &amp; AI department located?
+first-time     MISS sim=0.6086   18246.0 ms status=ok | Which semester is BUS-00220 offered, and what is the enrollment?
+first-time     MISS sim=0.8199   16129.8 ms status=ok | How many seats are available in BUS-00002?
+first-time     MISS sim=0.4625   14366.4 ms status=ok | What is the department code and building for Engineering?
+first-time     MISS sim=0.5963   18457.9 ms status=ok | Who is the instructor of CS-00121 and how many students enrolled?
+repeat/reword  HIT  sim=1.0      29.7 ms status=ok | What is the title of CS-00024 and which department offers it?
+repeat/reword  HIT  sim=1.0      29.5 ms status=ok | How many seats are available in DATA-00015?
+repeat/reword  HIT  sim=0.9966      35.9 ms status=ok | Where is the Data Science and AI department located?
+repeat/reword  HIT  sim=1.0      33.1 ms status=ok | Which semester is BUS-00220 offered, and what is the enrollment?
+repeat/reword  HIT  sim=0.9852      34.7 ms status=ok | How many seats does BUS-00002 have available?
+repeat/reword  HIT  sim=1.0      22.6 ms status=ok | What is the department code and building for Engineering?
+repeat/reword  HIT  sim=0.9977      30.4 ms status=ok | Who teaches ENGR-00327, and in which semester?
+repeat/reword  HIT  sim=1.0      28.5 ms status=ok | Who is the instructor of CS-00121 and how many students enrolled?</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1844.96it/s]
+=== Part 1.1 traffic mix | student Sreeramachandrasai Achutuni | threshold 0.9
+first-time     MISS sim=0.5306   38594.4 ms status=ok | What is the title of CS-00024 and which department offers it?
+first-time     MISS sim=0.3942   21301.2 ms status=ok | Who teaches ENGR-00327 and in which semester?
+first-time     MISS sim=0.8382   17120.3 ms status=ok | How many seats are available in DATA-00015?
+first-time     MISS sim=0.4908   13713.5 ms status=ok | Where is the Data Science & AI department located?
+first-time     MISS sim=0.6086   18246.0 ms status=ok | Which semester is BUS-00220 offered, and what is the enrollment?
+first-time     MISS sim=0.8199   16129.8 ms status=ok | How many seats are available in BUS-00002?
+first-time     MISS sim=0.4625   14366.4 ms status=ok | What is the department code and building for Engineering?
+first-time     MISS sim=0.5963   18457.9 ms status=ok | Who is the instructor of CS-00121 and how many students enrolled?
+repeat/reword  HIT  sim=1.0      29.7 ms status=ok | What is the title of CS-00024 and which department offers it?
+repeat/reword  HIT  sim=1.0      29.5 ms status=ok | How many seats are available in DATA-00015?
+repeat/reword  HIT  sim=0.9966      35.9 ms status=ok | Where is the Data Science and AI department located?
+repeat/reword  HIT  sim=1.0      33.1 ms status=ok | Which semester is BUS-00220 offered, and what is the enrollment?
+repeat/reword  HIT  sim=0.9852      34.7 ms status=ok | How many seats does BUS-00002 have available?
+repeat/reword  HIT  sim=1.0      22.6 ms status=ok | What is the department code and building for Engineering?
+repeat/reword  HIT  sim=0.9977      30.4 ms status=ok | Who teaches ENGR-00327, and in which semester?
+repeat/reword  HIT  sim=1.0      28.5 ms status=ok | Who is the instructor of CS-00121 and how many students enrolled?

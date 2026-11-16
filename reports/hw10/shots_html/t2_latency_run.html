@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-15/latency_experiment.py -- Part 4.3 (50 confirmed misses)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-15/latency_experiment.py -- Part 4.3 (50 confirmed misses) &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-15/latency_experiment.py
+=== Part 4.3 latency experiment | student Sreeramachandrasai Achutuni | target 50 confirmed misses, 56 candidates | threshold 0.9
+[ 1/50] ok          sim=0.002 31945.9 ms | Recommend a good book about the Roman Empire.
+[ 2/50] ok          sim=0.257 29611.1 ms | How many moons does Jupiter have?
+[ 3/50] ok          sim=0.6573 29891.3 ms | How many seats are available in BUS-00065?
+[ 4/50] ok          sim=0.526 19852.1 ms | Tell me about the course DATA-00006.
+[ 5/50] ok          sim=0.3209 25906.9 ms | Tell me about the course ENGR-00040.
+[ 6/50] ok          sim=0.0112 25959.8 ms | What causes a rainbow to appear?
+[ 7/50] ok          sim=0.4909 17750.3 ms | What is the department code and building for Data Science &amp; AI?
+[ 8/50] ok          sim=0.3254 30309.8 ms | Tell me about the course CS-00121.
+   ... 38 more requests (full log: reports/hw10/raw/latency_experiment_run.txt) ...
+[47/50] ok          sim=0.7317 17223.7 ms | What is the title of DATA-00015 and which department offers it?
+[48/50] ok          sim=0.1236 15262.7 ms | What is the capital of Australia?
+[49/50] ok          sim=0.6523 19017.3 ms | How many seats are available in ENGR-00040?
+[50/50] ok          sim=0.5836 21467.5 ms | What is the title of BUS-00180 and which department offers it?
+confirmed misses=50 | cache_lookup cache_hit=False for all: True | max similarity 0.836 | discarded 0</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+$ git log --format="%h  %ad  %s" --date=iso -- Part-15/eval_cases.json Part-15/human_labels.csv
+0318870  2026-11-15 23:46:38 -0800  HW10 Part 3.1: freeze eval_cases.json and human_labels.csv before any judge scoring
+
+$ ls -l --time-style=full-iso reports/hw10/raw/judge_runs.json   (first judge score file for the 20 frozen drafts)
+-rw-r--r-- 1 User 197121 25665 2026-11-16 00:46:49.734767700 -0800 reports/hw10/raw/judge_runs.json
+
+$ git status --short Part-15/eval_cases.json Part-15/human_labels.csv   (empty = unchanged since the commit)
+(no output)

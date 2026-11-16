@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-15/evaluator.py --trace &lt;miss trace_id&gt; -- Part 2 end-to-end test question</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-15/evaluator.py --trace &lt;miss trace_id&gt; -- Part 2 end-to-end test question &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">=== Part 2 evaluation record | student Sreeramachandrasai Achutuni | trace_id=b1bccf21-3913-4835-bc2a-d5b86d555fae
+question : Which department offers DATA-00007, and how many seats are available in it?
+messages : plan s1808_tasks@78, draft s1808_drafts@134, final s1808_final@133 (all joined on correlation_id)
+judge    : qwen3:8b temp=0.0 seed=1808 scale=1-5 (1 very poor, 5 excellent)
+1 Plan Quality               score=5  reason: The response directly addresses the question by identifying the department offering DATA-00007 and specifying the number of seats available, which are the exact details required by the test case.
+2 Writer Helpfulness         score=5  trace_id=b1bccf21-3913-4835-bc2a-d5b86d555fae
+3 Final Answer Helpfulness   score=5  final answer: The department offering DATA-00007 is the Data Science &amp; AI department. This course, titled &#x27;Applied Business Analytics&#x27;, has 12 seats available.
+4 Final-vs-Draft Improvement draft=5 final=5 difference=0
+  interpretation: No change: the Reviewer returned the Writer&#x27;s draft verbatim (both 5); it added nothing but also cost a model call.</div>
+  </div>
+</body>
+</html>

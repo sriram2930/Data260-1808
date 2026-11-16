@@ -1,0 +1,54 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 1982.05it/s]
+=== Part 4.3 latency experiment | student Sreeramachandrasai Achutuni | target 50 confirmed misses, 56 candidates | threshold 0.9
+[ 1/50] ok          sim=0.002 31945.9 ms | Recommend a good book about the Roman Empire.
+[ 2/50] ok          sim=0.257 29611.1 ms | How many moons does Jupiter have?
+[ 3/50] ok          sim=0.6573 29891.3 ms | How many seats are available in BUS-00065?
+[ 4/50] ok          sim=0.526 19852.1 ms | Tell me about the course DATA-00006.
+[ 5/50] ok          sim=0.3209 25906.9 ms | Tell me about the course ENGR-00040.
+[ 6/50] ok          sim=0.0112 25959.8 ms | What causes a rainbow to appear?
+[ 7/50] ok          sim=0.4909 17750.3 ms | What is the department code and building for Data Science & AI?
+[ 8/50] ok          sim=0.3254 30309.8 ms | Tell me about the course CS-00121.
+[ 9/50] ok          sim=0.4682 19605.4 ms | Who is the instructor of BUS-00220 and how many students enrolled?
+[10/50] ok          sim=0.3687 14941.8 ms | Where is the Engineering department located?
+[11/50] ok          sim=0.0571 30329.2 ms | How do vaccines train the immune system?
+[12/50] ok          sim=0.4731 31961.4 ms | Does ENGR-00040 still have open seats?
+[13/50] ok          sim=0.5203 16952.6 ms | What is the title of CS-00018 and which department offers it?
+[14/50] ok          sim=0.4156 24416.8 ms | Who teaches BUS-00227?
+[15/50] ok          sim=0.3227 26714.3 ms | Who teaches ENGR-00327?
+[16/50] ok          sim=0.2923 27502.8 ms | Who teaches CS-00020?
+[17/50] ok          sim=0.4712 23395.5 ms | Which semester is CS-00121 offered, and what is the enrollment?
+[18/50] ok          sim=0.551 20566.2 ms | Tell me about the course DATA-00028.
+[19/50] ok          sim=0.6403 19313.1 ms | Which semester is DATA-00272 offered, and what is the enrollment?
+[20/50] ok          sim=0.0189 18245.4 ms | Explain the rules of chess in two sentences.
+[21/50] ok          sim=0.5081 31599.5 ms | Does BUS-00180 still have open seats?
+[22/50] ok          sim=0.5039 24616.5 ms | Who teaches DATA-00211?
+[23/50] ok          sim=0.7385 17954.5 ms | What is the title of DATA-00016 and which department offers it?
+[24/50] ok          sim=0.679 18370.0 ms | How many seats are available in CS-00024?
+[25/50] ok          sim=0.4098 26918.7 ms | Who teaches BUS-00134?
+[26/50] ok          sim=0.5575 21342.9 ms | Who is the instructor of DATA-00272 and how many students enrolled?
+[27/50] ok          sim=0.5498 20994.6 ms | Which semester is BUS-00134 offered, and what is the enrollment?
+[28/50] ok          sim=0.542 16645.9 ms | Tell me about the course DATA-00016.
+[29/50] ok          sim=0.4908 18459.7 ms | Where is the Data Science & AI department located?
+[30/50] ok          sim=0.4858 22484.6 ms | Does ENGR-00004 still have open seats?
+[31/50] ok          sim=0.4923 26953.2 ms | Who teaches DATA-00272?
+[32/50] ok          sim=0.4066 15672.2 ms | Where is the Business Analytics department located?
+[33/50] ok          sim=0.3452 14220.7 ms | Where is the Computer Science department located?
+[34/50] ok          sim=0.553 25778.3 ms | Which semester is BUS-00227 offered, and what is the enrollment?
+[35/50] ok          sim=0.5497 20144.3 ms | Who is the instructor of DATA-00241 and how many students enrolled?
+[36/50] ok          sim=0.3965 17118.3 ms | Who is the instructor of CS-00185 and how many students enrolled?
+[37/50] ok          sim=0.5259 23005.9 ms | Tell me about the course DATA-00211.
+[38/50] ok          sim=0.5059 21728.8 ms | What is the title of CS-00020 and which department offers it?
+[39/50] ok          sim=0.483 19802.0 ms | Does ENGR-00003 still have open seats?
+[40/50] ok          sim=-0.0496 33131.9 ms | Write a short poem about the ocean.
+[41/50] ok          sim=0.414 14865.0 ms | What is the department code and building for Computer Science?
+[42/50] ok          sim=0.4693 24584.6 ms | Tell me about the course BUS-00180.
+[43/50] ok          sim=0.2911 29806.7 ms | Who teaches CS-00121?
+[44/50] ok          sim=0.836 19784.9 ms | How many seats are available in DATA-00016?
+[45/50] ok          sim=0.5094 24405.1 ms | Does BUS-00227 still have open seats?
+[46/50] ok          sim=0.4572 16830.0 ms | Tell me about the course BUS-00002.
+[47/50] ok          sim=0.7317 17223.7 ms | What is the title of DATA-00015 and which department offers it?
+[48/50] ok          sim=0.1236 15262.7 ms | What is the capital of Australia?
+[49/50] ok          sim=0.6523 19017.3 ms | How many seats are available in ENGR-00040?
+[50/50] ok          sim=0.5836 21467.5 ms | What is the title of BUS-00180 and which department offers it?
+confirmed misses=50 | cache_lookup cache_hit=False for all: True | max similarity 0.836 | discarded 0

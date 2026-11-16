@@ -1,0 +1,10 @@
+n=50 (evaluated 50) | e2e serving p50 21404.3 ms p95 31789.7 ms | unattributed 0.03%
+Stage                            n    p50 (ms)    p95 (ms)   % serving e2e  % traced e2e
+Cache lookup                    50        24.4        52.8             0.1           0.0
+Planner                         50     5,775.6     9,064.5            27.2           5.0
+Writer                          50     7,794.9    14,562.5            36.6           6.8
+Reviewer                        50     7,894.0    11,950.0            35.8           6.6
+Queue wait (total)              50        29.7        46.6             0.1           0.0
+Evaluation                      50    99,071.4   129,119.1            None          81.5
+Facts lookup (MySQL, extra)     50         9.9        17.6             0.1           0.0
+dominant (serving): Writer | dominant (traced incl. evaluation): Evaluation

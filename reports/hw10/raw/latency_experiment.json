@@ -1,0 +1,461 @@
+{
+  "n_confirmed_misses": 50,
+  "all_cache_hit_false": true,
+  "max_similarity_to_cache": 0.836,
+  "threshold": 0.9,
+  "discarded": [],
+  "concurrency": 1,
+  "store_on_miss": false,
+  "requests": [
+    {
+      "trace_id": "ea15d0a7-7df8-4434-9cd5-eaa4c995b779",
+      "question": "Recommend a good book about the Roman Empire.",
+      "is_cached": false,
+      "similarity": 0.002,
+      "latency_ms": 31945.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "03409c83-7cab-407f-ae7f-af83e80e29f0",
+      "question": "How many moons does Jupiter have?",
+      "is_cached": false,
+      "similarity": 0.257,
+      "latency_ms": 29611.1,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "45b30fa2-cdac-4a7a-87b2-5d710a3d0f01",
+      "question": "How many seats are available in BUS-00065?",
+      "is_cached": false,
+      "similarity": 0.6573,
+      "latency_ms": 29891.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "018c93d8-cc39-499b-9e31-69c58a4ece96",
+      "question": "Tell me about the course DATA-00006.",
+      "is_cached": false,
+      "similarity": 0.526,
+      "latency_ms": 19852.1,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "1342c2d9-e8bd-4fe1-874a-439032690878",
+      "question": "Tell me about the course ENGR-00040.",
+      "is_cached": false,
+      "similarity": 0.3209,
+      "latency_ms": 25906.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "a20157bb-9e71-4d07-b857-cb77584ab43f",
+      "question": "What causes a rainbow to appear?",
+      "is_cached": false,
+      "similarity": 0.0112,
+      "latency_ms": 25959.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "482f32b3-0ee7-4e17-aaae-36bcac7b738f",
+      "question": "What is the department code and building for Data Science & AI?",
+      "is_cached": false,
+      "similarity": 0.4909,
+      "latency_ms": 17750.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "31932de7-f121-4959-8693-4de2aaa77aa4",
+      "question": "Tell me about the course CS-00121.",
+      "is_cached": false,
+      "similarity": 0.3254,
+      "latency_ms": 30309.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "b2ba4a3a-4f35-473c-a81a-a7ea57dfd608",
+      "question": "Who is the instructor of BUS-00220 and how many students enrolled?",
+      "is_cached": false,
+      "similarity": 0.4682,
+      "latency_ms": 19605.4,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "dfd398e4-ac49-499c-a0e7-17cf99881e99",
+      "question": "Where is the Engineering department located?",
+      "is_cached": false,
+      "similarity": 0.3687,
+      "latency_ms": 14941.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "fc5eefc1-500f-4403-b927-30bcb2673f46",
+      "question": "How do vaccines train the immune system?",
+      "is_cached": false,
+      "similarity": 0.0571,
+      "latency_ms": 30329.2,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "46278be9-17cc-426b-99c0-9fdccda81045",
+      "question": "Does ENGR-00040 still have open seats?",
+      "is_cached": false,
+      "similarity": 0.4731,
+      "latency_ms": 31961.4,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "1b5df405-fd48-4e84-a9b7-1fd7094fefa2",
+      "question": "What is the title of CS-00018 and which department offers it?",
+      "is_cached": false,
+      "similarity": 0.5203,
+      "latency_ms": 16952.6,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "78750961-881f-4481-8bd8-95811b12e596",
+      "question": "Who teaches BUS-00227?",
+      "is_cached": false,
+      "similarity": 0.4156,
+      "latency_ms": 24416.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "4bc8c25d-0370-48f8-833f-b243c23a3780",
+      "question": "Who teaches ENGR-00327?",
+      "is_cached": false,
+      "similarity": 0.3227,
+      "latency_ms": 26714.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "da150ba7-4ab5-4fb7-8394-ca8535b2ec5f",
+      "question": "Who teaches CS-00020?",
+      "is_cached": false,
+      "similarity": 0.2923,
+      "latency_ms": 27502.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "f6f0c4bb-ffd2-412c-827d-e2544c2c62cf",
+      "question": "Which semester is CS-00121 offered, and what is the enrollment?",
+      "is_cached": false,
+      "similarity": 0.4712,
+      "latency_ms": 23395.5,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "4a18b123-17c0-486b-bba1-8cdbdcc5bce5",
+      "question": "Tell me about the course DATA-00028.",
+      "is_cached": false,
+      "similarity": 0.551,
+      "latency_ms": 20566.2,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "5e978205-66f7-4926-9766-4c09e00a39fc",
+      "question": "Which semester is DATA-00272 offered, and what is the enrollment?",
+      "is_cached": false,
+      "similarity": 0.6403,
+      "latency_ms": 19313.1,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "bbe7920b-40db-4bce-ba5f-43b4d24db385",
+      "question": "Explain the rules of chess in two sentences.",
+      "is_cached": false,
+      "similarity": 0.0189,
+      "latency_ms": 18245.4,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "0693fdf6-ed55-4342-8494-533ffee781c0",
+      "question": "Does BUS-00180 still have open seats?",
+      "is_cached": false,
+      "similarity": 0.5081,
+      "latency_ms": 31599.5,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "6b63f04d-698b-4a02-9861-fb91926c405d",
+      "question": "Who teaches DATA-00211?",
+      "is_cached": false,
+      "similarity": 0.5039,
+      "latency_ms": 24616.5,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "09278a18-786c-47e2-986e-2ed412b4be2d",
+      "question": "What is the title of DATA-00016 and which department offers it?",
+      "is_cached": false,
+      "similarity": 0.7385,
+      "latency_ms": 17954.5,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "0add2a06-3158-49f8-897f-3f20c8a07446",
+      "question": "How many seats are available in CS-00024?",
+      "is_cached": false,
+      "similarity": 0.679,
+      "latency_ms": 18370.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "54353973-c23e-4ba0-8d06-6bf788975fb0",
+      "question": "Who teaches BUS-00134?",
+      "is_cached": false,
+      "similarity": 0.4098,
+      "latency_ms": 26918.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "a385e84a-afda-4fd6-bb92-8293c851da10",
+      "question": "Who is the instructor of DATA-00272 and how many students enrolled?",
+      "is_cached": false,
+      "similarity": 0.5575,
+      "latency_ms": 21342.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "81c20bc1-a6ab-4d97-b697-d924d1d99d24",
+      "question": "Which semester is BUS-00134 offered, and what is the enrollment?",
+      "is_cached": false,
+      "similarity": 0.5498,
+      "latency_ms": 20994.6,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "7f22f73b-2caa-4d4f-863f-6606056bf1a7",
+      "question": "Tell me about the course DATA-00016.",
+      "is_cached": false,
+      "similarity": 0.542,
+      "latency_ms": 16645.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "592d61ff-061f-49b1-8af3-a5d4241f0906",
+      "question": "Where is the Data Science & AI department located?",
+      "is_cached": false,
+      "similarity": 0.4908,
+      "latency_ms": 18459.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "9e052fd5-d0f5-419f-a775-ded145f5064e",
+      "question": "Does ENGR-00004 still have open seats?",
+      "is_cached": false,
+      "similarity": 0.4858,
+      "latency_ms": 22484.6,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "f6356285-7acf-47c2-b08a-1987c40888da",
+      "question": "Who teaches DATA-00272?",
+      "is_cached": false,
+      "similarity": 0.4923,
+      "latency_ms": 26953.2,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "ade11cdb-5b78-470b-9d8e-f64447599f8a",
+      "question": "Where is the Business Analytics department located?",
+      "is_cached": false,
+      "similarity": 0.4066,
+      "latency_ms": 15672.2,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "378b65f3-11b3-4c7b-954f-0af0d0cb5459",
+      "question": "Where is the Computer Science department located?",
+      "is_cached": false,
+      "similarity": 0.3452,
+      "latency_ms": 14220.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "e82fa3d4-efbf-41fc-be96-2552025b96e1",
+      "question": "Which semester is BUS-00227 offered, and what is the enrollment?",
+      "is_cached": false,
+      "similarity": 0.553,
+      "latency_ms": 25778.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "7349ab76-edd2-4d41-8a33-f7f3383a253c",
+      "question": "Who is the instructor of DATA-00241 and how many students enrolled?",
+      "is_cached": false,
+      "similarity": 0.5497,
+      "latency_ms": 20144.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "04e0f7d7-95f8-4b85-8cc0-7d300b204dc5",
+      "question": "Who is the instructor of CS-00185 and how many students enrolled?",
+      "is_cached": false,
+      "similarity": 0.3965,
+      "latency_ms": 17118.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "079e37e4-6ff0-4896-ba2b-aa022ebfffed",
+      "question": "Tell me about the course DATA-00211.",
+      "is_cached": false,
+      "similarity": 0.5259,
+      "latency_ms": 23005.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "10605c46-59a5-4010-a73d-1c84cdc80b2a",
+      "question": "What is the title of CS-00020 and which department offers it?",
+      "is_cached": false,
+      "similarity": 0.5059,
+      "latency_ms": 21728.8,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "df10b8e1-855e-4328-a2e4-e4a39463fbc8",
+      "question": "Does ENGR-00003 still have open seats?",
+      "is_cached": false,
+      "similarity": 0.483,
+      "latency_ms": 19802.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "bb81f608-6863-446c-b0dd-d3514ece894f",
+      "question": "Write a short poem about the ocean.",
+      "is_cached": false,
+      "similarity": -0.0496,
+      "latency_ms": 33131.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "acb77e5e-084e-4e4f-8618-19dfc2b1cfb8",
+      "question": "What is the department code and building for Computer Science?",
+      "is_cached": false,
+      "similarity": 0.414,
+      "latency_ms": 14865.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "45e64294-942f-4ff7-80cf-c002ca4a9f30",
+      "question": "Tell me about the course BUS-00180.",
+      "is_cached": false,
+      "similarity": 0.4693,
+      "latency_ms": 24584.6,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "1679a690-d77a-4306-bada-b2c5a04e7760",
+      "question": "Who teaches CS-00121?",
+      "is_cached": false,
+      "similarity": 0.2911,
+      "latency_ms": 29806.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "6bfc91d9-50bc-4edb-89ee-2f51fc360e0d",
+      "question": "How many seats are available in DATA-00016?",
+      "is_cached": false,
+      "similarity": 0.836,
+      "latency_ms": 19784.9,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "c2dc86dc-a2b0-47ee-b220-4b8068598e8a",
+      "question": "Does BUS-00227 still have open seats?",
+      "is_cached": false,
+      "similarity": 0.5094,
+      "latency_ms": 24405.1,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "a3f7cfd7-32e3-4391-8915-f53488cec489",
+      "question": "Tell me about the course BUS-00002.",
+      "is_cached": false,
+      "similarity": 0.4572,
+      "latency_ms": 16830.0,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "b9d71e2e-1e7d-45ea-be77-f05495e60387",
+      "question": "What is the title of DATA-00015 and which department offers it?",
+      "is_cached": false,
+      "similarity": 0.7317,
+      "latency_ms": 17223.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "3366b7ec-8e3f-4ad6-b3e4-03b1d99b954b",
+      "question": "What is the capital of Australia?",
+      "is_cached": false,
+      "similarity": 0.1236,
+      "latency_ms": 15262.7,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "b831ebec-e85b-43b0-a18e-b2b52d6bf2ff",
+      "question": "How many seats are available in ENGR-00040?",
+      "is_cached": false,
+      "similarity": 0.6523,
+      "latency_ms": 19017.3,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "trace_id": "a68009c1-cc7b-4415-88db-c140988c4f1a",
+      "question": "What is the title of BUS-00180 and which department offers it?",
+      "is_cached": false,
+      "similarity": 0.5836,
+      "latency_ms": 21467.5,
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

@@ -813,3 +813,26 @@ python Part-13/part3_stale_demo.py                    # Part 3.5
 python Part-14/run_training.py && python Part-14/run_validation.py && python Part-14/run_variants.py   # Part 4
 python verify_hw09.py                                 # self-check, writes reports/hw09/verification.json
 ```
+
+---
+
+# HW10 — Trace spans, DeepEval judge, judge validation, latency, Streamlit dashboard
+
+Folder: `Part-15/` (tracing, traced Q&A service, evaluator, judge validation, latency experiment, dashboard).
+`Part-11/kafka_utils.py` and the three agents received a small span hook (no-op if tracing is not importable).
+Report, raw evidence and screenshots: `reports/hw10/`. `trace_id` is the HW8 `correlation_id` everywhere.
+
+Judge: `qwen3:8b` via local Ollama through DeepEval GEval (temperature 0, seed 1808, 1-5 scale).
+```
+docker start s1808-zookeeper s1808-kafka s1808-redis s1808-mysql
+python Part-11/planner.py ; python Part-11/writer.py ; python Part-11/reviewer.py   # three terminals
+python Part-15/trace_demo.py                  # Part 4.2: cache-hit, cache-miss, failed trace
+python Part-15/make_eval_cases.py             # Part 3.1: 20 drafts -> eval_cases.json, blank human_labels.csv
+streamlit run Part-15/label_tool.py           # label the 20 drafts yourself, then COMMIT both files
+python Part-15/latency_experiment.py          # Part 4.3: 50 confirmed cache misses
+python Part-15/evaluator.py --pending         # Part 2: judge plan / draft / final per trace
+python Part-15/validate_judge.py              # Part 3.2/3.3 (refuses to run unless labels are committed)
+python Part-15/latency_report.py              # Part 4.3 stage table
+streamlit run Part-15/dashboard.py            # Part 1
+python verify_hw10.py                         # self-check, writes reports/hw10/verification.json
+```

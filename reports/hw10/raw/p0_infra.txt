@@ -1,0 +1,28 @@
+$ docker ps --filter name=s1808 --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"
+NAMES             IMAGE                                STATUS
+s1808-redis       redis/redis-stack-server:7.2.0-v10   Up 3 hours
+s1808-kafka       confluentinc/cp-kafka:7.5.0          Up 3 hours
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0      Up 3 hours
+s1808-mysql       mysql:8                              Up 3 hours
+
+$ docker exec s1808-kafka kafka-topics --bootstrap-server localhost:29092 --list | grep -E "s1808_(inbox|tasks|drafts|final|dead_letter)"
+s1808_dead_letter
+s1808_drafts
+s1808_final
+s1808_inbox
+s1808_tasks
+
+$ docker exec s1808-redis redis-cli FT.INFO s1808:idx:semcache | head -8
+index_name
+s1808:idx:semcache
+index_options
+
+index_definition
+key_type
+HASH
+prefixes
+
+$ agents running (Part-11 planner / writer / reviewer, now emitting spans)
+Part-11/writer.py
+Part-11/reviewer.py
+Part-11/planner.py

@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-15/evaluator.py --pending -- Part 2 (judge qwen3:8b)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-15/evaluator.py --pending -- Part 2 (judge qwen3:8b) &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-15/evaluator.py --pending --only &lt;50 latency-experiment trace_ids&gt;
+=== Part 2 evaluator | student Sreeramachandrasai Achutuni | judge qwen3:8b | 50 trace(s)
+ea15d0a7-7df8-4434-9cd5-eaa4c995b779 ERROR draft: MissingTestCaseParamsError: &#x27;context&#x27; cannot be None for the &#x27;helpfulness [GEval]&#x27; metric; final: MissingTestCaseParamsErr...
+03409c83-7cab-407f-ae7f-af83e80e29f0 ERROR draft: MissingTestCaseParamsError: &#x27;context&#x27; cannot be None for the &#x27;helpfulness [GEval]&#x27; metric; final: MissingTestCaseParamsErr...
+45b30fa2-cdac-4a7a-87b2-5d710a3d0f01 plan=4 draft=3 final=3 diff=0 | No change: the Reviewer returned the Writer&#x27;s draft verbatim (both 3); it added nothing but also cost a...
+018c93d8-cc39-499b-9e31-69c58a4ece96 plan=4 draft=5 final=5 diff=0 | No change: the Reviewer returned the Writer&#x27;s draft verbatim (both 5); it added nothing but also cost a...
+1342c2d9-e8bd-4fe1-874a-439032690878 plan=3 draft=3 final=3 diff=0 | No change: the Reviewer returned the Writer&#x27;s draft verbatim (both 3); it added nothing but also cost a...
+a20157bb-9e71-4d07-b857-cb77584ab43f ERROR draft: MissingTestCaseParamsError: &#x27;context&#x27; cannot be None for the &#x27;helpfulness [GEval]&#x27; metric; final: MissingTestCaseParamsErr...
+   ... 41 more traces ...
+3366b7ec-8e3f-4ad6-b3e4-03b1d99b954b ERROR draft: MissingTestCaseParamsError: &#x27;context&#x27; cannot be None for the &#x27;helpfulness [GEval]&#x27; metric; final: MissingTestCaseParamsErr...
+b831ebec-e85b-43b0-a18e-b2b52d6bf2ff plan=4 draft=4 final=4 diff=0 | No score change (4 -&gt; 4): the Reviewer rewrote the text but the judge sees equal helpfulness. [108s]
+a68009c1-cc7b-4415-88db-c140988c4f1a plan=4 draft=4 final=4 diff=0 | No change: the Reviewer returned the Writer&#x27;s draft verbatim (both 4); it added nothing but also cost a...</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "homework": "hw10",
+  "sid4": 1808,
+  "commit_hash": "031887032e288df74653b74be0afb6e3a01d0925",
+  "judge": "qwen3:8b via Ollama, deepeval GEval",
+  "checks": [
+    {
+      "check": "p41_every_span_has_required_fields",
+      "pass": true,
+      "detail": "885 spans"
+    },
+    {
+      "check": "p41_status_values",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p41_error_spans_carry_error_text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p42_miss_trace_has_all_stages",
+      "pass": true,
+      "detail": "['cache_lookup', 'evaluation', 'facts_lookup', 'planner', 'queue_drafts', 'queue_final', 'queue_inbox', 'queue_tasks', 'request', 'reviewer', 'writer']"
+    },
+    {
+      "check": "p42_miss_trace_all_ok",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p42_miss_lookup_says_miss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p42_hit_trace_lookup_says_hit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p42_hit_trace_has_no_kafka_stage",
+      "pass": true,
+      "detail": "['cache_lookup', 'request']"
+    },
+    {
+      "check": "p42_failed_trace_names_stage_and_error",
+      "pass": true,
+      "detail": "planner: KeyError: 'question'"
+    },
+    {
+      "check": "p42_three_distinct_trace_ids",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p41_same_id_on_plan_draft_final",
+      "pass": true,
+      "detail": "tasks/drafts/final all carry the trace_id as correlation_id"
+    },
+    {
+      "check": "p41_no_second_request_identifier",
+      "pass": true,
+      "detail": "no extra id fields on any message"
+    },
+    {
+      "check": "p43_50_requests",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p43_none_served_from_cache",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p43_max_similarity_below_threshold",
+      "pass": true,
+      "detail": "max 0.836 < 0.9"
+    },
+    {
+      "check": "p43_table_recomputes_from_spans",
+      "pass": true,
+      "detail": "planner p50 5775.6 p95 9064.5"
+    },
+    {
+      "check": "p31_20_cases_20_labels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p31_labels_in_1_to_5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p31_frozen_before_judge_scores",
+      "pass": true,
+      "detail": "labels committed 1794815198 < judge_runs.json created 1794816528"
+    },
+    {
+      "check": "p31_files_unmodified_since_commit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p32_spearman_recomputes",
+      "pass": true,
+      "detail": "rho=-0.2554495932399395"
+    },
+    {
+      "check": "p32_mad_recomputes",
+      "pass": true,
+      "detail": "MAD=1.25"
+    },
+    {
+      "check": "p33_repeatability_recomputes",
+      "pass": true,
+      "detail": "0/20 cases changed across 3 runs"
+    },
+    {
+      "check": "p33_three_runs_20_scores_each",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_records_have_four_criteria",
+      "pass": true,
+      "detail": "51 evaluated traces"
+    },
+    {
+      "check": "p2_scores_on_1_to_5_scale",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_improvement_has_both_scores_diff_interpretation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_message_metadata_kept",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p2_plan_draft_final_joined_on_trace_id",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_three_pages",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_uses_streamlit_caching",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "p1_trace_id_input_and_windows_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "prefix_s1808_on_cache_keys",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "all_pass": true
+}

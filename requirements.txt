@@ -28,3 +28,5 @@ pyjwt
 ruff
 pre-commit
 redis
+deepeval
+streamlit

@@ -1,0 +1,251 @@
+{
+  "n_cases": 20,
+  "judge_settings": {
+    "model": "qwen3:8b",
+    "host": "http://localhost:11434",
+    "temperature": 0.0,
+    "seed": 1808,
+    "think": false,
+    "num_predict": 400,
+    "request_timeout_s": 180,
+    "scale": "1-5 (1 very poor, 5 excellent)",
+    "framework": "deepeval GEval"
+  },
+  "spearman_rho": -0.2554495932399395,
+  "spearman_p": 0.2770330319534983,
+  "mean_abs_diff": 1.25,
+  "mean_signed_diff_judge_minus_human": -1.15,
+  "exact_agreement": 7,
+  "within_one": 13,
+  "per_run_agreement": [
+    {
+      "run": 1,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    },
+    {
+      "run": 2,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    },
+    {
+      "run": 3,
+      "spearman": -0.255,
+      "mean_abs_diff": 1.25
+    }
+  ],
+  "repeatability": {
+    "n_runs": 3,
+    "cases_changed": 0,
+    "pct_cases_changed": 0.0,
+    "pair_comparisons": 60,
+    "pairs_with_change": 0,
+    "pct_pairs_changed": 0.0,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0,
+    "mean_abs_change_when_changed": 0.0
+  },
+  "per_case": [
+    {
+      "case_id": "c01",
+      "question": "How many seats are left in CS-00018?",
+      "human": 3,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c02",
+      "question": "Tell me the title and department of DATA-00016.",
+      "human": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c03",
+      "question": "Who is teaching BUS-00134 and when is it offered?",
+      "human": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c04",
+      "question": "What is the enrollment of CS-00185 and who is its instructor?",
+      "human": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c05",
+      "question": "Where is the Computer Science department housed?",
+      "human": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c06",
+      "question": "What building is Business Analytics in, and what is its department code?",
+      "human": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c07",
+      "question": "Compare the seat availability of DATA-00006 and DATA-00007.",
+      "human": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c08",
+      "question": "Which course has more seats, CS-00005 or CS-00018, and by how many?",
+      "human": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c09",
+      "question": "List the sections of ENGR-00040 with instructor and enrollment.",
+      "human": 4,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c10",
+      "question": "I want to take DATA-00272. Who teaches it and is it full?",
+      "human": 5,
+      "judge_run1": 2,
+      "judge_run2": 2,
+      "judge_run3": 2,
+      "abs_diff_run1": 3,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c11",
+      "question": "What is CS-00121 about?",
+      "human": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c12",
+      "question": "Is DATA-00241 offered in Fall 2026?",
+      "human": 5,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 2,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c13",
+      "question": "Summarize everything you know about BUS-00227.",
+      "human": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c14",
+      "question": "Which department offers Advanced Database Systems?",
+      "human": 5,
+      "judge_run1": 1,
+      "judge_run2": 1,
+      "judge_run3": 1,
+      "abs_diff_run1": 4,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c15",
+      "question": "How many courses does the Engineering department offer?",
+      "human": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c16",
+      "question": "Who painted the Mona Lisa?",
+      "human": 5,
+      "judge_run1": 1,
+      "judge_run2": 1,
+      "judge_run3": 1,
+      "abs_diff_run1": 4,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c17",
+      "question": "Explain how a hash table handles collisions.",
+      "human": 5,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 2,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c18",
+      "question": "How many seats are available in CS-09999?",
+      "human": 5,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 2,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c19",
+      "question": "Who teaches DATA-08888 in Spring 2027?",
+      "human": 5,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 2,
+      "range_across_runs": 0
+    },
+    {
+      "case_id": "c20",
+      "question": "What prerequisites does DATA-00006 have?",
+      "human": 4,
+      "judge_run1": 3,
+      "judge_run2": 3,
+      "judge_run3": 3,
+      "abs_diff_run1": 1,
+      "range_across_runs": 0
+    }
+  ],
+  "verdict": "Would NOT use this judge alone to gate a deployment yet. Bars: rho=-0.255 (bar >= 0.80: NOT met); MAD=1.25 (bar <= 0.50: NOT met); repeatability max change 0 (bar 0: met). Evidence still required: a larger labeled set (>= 100 cases, several labelers with inter-annotator agreement), cases with known-bad drafts to measure false passes, a second judge model or prompt to test sensitivity, and a score-vs-outcome check on real failures; with n=20 the Spearman confidence interval is wide."
+}

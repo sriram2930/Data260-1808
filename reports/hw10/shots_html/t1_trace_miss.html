@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>python Part-15/trace_demo.py -- Part 4.2 (1/2): the cache-miss trace</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">python Part-15/trace_demo.py -- Part 4.2 (1/2): the cache-miss trace &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ python Part-15/trace_demo.py
+=== Part 4.2 trace examples | student Sreeramachandrasai Achutuni | threshold 0.9
+miss: {&#x27;trace_id&#x27;: &#x27;b1bccf21-3913-4835-bc2a-d5b86d555fae&#x27;, &#x27;is_cached&#x27;: False, &#x27;status&#x27;: &#x27;ok&#x27;, &#x27;latency_ms&#x27;: 15588.4}
+hit : {&#x27;trace_id&#x27;: &#x27;3bb3a89a-a327-49ee-a788-17a4f331ddf8&#x27;, &#x27;is_cached&#x27;: True, &#x27;similarity&#x27;: 1.0, &#x27;status&#x27;: &#x27;ok&#x27;, &#x27;latency_ms&#x27;: 29.0}
+fail: {&#x27;trace_id&#x27;: &#x27;c2d639eb-3140-4b57-9932-641a42a6b56f&#x27;, &#x27;status&#x27;: &#x27;error&#x27;, &#x27;failed_stage&#x27;: &#x27;planner&#x27;, &#x27;error&#x27;: &quot;planner failed after 3 retries: &#x27;question&#x27;&quot;, &#x27;latency_ms&#x27;: 1025.4}
+=== 1. CACHE MISS (agent path completed) | trace_id=b1bccf21-3913-4835-bc2a-d5b86d555fae
+stage         status  start_time                      end_time                                ms  detail
+request       ok      2026-11-16T08:53:54.515+00:00   2026-11-16T08:54:10.103+00:00      15587.6  path=cache_miss
+cache_lookup  ok      2026-11-16T08:53:54.515+00:00   2026-11-16T08:53:54.537+00:00         21.5  cache_hit=False
+facts_lookup  ok      2026-11-16T08:53:54.537+00:00   2026-11-16T08:53:54.638+00:00        101.0  
+queue_inbox   ok      2026-11-16T08:53:54.643+00:00   2026-11-16T08:53:54.654+00:00         11.0  
+planner       ok      2026-11-16T08:53:54.654+00:00   2026-11-16T08:53:59.310+00:00       4656.9  attempts=1
+queue_tasks   ok      2026-11-16T08:53:59.312+00:00   2026-11-16T08:53:59.317+00:00          5.7  
+writer        ok      2026-11-16T08:53:59.317+00:00   2026-11-16T08:54:04.841+00:00       5523.7  attempts=1
+queue_drafts  ok      2026-11-16T08:54:04.842+00:00   2026-11-16T08:54:04.847+00:00          6.0  
+reviewer      ok      2026-11-16T08:54:04.847+00:00   2026-11-16T08:54:10.093+00:00       5245.6  attempts=1
+queue_final   ok      2026-11-16T08:54:10.094+00:00   2026-11-16T08:54:10.099+00:00          5.4  
+evaluation    ok      2026-11-16T08:54:20.645+00:00   2026-11-16T08:56:47.690+00:00     147045.4  </div>
+  </div>
+</body>
+</html>

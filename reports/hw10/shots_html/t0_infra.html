@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>docker ps / kafka topics / redis index -- stack</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d1117;
+    font-family: "Cascadia Code", "Consolas", monospace;
+  }
+  .window {
+    width: 980px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+  }
+  .titlebar {
+    background: #1f1f1f;
+    padding: 0 0 0 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .winicon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .wincontrols {
+    margin-left: auto;
+    display: flex;
+    height: 100%;
+  }
+  .wincontrols span {
+    width: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9d1d9;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+  }
+  .wincontrols .wclose { font-size: 14px; }
+  .titletext {
+    color: #c9d1d9;
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .body {
+    background: #0d1117;
+    color: #c9d1d9;
+    padding: 18px 20px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .prompt { color: #58a6ff; }
+  .ok { color: #3fb950; }
+  .err { color: #f85149; }
+  .namebar {
+    color: #8b949e;
+    font-size: 12px;
+    text-align: right;
+    padding: 4px 20px 0 0;
+  }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <span class="winicon">&gt;_</span>
+      <span class="titletext">docker ps / kafka topics / redis index -- stack &#8212; Sreeram Achutuni -- SID 019151808</span>
+      <span class="wincontrols">
+        <span class="wmin">&#8211;</span>
+        <span class="wmax">&#9633;</span>
+        <span class="wclose">&times;</span>
+      </span>
+    </div>
+    <div class="body">$ docker ps --filter name=s1808 --format &quot;table {{.Names}}\t{{.Image}}\t{{.Status}}&quot;
+NAMES             IMAGE                                STATUS
+s1808-redis       redis/redis-stack-server:7.2.0-v10   Up 3 hours
+s1808-kafka       confluentinc/cp-kafka:7.5.0          Up 3 hours
+s1808-zookeeper   confluentinc/cp-zookeeper:7.5.0      Up 3 hours
+s1808-mysql       mysql:8                              Up 3 hours
+
+$ docker exec s1808-kafka kafka-topics --bootstrap-server localhost:29092 --list | grep -E &quot;s1808_(inbox|tasks|drafts|final|dead_letter)&quot;
+s1808_dead_letter
+s1808_drafts
+s1808_final
+s1808_inbox
+s1808_tasks
+
+$ docker exec s1808-redis redis-cli FT.INFO s1808:idx:semcache | head -8
+index_name
+s1808:idx:semcache
+index_options
+
+index_definition
+key_type
+HASH
+prefixes
+
+$ agents running (Part-11 planner / writer / reviewer, now emitting spans)
+Part-11/writer.py
+Part-11/reviewer.py
+Part-11/planner.py</div>
+  </div>
+</body>
+</html>

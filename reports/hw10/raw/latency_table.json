@@ -1,0 +1,75 @@
+{
+  "n": 50,
+  "n_with_evaluation": 50,
+  "e2e_serving_p50_ms": 21404.3,
+  "e2e_serving_p95_ms": 31789.7,
+  "e2e_serving_mean_ms": 22506.5,
+  "unattributed_pct_of_serving": 0.03,
+  "table": [
+    {
+      "stage": "Cache lookup",
+      "n": 50,
+      "p50_ms": 24.4,
+      "p95_ms": 52.8,
+      "mean_ms": 29.6,
+      "pct_of_serving_e2e": 0.1,
+      "pct_of_traced_e2e": 0.0
+    },
+    {
+      "stage": "Planner",
+      "n": 50,
+      "p50_ms": 5775.6,
+      "p95_ms": 9064.5,
+      "mean_ms": 6127.3,
+      "pct_of_serving_e2e": 27.2,
+      "pct_of_traced_e2e": 5.0
+    },
+    {
+      "stage": "Writer",
+      "n": 50,
+      "p50_ms": 7794.9,
+      "p95_ms": 14562.5,
+      "mean_ms": 8235.9,
+      "pct_of_serving_e2e": 36.6,
+      "pct_of_traced_e2e": 6.8
+    },
+    {
+      "stage": "Reviewer",
+      "n": 50,
+      "p50_ms": 7894.0,
+      "p95_ms": 11950.0,
+      "mean_ms": 8061.5,
+      "pct_of_serving_e2e": 35.8,
+      "pct_of_traced_e2e": 6.6
+    },
+    {
+      "stage": "Queue wait (total)",
+      "n": 50,
+      "p50_ms": 29.7,
+      "p95_ms": 46.6,
+      "mean_ms": 32.9,
+      "pct_of_serving_e2e": 0.1,
+      "pct_of_traced_e2e": 0.0
+    },
+    {
+      "stage": "Evaluation",
+      "n": 50,
+      "p50_ms": 99071.4,
+      "p95_ms": 129119.1,
+      "mean_ms": 99226.9,
+      "pct_of_serving_e2e": null,
+      "pct_of_traced_e2e": 81.5
+    },
+    {
+      "stage": "Facts lookup (MySQL, extra)",
+      "n": 50,
+      "p50_ms": 9.9,
+      "p95_ms": 17.6,
+      "mean_ms": 12.7,
+      "pct_of_serving_e2e": 0.1,
+      "pct_of_traced_e2e": 0.0
+    }
+  ],
+  "dominant_stage_serving": "Writer",
+  "dominant_stage_traced": "Evaluation"
+}

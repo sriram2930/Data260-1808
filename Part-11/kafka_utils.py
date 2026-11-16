@@ -38,11 +38,23 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 import time
+from pathlib import Path
 from typing import Callable, Optional
 
 from kafka import KafkaConsumer, KafkaProducer
 from kafka_config import BOOTSTRAP_SERVERS
+
+# HW10: optional span tracing (Part-15/tracing.py). If it is not importable, tracing is a no-op,
+# so every HW8/HW9 script that imports this module behaves exactly as before.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "Part-15"))
+try:
+    from tracing import now_ms as _now_ms
+    from tracing import write_span as _write_span
+except ImportError:  # pragma: no cover
+    _now_ms = None
+    _write_span = None
 
 MAX_RETRIES = 3
 RETRY_BACKOFF_S = 0.5
@@ -88,6 +100,7 @@ def run_consumer_agent(
     process: Callable[[dict], Optional[dict]],
     *,
     enable_dead_letter: bool = True,
+    stage: Optional[str] = None,
 ) -> None:
     consumer = make_consumer(in_topic, group_id, enable_auto_commit=False)
     producer = make_producer()
@@ -118,6 +131,12 @@ def run_consumer_agent(
 
         log.info("received from %s: correlation_id=%s", in_topic, correlation_id)
 
+        # HW10 tracing: queue wait = Kafka record create time -> this agent starts work on it.
+        t_start = _now_ms() if _now_ms else 0.0
+        if _write_span and stage and correlation_id:
+            _write_span(correlation_id, "queue_" + in_topic.split("_", 1)[-1], float(msg.timestamp), t_start,
+                        topic=in_topic, partition=msg.partition, offset=msg.offset)
+
         result = None
         last_error = None
         for attempt in range(1, MAX_RETRIES + 1):
@@ -133,6 +152,12 @@ def run_consumer_agent(
                 )
                 if attempt < MAX_RETRIES:
                     time.sleep(RETRY_BACKOFF_S)
+
+        if _write_span and stage and correlation_id:
+            _write_span(correlation_id, stage, t_start, _now_ms(),
+                        "error" if last_error is not None else "ok",
+                        f"{type(last_error).__name__}: {last_error}" if last_error is not None else None,
+                        attempts=attempt if last_error is None else MAX_RETRIES)
 
         if last_error is not None:
             if enable_dead_letter:

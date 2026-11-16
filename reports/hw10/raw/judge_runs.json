@@ -1,0 +1,368 @@
+{
+ "1": {
+  "c01": {
+   "score": 4,
+   "reason": "The answer correctly identifies the number of seats available in CS-00018 as 8, which matches the context. However, it includes additional information about the course title and department, which is irrelevant padding. The answer is accurate but includes unnecessary details, which slightly reduces its clarity and completeness.",
+   "error": null,
+   "latency_ms": 37929.8
+  },
+  "c02": {
+   "score": 4,
+   "reason": "The answer correctly identifies the title and department of DATA-00016, providing the required information directly. However, it includes additional information about seat availability not requested in the question, which constitutes irrelevant padding.",
+   "error": null,
+   "latency_ms": 27075.0
+  },
+  "c03": {
+   "score": 4,
+   "reason": "The answer correctly identifies the instructor as Wei Brown and the offering time as Summer 2027, which aligns with the context. However, it adds extra information about seats available and enrollment status, which were not requested in the question. The answer is accurate but includes irrelevant padding.",
+   "error": null,
+   "latency_ms": 36271.0
+  },
+  "c04": {
+   "score": 4,
+   "reason": "The answer correctly identifies the enrollment and instructor for CS-00185. It mentions the seat availability of 30 and the Summer 2027 section with 34 enrolled students, taught by Omar Kim, which aligns with the context. However, it does not explicitly state the enrollment number for CS-00185, instead referring to the section's enrollment, which is a minor omission but does not significantly impact accuracy.",
+   "error": null,
+   "latency_ms": 46751.1
+  },
+  "c05": {
+   "score": 4,
+   "reason": "The answer correctly identifies the location of the Computer Science department as the Engineering Building, Room 310, which matches the context. However, it also includes the department code 'CS' as an additional fact, which was not requested in the question. This extra information is irrelevant padding and slightly reduces the score.",
+   "error": null,
+   "latency_ms": 29206.4
+  },
+  "c06": {
+   "score": 5,
+   "reason": "The answer correctly identifies the building and department code as specified in the context. It provides the exact information requested without padding or irrelevant details. The answer is accurate, complete, and directly addresses the question.",
+   "error": null,
+   "latency_ms": 22510.7
+  },
+  "c07": {
+   "score": 5,
+   "reason": "The answer correctly identifies the seat availability for both courses as per the context, directly answering the question without padding. It accurately reflects the provided data and is clear and relevant.",
+   "error": null,
+   "latency_ms": 29586.4
+  },
+  "c08": {
+   "score": 4,
+   "reason": "The answer correctly identifies that CS-00005 has more seats than CS-00018 and provides the correct difference of 22. However, the answer incorrectly attributes the course titles to the course codes, as the context explicitly states that CS-00005 is 'Statistical Operating Systems' and CS-00018 is 'Introduction to Cloud Computing'. The answer accurately reflects the seat numbers but misassociates the titles, which is a minor error but affects clarity and correctness.",
+   "error": null,
+   "latency_ms": 56814.7
+  },
+  "c09": {
+   "score": 3,
+   "reason": "The answer provides some correct information about the course and section but fails to list all the requested sections of ENGR-00040 with their respective instructors and enrollments. It only mentions one section and does not fully address the question's requirement to list all sections, making it incomplete and padded.",
+   "error": null,
+   "latency_ms": 40380.7
+  },
+  "c10": {
+   "score": 2,
+   "reason": "The answer incorrectly states that the course is not full, despite the context indicating seats_available = 30 and enrolled_count = 40, which implies the course is full. The answer also mentions the instructor correctly as Sam Rossi, but the key fact about the course being full is misrepresented.",
+   "error": null,
+   "latency_ms": 36318.1
+  },
+  "c11": {
+   "score": 4,
+   "reason": "The answer correctly identifies the course title and department, and mentions the section and enrollment details. However, it incorrectly states that the course is offered in Spring 2027, which is not part of the context. The answer also incorrectly claims the course is 'filled' with 45 students when the context only states that the enrolled count is 45, which may not necessarily mean the course is filled. These inaccuracies result in a score of 4.",
+   "error": null,
+   "latency_ms": 51861.5
+  },
+  "c12": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-00241 is offered by the Data Science & AI department and provides relevant context about its Spring 2027 section. However, it fails to directly answer the question about Fall 2026 offering, instead providing irrelevant details about Spring 2027 enrollment. The answer does not address the specific request and includes unnecessary padding, resulting in a score of 3.",
+   "error": null,
+   "latency_ms": 59738.5
+  },
+  "c13": {
+   "score": 4,
+   "reason": "The answer provides accurate information about the course title, department, instructor, and enrollment details. However, it incorrectly states that there are 22 seats available, while the context specifies 30 seats available. This minor error reduces the score. The answer is otherwise relevant and complete.",
+   "error": null,
+   "latency_ms": 38422.3
+  },
+  "c14": {
+   "score": 1,
+   "reason": "The answer invents facts about a course that do not exist, as indicated by the context. It claims the university offers 'Advanced Database Systems' when no such course exists in the catalog. This contradicts the provided context and introduces false information, leading to a very poor score.",
+   "error": null,
+   "latency_ms": 42316.4
+  },
+  "c15": {
+   "score": 4,
+   "reason": "The answer provides the number of courses (approximately 20) directly and aligns with the context. However, it includes unnecessary details about course topics and department location, which are not requested. The answer is accurate and relevant but contains minor padding.",
+   "error": null,
+   "latency_ms": 39118.7
+  },
+  "c16": {
+   "score": 1,
+   "reason": "The answer provides correct information about the Mona Lisa and Leonardo da Vinci, but it is irrelevant to the test case's context, which indicates the question is off-topic. The response does not address the specific request for course-catalogue facts and instead provides general art history information.",
+   "error": null,
+   "latency_ms": 40820.1
+  },
+  "c17": {
+   "score": 3,
+   "reason": "The answer provides a clear explanation of how hash tables handle collisions, including chaining and open addressing. However, the context indicates that the question is off-topic or refers to a non-existent course, and the answer does not address this context. The answer is accurate and relevant to the technical question but fails to acknowledge the context provided.",
+   "error": null,
+   "latency_ms": 53748.3
+  },
+  "c18": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course CS-09999 does not exist in the catalogue, aligning with the provided context. However, it fails to directly answer the question about the number of seats, instead providing irrelevant padding. The response does not fulfill the request for a specific fact, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 47658.3
+  },
+  "c19": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-08888 does not exist in the catalog, aligning with the provided context. However, it fails to directly answer the question about who teaches the course in Spring 2027, which was the explicit request. The response is informative but does not fulfill the specific query.",
+   "error": null,
+   "latency_ms": 44763.6
+  },
+  "c20": {
+   "score": 3,
+   "reason": "The answer correctly states that DATA-00006 has no explicitly listed prerequisites, which aligns with the context. However, it adds irrelevant information about the course's popularity and target audience, which was not requested. The answer fails to directly address the question about prerequisites and includes padding, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 43463.0
+  }
+ },
+ "2": {
+  "c01": {
+   "score": 4,
+   "reason": "The answer correctly identifies the number of seats available in CS-00018 as 8, which matches the context. However, it includes additional information about the course title and department, which is irrelevant padding. The answer is accurate but includes unnecessary details, which slightly reduces its clarity and completeness.",
+   "error": null,
+   "latency_ms": 37570.7
+  },
+  "c02": {
+   "score": 4,
+   "reason": "The answer correctly identifies the title and department of DATA-00016, providing the required information directly. However, it includes additional information about seat availability not requested in the question, which constitutes irrelevant padding.",
+   "error": null,
+   "latency_ms": 25975.1
+  },
+  "c03": {
+   "score": 4,
+   "reason": "The answer correctly identifies the instructor as Wei Brown and the offering time as Summer 2027, which aligns with the context. However, it adds extra information about seats available and enrollment status, which were not requested in the question. The answer is accurate but includes irrelevant padding.",
+   "error": null,
+   "latency_ms": 35274.9
+  },
+  "c04": {
+   "score": 4,
+   "reason": "The answer correctly identifies the enrollment and instructor for CS-00185. It mentions the seat availability of 30 and the Summer 2027 section with 34 enrolled students, taught by Omar Kim, which aligns with the context. However, it does not explicitly state the enrollment number for CS-00185, instead referring to the section's enrollment, which is a minor omission but does not significantly impact accuracy.",
+   "error": null,
+   "latency_ms": 43012.6
+  },
+  "c05": {
+   "score": 4,
+   "reason": "The answer correctly identifies the location of the Computer Science department as the Engineering Building, Room 310, which matches the context. However, it also includes the department code 'CS' as an additional fact, which was not requested in the question. This extra information is irrelevant padding and slightly reduces the score.",
+   "error": null,
+   "latency_ms": 30230.8
+  },
+  "c06": {
+   "score": 5,
+   "reason": "The answer correctly identifies the building and department code as specified in the context. It provides the exact information requested without padding or irrelevant details. The answer is accurate, complete, and directly addresses the question.",
+   "error": null,
+   "latency_ms": 23823.1
+  },
+  "c07": {
+   "score": 5,
+   "reason": "The answer correctly identifies the seat availability for both courses as per the context, directly answering the question without padding. It accurately reflects the provided data and is clear and relevant.",
+   "error": null,
+   "latency_ms": 29523.1
+  },
+  "c08": {
+   "score": 4,
+   "reason": "The answer correctly identifies that CS-00005 has more seats than CS-00018 and provides the correct difference of 22. However, the answer incorrectly attributes the course titles to the course codes, as the context explicitly states that CS-00005 is 'Statistical Operating Systems' and CS-00018 is 'Introduction to Cloud Computing'. The answer accurately reflects the seat numbers but misassociates the titles, which is a minor error but affects clarity and correctness.",
+   "error": null,
+   "latency_ms": 54727.2
+  },
+  "c09": {
+   "score": 3,
+   "reason": "The answer provides some correct information about the course and section but fails to list all the requested sections of ENGR-00040 with their respective instructors and enrollments. It only mentions one section and does not fully address the question's requirement to list all sections, making it incomplete and padded.",
+   "error": null,
+   "latency_ms": 36287.9
+  },
+  "c10": {
+   "score": 2,
+   "reason": "The answer incorrectly states that the course is not full, despite the context indicating seats_available = 30 and enrolled_count = 40, which implies the course is full. The answer also mentions the instructor correctly as Sam Rossi, but the key fact about the course being full is misrepresented.",
+   "error": null,
+   "latency_ms": 36369.5
+  },
+  "c11": {
+   "score": 4,
+   "reason": "The answer correctly identifies the course title and department, and mentions the section and enrollment details. However, it incorrectly states that the course is offered in Spring 2027, which is not part of the context. The answer also incorrectly claims the course is 'filled' with 45 students when the context only states that the enrolled count is 45, which may not necessarily mean the course is filled. These inaccuracies result in a score of 4.",
+   "error": null,
+   "latency_ms": 46497.7
+  },
+  "c12": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-00241 is offered by the Data Science & AI department and provides relevant context about its Spring 2027 section. However, it fails to directly answer the question about Fall 2026 offering, instead providing irrelevant details about Spring 2027 enrollment. The answer does not address the specific request and includes unnecessary padding, resulting in a score of 3.",
+   "error": null,
+   "latency_ms": 52094.1
+  },
+  "c13": {
+   "score": 4,
+   "reason": "The answer provides accurate information about the course title, department, instructor, and enrollment details. However, it incorrectly states that there are 22 seats available, while the context specifies 30 seats available. This minor error reduces the score. The answer is otherwise relevant and complete.",
+   "error": null,
+   "latency_ms": 34333.9
+  },
+  "c14": {
+   "score": 1,
+   "reason": "The answer invents facts about a course that do not exist, as indicated by the context. It claims the university offers 'Advanced Database Systems' when no such course exists in the catalog. This contradicts the provided context and introduces false information, leading to a very poor score.",
+   "error": null,
+   "latency_ms": 38807.0
+  },
+  "c15": {
+   "score": 4,
+   "reason": "The answer provides the number of courses (approximately 20) directly and aligns with the context. However, it includes unnecessary details about course topics and department location, which are not requested. The answer is accurate and relevant but contains minor padding.",
+   "error": null,
+   "latency_ms": 33163.0
+  },
+  "c16": {
+   "score": 1,
+   "reason": "The answer provides correct information about the Mona Lisa and Leonardo da Vinci, but it is irrelevant to the test case's context, which indicates the question is off-topic. The response does not address the specific request for course-catalogue facts and instead provides general art history information.",
+   "error": null,
+   "latency_ms": 30649.3
+  },
+  "c17": {
+   "score": 3,
+   "reason": "The answer provides a clear explanation of how hash tables handle collisions, including chaining and open addressing. However, the context indicates that the question is off-topic or refers to a non-existent course, and the answer does not address this context. The answer is accurate and relevant to the technical question but fails to acknowledge the context provided.",
+   "error": null,
+   "latency_ms": 44057.4
+  },
+  "c18": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course CS-09999 does not exist in the catalogue, aligning with the provided context. However, it fails to directly answer the question about the number of seats, instead providing irrelevant padding. The response does not fulfill the request for a specific fact, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 34731.7
+  },
+  "c19": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-08888 does not exist in the catalog, aligning with the provided context. However, it fails to directly answer the question about who teaches the course in Spring 2027, which was the explicit request. The response is informative but does not fulfill the specific query.",
+   "error": null,
+   "latency_ms": 34832.4
+  },
+  "c20": {
+   "score": 3,
+   "reason": "The answer correctly states that DATA-00006 has no explicitly listed prerequisites, which aligns with the context. However, it adds irrelevant information about the course's popularity and target audience, which was not requested. The answer fails to directly address the question about prerequisites and includes padding, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 37988.9
+  }
+ },
+ "3": {
+  "c01": {
+   "score": 4,
+   "reason": "The answer correctly identifies the number of seats available in CS-00018 as 8, which matches the context. However, it includes additional information about the course title and department, which is irrelevant padding. The answer is accurate but includes unnecessary details, which slightly reduces its clarity and completeness.",
+   "error": null,
+   "latency_ms": 34210.8
+  },
+  "c02": {
+   "score": 4,
+   "reason": "The answer correctly identifies the title and department of DATA-00016, providing the required information directly. However, it includes additional information about seat availability not requested in the question, which constitutes irrelevant padding.",
+   "error": null,
+   "latency_ms": 26247.3
+  },
+  "c03": {
+   "score": 4,
+   "reason": "The answer correctly identifies the instructor as Wei Brown and the offering time as Summer 2027, which aligns with the context. However, it adds extra information about seats available and enrollment status, which were not requested in the question. The answer is accurate but includes irrelevant padding.",
+   "error": null,
+   "latency_ms": 33970.7
+  },
+  "c04": {
+   "score": 4,
+   "reason": "The answer correctly identifies the enrollment and instructor for CS-00185. It mentions the seat availability of 30 and the Summer 2027 section with 34 enrolled students, taught by Omar Kim, which aligns with the context. However, it does not explicitly state the enrollment number for CS-00185, instead referring to the section's enrollment, which is a minor omission but does not significantly impact accuracy.",
+   "error": null,
+   "latency_ms": 46636.5
+  },
+  "c05": {
+   "score": 4,
+   "reason": "The answer correctly identifies the location of the Computer Science department as the Engineering Building, Room 310, which matches the context. However, it also includes the department code 'CS' as an additional fact, which was not requested in the question. This extra information is irrelevant padding and slightly reduces the score.",
+   "error": null,
+   "latency_ms": 32577.5
+  },
+  "c06": {
+   "score": 5,
+   "reason": "The answer correctly identifies the building and department code as specified in the context. It provides the exact information requested without padding or irrelevant details. The answer is accurate, complete, and directly addresses the question.",
+   "error": null,
+   "latency_ms": 26045.8
+  },
+  "c07": {
+   "score": 5,
+   "reason": "The answer correctly identifies the seat availability for both courses as per the context, directly answering the question without padding. It accurately reflects the provided data and is clear and relevant.",
+   "error": null,
+   "latency_ms": 30778.7
+  },
+  "c08": {
+   "score": 4,
+   "reason": "The answer correctly identifies that CS-00005 has more seats than CS-00018 and provides the correct difference of 22. However, the answer incorrectly attributes the course titles to the course codes, as the context explicitly states that CS-00005 is 'Statistical Operating Systems' and CS-00018 is 'Introduction to Cloud Computing'. The answer accurately reflects the seat numbers but misassociates the titles, which is a minor error but affects clarity and correctness.",
+   "error": null,
+   "latency_ms": 51933.1
+  },
+  "c09": {
+   "score": 3,
+   "reason": "The answer provides some correct information about the course and section but fails to list all the requested sections of ENGR-00040 with their respective instructors and enrollments. It only mentions one section and does not fully address the question's requirement to list all sections, making it incomplete and padded.",
+   "error": null,
+   "latency_ms": 39178.9
+  },
+  "c10": {
+   "score": 2,
+   "reason": "The answer incorrectly states that the course is not full, despite the context indicating seats_available = 30 and enrolled_count = 40, which implies the course is full. The answer also mentions the instructor correctly as Sam Rossi, but the key fact about the course being full is misrepresented.",
+   "error": null,
+   "latency_ms": 37847.8
+  },
+  "c11": {
+   "score": 4,
+   "reason": "The answer correctly identifies the course title and department, and mentions the section and enrollment details. However, it incorrectly states that the course is offered in Spring 2027, which is not part of the context. The answer also incorrectly claims the course is 'filled' with 45 students when the context only states that the enrolled count is 45, which may not necessarily mean the course is filled. These inaccuracies result in a score of 4.",
+   "error": null,
+   "latency_ms": 43732.4
+  },
+  "c12": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-00241 is offered by the Data Science & AI department and provides relevant context about its Spring 2027 section. However, it fails to directly answer the question about Fall 2026 offering, instead providing irrelevant details about Spring 2027 enrollment. The answer does not address the specific request and includes unnecessary padding, resulting in a score of 3.",
+   "error": null,
+   "latency_ms": 55405.0
+  },
+  "c13": {
+   "score": 4,
+   "reason": "The answer provides accurate information about the course title, department, instructor, and enrollment details. However, it incorrectly states that there are 22 seats available, while the context specifies 30 seats available. This minor error reduces the score. The answer is otherwise relevant and complete.",
+   "error": null,
+   "latency_ms": 35348.8
+  },
+  "c14": {
+   "score": 1,
+   "reason": "The answer invents facts about a course that do not exist, as indicated by the context. It claims the university offers 'Advanced Database Systems' when no such course exists in the catalog. This contradicts the provided context and introduces false information, leading to a very poor score.",
+   "error": null,
+   "latency_ms": 38287.4
+  },
+  "c15": {
+   "score": 4,
+   "reason": "The answer provides the number of courses (approximately 20) directly and aligns with the context. However, it includes unnecessary details about course topics and department location, which are not requested. The answer is accurate and relevant but contains minor padding.",
+   "error": null,
+   "latency_ms": 32568.3
+  },
+  "c16": {
+   "score": 1,
+   "reason": "The answer provides correct information about the Mona Lisa and Leonardo da Vinci, but it is irrelevant to the test case's context, which indicates the question is off-topic. The response does not address the specific request for course-catalogue facts and instead provides general art history information.",
+   "error": null,
+   "latency_ms": 32790.6
+  },
+  "c17": {
+   "score": 3,
+   "reason": "The answer provides a clear explanation of how hash tables handle collisions, including chaining and open addressing. However, the context indicates that the question is off-topic or refers to a non-existent course, and the answer does not address this context. The answer is accurate and relevant to the technical question but fails to acknowledge the context provided.",
+   "error": null,
+   "latency_ms": 44782.5
+  },
+  "c18": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course CS-09999 does not exist in the catalogue, aligning with the provided context. However, it fails to directly answer the question about the number of seats, instead providing irrelevant padding. The response does not fulfill the request for a specific fact, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 36322.7
+  },
+  "c19": {
+   "score": 3,
+   "reason": "The answer correctly identifies that the course DATA-08888 does not exist in the catalog, aligning with the provided context. However, it fails to directly answer the question about who teaches the course in Spring 2027, which was the explicit request. The response is informative but does not fulfill the specific query.",
+   "error": null,
+   "latency_ms": 35408.5
+  },
+  "c20": {
+   "score": 3,
+   "reason": "The answer correctly states that DATA-00006 has no explicitly listed prerequisites, which aligns with the context. However, it adds irrelevant information about the course's popularity and target audience, which was not requested. The answer fails to directly address the question about prerequisites and includes padding, resulting in a lower score.",
+   "error": null,
+   "latency_ms": 39964.3
+  }
+ }
+}

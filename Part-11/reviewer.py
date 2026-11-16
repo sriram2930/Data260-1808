@@ -55,7 +55,7 @@ def make_process(model: ModelClient):
 
 def main() -> None:
     model = _TimedModelClient()
-    run_consumer_agent(log, DRAFTS_TOPIC, FINAL_TOPIC, "s1808_reviewer", make_process(model))
+    run_consumer_agent(log, DRAFTS_TOPIC, FINAL_TOPIC, "s1808_reviewer", make_process(model), stage="reviewer")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+{
+  "cache_miss_success": "b1bccf21-3913-4835-bc2a-d5b86d555fae",
+  "cache_hit": "3bb3a89a-a327-49ee-a788-17a4f331ddf8",
+  "failed": "c2d639eb-3140-4b57-9932-641a42a6b56f",
+  "question": "Which department offers DATA-00007, and how many seats are available in it?",
+  "failed_stage": "planner",
+  "error": "planner failed after 3 retries: 'question'",
+  "miss_latency_ms": 15588.4,
+  "hit_latency_ms": 29.0
+}

@@ -1,0 +1,35 @@
+PASS p41_every_span_has_required_fields 885 spans
+PASS p41_status_values 
+PASS p41_error_spans_carry_error_text 
+PASS p42_miss_trace_has_all_stages ['cache_lookup', 'evaluation', 'facts_lookup', 'planner', 'queue_drafts', 'queue_final', 'queue_inbox', 'queue_tasks', 'request', 'reviewer', 'writer']
+PASS p42_miss_trace_all_ok 
+PASS p42_miss_lookup_says_miss 
+PASS p42_hit_trace_lookup_says_hit 
+PASS p42_hit_trace_has_no_kafka_stage ['cache_lookup', 'request']
+PASS p42_failed_trace_names_stage_and_error planner: KeyError: 'question'
+PASS p42_three_distinct_trace_ids 
+PASS p41_same_id_on_plan_draft_final tasks/drafts/final all carry the trace_id as correlation_id
+PASS p41_no_second_request_identifier no extra id fields on any message
+PASS p43_50_requests 
+PASS p43_none_served_from_cache 
+PASS p43_max_similarity_below_threshold max 0.836 < 0.9
+PASS p43_table_recomputes_from_spans planner p50 5775.6 p95 9064.5
+PASS p31_20_cases_20_labels 
+PASS p31_labels_in_1_to_5 
+PASS p31_frozen_before_judge_scores labels committed 1794815198 < judge_runs.json created 1794816528
+PASS p31_files_unmodified_since_commit 
+PASS p32_spearman_recomputes rho=-0.2554495932399395
+PASS p32_mad_recomputes MAD=1.25
+PASS p33_repeatability_recomputes 0/20 cases changed across 3 runs
+PASS p33_three_runs_20_scores_each 
+PASS p2_records_have_four_criteria 51 evaluated traces
+PASS p2_scores_on_1_to_5_scale 
+PASS p2_improvement_has_both_scores_diff_interpretation 
+PASS p2_message_metadata_kept 
+PASS p2_plan_draft_final_joined_on_trace_id 
+PASS p1_three_pages 
+PASS p1_uses_streamlit_caching 
+PASS p1_trace_id_input_and_windows_stated 
+PASS prefix_s1808_on_cache_keys 
+
+33/33 checks passed
