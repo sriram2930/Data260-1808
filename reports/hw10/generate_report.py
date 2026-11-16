@@ -117,6 +117,18 @@ def shot(name, caption, width=6.5, maxh=8.3):
     r.font.size = Pt(10)
 
 
+def cshot(name, caption, width=6.2):
+    path = HERE / "code_shots" / name
+    w, h = Image.open(path).size
+    doc.add_picture(str(path), width=Inches(min(width, 7.4 * w / h)))
+    FIG[0] += 1
+    FIGNUM[name] = FIG[0]
+    c = doc.add_paragraph()
+    r = c.add_run(f"Screenshot {FIG[0]}: {caption}")
+    r.italic = True
+    r.font.size = Pt(10)
+
+
 def table(data, widths=None, size=10):
     t = doc.add_table(rows=0, cols=len(data[0]))
     t.style = "Table Grid"
@@ -220,7 +232,7 @@ table([
 p("Caching: parsing the JSON-lines files and the Redis connection are the reusable, relatively expensive parts, so the loaders use "
   "@st.cache_data keyed on the file's modification time (a changed file refreshes automatically) and the Redis client uses "
   "@st.cache_resource (one shared connection). Light dataframe filtering is recomputed on every rerun, which is cheap.")
-code(src("Part-15/dashboard.py", "@st.cache_data(show_spinner=False)", "def spans_df"))
+cshot("c7_dashboard_cache.png", "Part-15/dashboard.py: the cached loaders (@st.cache_data keyed on file mtime) and the shared Redis connection (@st.cache_resource).", width=5.4)
 shot("d1_summary_all.png", "Summary page, window = all recorded data. The hit rate here is low on purpose: it contains the 50-request experiment, which is all misses by design, and the page says so.", width=6.0)
 shot("d1_summary_1h.png", "Summary page, window = last hour at capture time: the mixed traffic run (8 first-time questions then 8 repeats/rewordings) plus the three Part 4.2 example requests. 9 hits, 9 misses, 1 error (the deliberate malformed message).", width=6.0)
 p(f"Reading the 1-hour window: cache hits answered in a median {pc(hl, 50):.0f} ms (p95 {pc(hl, 95):.0f} ms) while misses took a median 17.1 s (p95 31.7 s), "
@@ -252,7 +264,8 @@ p("Part-15/qa_service.py wraps the HW9 cache in front of the HW8 pipeline. Its M
 p("The evaluator is bounded: every judge request has a 180 s timeout and a per-trace budget of 900 s; a missing or malformed message or an "
   "unavailable judge returns status=error with the reason instead of raising or hanging; the evaluation always writes its span. Cache-hit "
   "traces have no plan or draft (the agents never ran), so they are not evaluated.")
-code(src("Part-15/judge.py", "def make_metric", "if __name__"), size=7)
+cshot("c4_judge.png", "Part-15/judge.py: the G-Eval metric (rubric 1-5, evaluation steps) and the bounded judge() call that never raises.", width=6.0)
+cshot("c5_evaluate_trace.png", "Part-15/evaluator.py: evaluate_trace joins plan/draft/final, scores the four criteria within a time budget, and writes the evaluation span.", width=6.2)
 h2("2.2 Criteria and results")
 table([
     ("Criterion", "Judged text", "Saved with the score"),
@@ -314,6 +327,7 @@ table([
     ("Human label distribution", "5 x 12, 4 x 7, 3 x 1 (no 1s or 2s)"),
     ("Judge score distribution (run 1)", ", ".join(f"{k} x {v}" for k, v in sorted(collections.Counter(int(x['judge_run1']) for x in val['per_case']).items(), reverse=True))),
 ], widths=[3.0, 3.8], size=9.5)
+cshot("c6_validation_stats.png", "Part-15/validate_judge.py: Spearman, mean absolute difference and the repeatability statistics, all recomputable from judge_scores.csv.", width=6.2)
 shot("t4_judge_validation.png", "Judge validation run (excerpt of the 60 judge calls) and the computed statistics and verdict.", width=6.2, maxh=7.6)
 table([("Case", "Question", "Human", "Judge r1", "Judge r2", "Judge r3", "|diff| r1")] +
       [(c["case_id"], c["question"][:62], labels[c["case_id"]], jud[c["case_id"]]["judge_run1"], jud[c["case_id"]]["judge_run2"],
@@ -367,9 +381,9 @@ table([
 ], widths=[1.9, 1.8, 3.1], size=8.5)
 p("The hook in the shared Kafka consumer loop records queue wait and the stage span from the same correlation_id the message already carries; if Part-15/tracing.py "
   "cannot be imported the hook is a no-op, so HW8 and HW9 scripts still behave as before.")
-code(src("Part-11/kafka_utils.py", "# HW10 tracing: queue wait", "result = None"))
-code(src("Part-11/kafka_utils.py", "_write_span(correlation_id, stage, t_start", "if last_error is not None:"))
-code(src("Part-15/qa_service.py", 'with span(trace_id, "cache_lookup") as a:', 'out["similarity"] = None if sim'))
+cshot("c1_span_logger.png", "Part-15/tracing.py: span() writes one JSON span per stage, marking status=error and re-raising on failure; read_spans() skips torn lines.", width=6.0)
+cshot("c2_kafka_hook.png", "Part-11/kafka_utils.py: queue wait (record create time to start of work) and the stage span, including the error span when all retries fail.", width=6.0)
+cshot("c3_cache_lookup_span.png", "Part-15/qa_service.py: the cache_lookup span; attrs.cache_hit makes hit and miss paths distinguishable.", width=6.0)
 shot("t0_infra.png", "The stack the traces ran on: Kafka, Zookeeper, Redis Stack and MySQL containers, the s1808 topics, the Redis vector index, and the three agents running with the span hook.", width=6.4)
 h2("4.2 Required trace examples")
 table([
