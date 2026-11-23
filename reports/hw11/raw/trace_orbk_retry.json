@@ -1,0 +1,6 @@
+[
+ {"ts":"2026-11-23T21:54:57+00:00","run_id":"20261123-135233-e31d","effect_id":"d49a2eff47e1","step":"retrieved","detail":{"source":"prices_demo","url":"https://example-newswire.example/quote/orbk.us","key":"price:ORBK:2026-11-18"}},
+ {"ts":"2026-11-23T21:55:17+00:00","run_id":"20261123-135233-e31d","effect_id":"d49a2eff47e1","step":"importance_scored","detail":{"score":0.8,"reason":"ORBK +11.0% at or above notify threshold for very high volatility tier (10%)"}},
+ {"ts":"2026-11-23T21:55:17+00:00","run_id":"20261123-135233-e31d","effect_id":"d49a2eff47e1","step":"decision","detail":{"decision":"notify"}},
+ {"ts":"2026-11-23T21:55:17+00:00","run_id":"20261123-135233-e31d","effect_id":"d49a2eff47e1","step":"effect","detail":{"type":"SendToUser","effect_id":"d49a2eff47e1"}}
+]

@@ -1,0 +1,5 @@
+Muse's answer when asked for real token counts (it declined to guess):
+- It cannot see exact or billed token counts for the conversation or for the Stock Watch runs.
+- The only number it can see is a tool-reported estimate (source field "estimate") for the current conversation's context window: 133,690 tokens, 38% of a 350,000-token window.
+- watch.py, its database and the scheduled job's run record do not expose token usage.
+Settings > Usage: "Free plan, 0% used, weekly limit resets on Nov 30", before and after every run.

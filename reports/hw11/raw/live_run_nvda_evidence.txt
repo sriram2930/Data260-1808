@@ -1,0 +1,5 @@
+Muse's raw answer to: select title, summary from items where effect_id='c7bb039bc0c8'
+('NVDA: 8-K  - Current report', '<b>Filed:</b> 2026-11-23 <b>AccNo:</b> 0001045810-26-000090  <b>Size:</b> 147 KB<br>Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers<br>Item 9.01: Financial Statements and Exhibits')
+Muse's explanation: the names and roles in its alert ("Jen-Hsun Huang reinstated as President and CEO") came from the filing document it fetched with `watch.py fetch`, not from the stored summary and not from its own knowledge. The fetch is not recorded in the trace (watch.py logs only blocked fetches).
+First live run: Run 20261123-131939-58f1: 40 new, 0 duplicates suppressed, 22 alerts, 4 digest, 0 need review (14 quiet).
+EDGAR returned the 10 most recent 8-Ks per company (back to Feb 2025).
