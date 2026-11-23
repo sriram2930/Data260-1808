@@ -6,3 +6,7 @@ exclude = ["Part-6", "node_modules", ".venv"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]
 ignore = ["E501"]
+
+# HW11: stock-watch/watch.py is the instructor's starter kit (compact one-line style); only my small extensions are mine.
+[tool.ruff.lint.per-file-ignores]
+"stock-watch/watch.py" = ["E701", "E702", "E741", "F401"]
